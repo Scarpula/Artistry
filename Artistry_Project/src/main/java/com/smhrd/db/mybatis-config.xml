@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<environments default="development">  <!-- 환경설정(계정,driver,url...) -->
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver"
+					value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url"
+					value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="hr" />
+				<property name="password" value="84700211" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers> <!-- SQL문들 정의해주는 mapper.xml을 계속해서 만들건데 어디에있는지 지정해주는 태그 -->
+		<mapper resource="com/smhrd/db/MemberMapper.xml" />
+	</mappers>
+</configuration>
