@@ -10,9 +10,9 @@
 				<property name="driver"
 					value="oracle.jdbc.driver.OracleDriver" />
 				<property name="url"
-					value="jdbc:oracle:thin:@localhost:1521:xe" />
-				<property name="username" value="hr" />
-				<property name="password" value="84700211" />
+					value="jdbc:oracle:thin:@project-db-campus.smhrd.com:1524:xe" />
+				<property name="username" value="campus_24IS_BIG3_P2_2" />
+				<property name="password" value="smhrd2" />
 			</dataSource>
 		</environment>
 	</environments>
