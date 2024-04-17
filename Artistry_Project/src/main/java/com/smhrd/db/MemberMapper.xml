@@ -4,17 +4,16 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.db.MemberMapper">
 
-	<insert id="join" parameterType="com.smhrd.model.Member">
-		insert into MEMBERS values(#{email},#{pw})
-	</insert>
-<!-- 쿼리문 작성 -->
+   <insert id="join" parameterType="com.smhrd.model.Member">
+    INSERT INTO members (mb_email, mb_pw, mb_name, mb_addr, mb_phone, mb_birthdate, mb_nick, joined_at) 
+    VALUES (#{mb_Email}, #{mb_Pw}, #{mb_Name}, #{mb_Addr}, #{mb_Phone}, #{mb_Birthdate}, #{mb_Nick}, sysdate)
+   </insert>
+
 
 <select id="login"  parameterType="com.smhrd.model.Member" resultType="com.smhrd.model.Member">
 	select * from MEMBERS where mb_email=#{mb_Email} and mb_pw=#{mb_Pw}
 </select>
 
-<select id="login"  parameterType="com.smhrd.model.Member" resultType="com.smhrd.model.Member">
-   select * from MEMBERS where mb_email=#{mb_Email} and mb_pw=#{mb_Pw}
-</select>
+
 
 </mapper>
