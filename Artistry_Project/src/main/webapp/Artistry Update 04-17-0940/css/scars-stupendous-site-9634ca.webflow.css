@@ -4790,12 +4790,10 @@ body {
 
   .signup-form-wrapper {
     background-color: #fbf6f0;
-    border: 3px solid #333;
-    border-radius: 15px;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    width: 601px;
+    width: 950px;
     height: 73vh;
     padding-top: 30px;
     padding-bottom: 30px;
