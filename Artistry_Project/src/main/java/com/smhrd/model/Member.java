@@ -14,12 +14,31 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Member {
-   @NonNull
-   private String id;
-   @NonNull 
-   private String pw;
-   private String name;
-   
+	@NonNull
+	private String mbEmail;
+	@NonNull
+	private String mbPw;
+	@NonNull
+	private String mbPhone;
+	@NonNull
+	private String mbBirthdate;
+	@NonNull
+	private String mbName;
+	@NonNull
+	private String mbNick;
 
+	private String mbProfileImg;
+	@NonNull
+	private String mbAddr;
+	@NonNull
+	private String joinedAt;
+	@NonNull
+	private String mbType;
+	public Member(@NonNull String mbEmail, @NonNull String mbPw) {
+		super();
+		this.mbEmail = mbEmail;
+		this.mbPw = mbPw;
+	}
 
 }
+

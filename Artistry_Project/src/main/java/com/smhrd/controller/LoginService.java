@@ -17,12 +17,13 @@ public class LoginService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-	
+		String mbEmail = request.getParameter("email");
+		String mbPw = request.getParameter("pw");
+		
+		System.out.println(mbEmail+mbPw);
 //		System.out.println(id + pw);
 		
-		Member member = new Member(id,pw);
+		Member member = new Member(mbEmail,mbPw);
 		
     	 member = new MemberDAO().login(member);
 		
@@ -35,7 +36,7 @@ public class LoginService extends HttpServlet {
 		}else {
 			System.out.println("로그인 실패!");
 		}
-		response.sendRedirect("Main.jsp");
+		response.sendRedirect("index.html");
 		
 		
 	

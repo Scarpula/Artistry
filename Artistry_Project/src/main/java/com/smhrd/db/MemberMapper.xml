@@ -5,11 +5,11 @@
 <mapper namespace="com.smhrd.db.MemberMapper">
 
 	<insert id="join" parameterType="com.smhrd.model.Member">
-		insert into MEMBER values(#{id},#{pw},#{name})
+		insert into MEMBERS values(#{email},#{pw})
 	</insert>
 <!-- 쿼리문 작성 -->
 
 <select id="login"  parameterType="com.smhrd.model.Member" resultType="com.smhrd.model.Member">
-	select * from MEMBER where id=#{id} and pw=#{pw}
+	select * from MEMBERS where mb_email=#{mbEmail} and mb_pw=#{mbPw}
 </select>
 </mapper>
