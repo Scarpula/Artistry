@@ -1,11 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <mapper namespace="com.smhrd.db.MemberMapper">
-  	<select id="select" parameterType="com.smhrd.model.Member" resultType="com.smhrd.model.Member">
-  		select * from members where mb_email=#{email} and mb_pw=#{pw}
-  	</select>
-  
-  
-  </mapper>
+<mapper namespace="com.smhrd.db.MemberMapper">
+
+	<insert id="join" parameterType="com.smhrd.model.Member">
+		insert into MEMBERS values(#{email},#{pw})
+	</insert>
+<!-- 쿼리문 작성 -->
+
+<select id="login"  parameterType="com.smhrd.model.Member" resultType="com.smhrd.model.Member">
+	select * from MEMBERS where mb_email=#{mb_Email} and mb_pw=#{mb_Pw}
+</select>
+
+<select id="login"  parameterType="com.smhrd.model.Member" resultType="com.smhrd.model.Member">
+   select * from MEMBERS where mb_email=#{mb_Email} and mb_pw=#{mb_Pw}
+</select>
+
+</mapper>

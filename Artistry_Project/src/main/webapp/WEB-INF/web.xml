@@ -11,8 +11,7 @@
   	<servlet-class>com.smhrd.controller.JoinService</servlet-class>
   </servlet>
   <servlet>
-<<<<<<< HEAD
-=======
+
   	<servlet-name>SignUpClasification</servlet-name>
   	<display-name>SignUpClasification</display-name>
   	<description></description>
@@ -25,7 +24,7 @@
   	<servlet-class>com.smhrd.controller.SignUpClasification</servlet-class>
   </servlet>
   <servlet>
->>>>>>> d8dcea33753c90112db1da783be67024278661ac
+
   	<servlet-name>SignUpClasificationService</servlet-name>
   	<display-name>SignUpClasificationService</display-name>
   	<description></description>
@@ -36,8 +35,7 @@
   	<url-pattern>/JoinService</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-<<<<<<< HEAD
-=======
+
   	<servlet-name>SignUpClasification</servlet-name>
   	<url-pattern>/SignUpClasification</url-pattern>
   </servlet-mapping>
@@ -46,7 +44,7 @@
   	<url-pattern>/SignUpClasification1</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
->>>>>>> d8dcea33753c90112db1da783be67024278661ac
+
   	<servlet-name>SignUpClasificationService</servlet-name>
   	<url-pattern>/SignUpClasificationService</url-pattern>
   </servlet-mapping>
