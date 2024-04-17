@@ -15,29 +15,29 @@ import lombok.Setter;
 @Setter
 public class Member {
 	@NonNull
-	private String mbEmail;
+	private String mb_Email;
 	@NonNull
-	private String mbPw;
+	private String mb_Pw;
 	@NonNull
-	private String mbPhone;
+	private String mb_Phone;
 	@NonNull
-	private String mbBirthdate;
+	private String mb_Birthdate;
 	@NonNull
-	private String mbName;
+	private String mb_Name;
 	@NonNull
-	private String mbNick;
+	private String mb_Nick;
 
-	private String mbProfileImg;
+	private String mb_ProfileImg;
 	@NonNull
-	private String mbAddr;
+	private String mb_Addr;
 	@NonNull
 	private String joinedAt;
 	@NonNull
-	private String mbType;
-	public Member(@NonNull String mbEmail, @NonNull String mbPw) {
+	private String mb_Type;
+	public Member(@NonNull String mb_Email, @NonNull String mb_Pw) {
 		super();
-		this.mbEmail = mbEmail;
-		this.mbPw = mbPw;
+		this.mb_Email = mb_Email;
+		this.mb_Pw = mb_Pw;
 	}
 
 }

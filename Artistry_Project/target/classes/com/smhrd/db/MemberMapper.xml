@@ -10,6 +10,6 @@
 <!-- 쿼리문 작성 -->
 
 <select id="login"  parameterType="com.smhrd.model.Member" resultType="com.smhrd.model.Member">
-	select * from MEMBERS where mb_email=#{mbEmail} and mb_pw=#{mbPw}
+	select * from MEMBERS where mb_email=#{mb_Email} and mb_pw=#{mb_Pw}
 </select>
 </mapper>

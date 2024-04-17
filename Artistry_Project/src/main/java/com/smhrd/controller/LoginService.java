@@ -17,17 +17,17 @@ public class LoginService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		String mbEmail = request.getParameter("email");
-		String mbPw = request.getParameter("pw");
+		String mb_Email = request.getParameter("mb_Email");
+		String mb_Pw = request.getParameter("mb_Pw");
 		
-		System.out.println(mbEmail+mbPw);
+		System.out.println(mb_Email+mb_Pw);
 //		System.out.println(id + pw);
 		
-		Member member = new Member(mbEmail,mbPw);
+		Member member = new Member(mb_Email,mb_Pw);
 		
-    	 member = new MemberDAO().login(member);
+    	Member  loginMember = new MemberDAO().login(member);
 		
-		if(member != null) {
+		if(loginMember != null) {
 			// 로그인 성공
 			// session에 저장
 			HttpSession session = request.getSession();
