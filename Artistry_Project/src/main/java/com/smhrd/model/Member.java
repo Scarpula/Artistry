@@ -37,7 +37,7 @@ public class Member {
 	public Member(@NonNull String mb_Email, @NonNull String mb_Pw) {
 		super();
 		this.mb_Email = mb_Email;
-		this.mb_Pw = mb_Pw;
+		this.mb_Pw = mb_Pw;  
 	}
 
 }

@@ -20,7 +20,7 @@ public class SqlSessionManager {
 	         e.printStackTrace();
 	      }
 	   }
-	   // DAO에서 getSqlSession() 호출 해서 기능을 구현
+	   // dao에서 
 	   public static SqlSessionFactory getSqlSession() {
 	      return sqlSessionFactory;
 	   }
