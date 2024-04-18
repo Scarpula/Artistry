@@ -27,7 +27,7 @@
       <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
         <div class="container-9">
           <div class="navbar-wrapper-3">
-            <a href="index.html" aria-current="page" class="navbar-brand-3 w-nav-brand w--current"><img src="images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
+            <a href="index.jsp" aria-current="page" class="navbar-brand-3 w-nav-brand w--current"><img src="images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
             <nav role="navigation" class="nav-menu-wrapper-3 w-nav-menu">
               <ul role="list" class="nav-menu-two-3 w-list-unstyled">
                 <li>
@@ -118,7 +118,7 @@
                   	
                     <a href="user-account.html" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
                     <a href="log-in.html" class="navbar-dropdown-link w-dropdown-link">로그인</a>
-                    <a href="sign-up.html" class="navbar-dropdown-link w-dropdown-link">회원가입</a><button class="navbar-dropdown-link bottom" data-wf-user-logout="로그아웃" data-wf-user-login="회원가입" type="button">로그아웃</button>
+                    <a href="sign-up.jsp" class="navbar-dropdown-link w-dropdown-link">회원가입</a><button class="navbar-dropdown-link bottom" data-wf-user-logout="로그아웃" data-wf-user-login="회원가입" type="button">로그아웃</button>
                   	<%} %>
                   </nav>
                 </div>

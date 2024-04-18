@@ -1,3 +1,7 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.model.Member"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Wed Apr 17 2024 02:25:43 GMT+0000 (Coordinated Universal Time)  -->
@@ -150,7 +154,7 @@
 										class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
 										href="log-in.html"
 										class="navbar-dropdown-link w-dropdown-link">로그인</a> <a
-										href="sign-up.html" aria-current="page"
+										href="sign-up.jsp" aria-current="page"
 										class="navbar-dropdown-link w-dropdown-link w--current">회원가입</a>
 									<button class="navbar-dropdown-link bottom"
 										data-wf-user-logout="로그아웃" data-wf-user-login="회원가입"
@@ -181,7 +185,7 @@
 
 						<!--회원가입-->
 
-						<form action="JoinService" method="post" id="email-form">
+						<form action="signup-second-form.jsp" method="post" id="email-form">
 							<div class="form-text">이메일 주소</div>
 
 							<div class="email-check-form">
@@ -241,8 +245,9 @@
 							<div class="submit-form-wrap">
 								<input type="reset" data-wait="Please wait..."
 									class="sign-up-button w-button" value="취소"> <!--<input
-									type="submit" value="제출">--> <a
-									href="signup-second-form.html" class="sign-up-button w-button">다음</a>
+									type="submit" value="제출">--> 
+									<input type ="submit" class="sign-up-button w-button" value="다음">
+									
 							</div>
 						</form>
 						<div class="w-form-done">

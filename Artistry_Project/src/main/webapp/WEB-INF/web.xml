@@ -5,57 +5,55 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-  	<servlet-name>JoinService</servlet-name>
-  	<display-name>JoinService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.JoinService</servlet-class>
+     <servlet-name>JoinService</servlet-name>
+     <display-name>JoinService</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.JoinService</servlet-class>
   </servlet>
   <servlet>
 
-  	<servlet-name>SignUpClasification</servlet-name>
-  	<display-name>SignUpClasification</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.SignUpClasification</servlet-class>
+     <servlet-name>SignUpClasification</servlet-name>
+     <display-name>SignUpClasification</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.SignUpClasification</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>SignUpClasification1</servlet-name>
-  	<display-name>SignUpClasification1</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.SignUpClasification</servlet-class>
+     <servlet-name>SignUpClasification1</servlet-name>
+     <display-name>SignUpClasification1</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.SignUpClasification</servlet-class>
   </servlet>
   <servlet>
 
-  	<servlet-name>SignUpClasificationService</servlet-name>
-  	<display-name>SignUpClasificationService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.SignUpClasificationService</servlet-class>
+     <servlet-name>SignUpClasificationService</servlet-name>
+     <display-name>SignUpClasificationService</display-name>
+     <description></description>
+     <servlet-class>com.smhrd.controller.SignUpClasificationService</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>LogoutService</servlet-name>
-  	<display-name>LogoutService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.LogoutService</servlet-class>
-  </servlet>
+<servlet>
+    <servlet-name>LogoutService</servlet-name>
+    <servlet-class>com.smhrd.controller.LogoutService</servlet-class>
+</servlet>
   <servlet-mapping>
-  	<servlet-name>JoinService</servlet-name>
-  	<url-pattern>/JoinService</url-pattern>
+     <servlet-name>JoinService</servlet-name>
+     <url-pattern>/JoinService</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
 
-  	<servlet-name>SignUpClasification</servlet-name>
-  	<url-pattern>/SignUpClasification</url-pattern>
+     <servlet-name>SignUpClasification</servlet-name>
+     <url-pattern>/SignUpClasification</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>SignUpClasification1</servlet-name>
-  	<url-pattern>/SignUpClasification1</url-pattern>
+     <servlet-name>SignUpClasification1</servlet-name>
+     <url-pattern>/SignUpClasification1</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
 
-  	<servlet-name>SignUpClasificationService</servlet-name>
-  	<url-pattern>/SignUpClasificationService</url-pattern>
+     <servlet-name>SignUpClasificationService</servlet-name>
+     <url-pattern>/SignUpClasificationService</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>LogoutService</servlet-name>
-  	<url-pattern>/LogoutService</url-pattern>
+     <servlet-name>LogoutService</servlet-name>
+     <url-pattern>/LogoutService</url-pattern>
   </servlet-mapping>
 </web-app>

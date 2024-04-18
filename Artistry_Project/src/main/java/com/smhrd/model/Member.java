@@ -32,8 +32,9 @@ public class Member {
    private String mb_Addr;
    
    private String joinedAt;
+   @NonNull
+   private Boolean mb_Type;
    
-   private String mb_Type;
    public Member(@NonNull String mb_Email, @NonNull String mb_Pw) {
       super();
       this.mb_Email = mb_Email;

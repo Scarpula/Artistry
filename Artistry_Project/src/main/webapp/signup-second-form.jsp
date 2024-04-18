@@ -1,3 +1,7 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.model.Member"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Wed Apr 17 2024 02:25:43 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="661cc68163939fbbd3cc6973" data-wf-site="65fa46eb9d90d967c69e39b1">
@@ -129,7 +133,7 @@
           <div class="boundary"></div>
           <div class="member-type-select-wrap">
             <div class="member-type w-form">
-              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="member-type-selector" data-wf-page-id="661cc68163939fbbd3cc6973" data-wf-element-id="a0d52b46-df2d-9f2c-c665-37d9e5a5932f"><label data-w-id="617b85d8-e73f-9070-9be6-a2bb31ce50da" class="w-checkbox checkbox-field"><input type="checkbox" id="checkbox" name="checkbox" data-name="Checkbox" required="" data-w-id="617b85d8-e73f-9070-9be6-a2bb31ce50db" class="w-checkbox-input checkbox"><span class="checkbox-label w-form-label" for="checkbox">의뢰자<br>‍<br>그림을 의뢰하거나 / 좋아하는 작가의 포트폴리오를 감상할 수 있습니다</span></label></form>
+              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="member-type-selector" data-wf-page-id="661cc68163939fbbd3cc6973" data-wf-element-id="a0d52b46-df2d-9f2c-c665-37d9e5a5932f"><label data-w-id="617b85d8-e73f-9070-9be6-a2bb31ce50da" class="w-checkbox checkbox-field"><input type="checkbox" id="checkbox" name="mb_Type" value="true" data-name="Checkbox" required="" data-w-id="617b85d8-e73f-9070-9be6-a2bb31ce50db" class="w-checkbox-input checkbox"><span class="checkbox-label w-form-label" for="checkbox">의뢰자<br>‍<br>그림을 의뢰하거나 / 좋아하는 작가의 포트폴리오를 감상할 수 있습니다</span></label></form>
               <div class="w-form-done">
                 <div>Thank you! Your submission has been received!</div>
               </div>
@@ -138,7 +142,7 @@
               </div>
             </div>
             <div class="member-type w-form">
-              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="member-type-selector" data-wf-page-id="661cc68163939fbbd3cc6973" data-wf-element-id="a1686655-5388-a9b8-f960-8e1c6c863caf"><label data-w-id="a1686655-5388-a9b8-f960-8e1c6c863cb0" class="w-checkbox checkbox-field"><input type="checkbox" id="checkbox-2" name="checkbox-2" data-name="Checkbox 2" data-w-id="a1686655-5388-a9b8-f960-8e1c6c863cb1" class="w-checkbox-input checkbox _02"><span class="checkbox-label w-form-label" for="checkbox-2">아티스트<br>‍<br>디자인을 의뢰받아서 <br>사용자에 맞춰 그려주고,<br>실물 작품을 팔거나 업로드 할 수 있습니다</span></label></form>
+              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="member-type-selector" data-wf-page-id="661cc68163939fbbd3cc6973" data-wf-element-id="a1686655-5388-a9b8-f960-8e1c6c863caf"><label data-w-id="a1686655-5388-a9b8-f960-8e1c6c863cb0" class="w-checkbox checkbox-field"><input type="checkbox" id="checkbox-2" name="mb_Type" value="false" data-name="Checkbox 2" data-w-id="a1686655-5388-a9b8-f960-8e1c6c863cb1" class="w-checkbox-input checkbox _02"><span class="checkbox-label w-form-label" for="checkbox-2">아티스트<br>‍<br>디자인을 의뢰받아서 <br>사용자에 맞춰 그려주고,<br>실물 작품을 팔거나 업로드 할 수 있습니다</span></label></form>
               <div class="w-form-done">
                 <div>Thank you! Your submission has been received!</div>
               </div>
@@ -157,7 +161,7 @@
         </div>
         <div class="boundary _01"></div>
         <div class="signup-complete">
-          <a href="log-in.html" class="signup-complete-button w-button" onclick="submitForm(event)">가입 완료</a>
+          <a href="index.jsp" class="signup-complete-button w-button" onclick="submitForm(event)">가입 완료</a>
         </div>
       </div>
     </div>
@@ -173,17 +177,17 @@
   		
   		var form = document.createElement('form');
   		form.method = 'POST';
-  		form.action = 'SignUpClasificationService';
+  		form.action = 'JoinService';
   		
   		var input1 = document.createElement('input');
   		input1.type = 'hidden';
-  		input1.name='checkbox1';
+  		input1.name='mb_Type';
   		input1.value=checkbox1.checked;
   		form.appendChild(input1);
   		
   		var input2 = document.createElement('input');
   		input2.type = 'hidden';
-  		input2.name = 'checkbox2';
+  		input2.name = 'mb_Type';
   		input2.value = checkbox2.checked;
   		form.appendChild(input2);
   		

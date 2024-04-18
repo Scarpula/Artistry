@@ -6,7 +6,7 @@
 
    <insert id="join" parameterType="com.smhrd.model.Member">
     INSERT INTO members (mb_email, mb_pw, mb_name, mb_addr, mb_phone, mb_birthdate, mb_nick, joined_at) 
-    VALUES (#{mb_Email}, #{mb_Pw}, #{mb_Name}, #{mb_Addr}, #{mb_Phone}, #{mb_Birthdate}, #{mb_Nick}, sysdate)
+    VALUES (#{mb_Email}, #{mb_Pw}, #{mb_Name}, #{mb_Addr}, #{mb_Phone}, #{mb_Birthdate}, #{mb_Nick}, sysdate, CASE WHEN #{mb_Type} THEN 'T' ELSE 'F' END)
    </insert>
 
 
