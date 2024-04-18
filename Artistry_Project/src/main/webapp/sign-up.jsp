@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Wed Apr 17 2024 02:25:43 GMT+0000 (Coordinated Universal Time)  -->
@@ -186,7 +186,6 @@
 
 						<form action="JoinService" method="post" id="email-form">
 							<div class="form-text">이메일 주소</div>
-
 							<div class="email-check-form">
 								<input name="mb_Email" type="text" class="text-field w-input"
 									maxlength="256" data-name="email" placeholder="E-mail"
@@ -202,7 +201,6 @@
 								required="">
 
 							<div class="form-text">비밀번호 확인</div>
-
 							<div class="email-check-form">
 								<input name="pwCheck" class="text-field w-input" maxlength="256"
 									name="PWCheck" data-name="PWCheck" placeholder="6자 이상"
@@ -212,16 +210,19 @@
 									class="submit-button w-button" value="인증">
 							</div>
 
+
 							<div class="boundary signup-form _02"></div>
 							<div class="form-text">이름</div>
 							<input name="mb_Name" class="text-field-2 w-input"
 								maxlength="256" data-name="Name" placeholder="" type="text"
 								id="Name-3" required="">
 
+
 							<div class="form-text">생년월일</div>
 							<input name="mb_Birthdate" class="text-field-2 w-input"
 								maxlength="256" data-name="Birthdate" placeholder="" type="text"
 								required="">
+
 
 							<div class="form-text">전화번호</div>
 							<input name="mb_Phone" class="text-field-2 w-input"
@@ -237,18 +238,16 @@
 
 					
 					<!-- 우편번호 검색 API 구현하기 -->
-						<form>
+						
 							<div class="form-text">주소</div>
-							
 							<div class="email-check-form">
-								
 								<input name="mb_Addr" class="text-field w-input"
 									maxlength="256" data-name="addr" placeholder="" type="text"
-									id="addr" value="${dd}"  readonly>
+									id="addr" value=""  readonly>
 									
 
 								<input id="AddrCheck" type="submit"
-									class="submit-button w-button" value="우편번호확인"><br>
+									class="submit-button w-button" value="우편번호확인" onclick="addrCheck()"><br>
 							</div>
 							
 							<input name="mb_Addr2" class="text-field-2 w-input" type="text" maxlength="256" placeholder="나머지 주소를 입력하세요.">
@@ -259,40 +258,8 @@
 									type="submit" value="제출"> <a
 									href="signup-second-form.html" class="sign-up-button w-button">다음</a>
 							</div>
+						
 						</form>
-						
-						
-						<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-						<script>
-						
-							const addrCheck= document.querySelector('#AddrCheck');
-							addrCheck.addEventListener("click", ()=>{
-								
-						    new daum.Postcode({
-						        oncomplete: function(data) {
-						            
-						            String fullAddr= null;
-						            String extraAddr= null;
-						            
-						            if(data.userSelectedType=='R'){
-										fullAddr=data.roadAddress;
-									}else{
-										fullAddr=data.jibunAddress;
-									}
-									
-									System.out.print(fullAddr);
-					
-									
-						
-								  document.getElementById('mb_Addr').value= fullAddr;
-						        }
-						    }).open();	
-							})
-							
-							</script>
-								
-						
-						
 						
 						<div class="w-form-done">
 							<div>Thank you! Your submission has been received!</div>
@@ -311,5 +278,37 @@
 		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 		crossorigin="anonymous"></script>
 	<script src="js/webflow.js" type="text/javascript"></script>
+	
+	<script type="text/javascript" src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script type="text/javascript">
+	
+		function addrCheck(){	
+			
+			new daum.Postcode({
+		        oncomplete: function(data) {
+				
+		        	let fullAddr='';
+		        	let extraAddr= '';
+		        	
+		        	if(data.userSelectedType=='R'){
+		        		fullAddr= data.roadAddress;
+		        	}else{
+		        		fullAddr= data.jibunAddress;
+		        	}
+		       
+		        	console.log(fullAddr);
+		        	document.getElementById('addr').value= fullAddr;
+		       
+		        }
+		    }).open();
+		}
+		</script>
+	
+	
+	
+	
+	
+	
+	
 </body>
 </html>
