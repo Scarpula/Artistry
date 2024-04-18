@@ -232,12 +232,60 @@
 								maxlength="256" data-name="nick" placeholder="" type="text"
 								id="nick" required="">
 
+					
+					<!-- 우편번호 검색 API 구현하기 -->
+					
 							<div class="form-text">주소</div>
+							
 							<div class="email-check-form">
-								<input name="mb_Addr" class="text-field-2 w-input"
+								
+								<input name="mb_Addr" class="text-field w-input"
 									maxlength="256" data-name="addr" placeholder="" type="text"
-									id="addr">
+									id="addr" value="${}"  readonly>
+									
+								<input id="AddrCheck" type="submit"
+									class="submit-button w-button" value="우편번호확인"><br>
 							</div>
+							
+							<input name="mb_Addr2" class="text-field-2 w-input" type="text" maxlength="256" placeholder="나머지 주소를 입력하세요.">
+					
+						
+				<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+				<script>
+					
+					const addrCheck= document.querySelector('#AddrCheck');
+					addrCheck.addEventListener("click", ()=>{
+						
+				    new daum.Postcode({
+				        oncomplete: function(data) {
+				            
+				            let fullAddr=''
+				            let extraAddr=''
+				            
+				            if(data.userSelectedType=='R'){
+								fullAddr=data.roadAddress;
+														
+							}else{
+								fullAddr=data.jibunAddress;
+							}
+							
+						console.log(fullAddr);
+							
+				
+						  document.getElementById('mb_Addr').value= fullAddr;
+				        }
+				    }).open();	
+					})
+					
+					
+				</script>
+					
+					
+					
+					
+					
+					
+					
 							<div class="submit-form-wrap">
 								<input type="reset" data-wait="Please wait..."
 									class="sign-up-button w-button" value="취소"> <input
