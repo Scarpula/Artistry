@@ -31,12 +31,12 @@ public class LoginService extends HttpServlet {
 			// session에 저장
 			HttpSession session = request.getSession();
 
-			session.setAttribute("member", member);
+			session.setAttribute("member", loginMember);
 			System.out.println("로그인 성공!");
 		} else {
 			System.out.println("로그인 실패!");
 		}
-		response.sendRedirect("index.html");
+		response.sendRedirect("index.jsp");
 
 	}
 }
