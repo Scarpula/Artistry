@@ -11,7 +11,7 @@ public class MemberDAO {
 
 	public Member login(Member member) {
 		SqlSession session = sf.openSession(true);
-		Member loginMember = session.selectOne("com.smhrd.db.MemberMapper.select", member);
+		Member loginMember = session.selectOne("com.smhrd.db.MemberMapper.login", member);
 		session.close();
 		return loginMember;
 	}
