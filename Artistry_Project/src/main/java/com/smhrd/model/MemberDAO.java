@@ -22,6 +22,8 @@ public class MemberDAO {
 		int cnt = session.insert("com.smhrd.db.MemberMapper.join", member);
 		session.close();
 		return cnt;
-	}
+	
+	} 
+	
 
 }
