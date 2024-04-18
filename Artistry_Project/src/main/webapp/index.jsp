@@ -27,7 +27,7 @@
       <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
         <div class="container-9">
           <div class="navbar-wrapper-3">
-            <a href="index.html" aria-current="page" class="navbar-brand-3 w-nav-brand w--current"><img src="images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
+            <a href="index.jsp" aria-current="page" class="navbar-brand-3 w-nav-brand w--current"><img src="images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
             <nav role="navigation" class="nav-menu-wrapper-3 w-nav-menu">
               <ul role="list" class="nav-menu-two-3 w-list-unstyled">
                 <li>
@@ -59,7 +59,7 @@
                 <div class="divider-vertical bg-dgray01"></div>
               </li>
             </ul>
-            <div class="search-wrap">
+            <div class="search-wrap"> 
               <div data-hover="false" data-delay="0" class="dropdown w-dropdown">
                 <div class="dropdown-toggle w-dropdown-toggle"></div>
                 <nav class="dropdown-list w-dropdown-list">
@@ -70,7 +70,8 @@
               </div>
               <div class="form-search-wrap">
                 <div class="form-search-container w-form">
-                  <form id="wf-form-Search-Form" name="wf-form-Search-Form" data-name="Search Form" redirect="/research" data-redirect="/research" action="/research" method="get" class="form-search" data-wf-page-id="65fa46eb9d90d967c69e39b8" data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5"><input class="search-field w-input" maxlength="256" name="Search-2" data-name="Search 2" placeholder="Search on Artistry.." data-w-id="39529a09-50bd-5c07-ff29-0fe03328b2c6" type="text" id="Search">
+                  <form id="wf-form-Search-Form" name="wf-form-Search-Form" data-name="Search Form" redirect="/research" data-redirect="/research" action="SearchService" method="get" class="form-search" data-wf-page-id="65fa46eb9d90d967c69e39b8" data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5">
+                  	<input class="search-field w-input" maxlength="256" name="Search-2" data-name="Search 2" placeholder="Search on Artistry.." data-w-id="39529a09-50bd-5c07-ff29-0fe03328b2c6" type="text" id="Search">
                     <div class="search-icon-wrap">
                       <a href="#" target="_blank" class="link-block w-inline-block"><img src="images/search.svg" loading="lazy" alt=""></a>
                     </div>
@@ -116,9 +117,9 @@
                   		
                   	<%}else{%>
                   	
-                    <a href="user-account.html" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
+                    <a href="log-in.html" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
                     <a href="log-in.html" class="navbar-dropdown-link w-dropdown-link">로그인</a>
-                    <a href="sign-up.html" class="navbar-dropdown-link w-dropdown-link">회원가입</a><button class="navbar-dropdown-link bottom" data-wf-user-logout="로그아웃" data-wf-user-login="회원가입" type="button">로그아웃</button>
+                    <a href="sign-up.jsp" class="navbar-dropdown-link w-dropdown-link">회원가입</a>
                   	<%} %>
                   </nav>
                 </div>

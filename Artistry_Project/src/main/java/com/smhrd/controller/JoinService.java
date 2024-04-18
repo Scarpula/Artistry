@@ -25,21 +25,22 @@ public class JoinService extends HttpServlet {
       String mb_Phone = request.getParameter("mb_Phone");
       String mb_Nick = request.getParameter("mb_Nick");
       String mb_Addr = request.getParameter("mb_Addr");
+      boolean mb_Type = Boolean.parseBoolean(request.getParameter("mb_Type"));
 
-      //System.out.print(email + pw + name + birthDate + phone + nick + addr);
+      System.out.print(mb_Email + mb_Pw + mb_Name + mb_Birthdate + mb_Phone + mb_Nick + mb_Addr + mb_Type);
 
       
-        Member member = new Member(mb_Email, mb_Pw, mb_Name, mb_Addr, mb_Phone, mb_Birthdate, mb_Nick);
+        Member member = new Member(mb_Email, mb_Pw, mb_Name, mb_Addr, mb_Phone, mb_Birthdate, mb_Nick, mb_Type);
         
         int cnt = new MemberDAO().join(member);
         
         System.out.println("cnt : " + cnt);
        
         if(cnt>0) {  System.out.println("회원가입성공");
-       //response.sendRedirect("Main.jsp?result=success"); 
+        response.sendRedirect("sign-up.jsp?result=success"); 
         }else {
         System.out.println("회원가입실패");
-        //response.sendRedirect("Main.jsp?result=fail"); 
+        response.sendRedirect("sign-up.jsp?result=fail"); 
         }
        
 
