@@ -184,7 +184,7 @@
 
                   <!--회원가입-->
 
-                  <form action="JoinService" method="post" id="email-form">
+                  <form action="sigmup-second-form.jsp" method="post" id="email-form">
                      <div class="form-text">이메일 주소</div>
 
                      <div class="email-check-form">
