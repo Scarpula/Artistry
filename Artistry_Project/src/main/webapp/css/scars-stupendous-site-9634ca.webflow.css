@@ -5601,6 +5601,248 @@ body {
     position: relative;
     top: -10px;
   }
+
+  .mypage-main {
+    width: 100%;
+    height: 120vh;
+    display: flex;
+  }
+
+  .mypage-sidecontainer {
+    border: 4px solid #e8e5e3;
+    border-radius: 3px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 500px;
+    height: 100vh;
+    margin-top: 85px;
+    margin-left: 160px;
+    display: flex;
+  }
+
+  .mypage-side-profile-wrap {
+    border: 3px solid #f0ece9;
+    border-radius: 3px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 65%;
+    height: 380px;
+    margin-top: 65px;
+    display: flex;
+  }
+
+  .mypage-side-profile-img-wrap {
+    width: 50%;
+    height: 45%;
+    margin-top: 20px;
+  }
+
+  .profile-img {
+    border-radius: 90px;
+  }
+
+  .mypage-side-profile-clasify-block {
+    background-color: rgba(226, 223, 223, .44);
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 65px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 0;
+    padding-right: 0;
+    display: flex;
+  }
+
+  .profile-member-clasify {
+    margin-top: 10px;
+  }
+
+  .profile-member-nick {
+    margin-top: 10px;
+    margin-bottom: 9px;
+    font-family: Nanumgothic, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .profile-member-email {
+    font-family: Nanumgothic, sans-serif;
+    font-size: 21px;
+  }
+
+  .mypage-side-profile-catelist {
+    color: #5d5b5b;
+    margin-top: 65px;
+    margin-bottom: 80px;
+    margin-right: 78px;
+    list-style-type: disc;
+  }
+
+  .category-text-wrap {
+    cursor: pointer;
+    margin-top: 45px;
+    margin-bottom: 120px;
+    font-family: Nanumgothic, sans-serif;
+    font-size: 34px;
+  }
+
+  .mypage-context-wrap {
+    border: 3px solid #e8e5e3;
+    width: 1424px;
+    height: 100vh;
+    margin-top: 85px;
+    margin-left: 200px;
+  }
+
+  .mypage-trade {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1424px;
+    height: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    display: flex;
+    position: absolute;
+  }
+
+  .trade-top {
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 190px;
+    margin-top: auto;
+    display: flex;
+  }
+
+  .trade-main {
+    flex-flow: column;
+    width: 1030px;
+    margin-top: 65px;
+    display: block;
+  }
+
+  .trade-transaction {
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+  }
+
+  .trade-context {
+    border: 2px solid #000;
+    width: 100%;
+    height: 240px;
+  }
+
+  .text-block-12 {
+    font-size: 61px;
+  }
+
+  .text-block-13 {
+    margin-top: 37px;
+    font-size: 62px;
+    line-height: 44px;
+  }
+
+  .trade-context-top {
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    display: flex;
+  }
+
+  .top-numberblock, .top-requester-block {
+    border: 2px solid #000;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 75px;
+    display: flex;
+  }
+
+  .heading-13 {
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 72px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Nanumgothic, sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    display: flex;
+  }
+
+  .heading-14 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .top-requester-nameblock {
+    border: 2px solid #000;
+    width: 193px;
+    height: 75px;
+  }
+
+  .heading-15 {
+    object-fit: fill;
+    font-size: 19px;
+  }
+
+  .top-requester-cate {
+    border: 2px solid #000;
+  }
+
+  .trade-context-bottom {
+    height: 162px;
+  }
+
+  .mypage-context-title-wrap {
+    margin-top: 65px;
+  }
+
+  .mypage-chat {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1424px;
+    height: 100%;
+    display: flex;
+    position: absolute;
+  }
+
+  .mypage-modifyinfo {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1424px;
+    height: 100%;
+    padding-bottom: 0;
+    padding-right: 0;
+    display: flex;
+    position: absolute;
+  }
+
+  .mypage-likeartist {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1424px;
+    height: 100%;
+    display: flex;
+    position: absolute;
+  }
 }
 
 @media screen and (max-width: 991px) {
