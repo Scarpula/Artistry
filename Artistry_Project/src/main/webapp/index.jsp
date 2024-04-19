@@ -117,7 +117,7 @@
                   	<%}else{%>
                   	
                     <a href="log-in.html" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-                    <a href="log-in.html" class="navbar-dropdown-link w-dropdown-link">로그인</a>
+                    <a href="log-in.jsp" class="navbar-dropdown-link w-dropdown-link">로그인</a>
                     <a href="sign-up.jsp" class="navbar-dropdown-link w-dropdown-link">회원가입</a>
                   	<%} %>
                   </nav>
