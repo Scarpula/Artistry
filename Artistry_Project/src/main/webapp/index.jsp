@@ -185,7 +185,7 @@
 										<div
 											style="-webkit-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
 											class="picture-button-wrap">
-											<a href="artist-portfolio/portfolio.html"
+											<a href="artist-portfolio/portfolio.jsp"
 												class="button-2 _02 w-button">watch the picture</a>
 											<link rel="prerender" href="/artist-portfolio/portfolio">
 										</div>
