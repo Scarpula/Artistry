@@ -11,7 +11,7 @@
 ((__t=(`+V+`))==null?'':_.escape(__t))+
 '`:I?me+=`'+
 ((__t=(`+I+`))==null?'':__t)+
-'`:ee&&(me+=`';
+'`:ee&&(me+=`'; 
 `+ee+`
 __p+='`),H}),me+=`';
 `;var G=J.variable;if(G){if(!Y.test(G))throw new Error("variable is not a bare identifier: "+G)}else me=`with(obj||{}){
