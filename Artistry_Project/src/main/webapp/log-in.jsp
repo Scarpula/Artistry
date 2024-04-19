@@ -24,115 +24,73 @@
 </head>
 
 <body class="body">
-	<div class="navbar-logo-left-3">
-		<div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease"
-			role="banner" class="nevbar shadow-three w-nav">
-			<div class="container-9">
-				<div class="navbar-wrapper-3">
-					<a href="index.html" class="navbar-brand-3 w-nav-brand"><img src="images/Artistry-logo4.jpg"
-							loading="lazy" width="240" height="100" alt="" class="image-2"></a>
-					<nav role="navigation" class="nav-menu-wrapper-3 w-nav-menu">
-						<ul role="list" class="nav-menu-two-3 w-list-unstyled">
-							<li>
-								<a href="#" class="nav-link-4">product</a>
-							</li>
-							<li>
-								<a href="#" class="nav-link-4">contact us</a>
-							</li>
-						</ul>
-					</nav>
-					<ul role="list" class="nav-list cate">
-						<li class="nav-item hide">
-							<div class="divider-vertical bg-dgray01"></div>
-						</li>
-						<li class="navbar-dropdown">
-							<div data-hover="false" data-delay="0" data-w-id="7af45c02-140b-324f-b459-fb910465c184"
-								class="w-dropdown">
-								<div class="w-dropdown-toggle">
-									<div class="navbar-icon w-icon-dropdown-toggle"></div>
-									<div class="text-block-11">Category</div>
-								</div>
-								<nav class="dropdown-list-2 w-dropdown-list">
-									<a href="#" class="w-dropdown-link">Link 1</a>
-									<a href="#" class="w-dropdown-link">Link 2</a>
-									<a href="#" class="w-dropdown-link">Link 3</a>
-								</nav>
-							</div>
-						</li>
-						<li class="nav-item hide">
-							<div class="divider-vertical bg-dgray01"></div>
-						</li>
-					</ul>
-					<div class="search-wrap">
-						<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
-							<div class="dropdown-toggle w-dropdown-toggle"></div>
-							<nav class="dropdown-list w-dropdown-list">
-								<a href="#" class="w-dropdown-link">Link 1</a>
-								<a href="#" class="w-dropdown-link">Link 2</a>
-								<a href="#" class="w-dropdown-link">Link 3</a>
-							</nav>
-						</div>
-						<div class="form-search-wrap">
-							<div class="form-search-container w-form">
-								<form id="wf-form-Search-Form" name="wf-form-Search-Form" data-name="Search Form"
-									redirect="/research" data-redirect="/research" action="/research" method="get"
-									class="form-search" data-wf-page-id="65fd1577d3de0c8242fadc8c"
-									data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5"><input
-										class="search-field w-input" maxlength="256" name="Search-2"
-										data-name="Search 2" placeholder="Search on Artistry.."
-										data-w-id="39529a09-50bd-5c07-ff29-0fe03328b2c6" type="text" id="Search">
-									<div class="search-icon-wrap">
-										<a href="#" target="_blank" class="link-block w-inline-block"><img
-												src="images/search.svg" loading="lazy" alt=""></a>
-									</div>
-								</form>
-								<div class="w-form-done">
-									<div>Thank you! Your submission has been received!</div>
-								</div>
-								<div class="w-form-fail">
-									<div>Oops! Something went wrong while submitting the form.</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<ul role="list" class="nav-list right">
-						<li class="nav-item hide">
-							<div class="divider-vertical bg-dgray01"></div>
-						</li>
-						<li class="nav-item">
-							<div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
-								<div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt=""
-										src="images/star.svg" loading="lazy"></div>
-								<nav class="navbar-dropdown-list w-dropdown-list">
-									<a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
-									<a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
-									<a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
-								</nav>
-							</div>
-						</li>
-						<li class="nav-item hide">
-							<div class="divider-vertical bg-dgray01"></div>
-						</li>
-						<li class="nav-item">
-							<div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
-								<div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt=""
-										src="images/user.svg" loading="lazy"></div>
-								<nav class="navbar-dropdown-list w-dropdown-list">
-									<a href="user-account.html"
-										class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-									<a href="log-in.html" aria-current="page"
-										class="navbar-dropdown-link w-dropdown-link w--current">로그인</a>
-									<a href="sign-up.html" class="navbar-dropdown-link w-dropdown-link">회원가입</a><button
-										class="navbar-dropdown-link bottom" data-wf-user-logout="로그아웃"
-										data-wf-user-login="회원가입" type="button">로그아웃</button>
-								</nav>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="navbar-logo-left-3">
+    <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
+      <a href="index.html" class="navbar-brand-3 w-nav-brand"><img src="images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
+      <div class="container-9">
+        <div class="navbar-wrapper-3">
+          <ul role="list" class="nav-list cate">
+            <li class="nav-item hide">
+              <div class="divider-vertical bg-dgray01"></div>
+            </li>
+          </ul>
+          <div class="search-wrap">
+            <div data-hover="false" data-delay="0" class="dropdown w-dropdown">
+              <div class="dropdown-toggle w-dropdown-toggle"></div>
+              <nav class="dropdown-list w-dropdown-list">
+                <a href="#" class="w-dropdown-link">Link 1</a>
+                <a href="#" class="w-dropdown-link">Link 2</a>
+                <a href="#" class="w-dropdown-link">Link 3</a>
+              </nav>
+            </div>
+            <div class="form-search-wrap">
+              <div class="form-search-container w-form">
+                <form id="wf-form-Search-Form" name="wf-form-Search-Form" data-name="Search Form" redirect="/research" data-redirect="/research" action="/research" method="get" class="form-search" data-wf-page-id="65fd1577d3de0c8242fadc8c" data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5"><input class="search-field w-input" maxlength="256" name="Search-2" data-name="Search 2" placeholder="Search on Artistry.." data-w-id="39529a09-50bd-5c07-ff29-0fe03328b2c6" type="text" id="Search">
+                  <div class="search-icon-wrap">
+                    <a href="#" target="_blank" class="link-block w-inline-block"><img src="images/search.svg" loading="lazy" alt=""></a>
+                  </div>
+                </form>
+                <div class="w-form-done">
+                  <div>Thank you! Your submission has been received!</div>
+                </div>
+                <div class="w-form-fail">
+                  <div>Oops! Something went wrong while submitting the form.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul role="list" class="nav-list right">
+        <li class="nav-item hide">
+          <div class="divider-vertical bg-dgray01"></div>
+        </li>
+        <li class="nav-item">
+          <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
+            <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="images/star.svg" loading="lazy"></div>
+            <nav class="navbar-dropdown-list w-dropdown-list">
+              <a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
+              <a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
+              <a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
+            </nav>
+          </div>
+        </li>
+        <li class="nav-item hide">
+          <div class="divider-vertical bg-dgray01"></div>
+        </li>
+        <li class="nav-item">
+          <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
+            <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="images/user.svg" loading="lazy"></div>
+            <nav class="navbar-dropdown-list w-dropdown-list">
+              <a href="user-account.html" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
+              <a href="log-in.html" aria-current="page" class="navbar-dropdown-link w-dropdown-link w--current">로그인</a>
+              <a href="sign-up.html" class="navbar-dropdown-link w-dropdown-link">회원가입</a><button class="navbar-dropdown-link bottom" data-wf-user-logout="로그아웃" data-wf-user-login="회원가입" type="button">로그아웃</button>
+            </nav>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 	<div style="opacity:0;-webkit-transform:translate3d(0, -20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
 		class="loginform-wrapper">
 		<div class="login-form-block">

@@ -42,38 +42,12 @@
 
 
 
-  <div class="navbar-logo-left-3">
+   <div class="navbar-logo-left-3">
     <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
+      <a href="index.html" class="navbar-brand-3 w-nav-brand"><img src="images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
       <div class="container-9">
         <div class="navbar-wrapper-3">
-          <a href="index.html" class="navbar-brand-3 w-nav-brand"><img src="images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
-          <nav role="navigation" class="nav-menu-wrapper-3 w-nav-menu">
-            <ul role="list" class="nav-menu-two-3 w-list-unstyled">
-              <li>
-                <a href="#" class="nav-link-4">product</a>
-              </li>
-              <li>
-                <a href="#" class="nav-link-4">contact us</a>
-              </li>
-            </ul>
-          </nav>
           <ul role="list" class="nav-list cate">
-            <li class="nav-item hide">
-              <div class="divider-vertical bg-dgray01"></div>
-            </li>
-            <li class="navbar-dropdown">
-              <div data-hover="false" data-delay="0" data-w-id="7af45c02-140b-324f-b459-fb910465c184" class="w-dropdown">
-                <div class="w-dropdown-toggle">
-                  <div class="navbar-icon w-icon-dropdown-toggle"></div>
-                  <div class="text-block-11">Category</div>
-                </div>
-                <nav class="dropdown-list-2 w-dropdown-list">
-                  <a href="#" class="w-dropdown-link">Link 1</a>
-                  <a href="#" class="w-dropdown-link">Link 2</a>
-                  <a href="#" class="w-dropdown-link">Link 3</a>
-                </nav>
-              </div>
-            </li>
             <li class="nav-item hide">
               <div class="divider-vertical bg-dgray01"></div>
             </li>
@@ -103,36 +77,36 @@
               </div>
             </div>
           </div>
-          <ul role="list" class="nav-list right">
-            <li class="nav-item hide">
-              <div class="divider-vertical bg-dgray01"></div>
-            </li>
-            <li class="nav-item">
-              <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
-                <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="images/star.svg" loading="lazy"></div>
-                <nav class="navbar-dropdown-list w-dropdown-list">
-                  <a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
-                  <a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
-                  <a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
-                </nav>
-              </div>
-            </li>
-            <li class="nav-item hide">
-              <div class="divider-vertical bg-dgray01"></div>
-            </li>
-            <li class="nav-item">
-              <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
-                <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="images/user.svg" loading="lazy"></div>
-                <nav class="navbar-dropdown-list w-dropdown-list">
-                  <a href="user-account.html" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-                  <a href="log-in.html" class="navbar-dropdown-link w-dropdown-link">로그인</a>
-                  <a href="sign-up.html" class="navbar-dropdown-link w-dropdown-link">회원가입</a><button class="navbar-dropdown-link bottom" data-wf-user-logout="로그아웃" data-wf-user-login="회원가입" type="button">로그아웃</button>
-                </nav>
-              </div>
-            </li>
-          </ul>
         </div>
       </div>
+      <ul role="list" class="nav-list right">
+        <li class="nav-item hide">
+          <div class="divider-vertical bg-dgray01"></div>
+        </li>
+        <li class="nav-item">
+          <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
+            <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="images/star.svg" loading="lazy"></div>
+            <nav class="navbar-dropdown-list w-dropdown-list">
+              <a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
+              <a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
+              <a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
+            </nav>
+          </div>
+        </li>
+        <li class="nav-item hide">
+          <div class="divider-vertical bg-dgray01"></div>
+        </li>
+        <li class="nav-item">
+          <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
+            <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="images/user.svg" loading="lazy"></div>
+            <nav class="navbar-dropdown-list w-dropdown-list">
+              <a href="user-account.html" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
+              <a href="log-in.html" class="navbar-dropdown-link w-dropdown-link">로그인</a>
+              <a href="sign-up.html" class="navbar-dropdown-link w-dropdown-link">회원가입</a><button class="navbar-dropdown-link bottom" data-wf-user-logout="로그아웃" data-wf-user-login="회원가입" type="button">로그아웃</button>
+            </nav>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
   <div class="signupsecondform">
