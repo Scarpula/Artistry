@@ -11,39 +11,27 @@ import com.smhrd.model.Member;
 import com.smhrd.model.MemberDAO;
 
 public class JoinService extends HttpServlet {
-   protected void service(HttpServletRequest request, HttpServletResponse response)
-         throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-      // post 방식 인코딩
+		// post 방식 인코딩
 
-      request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 
-      String mb_Email = request.getParameter("mb_Email");
-      String mb_Pw = request.getParameter("mb_Pw");
-      String mb_Name = request.getParameter("mb_Name");
-      String mb_Birthdate = request.getParameter("mb_Birthdate");
-      String mb_Phone = request.getParameter("mb_Phone");
-      String mb_Nick = request.getParameter("mb_Nick");
-      String mb_Addr = request.getParameter("mb_Addr");
-      boolean mb_Type = Boolean.parseBoolean(request.getParameter("mb_Type"));
+		String mb_Email = request.getParameter("mb_Email");
+		String mb_Pw = request.getParameter("mb_Pw");
+		String mb_Name = request.getParameter("mb_Name");
+		String mb_Birthdate = request.getParameter("mb_Birthdate");
+		String mb_Phone = request.getParameter("mb_Phone");
+		String mb_Nick = request.getParameter("mb_Nick");
+		String mb_Addr = request.getParameter("mb_Addr");
+		String mb_Addr2 = request.getParameter("mb_Addr2");
+		Boolean mb_Type = Boolean.parseBoolean(request.getParameter("mb_Type"));
+		String add = mb_Addr + ' '+ mb_Addr2;
 
-      System.out.print(mb_Email + mb_Pw + mb_Name + mb_Birthdate + mb_Phone + mb_Nick + mb_Addr + mb_Type);
-
-      
-        Member member = new Member(mb_Email, mb_Pw, mb_Name, mb_Addr, mb_Phone, mb_Birthdate, mb_Nick, mb_Type);
-        
-        int cnt = new MemberDAO().join(member);
-        
-        System.out.println("cnt : " + cnt);
-       
-        if(cnt>0) {  System.out.println("회원가입성공");
-        response.sendRedirect("sign-up.jsp?result=success"); 
-        }else {
-        System.out.println("회원가입실패");
-        response.sendRedirect("sign-up.jsp?result=fail"); 
-        }
-       
-
-   }
+		Member member = new Member(mb_Email, mb_Pw, mb_Phone,mb_Birthdate, mb_Name,mb_Nick, add,mb_Type);
+		int cnt = new MemberDAO().join(member);
+		
+	}
 
 }

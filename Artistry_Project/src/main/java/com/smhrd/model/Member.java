@@ -31,9 +31,9 @@ public class Member {
    @NonNull
    private String mb_Addr;
    
-   private String joinedAt;
    @NonNull
    private Boolean mb_Type;
+   
    
    public Member(@NonNull String mb_Email, @NonNull String mb_Pw) {
       super();
