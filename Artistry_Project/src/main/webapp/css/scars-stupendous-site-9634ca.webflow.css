@@ -4358,11 +4358,14 @@ body {
   }
 
   .art-view-main {
+    width: auto;
     margin-top: 55px;
     margin-right: 310px;
   }
 
   .art-grid {
+    grid-column-gap: 13px;
+    grid-row-gap: 13px;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
     grid-template-columns: 1fr 1fr 1fr;
     align-content: stretch;
@@ -5083,27 +5086,28 @@ body {
   }
 
   .main-container {
-    flex-flow: column;
-    justify-content: center;
-    align-items: flex-end;
+    border: 1px #000;
+    flex-flow: row;
+    justify-content: flex-end;
+    align-items: flex-start;
     width: 100%;
-    height: 1400px;
+    height: 250vh;
     margin-top: 50px;
     display: flex;
   }
 
   .container-wrap {
-    border: 2px solid #000;
+    border: 1px #000;
     border-radius: 4px;
-    width: 58%;
-    height: 100%;
+    width: 120vh;
+    height: 150vh;
     margin-top: 45px;
-    margin-right: 200px;
+    margin-right: 85px;
     position: relative;
   }
 
   .portfolio-tab {
-    margin-top: 20px;
+    margin-top: 65px;
   }
 
   .banner-image-wrap {
@@ -5152,11 +5156,19 @@ body {
   }
 
   .portfolio-artist-infomation {
-    border-top: 1px solid #000;
+    mix-blend-mode: normal;
+    border: 1px solid #000;
     border-radius: 5px;
-    height: 92%;
+    flex-flow: column;
+    height: 100vh;
     margin-top: 45px;
-    position: static;
+    transition: z-index .2s;
+    display: flex;
+    position: absolute;
+    top: 6%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
   }
 
   .portfolio-artist-infomation-title {
@@ -5294,6 +5306,354 @@ body {
 
   .text-block-11 {
     font-family: Nanumgothic, sans-serif;
+  }
+
+  .home-link-block {
+    color: #060606;
+    -webkit-text-stroke-color: #000;
+    text-decoration: none;
+  }
+
+  .portfolio-artist-art {
+    border: 1px solid #000;
+    border-radius: 5px;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 120vh;
+    margin-top: 45px;
+    display: flex;
+    position: absolute;
+    top: 6%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+  }
+
+  .quick-stack {
+    grid-column-gap: 35px;
+    grid-row-gap: 35px;
+  }
+
+  .artist-art-grid {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: space-around;
+    justify-content: stretch;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .artist-art-form {
+    border: 1px solid #e0e0e0;
+    border-radius: 9px;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 370px;
+    margin: 0 10px;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    box-shadow: 8px 9px 14px rgba(0, 0, 0, .2);
+  }
+
+  .artist-art {
+    object-fit: fill;
+    width: 70%;
+    height: 70%;
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+
+  .artist-art-title {
+    margin-top: 0;
+    position: relative;
+    top: -25px;
+  }
+
+  .artist-art-img {
+    object-fit: fill;
+    border-radius: 6px;
+    box-shadow: 5px 10px 9px rgba(0, 0, 0, .2);
+  }
+
+  .portfolio-artist-review {
+    object-fit: fill;
+    border: 1px solid #000;
+    height: 150vh;
+    margin-top: 45px;
+    position: absolute;
+    top: 6%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+  }
+
+  .artist-review-head {
+    margin-top: 30px;
+  }
+
+  .heading-10 {
+    margin-left: 55px;
+    font-family: Nanumgothic, sans-serif;
+  }
+
+  .review-container {
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-template-columns: 1fr;
+    margin-top: 200px;
+    margin-left: 55px;
+    margin-right: 55px;
+  }
+
+  .review-block {
+    border: 3px solid #000;
+    border-radius: 3px;
+    width: 95%;
+    height: 350px;
+    margin-bottom: 18px;
+    margin-right: -28px;
+    display: flex;
+  }
+
+  .review-image-block {
+    object-fit: fill;
+    width: 300px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: 45px;
+    overflow: visible;
+  }
+
+  .review-image-block-img {
+    object-fit: cover;
+    display: block;
+    overflow: visible;
+  }
+
+  .review-text-block {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 850px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 65px;
+    display: flex;
+  }
+
+  .review-value-wrap {
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 95px;
+    margin-top: 35px;
+    margin-left: 25px;
+    display: flex;
+  }
+
+  .member-review-profile {
+    margin-left: 20px;
+  }
+
+  .image-11 {
+    border: 1px solid #dedede;
+    border-radius: 20px;
+  }
+
+  .review-value-text {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 85%;
+    height: 100%;
+    margin-right: 15px;
+    display: flex;
+  }
+
+  .review-text-up {
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    height: 50px;
+    max-height: none;
+    display: flex;
+  }
+
+  .review-star-text {
+    margin-left: 12px;
+    font-size: 34px;
+    line-height: 52px;
+  }
+
+  .review-member-id {
+    width: 50%;
+    height: 50px;
+    padding-bottom: 0;
+    padding-right: 0;
+  }
+
+  .link-2 {
+    color: var(--black);
+    font-size: 34px;
+    line-height: 55px;
+    text-decoration: none;
+  }
+
+  .review-text-wrapper {
+    width: 95%;
+    height: 220px;
+    margin-top: 35px;
+    margin-left: 35px;
+    padding-right: 45px;
+  }
+
+  .paragraph-6 {
+    font-size: 25px;
+    line-height: 1.2;
+  }
+
+  .portfolio-profile-tab {
+    background-color: #fbf6f0;
+    border: 1px solid #fbdede;
+    border-radius: 20px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 35vh;
+    height: 65vh;
+    margin-top: 125px;
+    margin-right: 125px;
+    display: flex;
+    position: relative;
+    top: -325px;
+  }
+
+  .portfolio-profile-img-wrap {
+    border: 3px solid #e5dada;
+    border-radius: 4px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    height: 19vh;
+    margin-top: 35px;
+    margin-left: 35px;
+    margin-right: 35px;
+    padding-top: 15px;
+    display: flex;
+  }
+
+  .profiel-img-con {
+    border-radius: 36px;
+    max-width: 38%;
+  }
+
+  .heading-11 {
+    margin-bottom: 0;
+    font-family: Nanumgothic, sans-serif;
+  }
+
+  .profile-button {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+    height: 10vh;
+    margin-top: 10px;
+    margin-left: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    display: flex;
+  }
+
+  .request-button {
+    text-align: center;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    margin-top: 0;
+    font-family: Nanumgothic, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    display: flex;
+  }
+
+  .follow-button {
+    color: #000;
+    background-color: #b9d9f6;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65px;
+    margin-top: 10px;
+    font-family: Nanumgothic, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    display: flex;
+  }
+
+  .profile-insta-block {
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 80%;
+    height: 65px;
+    padding-bottom: 0;
+    padding-right: 0;
+    display: flex;
+  }
+
+  .heading-12 {
+    width: 107px;
+    height: 50px;
+    font-size: 25px;
+    position: relative;
+    right: -17px;
+  }
+
+  .insta-link-block {
+    width: 85px;
+    height: 50px;
+    position: relative;
+    top: -10px;
+    right: -8px;
+  }
+
+  .like-container {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 75%;
+    height: 35%;
+    margin-top: 55px;
+    display: flex;
+  }
+
+  .like-img {
+    cursor: pointer;
+    width: 128px;
+    height: 128px;
+  }
+
+  .like-count {
+    font-family: Oswald, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    position: relative;
+    top: -10px;
   }
 }
 
@@ -6145,6 +6505,12 @@ body {
 
 #w-node-_1e9011f8-b6b4-4a86-4c60-dca647754811-c69e39b8, #w-node-_1e9011f8-b6b4-4a86-4c60-dca64775481a-c69e39b8, #w-node-_1e9011f8-b6b4-4a86-4c60-dca647754825-c69e39b8, #w-node-_36e6c8af-1fa4-832e-7c39-34708e065c9a-8afc4f38, #w-node-_36e6c8af-1fa4-832e-7c39-34708e065ca3-8afc4f38, #w-node-_36e6c8af-1fa4-832e-7c39-34708e065cae-8afc4f38 {
   grid-area: span 1 / span 1 / span 1 / span 1;
+}
+
+@media screen and (min-width: 1920px) {
+  #w-node-_550a96a2-a744-3681-3a62-95b4ca1c003a-bb169fcb, #w-node-_7284db90-fad2-42fa-7acf-0393715b2119-bb169fcb, #w-node-be721359-9902-5f24-6045-371207c22bae-bb169fcb, #w-node-bfe6e6dc-ff34-3816-93d7-684d3b67776a-bb169fcb, #w-node-_084f14de-cbd7-e08d-4037-57470f9202ca-bb169fcb, #w-node-_3797369b-1964-6cc3-d0ef-f5d2a211e715-bb169fcb, #w-node-_70ab8d54-e120-e793-0488-02bf4f355917-bb169fcb, #w-node-_85126c62-31a9-e326-a7eb-3f54c7649ad0-bb169fcb, #w-node-c768a1e9-0cc8-ef37-0a5a-6bbf2e0a07c5-bb169fcb {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+  }
 }
 
 
