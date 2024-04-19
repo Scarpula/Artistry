@@ -6528,6 +6528,7 @@ body {
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Nanumgothic';
   src: url('../fonts/NanumGothic-Regular.ttf') format('truetype');
