@@ -42,6 +42,12 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.SearchService</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>MyPage_EditInfo</servlet-name>
+  	<display-name>MyPage_EditInfo</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.MyPage_EditInfo</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinService</servlet-name>
   	<url-pattern>/JoinService</url-pattern>
@@ -67,5 +73,9 @@
   <servlet-mapping>
   	<servlet-name>SearchService</servlet-name>
   	<url-pattern>/SearchService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MyPage_EditInfo</servlet-name>
+  	<url-pattern>/MyPage_EditInfo</url-pattern>
   </servlet-mapping>
 </web-app>

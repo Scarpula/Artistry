@@ -48,7 +48,7 @@
 <body class="body">
 	<%
 	  Member loginMember = (Member)session.getAttribute("member");
-	%>	
+	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
 			<div data-animation="default" data-collapse="none"
@@ -139,12 +139,12 @@
 							</div>
 							<%if(loginMember!=null){ %>
 								<nav class="navbar-dropdown-list w-dropdown-list">
-									<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
+									<a href="MyPage.jsp" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
 									<a href="LogoutService" class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
 								</nav>
 							<%}else{ %>
 								<nav class="navbar-dropdown-list w-dropdown-list">
-									<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
+									<a href="log-in.jsp" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
 									<a href="log-in.jsp" class="navbar-dropdown-link w-dropdown-link">로그인</a>
 									<a href="sign-up.jsp" class="navbar-dropdown-link w-dropdown-link">회원가입</a>
 								</nav>
