@@ -115,6 +115,15 @@ Member loginMember = (Member) session.getAttribute("member");
 						</div>
 					</div>
 				</div>
+				<%
+				if (loginMember != null) {
+				%>
+				<div>
+					<a href="#"><%=loginMember.getMb_Nick()%>님</a>
+				</div>
+				<%
+				}
+				%>
 				<ul role="list" class="nav-list right">
 					<li class="nav-item hide">
 						<div class="divider-vertical bg-dgray01"></div>
@@ -143,18 +152,27 @@ Member loginMember = (Member) session.getAttribute("member");
 								<img width="24" height="24" alt="" src="../images/user.svg"
 									loading="lazy">
 							</div>
-							<%if(loginMember!=null){ %>
-								<nav class="navbar-dropdown-list w-dropdown-list">
-									<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-									<a href="../LogoutService" class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
-								</nav>
-							<%}else{ %>
-								<nav class="navbar-dropdown-list w-dropdown-list">
-									<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-									<a href="../log-in.jsp" class="navbar-dropdown-link w-dropdown-link">로그인</a>
-									<a href="../sign-up.jsp" class="navbar-dropdown-link w-dropdown-link">회원가입</a>
-								</nav>
-							<%} %>
+							<%
+							if (loginMember != null) {
+							%>
+							<nav class="navbar-dropdown-list w-dropdown-list">
+								<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
+								<a href="../LogoutService"
+									class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
+							</nav>
+							<%
+							} else {
+							%>
+							<nav class="navbar-dropdown-list w-dropdown-list">
+								<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
+								<a href="../log-in.jsp"
+									class="navbar-dropdown-link w-dropdown-link">로그인</a> <a
+									href="../sign-up.jsp"
+									class="navbar-dropdown-link w-dropdown-link">회원가입</a>
+							</nav>
+							<%
+							}
+							%>
 						</div>
 					</li>
 				</ul>
@@ -185,8 +203,8 @@ Member loginMember = (Member) session.getAttribute("member");
 						class="filter-accordion-wrap">
 						<a data-w-id="cd3495c7-a313-c4e7-ca25-d1c5ccffb9db" href="#"
 							class="filter-accordion-head w-inline-block">
-							<h1 class="heading-h3">commercial</h1>
-							<img src="../images/arrow_up.svg" loading="lazy" alt=""
+							<h1 class="heading-h3">commercial</h1> <img
+							src="../images/arrow_up.svg" loading="lazy" alt=""
 							class="cateonimage">
 						</a>
 						<div class="filter-accordion-body">
@@ -240,8 +258,8 @@ Member loginMember = (Member) session.getAttribute("member");
 						class="filter-accordion-wrap">
 						<a data-w-id="6cd93f0b-7ce8-02a7-12b9-274e4bce371c" href="#"
 							class="filter-accordion-head w-inline-block">
-							<h1 class="heading-h3">original</h1>
-							<img src="../images/arrow_up.svg" loading="lazy" alt=""
+							<h1 class="heading-h3">original</h1> <img
+							src="../images/arrow_up.svg" loading="lazy" alt=""
 							class="cateonimage">
 						</a>
 						<div class="filter-accordion-body">
@@ -347,9 +365,8 @@ Member loginMember = (Member) session.getAttribute("member");
 									sizes="(max-width: 479px) 100vw, 218px" class="image-5"></a>
 							</div>
 							<div class="text-wrap">
-								<a href="artist-portfolio-page.jsp"
-									class="title-link">It&#x27;s a legendary drawing of a pure
-									puppy</a>
+								<a href="artist-portfolio-page.jsp" class="title-link">It&#x27;s
+									a legendary drawing of a pure puppy</a>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="artist-link-wrap">
 									<a href="#" class="artist-link">LSD</a><img

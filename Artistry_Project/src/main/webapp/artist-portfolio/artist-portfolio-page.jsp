@@ -51,7 +51,7 @@
 </head>
 <body class="body">
 	<%
-	  Member loginMember = (Member)session.getAttribute("member");
+	Member loginMember = (Member) session.getAttribute("member");
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
@@ -107,6 +107,15 @@
 						</div>
 					</div>
 				</div>
+				<%
+				if (loginMember != null) {
+				%>
+				<div>
+					<a href="#"><%=loginMember.getMb_Nick()%>님</a>
+				</div>
+				<%
+				}
+				%>
 				<ul role="list" class="nav-list right">
 					<li class="nav-item hide">
 						<div class="divider-vertical bg-dgray01"></div>
@@ -136,7 +145,7 @@
 									loading="lazy">
 							</div>
 							<%
-								if (loginMember != null) {
+							if (loginMember != null) {
 							%>
 							<nav class="navbar-dropdown-list w-dropdown-list">
 								<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
@@ -144,13 +153,14 @@
 									class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
 							</nav>
 							<%
-								} else {
+							} else {
 							%>
 							<nav class="navbar-dropdown-list w-dropdown-list">
 								<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
 								<a href="../log-in.jsp"
 									class="navbar-dropdown-link w-dropdown-link">로그인</a> <a
-									href="../sign-up.jsp" class="navbar-dropdown-link w-dropdown-link">회원가입</a>
+									href="../sign-up.jsp"
+									class="navbar-dropdown-link w-dropdown-link">회원가입</a>
 							</nav>
 							<%
 							}
