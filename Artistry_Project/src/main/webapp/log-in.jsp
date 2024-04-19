@@ -1,97 +1,148 @@
+<%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Wed Apr 17 2024 00:40:02 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="65fd1577d3de0c8242fadc8c" data-wf-site="65fa46eb9d90d967c69e39b1">
+<html data-wf-page="65fd1577d3de0c8242fadc8c"
+	data-wf-site="65fa46eb9d90d967c69e39b1">
 
 <head>
-	<meta charset="utf-8">
-	<title>Scar&#x27;s Stupendous Site</title>
-	<meta content="width=device-width, initial-scale=1" name="viewport">
-	<meta content="Webflow" name="generator">
-	<link href="css/normalize.css" rel="stylesheet" type="text/css">
-	<link href="css/webflow.css" rel="stylesheet" type="text/css">
-	<link href="css/scars-stupendous-site-9634ca.webflow.css" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com" rel="preconnect">
-	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-	<script
-		type="text/javascript">WebFont.load({google: {families: ["Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Oswald:200,300,400,500,600,700", "Merriweather:300,300italic,400,400italic,700,700italic,900,900italic", "PT Sans:400,400italic,700,700italic"]}});</script>
-	<script
-		type="text/javascript">!function (o, c) {var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")}(window, document);</script>
-	<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
-	<link href="images/webclip.png" rel="apple-touch-icon">
+<meta charset="utf-8">
+<title>Scar&#x27;s Stupendous Site</title>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="Webflow" name="generator">
+<link href="css/normalize.css" rel="stylesheet" type="text/css">
+<link href="css/webflow.css" rel="stylesheet" type="text/css">
+<link href="css/scars-stupendous-site-9634ca.webflow.css"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.gstatic.com" rel="preconnect"
+	crossorigin="anonymous">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
+	type="text/javascript"></script>
+<script type="text/javascript">
+	WebFont
+			.load({
+				google : {
+					families : [
+							"Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic",
+							"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic",
+							"Oswald:200,300,400,500,600,700",
+							"Merriweather:300,300italic,400,400italic,700,700italic,900,900italic",
+							"PT Sans:400,400italic,700,700italic" ]
+				}
+			});
+</script>
+<script type="text/javascript">
+	!function(o, c) {
+		var n = c.documentElement, t = " w-mod-";
+		n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch
+				&& c instanceof DocumentTouch)
+				&& (n.className += t + "touch")
+	}(window, document);
+</script>
+<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link href="images/webclip.png" rel="apple-touch-icon">
 </head>
 
 <body class="body">
-  <div class="navbar-logo-left-3">
-    <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
-      <a href="index.html" class="navbar-brand-3 w-nav-brand"><img src="images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
-      <div class="container-9">
-        <div class="navbar-wrapper-3">
-          <ul role="list" class="nav-list cate">
-            <li class="nav-item hide">
-              <div class="divider-vertical bg-dgray01"></div>
-            </li>
-          </ul>
-          <div class="search-wrap">
-            <div data-hover="false" data-delay="0" class="dropdown w-dropdown">
-              <div class="dropdown-toggle w-dropdown-toggle"></div>
-              <nav class="dropdown-list w-dropdown-list">
-                <a href="#" class="w-dropdown-link">Link 1</a>
-                <a href="#" class="w-dropdown-link">Link 2</a>
-                <a href="#" class="w-dropdown-link">Link 3</a>
-              </nav>
-            </div>
-            <div class="form-search-wrap">
-              <div class="form-search-container w-form">
-                <form id="wf-form-Search-Form" name="wf-form-Search-Form" data-name="Search Form" redirect="/research" data-redirect="/research" action="/research" method="get" class="form-search" data-wf-page-id="65fd1577d3de0c8242fadc8c" data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5"><input class="search-field w-input" maxlength="256" name="Search-2" data-name="Search 2" placeholder="Search on Artistry.." data-w-id="39529a09-50bd-5c07-ff29-0fe03328b2c6" type="text" id="Search">
-                  <div class="search-icon-wrap">
-                    <a href="#" target="_blank" class="link-block w-inline-block"><img src="images/search.svg" loading="lazy" alt=""></a>
-                  </div>
-                </form>
-                <div class="w-form-done">
-                  <div>Thank you! Your submission has been received!</div>
-                </div>
-                <div class="w-form-fail">
-                  <div>Oops! Something went wrong while submitting the form.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <ul role="list" class="nav-list right">
-        <li class="nav-item hide">
-          <div class="divider-vertical bg-dgray01"></div>
-        </li>
-        <li class="nav-item">
-          <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
-            <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="images/star.svg" loading="lazy"></div>
-            <nav class="navbar-dropdown-list w-dropdown-list">
-              <a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
-              <a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
-              <a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
-            </nav>
-          </div>
-        </li>
-        <li class="nav-item hide">
-          <div class="divider-vertical bg-dgray01"></div>
-        </li>
-        <li class="nav-item">
-          <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
-            <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="images/user.svg" loading="lazy"></div>
-            <nav class="navbar-dropdown-list w-dropdown-list">
-              <a href="user-account.html" class="navbar-dropdown-link top w-dropdown-link">∏∂¿Ã∆‰¿Ã¡ˆ</a>
-              <a href="log-in.html" aria-current="page" class="navbar-dropdown-link w-dropdown-link w--current">∑Œ±◊¿Œ</a>
-              <a href="sign-up.html" class="navbar-dropdown-link w-dropdown-link">»∏ø¯∞°¿‘</a><button class="navbar-dropdown-link bottom" data-wf-user-logout="∑Œ±◊æ∆øÙ" data-wf-user-login="»∏ø¯∞°¿‘" type="button">∑Œ±◊æ∆øÙ</button>
-            </nav>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-	<div style="opacity:0;-webkit-transform:translate3d(0, -20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+	<%
+		Member loginMember = (Member) session.getAttribute("member");
+	%>
+	<div class="navbar-logo-left-3">
+		<div data-animation="default" data-collapse="none" data-duration="400"
+			data-easing="ease" data-easing2="ease" role="banner"
+			class="nevbar shadow-three w-nav">
+			<a href="index.html" class="navbar-brand-3 w-nav-brand"><img
+				src="images/Artistry-logo4.jpg" loading="lazy" width="240"
+				height="100" alt="" class="image-2"></a>
+			<div class="container-9">
+				<div class="navbar-wrapper-3">
+					<ul role="list" class="nav-list cate">
+						<li class="nav-item hide">
+							<div class="divider-vertical bg-dgray01"></div>
+						</li>
+					</ul>
+					<div class="search-wrap">
+						<div data-hover="false" data-delay="0" class="dropdown w-dropdown">
+							<div class="dropdown-toggle w-dropdown-toggle"></div>
+							<nav class="dropdown-list w-dropdown-list">
+								<a href="#" class="w-dropdown-link">Link 1</a> <a href="#"
+									class="w-dropdown-link">Link 2</a> <a href="#"
+									class="w-dropdown-link">Link 3</a>
+							</nav>
+						</div>
+						<div class="form-search-wrap">
+							<div class="form-search-container w-form">
+								<form id="wf-form-Search-Form" name="wf-form-Search-Form"
+									data-name="Search Form" redirect="/research"
+									data-redirect="/research" action="/research" method="get"
+									class="form-search" data-wf-page-id="65fd1577d3de0c8242fadc8c"
+									data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5">
+									<input class="search-field w-input" maxlength="256"
+										name="Search-2" data-name="Search 2"
+										placeholder="Search on Artistry.."
+										data-w-id="39529a09-50bd-5c07-ff29-0fe03328b2c6" type="text"
+										id="Search">
+									<div class="search-icon-wrap">
+										<a href="#" target="_blank" class="link-block w-inline-block"><img
+											src="images/search.svg" loading="lazy" alt=""></a>
+									</div>
+								</form>
+								<div class="w-form-done">
+									<div>Thank you! Your submission has been received!</div>
+								</div>
+								<div class="w-form-fail">
+									<div>Oops! Something went wrong while submitting the
+										form.</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ul role="list" class="nav-list right">
+				<li class="nav-item hide">
+					<div class="divider-vertical bg-dgray01"></div>
+				</li>
+				<li class="nav-item">
+					<div data-hover="false" data-delay="0"
+						class="navbar-dropdown w-dropdown">
+						<div class="navbar-dropdown-toggle w-dropdown-toggle">
+							<img width="24" height="24" alt="" src="images/star.svg"
+								loading="lazy">
+						</div>
+						<nav class="navbar-dropdown-list w-dropdown-list">
+							<a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
+							<a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
+							<a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
+						</nav>
+					</div>
+				</li>
+				<li class="nav-item hide">
+					<div class="divider-vertical bg-dgray01"></div>
+				</li>
+				<li class="nav-item">
+					<div data-hover="false" data-delay="0"
+						class="navbar-dropdown w-dropdown">
+						<div class="navbar-dropdown-toggle w-dropdown-toggle">
+							<img width="24" height="24" alt="" src="images/user.svg"
+								loading="lazy">
+						</div>
+						<nav class="navbar-dropdown-list w-dropdown-list">
+							<a href="#" class="navbar-dropdown-link top w-dropdown-link">ÎßàÏù¥ÌéòÏù¥ÏßÄ</a>
+							 <a href="#" aria-current="page" class="navbar-dropdown-link w-dropdown-link w--current">Î°úÍ∑∏Ïù∏</a>
+							<a href="sign-up.jsp" class="navbar-dropdown-link w-dropdown-link">ÌöåÏõêÍ∞ÄÏûÖ</a>
+						</nav>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div
+		style="opacity: 0; -webkit-transform: translate3d(0, -20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, -20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, -20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, -20px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
 		class="loginform-wrapper">
 		<div class="login-form-block">
 			<div class="loginform">
@@ -100,43 +151,49 @@
 				</div>
 				<div class="basic-login-form">
 					<div class="artistry-login-form w-form">
-						<form id="wf-form-" name="LoginForm" action="LoginService" method="post"
-							class="artistry-form-block">
-							<div class="logintextform">E-mail</div><input class="text-field login-form w-input"
-								maxlength="256" name="mb_Email" data-name="email" placeholder="E-mail" type="text"
-								id="email" >
-							<div class="logintextform">PW</div><input class="text-field-2 w-input" maxlength="256"
-								name="mb_Pw" data-name="pw" placeholder="PW" type="password" id="pw" >
-							<input type="submit" data-wait="Please wait..." class="login-button w-button" value="∑Œ±◊¿Œ">
-							<a href="sign-up.html" target="_blank" class="sign-up-button loginpage w-button">»∏ø¯∞°¿‘</a>
+						<form id="wf-form-" name="LoginForm" action="LoginService"
+							method="post" class="artistry-form-block">
+							<div class="logintextform">E-mail</div>
+							<input class="text-field login-form w-input" maxlength="256"
+								name="mb_Email" data-name="email" placeholder="E-mail"
+								type="text" id="email">
+							<div class="logintextform">PW</div>
+							<input class="text-field-2 w-input" maxlength="256" name="mb_Pw"
+								data-name="pw" placeholder="PW" type="password" id="pw">
+							<input type="submit" data-wait="Please wait..."
+								class="login-button w-button" value="Î°úÍ∑∏Ïù∏">
+								 <a href="sign-up.jsp" target="_blank"
+								class="sign-up-button loginpage w-button">ÌöåÏõêÍ∞ÄÏûÖ</a>
 						</form>
-						<div class="w-form-done">
-							<div>Thank you! Your submission has been received!</div>
-						</div>
-						<div class="w-form-fail">
-							<div>¿Ã∏ﬁ¿œ æÁΩƒ¿Ã ∆≤∑»Ω¿¥œ¥Ÿ</div>
-						</div>
 					</div>
 					<div class="sns-login-button">
 						<div class="sns-logo naver">
-							<a href="#" class="w-inline-block"><img src="images/naver_icon.png" loading="lazy"
-									width="80" height="80" alt="" class="logo-image"></a>
+							<a href="#" class="w-inline-block">
+							<img src="images/naver_icon.png" loading="lazy" width="80"
+								height="80" alt="" class="logo-image">
+						 	</a>
 						</div>
 						<div class="sns-logo google">
-							<a href="#" class="w-inline-block"><img src="images/kakao-logo.png" loading="lazy"
-									width="80" height="80" alt="" class="logo-image"></a>
+							<a href="#" class="w-inline-block">
+							<img src="images/kakao-logo.png" loading="lazy" width="80"
+								height="80" alt="" class="logo-image">
+							</a>
 						</div>
 						<div class="sns-logo kakao">
-							<a href="#" class="w-inline-block"><img src="images/google-real-logo.png" loading="lazy"
-									width="80" height="80" alt="" class="logo-image"></a>
+							<a href="#" class="w-inline-block">
+							<img src="images/google-real-logo.png" loading="lazy" width="80"
+								height="80" alt="" class="logo-image">
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1"
-		type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+	<script
+		src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1"
+		type="text/javascript"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 		crossorigin="anonymous"></script>
 	<script src="js/webflow.js" type="text/javascript"></script>
 </body>
