@@ -11,6 +11,100 @@
   grid-auto-columns: 1fr;
   display: grid;
 }
+.file-upload label {
+  display: inline-block;
+  padding: .5em .75em;
+  color: #999;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: .25em;
+}
+.file-upload input[type="file"] {  /* 파일 필드 숨기기 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+}
+
+.file-upload input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+}
+
+.file-upload label {
+  display: inline-block;
+  padding: .5em .75em;
+  color: #000000;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: .25em;
+}
+
+/* named upload */
+.file-upload .upload-name {
+  display: inline-block;
+  padding: .5em .75em;  /* label의 패딩값과 일치 */
+  font-size: inherit;
+  font-family: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #f5f5f5;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: .25em;
+  -webkit-appearance: none; /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  appearance: none;
+}
+/* imaged preview */
+.file-upload .upload-display {  /* 이미지가 표시될 지역 */
+  margin-bottom: 5px;
+}
+
+@media(min-width: 768px) { 
+  .file-upload .upload-display {
+      display: inline-block;
+      margin-right: 5px;
+      margin-bottom: 0;
+  }
+}
+
+.file-upload .upload-thumb-wrap {  /* 추가될 이미지를 감싸는 요소 */
+  display: inline-block;
+  width: 54px;
+  padding: 2px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.file-upload .upload-display img {  /* 추가될 이미지 */
+  display: block;
+  max-width: 100%;
+  width: 100% \9;
+  height: auto;
+}
 
 .w-commerce-commercecheckoutformcontainer {
   background-color: #f5f5f5;
@@ -3228,6 +3322,7 @@ body {
     min-width: 100%;
     min-height: 100%;
     padding-left: 0;
+    font-family: Nanumgothic, sans-serif;
   }
 
   .navbar-logo-left-3 {
@@ -4907,14 +5002,14 @@ body {
     outline-offset: 0px;
     border-radius: 0;
     outline: 3px #333;
-    width: 84px;
+    width: 63px;
     max-width: 96px;
     height: 96px;
     max-height: 96px;
   }
 
   .checkbox._02 {
-    width: 55px;
+    width: 66px;
   }
 
   .checkbox-2 {
@@ -5052,6 +5147,11 @@ body {
     position: relative;
   }
 
+  .container-wrap.setting-page {
+    aspect-ratio: 1;
+    height: auto;
+  }
+
   .portfolio-tab {
     margin-top: 65px;
   }
@@ -5115,6 +5215,14 @@ body {
     bottom: 0%;
     left: 0%;
     right: 0%;
+  }
+
+  .portfolio-artist-infomation.setting-page {
+    aspect-ratio: 1;
+    color: #000;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
   }
 
   .portfolio-artist-infomation-title {
@@ -5276,6 +5384,13 @@ body {
     right: 0%;
   }
 
+  .portfolio-artist-art.setting-page {
+    aspect-ratio: auto;
+    justify-content: flex-start;
+    align-items: center;
+    height: 400px;
+  }
+
   .quick-stack {
     grid-column-gap: 35px;
     grid-row-gap: 35px;
@@ -5328,8 +5443,10 @@ body {
   }
 
   .artist-art-img {
+    z-index: 1;
     object-fit: fill;
     border-radius: 6px;
+    position: relative;
     box-shadow: 5px 10px 9px rgba(0, 0, 0, .2);
   }
 
@@ -5345,6 +5462,11 @@ body {
     right: 0%;
   }
 
+  .portfolio-artist-review.setting-page {
+    aspect-ratio: 1;
+    height: auto;
+  }
+
   .artist-review-head {
     margin-top: 30px;
   }
@@ -5355,9 +5477,9 @@ body {
   }
 
   .review-container {
-    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto;
     grid-template-columns: 1fr;
-    margin-top: 200px;
+    margin-top: 70px;
     margin-left: 55px;
     margin-right: 55px;
   }
@@ -5515,7 +5637,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     width: 60%;
-    height: 10vh;
+    height: 15vh;
     margin-top: 10px;
     margin-left: 0;
     padding-bottom: 0;
@@ -5532,8 +5654,9 @@ body {
     height: 65px;
     margin-top: 0;
     font-family: Nanumgothic, sans-serif;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 700;
+    line-height: 17px;
     display: flex;
   }
 
@@ -5547,9 +5670,16 @@ body {
     height: 65px;
     margin-top: 10px;
     font-family: Nanumgothic, sans-serif;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 700;
+    line-height: 17px;
     display: flex;
+  }
+
+  .follow-button.setting-button {
+    background-color: #d0e1f0;
+    font-size: 22px;
+    line-height: 17px;
   }
 
   .profile-insta-block {
@@ -5842,6 +5972,221 @@ body {
     height: 100%;
     display: flex;
     position: absolute;
+  }
+
+  .artist-art-setting {
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 160px;
+    margin-top: 20px;
+    margin-left: 140px;
+    display: flex;
+  }
+
+  .heading-16 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .setting-divider {
+    aspect-ratio: auto;
+    object-fit: contain;
+    border: 1px solid #fbdede;
+    width: 80%;
+    height: .3px;
+    padding-bottom: 0;
+    padding-right: 0;
+  }
+
+  .modify-form {
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    max-width: 450px;
+    height: 50px;
+    margin-left: 300px;
+    display: flex;
+  }
+
+  .art-modify-block {
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+    display: flex;
+  }
+
+  .field-label {
+    text-align: center;
+    flex-flow: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 120px;
+    margin-bottom: 0;
+    font-size: 27px;
+    display: flex;
+  }
+
+  .text-field-3 {
+    margin-bottom: 0;
+  }
+
+  .artist-infomation-setting {
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 160px;
+    margin-top: 20px;
+    margin-left: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    display: flex;
+  }
+
+  .information-modify-block {
+    width: 80%;
+    height: 80%;
+    margin-top: 74px;
+  }
+
+  .info-modify-form {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 90%;
+    display: flex;
+  }
+
+  .artist-infor-area {
+    aspect-ratio: 2.39;
+    border-radius: 13px;
+    height: 117px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+
+  .field-label-2 {
+    margin-top: 150px;
+  }
+
+  .field-label-3 {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .select-field {
+    background-color: #fff;
+    border-radius: 13px;
+    width: 15%;
+    margin-top: 35px;
+    font-size: 21px;
+    overflow: hidden;
+  }
+
+  .select-category {
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 950px;
+    height: 90px;
+    margin-top: 95px;
+    margin-left: 0;
+    display: flex;
+  }
+
+  .select-field-2 {
+    color: #000;
+    background-color: #fff;
+    width: 25%;
+    margin-left: 0;
+  }
+
+  .text-field-4 {
+    border-radius: 3px;
+    width: 450px;
+    margin-left: 16px;
+  }
+
+  .cate-select-text-bar {
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    height: 100px;
+    padding-bottom: 0;
+    padding-right: 0;
+    display: flex;
+    position: relative;
+    top: 72px;
+  }
+
+  .heading-17 {
+    color: rgba(123, 123, 123, .84);
+    margin-bottom: 0;
+    margin-left: 0;
+    font-size: 24px;
+  }
+
+  .review-writing-block {
+    margin-top: 150px;
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  .submit-button-2 {
+    width: 128px;
+    margin-top: 0;
+    margin-left: 25px;
+  }
+
+  .field-label-4 {
+    margin-bottom: 61px;
+    font-size: 24px;
+  }
+
+  .review-text-area {
+    aspect-ratio: 2.39;
+    width: 850px;
+    height: 750px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .review-text-area-wrapp {
+    display: flex;
+  }
+
+  .value-submit-wrap {
+    width: 290px;
+    margin-left: 50px;
+  }
+
+  .select-field-3 {
+    color: #040202;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+
+  .submit-button-3 {
+    color: #fff;
+    border: 5px solid #000;
+    border-radius: 65px;
+    width: 128px;
+    height: 128px;
+    padding: 0;
+    font-weight: 700;
+    position: relative;
+    top: 59px;
+    left: 74px;
+  }
+
+  .img-upload-block {
+    display: flex;
+    width: 650px;
+    margin-left: 100px;
+    justify-content: center;
+    font-size: 18px;
   }
 }
 
