@@ -109,11 +109,13 @@
       </ul>
     </div>
   </div>
-  <div class="signupsecondform">
+    <div class="signupsecondform">
     <div class="signup-form-block signupsecond">
       <div class="signup-form-wrapper signupscond2">
         <div class="artistry-banner">
-          <h1 class="artistry-head-text signupsecondhead">Artistry</h1>
+          <a href="index.jsp" class="home-link-block w-inline-block">
+            <h1 style="-webkit-transform:translate3d(0, -800px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -800px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -800px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -800px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="artistry-head-text signupsecondhead">Artistry</h1>
+          </a>
         </div>
         <div class="signupsecondtextwrap">
           <div class="text-block-10">마지막 정보 입력 단계예요!</div>
