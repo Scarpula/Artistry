@@ -23,7 +23,14 @@ public class MemberDAO {
 		session.close();
 		return cnt;
 	
-	} 
-	
+	}
+
+	public Member emailCheck(String inputE) {
+		SqlSession session = sf.openSession(true);
+		Member member = (Member)session.selectOne("com.smhrd.db.MemberMapper.EmailCheck", inputE);
+		session.close();
+		// System.out.println(member.toString());
+		return member;
+	}
 
 }

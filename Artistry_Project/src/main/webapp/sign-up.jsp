@@ -161,10 +161,9 @@
 							<div class="email-check-form">
 								<input name="mb_Email" type="email" class="text-field w-input"
 									maxlength="256" data-name="email" placeholder="E-mail"
-									id="email-3"> <input id="emailCheck" type="submit"
-									data-wait="Please wait..."
-									data-w-id="17920c1e-aaa6-75a7-0eb7-3b976ce1d732"
+									id="inputE"> <input id="checkE" type="button"
 									class="submit-button w-button" value="인증">
+								
 							</div>
 
 							<div class="form-text">비밀번호</div>
@@ -217,7 +216,7 @@
 									data-name="addr" placeholder="" type="text" id="addr" value=""
 									readonly> <input id="AddrCheck" type="button"
 									class="submit-button w-button" value="우편번호확인"
-									onclick="addrCheck()"><br>
+									onclick="addrCheck()"><br> 
 							</div>
 
 							<input name="mb_Addr2" class="text-field-2 w-input" type="text"
@@ -275,6 +274,39 @@
 			}).open();
 		}
 	</script>
+		<!-- Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.scrolly.min.js"></script>
+	<script src="js/jquery.scrollex.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="js/main.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function() {
+	    $('#checkE').click(function() {
+	        var inputE = $("#inputE").val();
+	        console.log("Input Email: ", inputE);
+
+	        $.ajax({
+	            url: "EmailCheck",
+	            data: {inputE: inputE},
+	            type: 'GET',
+	            success: function(data) {
+	                if(data == 'true') {
+	                    $('#checkE').html('사용 가능한 이메일입니다~');
+	                } else {
+	                    $('#checkE').html('사용 불가능한 이메일입니다~');
+	                }
+	            },
+	            error: function() {
+	                alert("통신 실패!");
+	            }
+	        });  // AJAX call end
+	    });  // click event end
+	});  // document ready ends
+  </script>
+	
 
 
 
