@@ -14,6 +14,10 @@
 	select * from members where mb_email=#{mb_Email} and mb_pw=#{mb_Pw}
 </select>
 
+  <select id="EmailCheck" parameterType="String" resultType="com.smhrd.model.Member">
+  	select * from members where mb_email=#{mb_Email}
+  </select>
+
 
 
 </mapper>

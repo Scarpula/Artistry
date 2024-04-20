@@ -161,7 +161,9 @@
 							<div class="email-check-form">
 								<input name="mb_Email" type="email" class="text-field w-input"
 									maxlength="256" data-name="email" placeholder="E-mail"
-									id="inputE"> <input id="checkE" type="button"
+									id="inputE"> 
+									
+									<input id="checkE" type="button"
 									class="submit-button w-button" value="인증">
 								
 							</div>
@@ -289,14 +291,14 @@
 	        console.log("Input Email: ", inputE);
 
 	        $.ajax({
-	            url: "EmailCheck",
+	            url: "EmailCheck.do",
 	            data: {inputE: inputE},
 	            type: 'GET',
 	            success: function(data) {
 	                if(data == 'true') {
-	                    $('#checkE').html('사용 가능한 이메일입니다~');
+	                	 alert('사용 가능한 이메일입니다.');
 	                } else {
-	                    $('#checkE').html('사용 불가능한 이메일입니다~');
+	                	 alert('사용 불가능한 이메일입니다.');
 	                }
 	            },
 	            error: function() {
