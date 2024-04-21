@@ -1,6 +1,7 @@
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Sat Apr 20 2024 06:52:07 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="660fa367cce1a421bb169fcb" data-wf-site="65fa46eb9d90d967c69e39b1">
@@ -125,7 +126,14 @@
       <div class="main-container">
         <div style="-webkit-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-profile-tab">
           <div class="portfolio-profile-img-wrap"><img src="../images/11.png" loading="lazy" sizes="(max-width: 1024px) 100vw, (max-width: 1919px) 1024px, 4vw" srcset="../images/11-p-500.png 500w, ../images/11-p-800.png 800w, ../images/11.png 1024w" alt="" class="profiel-img-con">
-            <h1 class="heading-11">코끼리</h1>
+            
+            
+							<%if(loginMember == null){ %>
+									<h1>로그인 한 세션아이디를 출력해주세요</h1>
+							<%}else{ %>
+								<h1><%=loginMember.getMb_Email()%></h1>
+							<%} %>
+			
             <div class="profile-insta-block">
               <h1 class="heading-12">INSTA@:</h1>
               <a href="#" class="insta-link-block w-inline-block"><img src="../images/insta_logo-removebg-preview.png" loading="lazy" sizes="(max-width: 666px) 100vw, (max-width: 1919px) 666px, 4vw" srcset="../images/insta_logo-removebg-preview-p-500.png 500w, ../images/insta_logo-removebg-preview.png 666w" alt="" class="insta-logo"></a>
