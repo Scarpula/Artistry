@@ -171,17 +171,34 @@
 							<div class="form-text">비밀번호</div>
 							<input name="mb_Pw" class="text-field-2 w-input" maxlength="256"
 								data-name="PW" placeholder="6자 이상" type="password" id="PW"
-								required="">
+								>
 
 							<div class="form-text">비밀번호 확인</div>
 							<div class="email-check-form">
-								<input name="pwCheck" class="text-field w-input" maxlength="256"
-									name="PWCheck" data-name="PWCheck" placeholder="6자 이상"
-									type="password" id="PWCheck" required=""> <input
-									id="emailCheck" type="submit" data-wait="Please wait..."
+								<input name="mb_Pw" class="text-field w-input" maxlength="256"
+									 data-name="PWCheck" placeholder="6자 이상"
+									type="password" id="PWCheck"> 
+									
+									<input
+									type="button" data-wait="Please wait..."
 									data-w-id="17920c1e-aaa6-75a7-0eb7-3b976ce1d732"
-									class="submit-button w-button" value="인증">
+									class="submit-button w-button" onclick="test()" value="인증">
 							</div>
+							    <script type="text/javascript">
+					    function test() {
+					        var p1 = document.getElementById('PW');
+					        var p2 = document.getElementById('PWCheck');
+					
+					        if (p1.value != p2.value) {
+					            alert("비밀번호가 일치하지 않습니다.");
+					            return false;
+					        } else {
+					            alert("비밀번호가 일치합니다.");
+					            return true;
+					        }
+					    }
+					    </script>
+												
 
 
 							<div class="boundary signup-form _02"></div>
@@ -309,11 +326,4 @@
 	});  // document ready ends
   </script>
 	
-
-
-
-
-
-
-
 </body>
