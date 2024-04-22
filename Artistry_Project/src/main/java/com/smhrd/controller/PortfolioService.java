@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.frontcontroller.Command;
-import com.smhrd.model.Portfolio;
+import com.smhrd.model.Member;
+import com.smhrd.model.Portfolio1;
 import com.smhrd.model.PortfolioDAO;
 
 public class PortfolioService implements Command {
@@ -37,16 +38,17 @@ public class PortfolioService implements Command {
 		try {
 			multi = new MultipartRequest(request, path, maxSize, encoding, rename);
 			// 데이터 가져오기
-			String pf_Path = multi.getParameter("pf_Path");
+			String pf_Path = multi.getParameter("pf_Info");
 			String pf_Name = multi.getParameter("pf_Name");
-			String pf_Info = multi.getFilesystemName("pf_Info");
-			//String content = multi.getParameter("content");
+			String pf_Info = multi.getFilesystemName("pf_Path");
+			String mb_Nick = multi.getParameter("mb_Nick");
 
 			System.out.println(pf_Path + pf_Name + pf_Info);
 
-			Portfolio portfolio = new Portfolio(pf_Path, pf_Path, pf_Info);
+			Portfolio1 portfolio = new Portfolio1(pf_Path, pf_Path, pf_Info);
+			Member member = new Member(mb_Nick);
 
-			int cnt = new BoardDAO().insertBoard(board);
+			int cnt = new PortfolioDAO().insertPortfolio(portfolio);
 
 			if (cnt > 0) {
 				System.out.println("파일 업로드 성공!");
@@ -60,7 +62,7 @@ public class PortfolioService implements Command {
 		
 		// response.sendRedirect("BoardMain.jsp");
 
-		return "BoardMain.jsp";
+		return "artist-portfolio-page.jsp";
 	}
 
 }

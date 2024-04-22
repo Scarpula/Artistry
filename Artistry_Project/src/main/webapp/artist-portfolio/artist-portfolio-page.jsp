@@ -1,6 +1,10 @@
+<%@page import="com.smhrd.model.PortfolioDAO"%>
+<%@page import="com.smhrd.model.Portfolio1"%>
+<%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Sat Apr 20 2024 06:52:07 GMT+0000 (Coordinated Universal Time)  -->
@@ -28,6 +32,11 @@
 	<%
 	Member loginMember = (Member) session.getAttribute("member");
 	%>
+	 
+		<%List<Portfolio1> portfolioList = new PortfolioDAO().showPortfolio(); 
+				pageContext.setAttribute("portfolioList", portfolioList);
+			%>
+	
 <div class="main">
     <div class="navbar-logo-left-3">
       <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
@@ -162,46 +171,24 @@
               </a>
             </div>
           </div>
+          
+          <!-- 포트폴리오 시작 -->
+          
           <div style="display:block;opacity:0;-webkit-transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-artist-art">
             <div class="w-layout-grid artist-art-grid">
               <div id="w-node-_550a96a2-a744-3681-3a62-95b4ca1c003a-bb169fcb" class="artist-art-form">
                 <div data-w-id="1cbd1ca6-35dd-5037-fb9c-405a15f6cf3f" class="artist-art"><img src="../images/1.png" loading="lazy" width="350" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 350px, 243.125px" class="artist-art-img"></div>
                 <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-_7284db90-fad2-42fa-7acf-0393715b2119-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-be721359-9902-5f24-6045-371207c22bae-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-bfe6e6dc-ff34-3816-93d7-684d3b67776a-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-_084f14de-cbd7-e08d-4037-57470f9202ca-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-_3797369b-1964-6cc3-d0ef-f5d2a211e715-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-_70ab8d54-e120-e793-0488-02bf4f355917-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-_85126c62-31a9-e326-a7eb-3f54c7649ad0-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-c768a1e9-0cc8-ef37-0a5a-6bbf2e0a07c5-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
+                	<c:forEach items="${portfolioListt }" var="List" varStatus="s">
+		<div data-w-id="1cbd1ca6-35dd-5037-fb9c-405a15f6cf3f" class="artist-art"><img src="../images/1.png" loading="lazy" width="350" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 350px, 243.125px" class="artist-art-img">${List.pf_Path}</div>
+							<h1>${List.pf_Name}</h1>
+					</c:forEach>
               </div>
             </div>
           </div>
+          
+          <!-- 포트폴리오 끝 -->
+          
           <div id="Artist-infomation" style="display:none" class="portfolio-artist-infomation">
             <h1 class="portfolio-artist-infomation-title"><strong class="bold-text">15년 이상의 브랜드 전문가와 함께 하세요~</strong></h1>
             <p class="portfolio-artist-infomation-text">디자이너 gutta 공모전 수상 경력 사항<br><br>‍<br>Hi 서울 웹포스터 공모전 [수상 : 대상]09년 수산물 브랜드 대전 [수상 : 은상]<br>‍<br>제8회대한민국비쥬얼트랜드대전 [수상 : 특선]<br>제3회 Blue Leage 포트폴리오 대전 [수상 : 입선]<br>07년 Edtool 표지디자인 공모전 [수상 : 입상]<br>08년 UNICORN증보시스템 캐릭터 공모전 [수상 : 2위]<br>제44회 대한민국 디자인 전람회 [수상 : 입선]<br>10년 춘천월드레져총회 및 경기대회 캐릭터 공모전 [수상 : 입선]<br>14년 순천만 정원포스터 공모전 [수상 : 동상]<br>16년 담양대나무축제 포스터 [수상:대상]<br>‍<br><br>(자격사항)웹디자인 기능사 취득그래픽운용기능사 취득교원(실기교사) 자격증 취득브랜드컨설턴트 수료</p>

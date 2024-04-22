@@ -176,22 +176,27 @@
 				<form action="MyPage_EditInfo" method="post">
 					<table>
 						<tr>
+							<td>이메일</td>
+							<td><input type="text" name="email" value="<%=loginMember.getMb_Email() %>" readonly></td>
+						</tr>
+						
+						<tr>
 							<td>닉네임</td>
-							<td><input type="text" name="nick" value="<%=loginMember.getMb_Nick() %>"></td>
+							<td><input type="text" name="nick" value="<%=loginMember.getMb_Nick() %>" required=""></td>
 						</tr>
 						<tr>
 							<td>전화번호</td>
-							<td><input type="text" name="phone" value="<%=loginMember.getMb_Phone() %>"></td>
+							<td><input type="text" name="phone" value="<%=loginMember.getMb_Phone() %>" required=""></td>
 						</tr>
 						<tr>
 							<td>이름</td>
-							<td><input type="text" name="name" value="<%=loginMember.getMb_Name() %>"></td>
+							<td><input type="text" name="name" value="<%=loginMember.getMb_Name() %>" required=""></td>
 						</tr>
 						<tr>
 							<td>주소</td>
 							<td>
 								<input name="mb_Addr" maxlength="256" data-name="addr" 
-								placeholder="" type="text" id="addr" value="" readonly="readonly">
+								placeholder="" type="text" id="addr" value="" readonly="readonly" required="">
 								<input type="button"  value="우편번호확인" onclick="addrCheck()">
 							</td>
 						</tr>
@@ -199,16 +204,16 @@
 							<td></td>
 							<td>
 								<input name="mb_Addr2" type="text"
-								maxlength="256" placeholder="나머지 주소를 입력하세요.">
+								maxlength="256" placeholder="나머지 주소를 입력하세요." required="">
 							</td>
 						</tr>
 						<tr>
 							<td>비밀번호</td>
-							<td><input type="password" value="<%=loginMember.getMb_Pw() %>"></td>
+							<td><input type="password" value="<%=loginMember.getMb_Pw() %>" required=""></td>
 						</tr>
 						<tr>
 							<td>비밀번호 확인</td>
-							<td><input type="password" name="pw" value="<%=loginMember.getMb_Pw() %>"></td>
+							<td><input type="password" name="pw" value="<%=loginMember.getMb_Pw() %>" required=""></td>
 						</tr>
 						<tr>
 							<td colspan="2" style="text-align: center;"><input type="submit" value="수정하기"></td>
