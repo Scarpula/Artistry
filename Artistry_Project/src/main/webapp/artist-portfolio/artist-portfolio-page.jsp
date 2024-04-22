@@ -127,7 +127,7 @@
         <div style="-webkit-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-profile-tab">
           <div class="portfolio-profile-img-wrap"><img src="../images/11.png" loading="lazy" sizes="(max-width: 1024px) 100vw, (max-width: 1919px) 1024px, 4vw" srcset="../images/11-p-500.png 500w, ../images/11-p-800.png 800w, ../images/11.png 1024w" alt="" class="profiel-img-con">
             
-            
+            <!-- 아티스트 닉네임 -->
 							<%if(loginMember == null){ %>
 									<h1>로그인 한 세션아이디를 출력해주세요</h1>
 							<%}else{ %>
@@ -142,7 +142,7 @@
           <div class="profile-button">
             <a href="#" class="request-button w-button">의뢰하기</a>
             <a href="#" class="follow-button w-button">팔로우+</a>
-            <a href="#" class="follow-button setting-button w-button">포트폴리오 수정하기</a>
+            <a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 수정하기</a>
           </div>
           <div class="like-container"><img src="../images/Like_lofo-removebg.png" loading="lazy" width="512" height="512" alt="" srcset="../images/Like_lofo-removebg-p-500.png 500w, ../images/Like_lofo-removebg-p-800.png 800w, ../images/Like_lofo-removebg.png 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1919px) 512px, 128px" class="like-img">
             <div class="like-count">0</div>
