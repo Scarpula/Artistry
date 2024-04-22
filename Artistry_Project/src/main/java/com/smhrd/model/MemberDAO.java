@@ -32,5 +32,13 @@ public class MemberDAO {
 		// System.out.println(member.toString());
 		return member;
 	}
+	
+	public int update_info(Member member) {
+		// 내 정보 수정 메소드
+		SqlSession session = sf.openSession(true);
+		int cnt = session.update("com.smhrd.db.MemberMapper.update_my_info", member);
+		
+		return cnt;
+	}
 
 }

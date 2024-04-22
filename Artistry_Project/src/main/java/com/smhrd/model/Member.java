@@ -40,5 +40,17 @@ public class Member {
       this.mb_Email = mb_Email;
       this.mb_Pw = mb_Pw;
    }
+   
+   public Member(String mb_Email,@NonNull String mb_Pw, @NonNull String mb_Phone, @NonNull String mb_Name, @NonNull String mb_Nick,
+			@NonNull String mb_Addr) {
+		// 내 정보 수정용 생성자 메소드
+		super();
+		this.mb_Email = mb_Email;
+		this.mb_Pw = mb_Pw;
+		this.mb_Phone = mb_Phone;
+		this.mb_Name = mb_Name;
+		this.mb_Nick = mb_Nick;
+		this.mb_Addr = mb_Addr;
+	}
 
 }
