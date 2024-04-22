@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.ChatRoom"%>
 <%@page import="com.smhrd.model.Likes"%>
 <%@page import="com.smhrd.model.Payments"%>
 <%@page import="java.util.List"%>
@@ -53,6 +54,7 @@
 		Member loginMember = (Member)session.getAttribute("member");
 		List<Payments> paymentList = (List<Payments>)session.getAttribute("paymentList");
 		List<Likes> likeList = (List<Likes>)session.getAttribute("likeList");
+		List<ChatRoom> chatRoomList = (List<ChatRoom>)session.getAttribute("chatRoomList");
 	%>
 	<div class="navbar-logo-left-3">
 		<div data-animation="default" data-collapse="none" data-duration="400"
@@ -246,7 +248,7 @@
 							<td><%=paymentList.get(i).getPay_Idx() %><td/>
 							<td><%=paymentList.get(i).getPay_Method() %><td/>
 							<td><%=paymentList.get(i).getTotal_Amount() %><td/>
-							<td><%=paymentList.get(i).getPayed_At() %><td/>
+							<td><%=paymentList.get(i).getPayed_At().substring(0,11) %><td/>
 							<td><%=paymentList.get(i).getPay_Memo() %><td/>
 						</tr>
 					<%} %>
@@ -256,13 +258,18 @@
 			<div style="display: none" class="mypage-chat">
 				<div class="mypage-context-title-wrap">
 					<h1>채팅내역</h1>
+					
+					<%for(int i = 0; i<chatRoomList.size(); i++){ %>
+						<a href="#"><h3><%=chatRoomList.get(i).getRoom_Title() %></h3></a><br>
+					<%} %>
+					
 				</div>
 			</div>
 			<div style="display: none" class="mypage-likeartist">
 				<div class="mypage-context-title-wrap">
 					<h1>좋아요 작가 목록</h1>
 					<%for(int i = 0; i<likeList.size(); i++){ %>
-						<a href="#"><h2><%=likeList.get(i).getArtist_Email() %></h2></a><br>
+						<a href="#"><h3><%=likeList.get(i).getArtist_Email() %></h3></a><br>
 					<%} %>
 				</div>
 			</div>
