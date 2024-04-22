@@ -1,0 +1,12 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.ReviewMapper">
+
+	<insert id="addReview" parameterType="com.smhrd.model.Review">
+		insert into reviews values(num_reviews.nextval, #{mb_Email}, 1, #{review_Content}, #{review_Ratings}, sysdate)
+	</insert>
+
+
+
+</mapper>
