@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Likes"%>
 <%@page import="com.smhrd.model.Payments"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.Member"%>
@@ -51,6 +52,7 @@
 	<%
 		Member loginMember = (Member)session.getAttribute("member");
 		List<Payments> paymentList = (List<Payments>)session.getAttribute("paymentList");
+		List<Likes> likeList = (List<Likes>)session.getAttribute("likeList");
 	%>
 	<div class="navbar-logo-left-3">
 		<div data-animation="default" data-collapse="none" data-duration="400"
@@ -259,6 +261,9 @@
 			<div style="display: none" class="mypage-likeartist">
 				<div class="mypage-context-title-wrap">
 					<h1>좋아요 작가 목록</h1>
+					<%for(int i = 0; i<likeList.size(); i++){ %>
+						<a href="#"><h2><%=likeList.get(i).getArtist_Email() %></h2></a><br>
+					<%} %>
 				</div>
 			</div>
 		</div>
