@@ -22,6 +22,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link href="https://fonts.gstatic.com" rel="preconnect"
 	crossorigin="anonymous">
+<link href="css/MyPage.css" type="text/css" rel="stylesheet" >
 <script
 	src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
 	type="text/javascript"></script>
@@ -182,48 +183,51 @@
 				<div class="mypage-context-title-wrap">
 					<h1>정보수정</h1>
 				</div>
-				<div>
+				<div class="myAccount">
 				<form action="MyPage_EditInfo" method="post">
-					<table>
-						<tr>
-							<td>이메일</td>
-							<td><input type="text" name="email" value="<%=loginMember.getMb_Email() %>" readonly></td>
+					<table id="myAccount" >
+						<tr >
+							<td id="basic">이메일</td>
+							<td id="inputAccount"><input type="text" name="email" value="<%=loginMember.getMb_Email() %>" readonly></td>
 						</tr>
 						
 						<tr>
-							<td>닉네임</td>
-							<td><input type="text" name="nick" value="<%=loginMember.getMb_Nick() %>" required=""></td>
+							<td id="basic">닉네임</td>
+							<td id="inputAccount"><input type="text" name="nick" value="<%=loginMember.getMb_Nick() %>" required=""></td>
 						</tr>
 						<tr>
-							<td>전화번호</td>
-							<td><input type="text" name="phone" value="<%=loginMember.getMb_Phone() %>" required=""></td>
+							<td id="basic">전화번호</td>
+							<td id="inputAccount"><input type="text" name="phone" value="<%=loginMember.getMb_Phone() %>" required=""></td>
 						</tr>
 						<tr>
-							<td>이름</td>
-							<td><input type="text" name="name" value="<%=loginMember.getMb_Name() %>" required=""></td>
+							<td id="basic">이름</td>
+							<td id="inputAccount"><input type="text" name="name" value="<%=loginMember.getMb_Name() %>" required=""></td>
 						</tr>
 						<tr>
-							<td>주소</td>
-							<td>
+							<td id="basic">주소</td>
+							<td id="inputAccount">
 								<input name="mb_Addr" maxlength="256" data-name="addr" 
 								placeholder="" type="text" id="addr" value="" readonly="readonly" required="">
+								
+							<td id="postNum">
 								<input type="button"  value="우편번호확인" onclick="addrCheck()">
+							</td>	
 							</td>
 						</tr>
 						<tr>
 							<td></td>
-							<td>
+							<td id="inputAccount">
 								<input name="mb_Addr2" type="text"
 								maxlength="256" placeholder="나머지 주소를 입력하세요." required="">
 							</td>
 						</tr>
 						<tr>
-							<td>비밀번호</td>
-							<td><input type="password" value="<%=loginMember.getMb_Pw() %>" required=""></td>
+							<td id="basic">비밀번호</td>
+							<td id="inputAccount"><input type="password" value="<%=loginMember.getMb_Pw() %>" required=""></td>
 						</tr>
 						<tr>
-							<td>비밀번호 확인</td>
-							<td><input type="password" name="pw" value="<%=loginMember.getMb_Pw() %>" required=""></td>
+							<td id="basic">비밀번호 확인</td>
+							<td id="inputAccount"><input type="password" name="pw" value="<%=loginMember.getMb_Pw() %>" required=""></td>
 						</tr>
 						<tr>
 							<td colspan="2" style="text-align: center;"><input type="submit" value="수정하기"></td>
@@ -233,44 +237,53 @@
 				</div>
 			</div>
 			<div style="display: none" class="mypage-trade">
-				<div class="mypage-context-title-wrap">
+				<div class="mypage-context-title-wrap" style="text-align: center;">
 					<h1>거래내역</h1>
-					<table border="1" >
+					<div  class="myAccount">
+					<table  id="myAccount">
 					<tr>
-						<td>결제 번호</td>
-						<td>결제 수단</td>
-						<td>결제 금액</td>
-						<td>결제 일시</td>
-						<td>결제 메모</td>
+						<td colspan="2">결제 고유 번호</td>
+						<td colspan="2">결제 수단</td>
+						<td colspan="2">결제 금액</td>
+						<td colspan="2">결제 일시</td>
+						<td colspan="2">결제 메모</td>
 					</tr>
 					<%for(int i = 0; i < paymentList.size(); i++){ %>
 						<tr>
 							<td><%=paymentList.get(i).getPay_Idx() %><td/>
 							<td><%=paymentList.get(i).getPay_Method() %><td/>
 							<td><%=paymentList.get(i).getTotal_Amount() %><td/>
-							<td><%=paymentList.get(i).getPayed_At().substring(0,11) %><td/>
-							<td><%=paymentList.get(i).getPay_Memo() %><td/>
+							<td><%=paymentList.get(i).getPayed_At() %><td/>
+							<%if(paymentList.get(i).getPay_Memo().length()>10){%>
+							<td><%=paymentList.get(i).getPay_Memo().substring(0,15) %>...</td>
+							<%}else{ %>
+							<td><%=paymentList.get(i).getPay_Memo() %></td>
+							<%} %>
 						</tr>
 					<%} %>
 					</table>
+					</div>
 				</div>
 			</div>
 			<div style="display: none" class="mypage-chat">
-				<div class="mypage-context-title-wrap">
+				<div class="mypage-context-title-wrap" style="text-align: center;">
 					<h1>채팅내역</h1>
-					
+					<div  class="myAccount">
 					<%for(int i = 0; i<chatRoomList.size(); i++){ %>
 						<a href="#"><h3><%=chatRoomList.get(i).getRoom_Title() %></h3></a><br>
 					<%} %>
+					</div>
 					
 				</div>
 			</div>
 			<div style="display: none" class="mypage-likeartist">
-				<div class="mypage-context-title-wrap">
+				<div class="mypage-context-title-wrap" style="text-align: center;">
 					<h1>좋아요 작가 목록</h1>
+					<div  class="myAccount">
 					<%for(int i = 0; i<likeList.size(); i++){ %>
 						<a href="#"><h3><%=likeList.get(i).getArtist_Email() %></h3></a><br>
 					<%} %>
+					</div>
 				</div>
 			</div>
 		</div>

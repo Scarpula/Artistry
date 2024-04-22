@@ -6,13 +6,13 @@ create sequence payment_num
 start with 1
 increment by 1;
 
-insert into PAYMENTS values (4,
+insert into PAYMENTS values (5,
 								'admin',
 								1,
 								1,
 								'test1',
 								1,
-								'test1',
+								'test if pay memo is to long how it does look like... these are meanless sentence...',
 								sysdate);
 						
 								
