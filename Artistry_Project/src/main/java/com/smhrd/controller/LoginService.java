@@ -8,6 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.smhrd.model.ChatRoom;
+import com.smhrd.model.ChatRoomDAO;
+import com.smhrd.model.Likes;
+import com.smhrd.model.LikesDAO;
 import com.smhrd.model.Member;
 import com.smhrd.model.MemberDAO;
 import com.smhrd.model.Payments;
@@ -26,14 +31,18 @@ public class LoginService extends HttpServlet {
 //		System.out.println(id + pw);
 
 		Member member = new Member(mb_Email, mb_Pw);
-
 		Member loginMember = new MemberDAO().login(member);
 		
 		Payments payments = new Payments(mb_Email);
-		
 		List<Payments> paymentList = new PaymentsDAO().payment_info(payments);
 		
-		System.out.println(paymentList);
+		Likes like = new Likes(mb_Email);
+		List<Likes> likeList = new LikesDAO().like_list(like);
+		
+		ChatRoom chatRoom = new ChatRoom(mb_Email);
+		List<ChatRoom> chatRoomList = new ChatRoomDAO().chat_room_list(chatRoom);
+		
+		System.out.println(chatRoomList);
 		
 		if (loginMember != null) {
 			// 로그인 성공
@@ -45,6 +54,13 @@ public class LoginService extends HttpServlet {
 			
 			// session 에 결제 정보 저장
 			session.setAttribute("paymentList", paymentList);
+			
+			// session 에 좋아요 정보 저장
+			session.setAttribute("likeList", likeList);
+			
+			// session 에 좋아요 정보 저장
+			session.setAttribute("chatRoomList", chatRoomList);
+			
 			System.out.println("로그인 성공!");
 		} else {
 			System.out.println("로그인 실패!");
