@@ -37,7 +37,7 @@ public class MemberDAO {
 		// 내 정보 수정 메소드
 		SqlSession session = sf.openSession(true);
 		int cnt = session.update("com.smhrd.db.MemberMapper.update_my_info", member);
-		
+		session.close();
 		return cnt;
 	}
 

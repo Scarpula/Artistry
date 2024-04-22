@@ -151,10 +151,14 @@
 						srcset="images/1-p-500.png 500w, images/1-p-800.png 800w, images/1.png 1024w">
 				</div>
 				<div class="mypage-side-profile-clasify-block">
+				<%if(loginMember.getMb_Type().equals(0)){%>
 					<h1 class="profile-member-clasify">아티스트</h1>
+				<%}else{%>
+					<h1 class="profile-member-clasify">의뢰자</h1>
+				<%} %>
 				</div>
-				<div class="profile-member-nick">코끼리</div>
-				<div class="profile-member-email">dltjdeh7745@naver.com</div>
+				<div class="profile-member-nick"><%=loginMember.getMb_Nick() %></div>
+				<div class="profile-member-email"><%=loginMember.getMb_Email() %></div>
 			</div>
 			<ul role="list" class="mypage-side-profile-catelist w-list-unstyled">
 				<li data-w-id="3f641a6c-3b4c-fd6d-20d3-f0dd35d2eeca"
