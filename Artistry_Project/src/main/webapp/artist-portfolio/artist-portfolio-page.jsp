@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Sat Apr 20 2024 06:52:07 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Mon Apr 22 2024 03:26:40 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="660fa367cce1a421bb169fcb" data-wf-site="65fa46eb9d90d967c69e39b1">
 <head>
   <meta charset="utf-8">
@@ -25,10 +25,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body class="body">
-	<%
-	Member loginMember = (Member) session.getAttribute("member");
-	%>
-<div class="main">
+  <div class="main">
     <div class="navbar-logo-left-3">
       <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
         <a href="../index.html" class="navbar-brand-3 w-nav-brand"><img src="../images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
@@ -66,15 +63,6 @@
             </div>
           </div>
         </div>
-				<%
-				if (loginMember != null) {
-				%>
-				<div>
-					<a href="#"><%=loginMember.getMb_Nick()%>님</a>
-				</div>
-				<%
-				}
-				%>
         <ul role="list" class="nav-list right">
           <li class="nav-item hide">
             <div class="divider-vertical bg-dgray01"></div>
@@ -95,28 +83,12 @@
           <li class="nav-item">
             <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
               <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="../images/user.svg" loading="lazy"></div>
-							<%
-							if (loginMember != null) {
-							%>
-	              <nav class="navbar-dropdown-list w-dropdown-list">
+              <nav class="navbar-dropdown-list w-dropdown-list">
                 <a href="../user-account.html" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
                 <a href="../log-in.html" class="navbar-dropdown-link w-dropdown-link">로그인</a>
                 <a href="../sign-up.html" class="navbar-dropdown-link w-dropdown-link">회원가입</a><button class="navbar-dropdown-link bottom" data-wf-user-logout="로그아웃" data-wf-user-login="회원가입" type="button">로그아웃</button>
               </nav>
-							<%
-							} else {
-							%>
-							<nav class="navbar-dropdown-list w-dropdown-list">
-								<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-								<a href="../log-in.jsp"
-									class="navbar-dropdown-link w-dropdown-link">로그인</a> <a
-									href="../sign-up.jsp"
-									class="navbar-dropdown-link w-dropdown-link">회원가입</a>
-							</nav>
-							<%
-							}
-							%>
-					 </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -125,26 +97,19 @@
       <div class="banner-image-wrap"><img src="../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac.jpg" loading="lazy" sizes="100vw" srcset="../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-500.jpg 500w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-800.jpg 800w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-1080.jpg 1080w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-1600.jpg 1600w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-2000.jpg 2000w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-2600.jpg 2600w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-3200.jpg 3200w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac.jpg 3840w" alt="" class="image-10"></div>
       <div class="main-container">
         <div style="-webkit-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-profile-tab">
-          <div class="portfolio-profile-img-wrap"><img src="../images/11.png" loading="lazy" sizes="(max-width: 1024px) 100vw, (max-width: 1919px) 1024px, 4vw" srcset="../images/11-p-500.png 500w, ../images/11-p-800.png 800w, ../images/11.png 1024w" alt="" class="profiel-img-con">
-            
-            
-							<%if(loginMember == null){ %>
-									<h1>로그인 한 세션아이디를 출력해주세요</h1>
-							<%}else{ %>
-								<h1><%=loginMember.getMb_Email()%></h1>
-							<%} %>
-			
+          <div class="portfolio-profile-img-wrap"><img src="../images/11.png" loading="lazy" sizes="(max-width: 1279px) 100vw, (max-width: 1919px) 1024.0078125px, 4vw" srcset="../images/11-p-500.png 500w, ../images/11-p-800.png 800w, ../images/11.png 1024w" alt="" class="profiel-img-con">
+            <h1 class="heading-11">코끼리</h1>
             <div class="profile-insta-block">
               <h1 class="heading-12">INSTA@:</h1>
               <a href="#" class="insta-link-block w-inline-block"><img src="../images/insta_logo-removebg-preview.png" loading="lazy" sizes="(max-width: 666px) 100vw, (max-width: 1919px) 666px, 4vw" srcset="../images/insta_logo-removebg-preview-p-500.png 500w, ../images/insta_logo-removebg-preview.png 666w" alt="" class="insta-logo"></a>
             </div>
           </div>
           <div class="profile-button">
-            <a href="#" class="request-button w-button">의뢰하기</a>
-            <a href="#" class="follow-button w-button">팔로우+</a>
+            <a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰하기</a>
+            <a href="#" class="follow-button w-button">1 : 1 채팅</a>
             <a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 수정하기</a>
           </div>
-          <div class="like-container"><img src="../images/Like_lofo-removebg.png" loading="lazy" width="512" height="512" alt="" srcset="../images/Like_lofo-removebg-p-500.png 500w, ../images/Like_lofo-removebg-p-800.png 800w, ../images/Like_lofo-removebg.png 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1919px) 512px, 128px" class="like-img">
+          <div class="like-container"><img src="../images/Like_lofo-removebg.png" loading="lazy" width="512" height="512" alt="" srcset="../images/Like_lofo-removebg-p-500.png 500w, ../images/Like_lofo-removebg-p-800.png 800w, ../images/Like_lofo-removebg.png 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1919px) 511.9921875px, 127.9921875px" class="like-img">
             <div class="like-count">0</div>
           </div>
         </div>
@@ -165,39 +130,39 @@
           <div style="display:block;opacity:0;-webkit-transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-artist-art">
             <div class="w-layout-grid artist-art-grid">
               <div id="w-node-_550a96a2-a744-3681-3a62-95b4ca1c003a-bb169fcb" class="artist-art-form">
-                <div data-w-id="1cbd1ca6-35dd-5037-fb9c-405a15f6cf3f" class="artist-art"><img src="../images/1.png" loading="lazy" width="350" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 350px, 243.125px" class="artist-art-img"></div>
+                <div data-w-id="1cbd1ca6-35dd-5037-fb9c-405a15f6cf3f" class="artist-art"><img src="../images/1.png" loading="lazy" width="350" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 349.9921875px, 242.8828125px" class="artist-art-img"></div>
                 <h1 class="artist-art-title">코끼리</h1>
               </div>
               <div id="w-node-_7284db90-fad2-42fa-7acf-0393715b2119-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
+                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
                 <h1 class="artist-art-title">코끼리</h1>
               </div>
               <div id="w-node-be721359-9902-5f24-6045-371207c22bae-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
+                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
                 <h1 class="artist-art-title">코끼리</h1>
               </div>
               <div id="w-node-bfe6e6dc-ff34-3816-93d7-684d3b67776a-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
+                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
                 <h1 class="artist-art-title">코끼리</h1>
               </div>
               <div id="w-node-_084f14de-cbd7-e08d-4037-57470f9202ca-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
+                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
                 <h1 class="artist-art-title">코끼리</h1>
               </div>
               <div id="w-node-_3797369b-1964-6cc3-d0ef-f5d2a211e715-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
+                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
                 <h1 class="artist-art-title">코끼리</h1>
               </div>
               <div id="w-node-_70ab8d54-e120-e793-0488-02bf4f355917-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
+                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
                 <h1 class="artist-art-title">코끼리</h1>
               </div>
               <div id="w-node-_85126c62-31a9-e326-a7eb-3f54c7649ad0-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
+                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
                 <h1 class="artist-art-title">코끼리</h1>
               </div>
               <div id="w-node-c768a1e9-0cc8-ef37-0a5a-6bbf2e0a07c5-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 243.125px" class="artist-art-img"></div>
+                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
                 <h1 class="artist-art-title">코끼리</h1>
               </div>
             </div>
@@ -254,7 +219,7 @@
             </div>
             <div class="w-layout-grid review-container">
               <div id="w-node-_8616ec42-16ad-8146-6b61-c251d1221daa-bb169fcb" class="review-block">
-                <div class="review-image-block"><img src="../images/10.png" loading="lazy" width="512" height="Auto" alt="" srcset="../images/10-p-500.png 500w, ../images/10-p-800.png 800w, ../images/10.png 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1919px) 512px, 14vw" class="review-image-block-img"></div>
+                <div class="review-image-block"><img src="../images/10.png" loading="lazy" width="512" height="Auto" alt="" srcset="../images/10-p-500.png 500w, ../images/10-p-800.png 800w, ../images/10.png 1024w" sizes="100vw" class="review-image-block-img"></div>
                 <div class="review-text-block">
                   <div class="review-value-wrap">
                     <div class="member-review-profile"><img src="../images/user.svg" loading="lazy" width="48" height="48" alt="" class="image-11"></div>
@@ -273,7 +238,7 @@
                 </div>
               </div>
               <div id="w-node-c470b5dd-b666-cfef-88d8-4f74deea6ba3-bb169fcb" class="review-block">
-                <div class="review-image-block"><img src="../images/10.png" loading="lazy" width="512" sizes="(max-width: 767px) 100vw, (max-width: 1919px) 512px, 14vw" alt="" srcset="../images/10-p-500.png 500w, ../images/10-p-800.png 800w, ../images/10.png 1024w" class="review-image-block-img"></div>
+                <div class="review-image-block"><img src="../images/10.png" loading="lazy" width="512" sizes="100vw" alt="" srcset="../images/10-p-500.png 500w, ../images/10-p-800.png 800w, ../images/10.png 1024w" class="review-image-block-img"></div>
                 <div class="review-text-block">
                   <div class="review-value-wrap">
                     <div class="member-review-profile"><img src="../images/user.svg" loading="lazy" width="48" height="48" alt="" class="image-11"></div>
@@ -291,6 +256,59 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Request-form" style="width:1250px;height:1550px;-webkit-transform:translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);display:none;transform-style:preserve-3d" class="request-form-block">
+      <section style="display:none" class="reqeust-form-head">
+        <h1 class="heading-18">요청서 작성</h1><img src="../images/cancel_FILL0_wght400_GRAD0_opsz24.svg" loading="lazy" data-w-id="1a8b61ae-1fcf-133d-30a7-2ac6cfce9216" alt="" class="cancel-button-img">
+      </section>
+      <div style="display:none" class="request-form-container">
+        <div class="request-form-wrap">
+          <h1 class="heading-19">[의뢰하기 파일(원본) 첨부]</h1>
+          <div data-w-id="f1f0f9e6-8eea-6be6-da34-9748990e277c" class="request-form-img-upload-wrap">
+            <div class="text-block-14">업로드 할 파일 놓기<br><span>또는</span></div><div class="file-upload preview-image">
+                  <label for="input-image">파일 선택</label> 
+                  <input type="file"  id="input-image" class="upload-hidden"> 
+              </div> 
+          </div>
+        </div>
+        <div class="request-form-wrap-2">
+          <div class="text-block-15">[옵션 추가]</div>
+          <div class="frame-price-form-block w-form">
+            <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="post" data-wf-page-id="660fa367cce1a421bb169fcb" data-wf-element-id="2dfbc100-32b3-76a9-dec3-d9e147758136"><label class="w-checkbox frame-choose"><input type="checkbox" name="" data-name="" class="w-checkbox-input checkbox-3"><span class="checkbox-label-2 w-form-label">액자 추가</span></label>
+              <div class="radio-wrap"><label class="frame-choose-radio w-radio"><input type="radio" data-name="frame price" id="30-000" name="frame-price" required="" class="w-form-formradioinput price-button w-radio-input" value="30,000"><span class="radio-button-label w-form-label" for="30-000">30,000원</span></label><label class="frame-choose-radio w-radio"><input type="radio" data-name="frame price" id="50-000" name="frame-price" required="" class="w-form-formradioinput price-button w-radio-input" value="50,000"><span class="radio-button-label-2 w-form-label" for="50-000">50,000원</span></label><label class="frame-choose-radio w-radio"><input type="radio" data-name="frame price" id="70-000" name="frame-price" required="" class="w-form-formradioinput price-button w-radio-input" value="70,000"><span class="radio-button-label-3 w-form-label" for="70-000">70,000원</span></label><label class="frame-choose-radio w-radio"><input type="radio" data-name="frame price" id="100-000" name="frame-price" required="" class="w-form-formradioinput price-button w-radio-input" value="100,000"><span class="radio-button-label-4 w-form-label" for="100-000">100,000원</span></label></div>
+            </form>
+            <div class="w-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="w-form-fail">
+              <div>Oops! Something went wrong while submitting the form.</div>
+            </div>
+          </div>
+          <div class="choose-modification w-form">
+            <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="post" data-wf-page-id="660fa367cce1a421bb169fcb" data-wf-element-id="78b453ce-27ec-8332-0e88-c1cd34c8d37c"><label class="w-checkbox frame-choose"><input type="checkbox" name="" data-name="" class="w-checkbox-input checkbox-3"><span class="checkbox-label-2 w-form-label">추가 수정횟수(30,000원/회)</span></label>
+              <div class="radio-wrap"><label class="frame-choose-radio w-radio"><input type="radio" data-name="frame price" id="30-000" name="frame-price" required="" class="w-form-formradioinput price-button w-radio-input" value="30,000"><span class="radio-button-label w-form-label" for="30-000">1회</span></label><label class="frame-choose-radio w-radio"><input type="radio" data-name="frame price" id="50-000" name="frame-price" required="" class="w-form-formradioinput price-button w-radio-input" value="50,000"><span class="radio-button-label-2 w-form-label" for="50-000">2회</span></label><label class="frame-choose-radio w-radio"><input type="radio" data-name="frame price" id="70-000" name="frame-price" required="" class="w-form-formradioinput price-button w-radio-input" value="70,000"><span class="radio-button-label-3 w-form-label" for="70-000">3회</span></label><label class="frame-choose-radio w-radio"><input type="radio" data-name="frame price" id="100-000" name="frame-price" required="" class="w-form-formradioinput price-button w-radio-input" value="100,000"><span class="radio-button-label-4 w-form-label" for="100-000">4회</span></label><label class="frame-choose-radio w-radio"><input type="radio" data-name="frame price" id="30-000" name="frame-price" required="" class="w-form-formradioinput price-button w-radio-input" value="30,000"><span class="radio-button-label w-form-label" for="30-000">5회</span></label></div>
+            </form>
+            <div class="w-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="w-form-fail">
+              <div>Oops! Something went wrong while submitting the form.</div>
+            </div>
+          </div>
+        </div>
+        <div class="request-form-wrap-3">
+          <div class="text-block-16">[요청서 작성]</div>
+          <div class="request-text-area w-form">
+            <form id="email-form-3" name="email-form-3" data-name="Email Form 3" method="post" class="text-area-form" data-wf-page-id="660fa367cce1a421bb169fcb" data-wf-element-id="b4d1ec42-6ae0-b4d9-64f8-2ff74e9f71d7"><textarea placeholder="" maxlength="5000" id="Request-Text" name="Request-Text" data-name="Request Text" class="textarea w-input"></textarea><input type="submit" data-wait="Please wait..." class="submit-button-4 w-button" value="의뢰하기"></form>
+            <div class="w-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="w-form-fail">
+              <div>Oops! Something went wrong while submitting the form.</div>
             </div>
           </div>
         </div>
