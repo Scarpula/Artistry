@@ -19,5 +19,6 @@
    <mappers> <!-- SQL문들 정의해주는 mapper.xml을 계속해서 만들건데 어디에있는지 지정해주는 태그 -->
       <mapper resource="com/smhrd/db/MemberMapper.xml" />
       <mapper resource="com/smhrd/db/PortfolioMapper.xml" />
+      <mapper resource="com/smhrd/db/PaymentsMapper.xml" />
    </mappers>
 </configuration>

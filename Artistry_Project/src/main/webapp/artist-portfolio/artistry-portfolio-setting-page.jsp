@@ -127,9 +127,10 @@
             <div class="img-upload-block">
               <div class="file-upload preview-image">
                   이미지 선택 : <input type="text" class="upload-name" value="파일선택" disabled="disabled">
-                  <label for="input-file">업로드</label> 
-                  <input type="file" id="input-file" class="upload-hidden"> 
-              </div></div>
+                  <label for="input-image">업로드</label> 
+                  <input type="file"  id="input-image" class="upload-hidden"> 
+              </div>
+              </div>
             <form id="email-form" name="email-form" data-name="Email Form" method="get" class="modify-form" data-wf-page-id="66222a812cd3c91311cdf709" data-wf-element-id="64b7f9c9-81e4-2d43-d296-ad9ab106fc96"><label for="email-2" class="field-label">제목 :</label><input class="text-field-3 w-input" maxlength="256" name="email" data-name="Email" placeholder="" type="email" id="email" required=""><input type="submit" data-wait="Please wait..." class="w-button" value="제출하기"></form>
             <div class="w-form-done">
               <div>Thank you! Your submission has been received!</div>
