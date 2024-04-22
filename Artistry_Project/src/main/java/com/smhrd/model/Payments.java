@@ -13,23 +13,33 @@ import lombok.Setter;
 @Setter
 public class Payments {
 		@NonNull
-		private Double payIdx;
+		private Double pay_Idx;
 		@NonNull
-	    private String mbEmail;
+	    private String mb_Email;
 		@NonNull
-	    private int reqIdx;
+	    private int req_Idx;
 		@NonNull
-	    private int totalAmount;
+	    private int total_Amount;
 		@NonNull
-	    private int discountAmount;
+	    private int discount_Amount;
 		@NonNull
-	    private int payAmount;
+	    private int pay_Amount;
 		@NonNull
-	    private String payMethod;
+	    private String pay_Method;
 		@NonNull
-	    private int paidAmount;
+	    private int paid_Amount;
 		@NonNull
-	    private String payMemo;
+	    private String pay_Memo;
 
-		private String payedAt;
+		private String payed_At;
+
+		public Payments(@NonNull String mb_Email) {
+			super();
+			this.mb_Email = mb_Email;
+		}
+		
+		
+		
 }
+
+

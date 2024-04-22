@@ -5,7 +5,7 @@
   <mapper namespace="com.smhrd.db.PaymentsMapper">
   	
   	<!-- 로그인한 사용자의 결제 정보 가져오기 -->
-  	<select id="get_payments_info" parameterType="String" resultType="com.smhrd.model.Payments">
+  	<select id="get_payments_info" parameterType="com.smhrd.model.Payments" resultType="com.smhrd.model.Payments">
   		select * from payments where mb_email=#{mb_Email} order by pay_idx desc
   	</select>
   

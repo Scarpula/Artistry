@@ -11,9 +11,9 @@ public class PaymentsDAO {
 
 	SqlSessionFactory sf = SqlSessionManager.getSqlSession();
 	
-	public List<Payments> payment_info(String mb_Email) {
+	public List<Payments> payment_info(Payments payments) {
 		SqlSession session = sf.openSession(true);
-		List<Payments> paymentList = session.selectList("com.smhrd.db.PaymentsMapper.get_payments_info", mb_Email);
+		List<Payments> paymentList = session.selectList("com.smhrd.db.PaymentsMapper.get_payments_info", payments);
 		session.close();
 		return  paymentList;
 	}

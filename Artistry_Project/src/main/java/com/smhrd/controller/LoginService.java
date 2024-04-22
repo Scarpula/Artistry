@@ -29,8 +29,9 @@ public class LoginService extends HttpServlet {
 
 		Member loginMember = new MemberDAO().login(member);
 		
-		List<Payments> paymentList = null;
-		paymentList = new PaymentsDAO().payment_info(mb_Email);
+		Payments payments = new Payments(mb_Email);
+		
+		List<Payments> paymentList = new PaymentsDAO().payment_info(payments);
 		
 		System.out.println(paymentList);
 		

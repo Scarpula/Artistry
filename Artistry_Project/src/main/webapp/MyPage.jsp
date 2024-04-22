@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Payments"%>
+<%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -46,10 +48,10 @@
 <link href="images/webclip.png" rel="apple-touch-icon">
 </head>
 <body class="body">
-	<%Member loginMember = (Member)session.getAttribute("member");
-		if(loginMember==null){
-		response.sendRedirect("index.jsp");
-	  }%>
+	<%
+		Member loginMember = (Member)session.getAttribute("member");
+		List<Payments> paymentList = (List<Payments>)session.getAttribute("paymentList");
+	%>
 	<div class="navbar-logo-left-3">
 		<div data-animation="default" data-collapse="none" data-duration="400"
 			data-easing="ease" data-easing2="ease" role="banner"
@@ -229,6 +231,24 @@
 			<div style="display: none" class="mypage-trade">
 				<div class="mypage-context-title-wrap">
 					<h1>거래내역</h1>
+					<table border="1" >
+					<tr>
+						<td>결제 번호</td>
+						<td>결제 수단</td>
+						<td>결제 금액</td>
+						<td>결제 일시</td>
+						<td>결제 메모</td>
+					</tr>
+					<%for(int i = 0; i < paymentList.size(); i++){ %>
+						<tr>
+							<td><%=paymentList.get(i).getPay_Idx() %><td/>
+							<td><%=paymentList.get(i).getPay_Method() %><td/>
+							<td><%=paymentList.get(i).getTotal_Amount() %><td/>
+							<td><%=paymentList.get(i).getPayed_At() %><td/>
+							<td><%=paymentList.get(i).getPay_Memo() %><td/>
+						</tr>
+					<%} %>
+					</table>
 				</div>
 			</div>
 			<div style="display: none" class="mypage-chat">
