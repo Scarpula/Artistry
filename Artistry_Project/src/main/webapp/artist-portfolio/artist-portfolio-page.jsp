@@ -142,7 +142,7 @@
           <div class="profile-button">
             <a href="#" class="request-button w-button">의뢰하기</a>
             <a href="#" class="follow-button w-button">팔로우+</a>
-            <a href="#" class="follow-button setting-button w-button">포트폴리오 수정하기</a>
+            <a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 수정하기</a>
           </div>
           <div class="like-container"><img src="../images/Like_lofo-removebg.png" loading="lazy" width="512" height="512" alt="" srcset="../images/Like_lofo-removebg-p-500.png 500w, ../images/Like_lofo-removebg-p-800.png 800w, ../images/Like_lofo-removebg.png 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1919px) 512px, 128px" class="like-img">
             <div class="like-count">0</div>
