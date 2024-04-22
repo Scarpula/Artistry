@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Sat Apr 20 2024 06:52:07 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Sat Apr 20 2024 05:52:46 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66222a812cd3c91311cdf709" data-wf-site="65fa46eb9d90d967c69e39b1">
 <head>
   <meta charset="utf-8">
@@ -124,7 +124,12 @@
             <h1 class="heading-16">포트폴리오 수정하기</h1>
           </div>
           <div class="art-modify-block w-form">
-            <div class="img-upload-block"></div>
+            <div class="img-upload-block">
+              <div class="file-upload preview-image">
+                  이미지 선택 : <input type="text" class="upload-name" value="파일선택" disabled="disabled">
+                  <label for="input-file">업로드</label> 
+                  <input type="file" id="input-file" class="upload-hidden"> 
+              </div></div>
             <form id="email-form" name="email-form" data-name="Email Form" method="get" class="modify-form" data-wf-page-id="66222a812cd3c91311cdf709" data-wf-element-id="64b7f9c9-81e4-2d43-d296-ad9ab106fc96"><label for="email-2" class="field-label">제목 :</label><input class="text-field-3 w-input" maxlength="256" name="email" data-name="Email" placeholder="" type="email" id="email" required=""><input type="submit" data-wait="Please wait..." class="w-button" value="제출하기"></form>
             <div class="w-form-done">
               <div>Thank you! Your submission has been received!</div>
@@ -173,5 +178,59 @@
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="../js/webflow.js" type="text/javascript"></script>
+  <script>
+    $(document).ready(function(){
+    
+    //$('#ex_filename').change(function() {
+    //	var filename = $(this).val();
+    //	$('.upload-name').val(filename);
+    //});
+    
+    var fileTarget = $('.file-upload .upload-hidden');
+    
+    fileTarget.on('change', function(){  // 값이 변경되면
+         if(window.FileReader){  // modern browser
+              var filename = $(this)[0].files[0].name;
+         } 
+         else {  // old IE
+              var filename = $(this).val().split('/').pop().split('\\').pop();  // 파일명만 추출
+         }
+    
+         // 추출한 파일명 삽입
+         $(this).siblings('.upload-name').val(filename);
+    });
+    }); 
+    
+    //preview image 
+    var imgTarget = $('.preview-image .upload-hidden');
+    
+    imgTarget.on('change', function(){
+    var parent = $(this).parent();
+    parent.children('.upload-display').remove();
+    
+    if(window.FileReader){
+         //image 파일만
+         if (!$(this)[0].files[0].type.match(/image\//)) return;
+    
+         var reader = new FileReader();
+         reader.onload = function(e){
+              var src = e.target.result;
+              parent.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img src="'+src+'" class="upload-thumb"></div></div>');
+         }
+         reader.readAsDataURL($(this)[0].files[0]);
+    }
+    
+    else {
+         $(this)[0].select();
+         $(this)[0].blur();
+         var imgSrc = document.selection.createRange().text;
+         parent.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img class="upload-thumb"></div></div>');
+    
+         var img = $(this).siblings('.upload-display').find('img');
+         img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")";        
+    }
+    });
+    
+      </script>
 </body>
 </html>
