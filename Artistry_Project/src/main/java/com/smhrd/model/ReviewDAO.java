@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -16,9 +18,17 @@ public class ReviewDAO {
 			int cnt = session.insert("com.smhrd.db.ReviewMapper.addReview", reviews);
 			session.close();
 			return cnt;
-		
 	}
 
+	
+	public List<Review> ReviewList(){
+		SqlSession session = sf.openSession(true); //auto commit
+		List ReviewList = session.selectList("com.smhrd.db.ReviewMapper.selectReview");
+		session.close();
+		return ReviewList; 
+	}
+	
+	
 	
 	
 	
