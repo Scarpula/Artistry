@@ -57,7 +57,6 @@
   	<description></description>
   	<servlet-class>com.smhrd.frontcontroller.Command</servlet-class>
   </servlet>
-  
   <servlet>
   	<servlet-name>ReviewService</servlet-name>
   	<display-name>ReviewService</display-name>
@@ -99,6 +98,12 @@
   	<servlet-name>Command</servlet-name>
   	<url-pattern>/Command</url-pattern>
   </servlet-mapping>
-  
+
+  <servlet-mapping>
+  	<servlet-name>ReviewService</servlet-name>
+  	<url-pattern>/ReviewService</url-pattern>
+  </servlet-mapping>
+
+
 
 </web-app>

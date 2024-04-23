@@ -1,5 +1,6 @@
 package com.smhrd.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -7,11 +8,11 @@ import lombok.Setter;
 import lombok.ToString;
 
 
-@RequiredArgsConstructor
+
 @Setter
 @Getter
 @ToString
-
+@AllArgsConstructor
 public class Review {
 	
 
@@ -27,7 +28,7 @@ public class Review {
 	    private Double req_Idx;
 
 	    // 리뷰 내용 
-	    @NonNull	    
+
 	    private String review_Content;
 	    // 별점 
 
@@ -42,6 +43,13 @@ public class Review {
 			this.review_Content = review_Content;
 			this.review_Ratings = review_Ratings;
 		}
+	    
+	    public Review(String mb_Email) {
+	    	super();
+			this.mb_Email = mb_Email;
+	    }
+	    
+	    
 
 		// 등록 일자 
 		
