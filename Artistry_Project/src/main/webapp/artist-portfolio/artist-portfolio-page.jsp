@@ -1,6 +1,9 @@
+<%@page import="com.smhrd.model.Review"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.model.ReviewDAO"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Mon Apr 22 2024 03:26:40 GMT+0000 (Coordinated Universal Time)  -->
@@ -192,15 +195,10 @@
             </div>
           </div>
           
-          
-          
+           
           <!-- 리뷰수정_기현수 -->
           
           	<% Member loginMember = (Member)session.getAttribute("member"); %>
-          	
-			
-          
-          
           <div style="display:none" class="portfolio-artist-review">
             <div class="artist-review-head">
               <h1 class="heading-10">총 리뷰 0개</h1>
@@ -208,10 +206,8 @@
             
             <!-- 리뷰작성란 div태그 -->
             <div class="review-writing-block w-form">
-              
              <% if(loginMember!=null){ %>
               <form action="../ReviewService" method="post" id="email-form" class="review-writing-form" data-wf-page-id="660fa367cce1a421bb169fcb" data-wf-element-id="de265365-044b-c91d-7432-08d6c918aa7e"><label for="field" class="field-label-4">리뷰 작성하기</label>
-               <!-- name="email-form" data-name="Email Form"  --> 
                 
 				<input type="hidden" name="mb_Email" value="<%=loginMember.getMb_Email()%>">
 				
@@ -232,33 +228,45 @@
               </form>
             </div>
             <!-- 리뷰작성란 div태그끝-->
-				
-				<%} %>
+				<%}%>
                 
             
         	<!--리뷰div for문 시작-->
-            <div class="w-layout-grid review-container">
-              <div id="w-node-_8616ec42-16ad-8146-6b61-c251d1221daa-bb169fcb" class="review-block">
-	                <div class="review-text-block">
-	                  <div class="review-value-wrap">
-	                    <div class="review-value-text">
+        	<% 
+        		List<Review> ReviewList = new ReviewDAO().ReviewList();
+           		pageContext.setAttribute("ReviewList",ReviewList);
+        	%>
+				<c:forEach items="${ReviewList}" var="reviews" varStatus="s">
+					<div class="w-layout-grid review-container">
+	              <div id="w-node-_8616ec42-16ad-8146-6b61-c251d1221daa-bb169fcb" class="review-block">
+		                <!-- <div class="review-text-block"> -->
+		                <!--   <div class="review-value-wrap"> -->
+		                <!--     <div class="review-value-text"> -->
 	                      <div class="review-member-id">
-	                        <a href="#" class="link-2"><strong>      작성자     </strong></a>
+	                        <a href="#" class="link-2"><strong><%=loginMember.getMb_Nick() %>님</strong></a>
 	                      </div>
-	                      <div class="review-text-up"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star">
-	                        <div class="review-star-text">   5점   </div>
-	                      </div>
-	                    </div>
-	                  </div>
-	                  <div class="review-text-wrapper">
-	                    <p class="paragraph-6">     리뷰내용    </p>
-	                  </div>
-	                </div>
-           	 </div>
-           </div>
+	                  	
+	                  		
+	                  		%>
+	                  		 <div class="review-text-up"><img src="../images/star.svg" loading="lazy" width="50" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star">
+		                        <div class="review-star-text"> "${reviews.review_ratings}" </div>
+		                      </div>
+	                  		
+	                  		
+	                  
+	                     
+		                  <!--   </div> -->
+		                <!--   </div> -->
+		                  <div class="review-text-wrapper">
+		                    <p class="paragraph-6">"${reviews.review_content}"</p>
+		                  </div>
+		               <!--  </div> -->
+	       	    	 </div>
+		           </div>
+		         </c:forEach>
         	<!-- 리뷰for문 끝 -->
-        </div>
-        <!--  리뷰div태그 끝 -->
+	        </div>
+	        <!--  리뷰수정 끝 -->
           
           
         </div>
