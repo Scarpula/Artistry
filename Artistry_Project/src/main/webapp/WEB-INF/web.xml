@@ -10,13 +10,7 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.JoinService</servlet-class>
   </servlet>
-  <servlet>
-
-  	<servlet-name>SignUpClasification</servlet-name>
-  	<display-name>SignUpClasification</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.SignUpClasification</servlet-class>
-  </servlet>
+ 
   <servlet>
   	<servlet-name>SignUpClasification1</servlet-name>
   	<display-name>SignUpClasification1</display-name>
@@ -95,17 +89,17 @@
   	<servlet-name>EmailCheck</servlet-name>
   	<url-pattern>/EmailCheck</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>Command</servlet-name>
   	<url-pattern>/Command</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
-  	<servlet-name>ReviewService</servlet-name>
-  	<url-pattern>/ReviewService</url-pattern>
+  	<servlet-name>PortfolioService</servlet-name>
+  	<url-pattern>/PortfolioService</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>PortService</servlet-name>
-  	<url-pattern>/PortService</url-pattern>
-  </servlet-mapping>
+  
+
 
 </web-app>
