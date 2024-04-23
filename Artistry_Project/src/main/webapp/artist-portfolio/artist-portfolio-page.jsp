@@ -231,11 +231,11 @@
 				<%}%>
                 
             
-        	<!--리뷰div for문 시작-->
+        <%-- 	<!--리뷰div for문 시작-->
         	<% 
         		List<Review> ReviewList = new ReviewDAO().ReviewList();
            		pageContext.setAttribute("ReviewList",ReviewList);
-        	%>
+        	%> --%>
 				<c:forEach items="${ReviewList}" var="reviews" varStatus="s">
 					<div class="w-layout-grid review-container">
 	              <div id="w-node-_8616ec42-16ad-8146-6b61-c251d1221daa-bb169fcb" class="review-block">
