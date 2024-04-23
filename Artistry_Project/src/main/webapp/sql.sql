@@ -37,7 +37,14 @@ insert into members values ('imgTest5','imgTest5','imgTest5','imgTest5','imgTest
 
 select * from PORTFOLIOS;
 
-insert into PORTFOLIOS values (101,'imgTest1',);
+insert into PORTFOLIOS values (103,'imgTest1','../portfolio_img/3.jpg','emoji3','emoji',sysdate,'test3');
+insert into PORTFOLIOS values (104,'imgTest1','../portfolio_img/4.jpg','emoji4','emoji',sysdate,'test4');
+insert into PORTFOLIOS values (105,'imgTest1','../portfolio_img/5.jpg','emoji5','emoji',sysdate,'test5');
+insert into PORTFOLIOS values (106,'imgTest1','../portfolio_img/6.jpg','emoji6','emoji',sysdate,'test6');
+insert into PORTFOLIOS values (107,'imgTest1','../portfolio_img/7.jpg','emoji7','emoji',sysdate,'test7');
+insert into PORTFOLIOS values (108,'imgTest1','../portfolio_img/8.jpg','emoji8','emoji',sysdate,'test8');
+insert into PORTFOLIOS values (109,'imgTest1','../portfolio_img/9.jpg','emoji9','emoji',sysdate,'test9');
+insert into PORTFOLIOS values (110,'imgTest1','../portfolio_img/10.jpg','emoji10','emoji',sysdate,'test10');
 
 
 

@@ -323,7 +323,7 @@
   <script>
 $(document).ready(function() {
   var likeCount = parseInt($('.like-count').text());
-  $('.like-img').click(function() { 
+  $('.like-img').click(function() {
     $.ajax({
       url: 'https://api.example.com/like', // 서버의 API 엔드포인트 URL로 대체해주세요.
       method: 'POST',
