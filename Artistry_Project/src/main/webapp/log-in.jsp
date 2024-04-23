@@ -1,3 +1,6 @@
+<%@ page import="java.net.URLEncoder"%>
+<%@ page import="java.security.SecureRandom"%>
+<%@ page import="java.math.BigInteger"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="UTF-8"%>
@@ -49,7 +52,7 @@
 
 <body class="body">
 	<%
-		Member loginMember = (Member) session.getAttribute("member");
+	Member loginMember = (Member) session.getAttribute("member");
 	%>
 	<div class="navbar-logo-left-3">
 		<div data-animation="default" data-collapse="none" data-duration="400"
@@ -133,8 +136,10 @@
 						</div>
 						<nav class="navbar-dropdown-list w-dropdown-list">
 							<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-							 <a href="#" aria-current="page" class="navbar-dropdown-link w-dropdown-link w--current">로그인</a>
-							<a href="sign-up.jsp" class="navbar-dropdown-link w-dropdown-link">회원가입</a>
+							<a href="#" aria-current="page"
+								class="navbar-dropdown-link w-dropdown-link w--current">로그인</a>
+							<a href="sign-up.jsp"
+								class="navbar-dropdown-link w-dropdown-link">회원가입</a>
 						</nav>
 					</div>
 				</li>
@@ -161,27 +166,38 @@
 							<input class="text-field-2 w-input" maxlength="256" name="mb_Pw"
 								data-name="pw" placeholder="PW" type="password" id="pw">
 							<input type="submit" data-wait="Please wait..."
-								class="login-button w-button" value="로그인">
-								 <a href="sign-up.jsp" target="_blank"
+								class="login-button w-button" value="로그인"> <a
+								href="sign-up.jsp" target="_blank"
 								class="sign-up-button loginpage w-button">회원가입</a>
 						</form>
 					</div>
+					<%
+					String clientId = "h9rK2bSi9jq7AfwqvdSJ";//애플리케이션 클라이언트 아이디값";
+					String redirectURI = URLEncoder.encode("http://localhost:8081/Artistry_Project/index.jsp", "UTF-8");
+					SecureRandom random = new SecureRandom();
+					String state = new BigInteger(130, random).toString();
+					String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
+					apiURL += "&client_id=" + clientId;
+					apiURL += "&redirect_uri=" + redirectURI;
+					apiURL += "&state=" + state;
+					session.setAttribute("state", state);
+					%>
 					<div class="sns-login-button">
 						<div class="sns-logo naver">
-							<a href="#" class="w-inline-block">
-							<img src="images/naver_icon.png" loading="lazy" width="80"
+							<a href="<%=apiURL%>" class="w-inline-block">
+								<img src="images/naver_icon.png" loading="lazy" width="80"
 								height="80" alt="" class="logo-image">
-						 	</a>
+							</a>
 						</div>
 						<div class="sns-logo google">
-							<a href="#" class="w-inline-block">
-							<img src="images/kakao-logo.png" loading="lazy" width="80"
+							<a href="#" class="w-inline-block"> <img
+								src="images/kakao-logo.png" loading="lazy" width="80"
 								height="80" alt="" class="logo-image">
 							</a>
 						</div>
 						<div class="sns-logo kakao">
-							<a href="#" class="w-inline-block">
-							<img src="images/google-real-logo.png" loading="lazy" width="80"
+							<a href="#" class="w-inline-block"> <img
+								src="images/google-real-logo.png" loading="lazy" width="80"
 								height="80" alt="" class="logo-image">
 							</a>
 						</div>
@@ -196,6 +212,11 @@
 		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 		crossorigin="anonymous"></script>
 	<script src="js/webflow.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		function loginWithNaver() {
+			window.location.href = 'NaverLoginService'; // 이 경로는 서블릿 URL로 설정해야 함
+		}
+	</script>
 </body>
 
 </html>
