@@ -28,6 +28,11 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body class="body">
+
+	<%
+		List<Review> reviewList = (List<Review>)session.getAttribute("reviewList");
+	%>
+
   <div class="main">
     <div class="navbar-logo-left-3">
       <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
@@ -197,7 +202,6 @@
           
            
           <!-- 리뷰수정_기현수 -->
-          
           	<% Member loginMember = (Member)session.getAttribute("member"); %>
           <div style="display:none" class="portfolio-artist-review">
             <div class="artist-review-head">
@@ -206,6 +210,8 @@
             
             <!-- 리뷰작성란 div태그 -->
             <div class="review-writing-block w-form">
+            
+        <!-- List<Review> revie wList = (List<Review>)session.getAttribute("reviewList"); -->
              <% if(loginMember!=null){ %>
               <form action="../ReviewService" method="post" id="email-form" class="review-writing-form" data-wf-page-id="660fa367cce1a421bb169fcb" data-wf-element-id="de265365-044b-c91d-7432-08d6c918aa7e"><label for="field" class="field-label-4">리뷰 작성하기</label>
                 
@@ -229,41 +235,33 @@
             </div>
             <!-- 리뷰작성란 div태그끝-->
 				<%}%>
-                
-            
-        	<!--리뷰div for문 시작-->
-        	<% 
-        		List<Review> ReviewList = new ReviewDAO().ReviewList();
-           		pageContext.setAttribute("ReviewList",ReviewList);
-        	%>
-				<c:forEach items="${ReviewList}" var="reviews" varStatus="s">
+				
+				<!-- 리뷰for문 -->
+				
+				<% for(int i=0; i<reviewList.size(); i++) {%>
 					<div class="w-layout-grid review-container">
 	              <div id="w-node-_8616ec42-16ad-8146-6b61-c251d1221daa-bb169fcb" class="review-block">
 		                <!-- <div class="review-text-block"> -->
 		                <!--   <div class="review-value-wrap"> -->
 		                <!--     <div class="review-value-text"> -->
 	                      <div class="review-member-id">
-	                        <a href="#" class="link-2"><strong><%=loginMember.getMb_Nick() %>님</strong></a>
+	                        <a href="#" class="link-2"><strong><%= reviewList.get(i).getMb_Email() %>님</strong></a>
 	                      </div>
-	                  	
-	                  		
-	                  		%>
-	                  		 <div class="review-text-up"><img src="../images/star.svg" loading="lazy" width="50" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star">
-		                        <div class="review-star-text"> "${reviews.review_ratings}" </div>
-		                      </div>
-	                  		
-	                  		
-	                  
-	                     
+	                      
+	                  		 <div class="review-text-up">
+	                	      <% for(int j =0; j<=reviewList.get(i).getReview_Ratings();j++){%>
+	                  		 <img src="../images/star.svg" loading="lazy" width="50" height="37" alt="" class="review-star"><% }%>
+		                        <div class="review-star-text"> 점 </div>
+		                      </div> 
 		                  <!--   </div> -->
 		                <!--   </div> -->
 		                  <div class="review-text-wrapper">
-		                    <p class="paragraph-6">"${reviews.review_content}"</p>
+		                    <p class="paragraph-6"><%= reviewList.get(i).getReview_Content() %></p>
 		                  </div>
 		               <!--  </div> -->
 	       	    	 </div>
-		           </div>
-		         </c:forEach>
+		           </div> <%} %>
+				
         	<!-- 리뷰for문 끝 -->
 	        </div>
 	        <!--  리뷰수정 끝 -->

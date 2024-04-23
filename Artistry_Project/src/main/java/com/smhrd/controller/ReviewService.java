@@ -1,6 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,9 +11,9 @@ import com.smhrd.model.Review;
 import com.smhrd.model.ReviewDAO;
 
 public class ReviewService extends HttpServlet {
+
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	
 		request.setCharacterEncoding("UTF-8");
 		
 		String mb_Email = request.getParameter("mb_Email");
@@ -35,7 +36,7 @@ public class ReviewService extends HttpServlet {
 		
 		response.sendRedirect("artist-portfolio/artist-portfolio-page.jsp");
 	
-		
+	
 	
 	
 	}
