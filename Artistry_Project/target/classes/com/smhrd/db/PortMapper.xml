@@ -9,6 +9,9 @@
         INSERT INTO portfolios (pf_path, mb_email, pf_name, pf_category, pf_info)
         VALUES (#{pf_Path}, #{mb_Email}, #{pf_Name}, #{pf_Cate}, #{pf_Info})
     </insert>
-
+	
+	<select id="getPortList" parameterType="com.smhrd.model.Port" resultType="com.smhrd.model.Port">
+		select * from portfolios where mb_email=#{mb_Email}
+	</select>
 
 </mapper>
