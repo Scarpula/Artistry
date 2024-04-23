@@ -1,6 +1,24 @@
 <%@page import="com.smhrd.model.Member"%>
+<%@ page import="com.smhrd.controller.NaverLoginController" %>
+<%@ page import="com.smhrd.controller.ApiExamMemberProfile" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+	<%
+    String code = request.getParameter("code");
+    String state = request.getParameter("state");
+
+    if (code != null && state != null) {
+        try {
+            String accessToken = NaverLoginController.getAccessToken(code, state);
+            ApiExamMemberProfile.ACCESS_TOKEN = accessToken;
+            ApiExamMemberProfile.getUserProfile();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+%>
+	
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Fri Apr 19 2024 05:34:53 GMT+0000 (Coordinated Universal Time)  -->
