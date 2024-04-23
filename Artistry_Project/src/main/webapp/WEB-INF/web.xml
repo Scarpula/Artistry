@@ -4,6 +4,10 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+      <context-param>
+        <param-name>expressionLanguageEnabled</param-name>
+        <param-value>true</param-value>
+    </context-param>
   <servlet>
   	<servlet-name>JoinService</servlet-name>
   	<display-name>JoinService</display-name>
@@ -59,7 +63,6 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.ReviewService</servlet-class>
   </servlet>
-  
 
   <servlet-mapping>
   	<servlet-name>JoinService</servlet-name>
@@ -88,12 +91,12 @@
   	<servlet-name>Command</servlet-name>
   	<url-pattern>/Command</url-pattern>
   </servlet-mapping>
+
   <servlet-mapping>
   	<servlet-name>ReviewService</servlet-name>
   	<url-pattern>/ReviewService</url-pattern>
   </servlet-mapping>
-  
-  
+
 
 
 </web-app>
