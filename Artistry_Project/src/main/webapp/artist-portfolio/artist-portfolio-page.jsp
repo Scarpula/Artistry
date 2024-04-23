@@ -85,7 +85,7 @@
               <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="../images/user.svg" loading="lazy"></div>
               <nav class="navbar-dropdown-list w-dropdown-list">
                 <a href="../user-account.html" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-                <a href="../log-in.html" class="navbar-dropdown-link w-dropdown-link">로그인</a>
+                <a href="../log-in.jsp" class="navbar-dropdown-link w-dropdown-link">로그인</a>
                 <a href="../sign-up.html" class="navbar-dropdown-link w-dropdown-link">회원가입</a><button class="navbar-dropdown-link bottom" data-wf-user-logout="로그아웃" data-wf-user-login="회원가입" type="button">로그아웃</button>
               </nav>
             </div>
@@ -191,73 +191,76 @@
               </div>
             </div>
           </div>
+          
+          
+          
+          <!-- 리뷰수정_기현수 -->
+          
+          	<% Member loginMember = (Member)session.getAttribute("member"); %>
+          	
+			
+          
+          
           <div style="display:none" class="portfolio-artist-review">
             <div class="artist-review-head">
               <h1 class="heading-10">총 리뷰 0개</h1>
             </div>
+            
+            <!-- 리뷰작성란 div태그 -->
             <div class="review-writing-block w-form">
-              <form id="email-form" name="email-form" data-name="Email Form" method="post" class="review-writing-form" data-wf-page-id="660fa367cce1a421bb169fcb" data-wf-element-id="de265365-044b-c91d-7432-08d6c918aa7e"><label for="field" class="field-label-4">리뷰 작성하기</label>
-                <div class="review-text-area-wrapp"><textarea placeholder="" maxlength="5000" id="field" name="field" data-name="Field" class="review-text-area w-input"></textarea>
+              
+             <% if(loginMember!=null){ %>
+              <form action="../ReviewService" method="post" id="email-form" class="review-writing-form" data-wf-page-id="660fa367cce1a421bb169fcb" data-wf-element-id="de265365-044b-c91d-7432-08d6c918aa7e"><label for="field" class="field-label-4">리뷰 작성하기</label>
+               <!-- name="email-form" data-name="Email Form"  --> 
+                
+				<input type="hidden" name="mb_Email" value="<%=loginMember.getMb_Email()%>">
+				
+                <div class="review-text-area-wrapp"><textarea name="content" placeholder="작품을 잘 받아보셨다면, 솔직한 후기를 남겨주세요^^" maxlength="5000" id="field" name="field" data-name="Field" class="review-text-area w-input"></textarea>
                   <div class="value-submit-wrap">
-                    <h3>별점을 선택해주세요!</h3><select id="field-2" name="field-2" data-name="Field 2" class="select-field-3 w-select">
-                      <option value="">0점</option>
-                      <option value="First">1점</option>
-                      <option value="Second">2점</option>
-                      <option value="Third">3점</option>
-                      <option value="Another option">4점</option>
-                      <option value="Another option">5점</option>
-                    </select><input type="submit" data-wait="Please wait..." class="submit-button-3 w-button" value="리뷰 저장하기!">
+                    <h3>별점을 선택해주세요</h3>
+                    <select name="ratings" id="field-2" data-name="Field 2" class="select-field-3 w-select">
+                      <option value="0">0점</option>
+                      <option value="1">1점</option>
+                      <option value="2">2점</option>
+                      <option value="3">3점</option>
+                      <option value="4">4점</option>
+                      <option value="5">5점</option>
+                    </select>
+                    <input type="submit" class="submit-button-3 w-button" value="리뷰작성 완료">
                   </div>
                 </div>
               </form>
-              <div class="w-form-done">
-                <div>Thank you! Your submission has been received!</div>
-              </div>
-              <div class="w-form-fail">
-                <div>Oops! Something went wrong while submitting the form.</div>
-              </div>
             </div>
+            <!-- 리뷰작성란 div태그끝-->
+				
+				<%} %>
+                
+            
+        	<!--리뷰div for문 시작-->
             <div class="w-layout-grid review-container">
               <div id="w-node-_8616ec42-16ad-8146-6b61-c251d1221daa-bb169fcb" class="review-block">
-                <div class="review-image-block"><img src="../images/10.png" loading="lazy" width="512" height="Auto" alt="" srcset="../images/10-p-500.png 500w, ../images/10-p-800.png 800w, ../images/10.png 1024w" sizes="100vw" class="review-image-block-img"></div>
-                <div class="review-text-block">
-                  <div class="review-value-wrap">
-                    <div class="member-review-profile"><img src="../images/user.svg" loading="lazy" width="48" height="48" alt="" class="image-11"></div>
-                    <div class="review-value-text">
-                      <div class="review-text-up"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star">
-                        <div class="review-star-text">5점</div>
-                      </div>
-                      <div class="review-member-id">
-                        <a href="#" class="link-2"><strong>(주)인풀 - in pool</strong></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="review-text-wrapper">
-                    <p class="paragraph-6">사장님이 너무 꽃 그림을 잘그리셔서 행복했습니다 앞으로도 많은 꽃 그림으로 많은 사람들의 집에 꽃을 피워주셨으면 좋겠습니다</p>
-                  </div>
-                </div>
-              </div>
-              <div id="w-node-c470b5dd-b666-cfef-88d8-4f74deea6ba3-bb169fcb" class="review-block">
-                <div class="review-image-block"><img src="../images/10.png" loading="lazy" width="512" sizes="100vw" alt="" srcset="../images/10-p-500.png 500w, ../images/10-p-800.png 800w, ../images/10.png 1024w" class="review-image-block-img"></div>
-                <div class="review-text-block">
-                  <div class="review-value-wrap">
-                    <div class="member-review-profile"><img src="../images/user.svg" loading="lazy" width="48" height="48" alt="" class="image-11"></div>
-                    <div class="review-value-text">
-                      <div class="review-text-up"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star">
-                        <div class="review-star-text">5점</div>
-                      </div>
-                      <div class="review-member-id">
-                        <a href="#" class="link-2"><strong>(주)인풀 - in pool</strong></a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="review-text-wrapper">
-                    <p class="paragraph-6">사장님이 너무 꽃 그림을 잘그리셔서 행복했습니다 앞으로도 많은 꽃 그림으로 많은 사람들의 집에 꽃을 피워주셨으면 좋겠습니다</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+	                <div class="review-text-block">
+	                  <div class="review-value-wrap">
+	                    <div class="review-value-text">
+	                      <div class="review-member-id">
+	                        <a href="#" class="link-2"><strong>      작성자     </strong></a>
+	                      </div>
+	                      <div class="review-text-up"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star"><img src="../images/star.svg" loading="lazy" width="37" height="37" alt="" class="review-star">
+	                        <div class="review-star-text">   5점   </div>
+	                      </div>
+	                    </div>
+	                  </div>
+	                  <div class="review-text-wrapper">
+	                    <p class="paragraph-6">     리뷰내용    </p>
+	                  </div>
+	                </div>
+           	 </div>
+           </div>
+        	<!-- 리뷰for문 끝 -->
+        </div>
+        <!--  리뷰div태그 끝 -->
+          
+          
         </div>
       </div>
     </div>
@@ -320,7 +323,7 @@
   <script>
 $(document).ready(function() {
   var likeCount = parseInt($('.like-count').text());
-  $('.like-img').click(function() {
+  $('.like-img').click(function() { 
     $.ajax({
       url: 'https://api.example.com/like', // 서버의 API 엔드포인트 URL로 대체해주세요.
       method: 'POST',

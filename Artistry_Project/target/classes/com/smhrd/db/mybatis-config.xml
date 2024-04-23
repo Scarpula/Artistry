@@ -18,6 +18,10 @@
    </environments>
    <mappers> <!-- SQL문들 정의해주는 mapper.xml을 계속해서 만들건데 어디에있는지 지정해주는 태그 -->
       <mapper resource="com/smhrd/db/MemberMapper.xml" />
+      <mapper resource="com/smhrd/db/PaymentsMapper.xml" />
+      
+      <mapper resource="com/smhrd/db/ReviewMapper.xml" />
+      
       <!-- 포트폴리오 매퍼 -->
       <mapper resource="com/smhrd/db/PaymentsMapper.xml" /> 
       <!-- 리뷰 매퍼 -->

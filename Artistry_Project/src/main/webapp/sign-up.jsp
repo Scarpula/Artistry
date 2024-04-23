@@ -153,7 +153,7 @@
 				<div class="basic-login-form">
 					<div class="artistry-login-form w-form">
 
-						<!--회원가입 Form 시작-->
+		<!--회원가입 Form 시작-->
 
 						<form action="signup-second-form.jsp" method="post"
 							id="email-form">
