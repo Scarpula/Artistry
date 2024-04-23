@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
@@ -119,62 +120,56 @@
             </a>
           </div>
         </div>
-        <div style="opacity:0;-webkit-transform:translate3d(0, 200px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-artist-art setting-page">
-          <div class="artist-art-setting">
-            <h1 class="heading-16">포트폴리오 수정하기</h1>
-          </div>
-          <div class="art-modify-block w-form">
-            <div class="img-upload-block">
-              <div class="file-upload preview-image">
-                  이미지 선택 : <input type="text" class="upload-name" value="파일선택" disabled="disabled">
-                  <label for="input-image">업로드</label> 
-                  <input type="file"  id="input-image" class="upload-hidden"> 
-              </div>
-              </div>
-            <form id="email-form" name="email-form" data-name="Email Form" method="get" class="modify-form" data-wf-page-id="66222a812cd3c91311cdf709" data-wf-element-id="64b7f9c9-81e4-2d43-d296-ad9ab106fc96"><label for="email-2" class="field-label">제목 :</label><input class="text-field-3 w-input" maxlength="256" name="email" data-name="Email" placeholder="" type="email" id="email" required=""><input type="submit" data-wait="Please wait..." class="w-button" value="제출하기"></form>
-            <div class="w-form-done">
-              <div>Thank you! Your submission has been received!</div>
-            </div>
-            <div class="w-form-fail">
-              <div>Oops! Something went wrong while submitting the form.</div>
-            </div>
-          </div>
+  <!-- 정보입력 -->
+<div class="portfolio-artist-art setting-page">
+    <div class="artist-art-setting">
+        <h1 class="heading-16">포트폴리오 수정하기</h1>
+    </div>
+    <form id="email-form" action="PortService" method="post" enctype="multipart/form-data" class="art-modify-block">
+        <div class="form-group">
+            <label for="input-image" class="form-label">이미지 업로드:</label>
+            <input type="file" id="input-image" name="pf_Path" class="form-control"> <!-- pf_Path  -->
         </div>
-        <div id="Artist-infomation" class="portfolio-artist-infomation setting-page">
-          <div class="artist-infomation-setting">
+        <div class="form-group">
+            <label for="email-2" class="form-label">제목:</label>
+            <input class="form-control" maxlength="256" name="pf_Name" placeholder="제목을 입력해주세요" type="text" id="email-2" required> <!-- pf_Name -->
+        </div>
+        <div class="form-group">
+            <input type="submit" value="저장" style="padding: 10px 30px; font-size: 20px; width: 100%;" class="submit-button w-button" onclick="submitForms()">
+        </div>
+    </form>
+</div>
+			<!-- 정보입력 끝 -->
+			<!-- 본문 작성 -->
+<form id="artist-information-form" action="PortService" method="post" class="w-form">
+    <div id="Artist-infomation" class="portfolio-artist-infomation setting-page">
+        <div class="artist-infomation-setting">
             <h1 class="heading-16">아티스트 정보 수정하기</h1>
-          </div>
-          <div class="information-modify-block w-form">
-            <form id="email-form-2" name="email-form-2" data-name="Email Form 2" method="get" class="info-modify-form" data-wf-page-id="66222a812cd3c91311cdf709" data-wf-element-id="444226c0-36d3-47f0-2abf-a5b58033e092"><label for="Information-Modify" class="field-label-3">아티스트 정보</label><textarea id="Information-Modify" name="Information-Modify" maxlength="5000" data-name="Information-Modify" placeholder="" class="artist-infor-area w-input"></textarea>
-              <div class="cate-select-text-bar">
-                <h1 class="heading-17">의뢰 가능 분야 선택</h1>
-              </div>
-              <div class="select-category"><select id="field" name="field" data-name="Field" required="" class="select-field-2 w-select">
-                  <option value="Another option">///Commercial</option>
-                  <option value="">@캐릭터</option>
-                  <option value="First">@일러스트</option>
-                  <option value="Second">@캐리커쳐</option>
-                  <option value="Third">@이모티콘</option>
-                  <option value="Another option">@캘리그라피/로고</option>
-                  <option value="Another option">///Original</option>
-                  <option value="Another option">@추상화</option>
-                  <option value="Another option">@민화</option>
-                  <option value="Another option">@팝아트</option>
-                  <option value="Another option">@풍경화</option>
-                  <option value="Another option">@정물화</option>
-                  <option value="Another option"> @사진</option>
-                  <option value="Another option">@명화</option>
-                </select><input class="text-field-4 w-input" autofocus="true" maxlength="256" name="field-2" data-name="Field 2" placeholder="" type="text" id="field-2" required=""><input type="submit" data-wait="Please wait..." class="submit-button-2 w-button" value="저장하기"></div>
-            </form>
-            <div class="w-form-done">
-              <div>Thank you! Your submission has been received!</div>
-            </div>
-            <div class="w-form-fail">
-              <div>Oops! Something went wrong while submitting the form.</div>
-            </div>
-          </div>
         </div>
-      </div>
+        <div class="information-modify-block">
+            <label for="Information-Modify" class="field-label-3">아티스트 정보</label>
+            <textarea id="Information-Modify" name="pf_Info" maxlength="5000" data-name="Information-Modify" placeholder="" class="artist-infor-area w-input"></textarea> <!-- pf_Info -->
+            <div class="cate-select-text-bar">
+                <h1 class="heading-17">의뢰 가능 분야 선택</h1>
+            </div>
+            <div class="select-category">
+                <select id="field" name="field" data-name="Field" required="" class="select-field-2 w-select">
+                    <option value="Another option">///Commercial</option>
+                    <!-- Other options... -->
+                </select>
+                <input class="text-field-4 w-input" autofocus="true" maxlength="256" name="pf_Cate" data-name="Field 2" placeholder="" type="text" id="field-2" required=""> <!-- pf_Cate -->
+            </div>
+            <input type="submit" data-wait="Please wait..." class="submit-button-2 w-button" value="저장하기">
+        </div>
+    </div>
+</form>
+	<!-- 본문작성 끝  -->
+	<script>
+    function submitForms() {
+        document.getElementById("portfolio-form").submit();
+        document.getElementById("artist-info-form").submit();
+    }
+</script>
     </div>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>

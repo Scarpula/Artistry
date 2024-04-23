@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.smhrd.controller.EmailCheck;
-
+import com.smhrd.controller.PortService;
 import com.smhrd.model.Member;
 import com.smhrd.model.MemberDAO;
 
@@ -47,12 +47,21 @@ public class frontController extends HttpServlet {
 		if(resultURL.equals("EmailCheck.do")) {
 			service = new EmailCheck();
 		}
-		String moveURL = service.execute(request, response);
 		
+		
+		if(service != null) {
+            String moveURL = service.execute(request, response);
+		
+	
 		if(moveURL != null) {
 			response.sendRedirect(moveURL);
-		}
-		
+		}else {
+            // 처리되지 않은 URL에 대한 예외 처리
+            PrintWriter out = response.getWriter();
+            out.println("해당 URL에 대한 서비스를 찾을 수 없습니다.");
+        }
+    }
+}
 		
 		
 		
@@ -60,4 +69,4 @@ public class frontController extends HttpServlet {
 	
 	}
 
-}
+
