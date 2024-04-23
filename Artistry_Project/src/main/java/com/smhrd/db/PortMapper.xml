@@ -6,7 +6,7 @@
   
       <!-- 포트폴리오 정보 삽입 -->
     <insert id="insertPort" parameterType="com.smhrd.model.Port">
-        INSERT INTO portfolios (pf_path, mb_email, pf_name, pf_cate, pf_info)
+        INSERT INTO portfolios (pf_path, mb_email, pf_name, pf_category, pf_info)
         VALUES (#{pf_Path}, #{mb_Email}, #{pf_Name}, #{pf_Cate}, #{pf_Info})
     </insert>
 
