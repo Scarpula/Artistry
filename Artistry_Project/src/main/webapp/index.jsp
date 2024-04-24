@@ -1,12 +1,13 @@
+<%@page import="com.smhrd.model.KakaoUser"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page import="com.smhrd.controller.NaverLoginController" %>
 <%@ page import="com.smhrd.controller.ApiExamMemberProfile" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
-<%
+	<%
     String code = request.getParameter("code");
-    String state = request.getParameter("state");
+    String state = request.getParameter("state"); 
 
     if (code != null && state != null) {
         try {
@@ -18,7 +19,6 @@
         }
     }
 %>
-	
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Fri Apr 19 2024 05:34:53 GMT+0000 (Coordinated Universal Time)  -->
@@ -66,6 +66,7 @@
 <body class="body">
 	<%
 	  Member loginMember = (Member)session.getAttribute("member");
+	  KakaoUser loginUser = (KakaoUser)session.getAttribute("kakaoUser");
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
@@ -155,7 +156,7 @@
 								<img width="24" height="24" alt="" src="images/user.svg"
 									loading="lazy">
 							</div>
-							<%if(loginMember!=null){ %>
+							<%if(loginMember!=null || loginUser !=null){ %>
 								<nav class="navbar-dropdown-list w-dropdown-list">
 									<a href="MyPage.jsp" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
 									<a href="LogoutService" class="navbar-dropdown-link w-dropdown-link">로그아웃</a>

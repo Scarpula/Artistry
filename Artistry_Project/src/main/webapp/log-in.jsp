@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.KakaoUser"%>
 <%@ page import="java.net.URLEncoder"%>
 <%@ page import="java.security.SecureRandom"%>
 <%@ page import="java.math.BigInteger"%>
@@ -134,13 +135,24 @@
 							<img width="24" height="24" alt="" src="images/user.svg"
 								loading="lazy">
 						</div>
+						<%
+								// 세션에서 사용자 정보 가져오기
+								KakaoUser loginUser = (KakaoUser) session.getAttribute("kakaoUser");
+						%>
+						<%if(loginUser != null) {%>	
+						<!-- 로그인 된 경우 -->					
 						<nav class="navbar-dropdown-list w-dropdown-list">
 							<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-							<a href="#" aria-current="page"
+							<a href="#" onclick="kakaoLogout(event)" class="navbar-dropdown-link w-dropdown-link">로그아웃</a></nav>
+								
+						<%}else{ %>
+						<!-- 로그인 되지 않은 경우 -->
+								<nav class="navbar-dropdown-list w-dropdown-list">
+								<a href="#" aria-current="page"
 								class="navbar-dropdown-link w-dropdown-link w--current">로그인</a>
 							<a href="sign-up.jsp"
-								class="navbar-dropdown-link w-dropdown-link">회원가입</a>
-						</nav>
+								class="navbar-dropdown-link w-dropdown-link">회원가입</a></nav>
+								<% } %>
 					</div>
 				</li>
 			</ul>
@@ -184,22 +196,57 @@
 					%>
 					<div class="sns-login-button">
 						<div class="sns-logo naver">
-							<a href="<%=apiURL%>" class="w-inline-block">
-								<img src="images/naver_icon.png" loading="lazy" width="80"
+							<a href="<%=apiURL%>" class="w-inline-block"> <img
+								src="images/naver_icon.png" loading="lazy" width="80"
+								height="80" alt="" class="logo-image">
+							</a>
+						</div>
+						<div class="sns-logo kakao">
+							<a href="javascript:kakaoLogin()" class="w-inline-block"> <img
+								src="images/kakao-logo.png" loading="lazy" width="80"
 								height="80" alt="" class="logo-image">
 							</a>
 						</div>
 						<div class="sns-logo google">
 							<a href="#" class="w-inline-block"> <img
-								src="images/kakao-logo.png" loading="lazy" width="80"
-								height="80" alt="" class="logo-image">
-							</a>
-						</div>
-						<div class="sns-logo kakao">
-							<a href="#" class="w-inline-block"> <img
 								src="images/google-real-logo.png" loading="lazy" width="80"
 								height="80" alt="" class="logo-image">
 							</a>
+							<script type="text/javascript"
+								src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+							<script type="text/javascript">
+								Kakao.init('02c23cde395efa25162c48a90df59fc2');
+								function kakaoLogin() {
+									Kakao.Auth
+											.login({
+												success : function(response) {
+													Kakao.API
+															.request({
+																url : '/v2/user/me',
+																success : function(
+																		response) {
+																	var email = response.kakao_account.email;
+												                    var nickname = response.properties.nickname;
+												                    var profileImageUrl = response.properties.profile_image;
+
+												                    // 사용자 정보를 컨트롤러로 전달
+												                    window.location.href = "KakaoLoginController?email=" + email +
+												                        "&nickname=" + encodeURIComponent(nickname) +
+												                        "&profileImageUrl=" + encodeURIComponent(profileImageUrl); 
+																},
+																fail : function(
+																		error) {
+																	alert(JSON
+																			.stringify(error))
+																},
+															})
+												},
+												fail : function(error) {
+													alert(JSON.stringify(error))
+												},
+											})
+								}
+							</script>
 						</div>
 					</div>
 				</div>
@@ -213,9 +260,14 @@
 		crossorigin="anonymous"></script>
 	<script src="js/webflow.js" type="text/javascript"></script>
 	<script type="text/javascript">
-		function loginWithNaver() {
-			window.location.href = 'NaverLoginService'; // 이 경로는 서블릿 URL로 설정해야 함
-		}
+	function kakaoLogout(event){
+		Kakao.Auth.logout(function(){
+			// 로그아웃 성공 시 처리할 코드
+			alert('카카오 로그아웃 완료');
+			// 세션 삭제를 위해 서버로 요청 보내기
+			window.location.href = "KakaoLogoutController";
+		});
+	}
 	</script>
 </body>
 
