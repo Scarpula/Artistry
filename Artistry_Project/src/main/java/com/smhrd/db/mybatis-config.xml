@@ -23,6 +23,7 @@
       <mapper resource="com/smhrd/db/LikesMapper.xml" />
       <mapper resource="com/smhrd/db/ChatRoomMapper.xml" />
       <mapper resource="com/smhrd/db/PortMapper.xml" />
-      <mapper resource="com/smhrd/db/NaverUserMapper.xml" />      
+      <mapper resource="com/smhrd/db/NaverUserMapper.xml" />    
+      <mapper resource="com/smhrd/db/KakaoUserMapper.xml" />            
    </mappers>
 </configuration>
