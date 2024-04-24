@@ -33,18 +33,18 @@
 
 
 	<%	
-	Member loginMember = (Member)session.getAttribute("loginMember");	
-	List<Review> reviewList = null;
-		if(reviewList==null){
-			response.sendRedirect("../Review_List");
+		Member loginMember = (Member)session.getAttribute("loginMember");	
+		List<Review> reviewList = null;
+		List<Port> portList = null;
+		portList = (List<Port>)session.getAttribute("portList");
 		reviewList = (List<Review>)session.getAttribute("reviewList");
+		
+		String artistEmail = request.getParameter("artistEmail");
+		
+		if(reviewList==null || portList == null){
+			response.sendRedirect("../GetReviewPortService?artistEmail="+artistEmail);
 		}
 		
-		List<Port> portList = null;
-		if(session.getAttribute("portList")==null){
-			response.sendRedirect("../portfolioImg");
-		}
-	portList = (List<Port>)session.getAttribute("portList");
 	%>
 
   <div class="main">
