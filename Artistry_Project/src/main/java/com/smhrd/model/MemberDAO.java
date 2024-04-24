@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -39,6 +41,14 @@ public class MemberDAO {
 		int cnt = session.update("com.smhrd.db.MemberMapper.update_my_info", member);
 		session.close();
 		return cnt;
+	}
+
+	public List<Member> get_artist_list() {
+	// 아티스트 리스트 가져오기
+		SqlSession session = sf.openSession(true);
+		List<Member> artistList = session.selectList("com.smhrd.db.MemberMapper.artistList");
+		session.close();
+		return artistList;
 	}
 
 }

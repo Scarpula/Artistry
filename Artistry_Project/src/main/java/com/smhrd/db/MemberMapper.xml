@@ -29,6 +29,10 @@
 		mb_name=#{mb_Name}, mb_pw=#{mb_Pw} , mb_addr=#{mb_Addr},
 		mb_phone=#{mb_Phone} where mb_email=#{mb_Email}
 	</update>
-
+	
+	<!-- 아티스트 리스트 가져오기 -->
+	<select id="artistList" resultType="com.smhrd.model.Member">
+		select * from members where mb_type='0'
+	</select>
 
 </mapper>
