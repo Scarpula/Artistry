@@ -5,10 +5,13 @@
   <mapper namespace="com.smhrd.db.PortMapper">
   
       <!-- 포트폴리오 정보 삽입 -->
-    <insert id="insertPort" parameterType="com.smhrd.model.Port">
-        INSERT INTO portfolio (pf_idx, mb_email, pf_path, pf_name, pf_category, created_at, pf_info)
-        VALUES (portfolio_SEQ.nextval, #{mb_Email}, #{pf_Path}, #{pf_Name}, #{pf_Cate}, sysdate, #{pf_Info} )
-    </insert>
+   <insert id="insertPort" parameterType="com.smhrd.model.Port">
+  <selectKey keyProperty="idx" resultType="int" order="BEFORE">
+    SELECT portfolio_SEQ.nextval FROM DUAL
+  </selectKey>
+  INSERT INTO portfolio (pf_idx, mb_email, pf_path, pf_name, pf_category, created_at, pf_info)
+  VALUES (#{idx}, #{mb_Email}, #{pf_Path}, #{pf_Name}, #{pf_Cate}, sysdate, #{pf_Info})
+</insert>
 	
 	<select id="getPortList" parameterType="com.smhrd.model.Port" resultType="com.smhrd.model.Port">
 		select * from portfolio where mb_email=#{mb_Email}
