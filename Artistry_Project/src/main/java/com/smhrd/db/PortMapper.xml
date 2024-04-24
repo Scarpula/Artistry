@@ -6,12 +6,12 @@
   
       <!-- 포트폴리오 정보 삽입 -->
     <insert id="insertPort" parameterType="com.smhrd.model.Port">
-        INSERT INTO portfolios (pf_path, mb_email, pf_name, pf_category, pf_info)
+        INSERT INTO portfolio (pf_path, mb_email, pf_name, pf_category, pf_info)
         VALUES (#{pf_Path}, #{mb_Email}, #{pf_Name}, #{pf_Cate}, #{pf_Info})
     </insert>
 	
 	<select id="getPortList" parameterType="com.smhrd.model.Port" resultType="com.smhrd.model.Port">
-		select * from portfolios where mb_email=#{mb_Email}
+		select * from portfolio where mb_email=#{mb_Email}
 	</select>
 
 </mapper>

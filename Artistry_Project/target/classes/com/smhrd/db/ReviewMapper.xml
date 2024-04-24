@@ -8,7 +8,7 @@
 	</insert>
 
 	<select id="showReview" parameterType="com.smhrd.model.Review" resultType="com.smhrd.model.Review">
-		select * from reviews where mb_email = #{mb_Email} 
+		select * from reviews where receiver = #{receiver} 
 	</select>
 
 	

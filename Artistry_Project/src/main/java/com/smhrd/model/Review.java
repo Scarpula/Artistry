@@ -44,11 +44,11 @@ public class Review {
 			this.review_Content = review_Content;
 			this.review_Ratings = review_Ratings;
 		}
-	    
-	    public Review(String mb_Email) {
-	    	super();
-			this.mb_Email = mb_Email;
-	    }
+
+		public Review(String receiver) {
+			super();
+			this.receiver = receiver;
+		}
 	    
 	    
 

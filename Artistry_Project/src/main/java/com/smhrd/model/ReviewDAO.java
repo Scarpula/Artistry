@@ -20,11 +20,11 @@ public class ReviewDAO {
 			return cnt;
 	}
 
-	public List<Review> showReview(Review mb_Review){
+	public List<Review> showReview(Review review){
 		SqlSession session = sf.openSession(true); //auto commit
-		List ReviewList = session.selectList("com.smhrd.db.ReviewMapper.showReview", mb_Review);
+		List<Review> reviewList = session.selectList("com.smhrd.db.ReviewMapper.showReview", review);
 		session.close();
-		return ReviewList; 
+		return reviewList; 
 	}
 	
 	
