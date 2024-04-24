@@ -43,7 +43,7 @@
   <div class="main">
     <div class="navbar-logo-left-3">
       <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
-        <a href="../index.html" class="navbar-brand-3 w-nav-brand"><img src="../images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
+        <a href="../index.jsp" class="navbar-brand-3 w-nav-brand"><img src="../images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
         <div class="container-9">
           <div class="navbar-wrapper-3">
             <ul role="list" class="nav-list cate">

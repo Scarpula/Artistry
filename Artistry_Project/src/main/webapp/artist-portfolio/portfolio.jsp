@@ -3,7 +3,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://www.webflow.com  -->
@@ -60,10 +60,10 @@
 </head>
 <body class="body">
 	<%
-		String keyWord = request.getParameter("keyWord");
-		/* System.out.print(keyWord); */
-		Member loginMember = (Member) session.getAttribute("member");
-		List<Member> artistList = new MemberDAO().get_artist_list();
+	String keyWord = request.getParameter("keyWord");
+	/* System.out.print(keyWord); */
+	Member loginMember = (Member) session.getAttribute("member");
+	List<Member> artistList = new MemberDAO().get_artist_list();
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
@@ -123,7 +123,7 @@
 				if (loginMember != null) {
 				%>
 				<div>
-					<a href="#"><%=loginMember.getMb_Nick()%>님</a>
+					<a href="../MyPage.jsp"><%=loginMember.getMb_Nick()%>님</a>
 				</div>
 				<%
 				}
@@ -160,16 +160,18 @@
 							if (loginMember != null) {
 							%>
 							<nav class="navbar-dropdown-list w-dropdown-list">
-								<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-								<a href="../LogoutService"
+								<a href="../MyPage.jsp"
+									class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
+									href="../LogoutService"
 									class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
 							</nav>
 							<%
 							} else {
 							%>
 							<nav class="navbar-dropdown-list w-dropdown-list">
-								<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-								<a href="../log-in.jsp"
+								<a href="../MyPage.jsp"
+									class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
+									href="../log-in.jsp"
 									class="navbar-dropdown-link w-dropdown-link">로그인</a> <a
 									href="../sign-up.jsp"
 									class="navbar-dropdown-link w-dropdown-link">회원가입</a>
@@ -316,8 +318,9 @@
 									sizes="(max-width: 479px) 100vw, 218px" class="image-5"></a>
 							</div>
 							<div class="text-wrap">
-								<a href="artist-portfolio-page.jsp?artistEmail=<%=artistList.get(i).getMb_Email() %>" class="title-link">
-									<%=artistList.get(i).getMb_Email() %></a>
+								<a
+									href="artist-portfolio-page.jsp?artistEmail=<%=artistList.get(i).getMb_Email()%>"
+									class="title-link"> <%=artistList.get(i).getMb_Email()%></a>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="artist-link-wrap">
 									<a href="#" class="artist-link"><%=artistList.get(i).getMb_Nick()%></a><img
