@@ -13,8 +13,8 @@
   VALUES (#{idx}, #{mb_Email}, #{pf_Path}, #{pf_Name}, #{pf_Cate}, sysdate, #{pf_Info})
 </insert>
 	
-	<select id="getPortList" parameterType="com.smhrd.model.Port" resultType="com.smhrd.model.Port">
-		select * from portfolio where mb_email=#{mb_Email}
+	<select id="getPortList" parameterType="String" resultType="com.smhrd.model.Port">
+		select * from portfolio where mb_email=#{artistEmail}
 	</select>
 
 </mapper>

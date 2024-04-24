@@ -34,5 +34,15 @@
 	<select id="artistList" resultType="com.smhrd.model.Member">
 		select * from members where mb_type='0'
 	</select>
-
+	
+	<!-- 전체 회원 리스트 가져오기 -->
+	<select id="memberList" resultType="com.smhrd.model.Member">
+		select * from members
+	</select>
+	
+	<!-- 회원 삭제 -->
+	<delete id="delete_member" parameterType="com.smhrd.model.Member" >
+		delete members where mb_email=#{mb_Email}
+	</delete>
+	
 </mapper>

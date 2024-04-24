@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.MemberDAO"%>
+<%@page import="com.smhrd.model.PortDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -58,14 +60,10 @@
 </head>
 <body class="body">
 	<%
-	String keyWord = request.getParameter("keyWord");
-	/* System.out.print(keyWord); */
-	Member loginMember = (Member) session.getAttribute("member");
-	List<Member> artistList = null;
-	artistList = (List<Member>) session.getAttribute("artistList");
-	if (artistList == null) {
-		response.sendRedirect("../GetArtistListService");
-	}
+		String keyWord = request.getParameter("keyWord");
+		/* System.out.print(keyWord); */
+		Member loginMember = (Member) session.getAttribute("member");
+		List<Member> artistList = new MemberDAO().get_artist_list();
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">

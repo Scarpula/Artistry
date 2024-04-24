@@ -18,10 +18,12 @@ public class PortDAO {
 		return cnt;
 	}
 	
-	public List<Port> get_port_list(Port port) {
-	    SqlSession session = sf.openSession(true);
-	    List<Port> portList = session.selectList("com.smhrd.db.PortMapper.getPortList", port);
-	    return portList;
+
+	public List<Port> get_port_list(String artistEmail) {
+		SqlSession session = sf.openSession(true);
+		List<Port> portList = session.selectList("com.smhrd.db.PortMapper.getPortList",artistEmail);
+		return portList;
+
 	}
 }
 	

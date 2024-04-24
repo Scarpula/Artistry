@@ -15,18 +15,7 @@
   	<servlet-class>com.smhrd.controller.JoinService</servlet-class>
   </servlet>
  
-  <servlet>
-  	<servlet-name>SignUpClasification1</servlet-name>
-  	<display-name>SignUpClasification1</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.SignUpClasification</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>SignUpClasificationService</servlet-name>
-  	<display-name>SignUpClasificationService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.SignUpClasificationService</servlet-class>
-  </servlet>
+
   <servlet>
   	<servlet-name>LogoutService</servlet-name>
   	<display-name>LogoutService</display-name>
@@ -64,12 +53,6 @@
   	<servlet-class>com.smhrd.controller.ReviewService</servlet-class>
   </servlet>
 
-  <servlet>
-  	<servlet-name>Review_List</servlet-name>
-  	<display-name>Review_List</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.Review_List</servlet-class>
-  </servlet>
 
  <!--  <servlet>
   	<servlet-name>LoginService</servlet-name>
@@ -115,11 +98,18 @@
 		<servlet-class>com.smhrd.controller.GetArtistListService</servlet-class>
 
 	</servlet>
+
 	<servlet>
-		<servlet-name>GetReviewPortService</servlet-name>
-		<display-name>GetReviewPortService</display-name>
+		<servlet-name>GetAllMemberService</servlet-name>
+		<display-name>GetAllMemberService</display-name>
 		<description></description>
-		<servlet-class>com.smhrd.controller.GetReviewPortService</servlet-class>
+		<servlet-class>com.smhrd.controller.GetAllMemberService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MemberDeleteService</servlet-name>
+		<display-name>MemberDeleteService</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.MemberDeleteService</servlet-class>
 	</servlet> 
 
   <servlet-mapping>
@@ -156,10 +146,6 @@
   </servlet-mapping>
 
   <servlet-mapping>
-  	<servlet-name>Review_List</servlet-name>
-  	<url-pattern>/Review_List</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
   	<servlet-name>KakaoLogoutController</servlet-name>
   	<url-pattern>/KakaoLogoutController</url-pattern>
   </servlet-mapping>
@@ -179,11 +165,15 @@
   <servlet-mapping>
   	<servlet-name>GetArtistListService</servlet-name>
   	<url-pattern>/GetArtistListService</url-pattern>
+  </servlet-mapping>
 
+  <servlet-mapping>
+  	<servlet-name>GetAllMemberService</servlet-name>
+  	<url-pattern>/GetAllMemberService</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>GetReviewPortService</servlet-name>
-  	<url-pattern>/GetReviewPortService</url-pattern>
+  	<servlet-name>MemberDeleteService</servlet-name>
+  	<url-pattern>/MemberDeleteService</url-pattern>
   </servlet-mapping>
 
  <!--  <servlet-mapping>

@@ -51,4 +51,18 @@ public class MemberDAO {
 		return artistList;
 	}
 
+	public List<Member> getMemberList() {
+		SqlSession session = sf.openSession(true);
+		List<Member> memberList = session.selectList("com.smhrd.db.MemberMapper.memberList");
+		session.close();
+		return memberList;
+	}
+
+	public int deleteMember(Member delMember) {
+		SqlSession session = sf.openSession(true);
+		int cnt = session.update("com.smhrd.db.MemberMapper.delete_member", delMember);
+		session.close();
+		return cnt;
+	}
+
 }

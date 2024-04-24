@@ -35,7 +35,7 @@ delete MEMBERS where mb_email != 'admin';
 
 insert into members values ('imgTest5','imgTest5','imgTest5','imgTest5','imgTest5','imgTest5',null,'imgTest5',sysdate,0);
 
-select * from PORTFOLIOS;
+select * from PORTFOLIO;
 
 insert into PORTFOLIOS values (101,'admin','../portfolio_img/1.jpg','emoji1','emoji','test1',sysdate);
 
