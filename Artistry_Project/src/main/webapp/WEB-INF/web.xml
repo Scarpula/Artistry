@@ -162,17 +162,18 @@
   	<url-pattern>/KakaoLoginController</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-<<<<<<< HEAD
+
   	<servlet-name>GoggleLoginController</servlet-name>
   	<url-pattern>/GoggleLoginController</url-pattern>
-=======
+</servlet-mapping>
+<servlet-mapping>
   	<servlet-name>GetSellerService</servlet-name>
   	<url-pattern>/GetSellerService</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>GetArtistListService</servlet-name>
   	<url-pattern>/GetArtistListService</url-pattern>
->>>>>>> branch 'main' of https://github.com/junbeom09/Artistry.git
+
   </servlet-mapping>
 
  <!--  <servlet-mapping>
