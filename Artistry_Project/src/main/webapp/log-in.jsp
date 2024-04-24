@@ -216,6 +216,7 @@
 								height="80" alt="" class="logo-image">
 							</a>
 						</div>
+						
 						<!-- 구글 연동 스크립트 -->
 						<script src="https://accounts.google.com/gsi/client" async defer></script>
 
@@ -225,7 +226,7 @@
 								data-client_id="755402645796-in2nk95j3efnuigdt6ua21m165os6fr3.apps.googleusercontent.com"
 								data-callback="handleCredentialResponse"
 								data-auto_prompt="false"></div>
-							<div class="g_id_signin" data-type="icon" data-shape="circle"
+							<div class="g_id_signin" data-type="icon" data-shape="Rectangle" 
 								data-theme="outline" data-text="signin_with" data-size="large">
 							</div>
 						</div>
@@ -345,7 +346,7 @@
 					}).join(''));
 			return JSON.parse(jsonPayload);
 		}
-	</script>
+	</script>           
 </body>
 
 </html>
