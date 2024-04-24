@@ -150,6 +150,7 @@
 				<div class="profile-member-nick"><%=loginMember.getMb_Nick()%></div>
 				<div class="profile-member-email"><%=loginMember.getMb_Email()%></div>
 			</div>
+						<%if(loginMember.getMb_Email().equals("admin")){ %>
 			<ul role="list" class="mypage-side-profile-catelist w-list-unstyled">
 				<li data-w-id="3f641a6c-3b4c-fd6d-20d3-f0dd35d2eeca"
 					class="category-text-wrap">정보수정</li>
@@ -162,6 +163,18 @@
 				<li data-w-id="f861915a-ac63-97aa-257a-d469c1980934"
 					class="category-text-wrap">관리자 페이지</li>
 			</ul>
+			<%}else{ %>
+			<ul role="list" class="mypage-side-profile-catelist w-list-unstyled">
+				<li data-w-id="3f641a6c-3b4c-fd6d-20d3-f0dd35d2eeca"
+					class="category-text-wrap">정보수정</li>
+				<li data-w-id="74c3dd16-60ec-6e8f-c824-5d0e7908d266"
+					class="category-text-wrap">거래내역</li>
+				<li data-w-id="44949014-bf4f-bb3c-6159-e0fc071a6d27"
+					class="category-text-wrap">채팅내역</li>
+				<li data-w-id="13e59a0c-9989-cb9a-2092-6108e16f97b7"
+					class="category-text-wrap">좋아요 작가 목록</li>
+			</ul>
+			<%} %>
 		</div>
 		<div class="mypage-context-wrap">
 			<div style="display: flex" class="mypage-modifyinfo">
@@ -297,13 +310,14 @@
 					</div>
 				</div>
 			</div>
-			<div style="display: none" class="mypage-adminpage">
-				<div class="mypage-context-title-wrap" style="text-align:center;">
-					<h1>관리자 페이지</h1>
-					<div class="myAccount">
+				<div style="display: none" class="mypage-adminpage">
+					<div class="mypage-context-title-wrap" style="text-align:center;">
+						<h1>관리자 페이지</h1>
+						<div class="myAccount">
+						
+						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 	</div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
