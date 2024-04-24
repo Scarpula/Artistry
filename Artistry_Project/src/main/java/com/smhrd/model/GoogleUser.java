@@ -7,8 +7,19 @@ public class GoogleUser {
     private String familyName;
     private String imageUrl;
     private String email;
+    private int id;
 
-    // Getters and Setters
+ 
+
+	// Getters and Setters
+    public int getId() {
+ 		return id;
+ 	}
+
+ 	public void setId(int id) {
+ 		this.id = id;
+ 	}
+    
     public String getUserId() {
         return userId;
     }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.GoogleUserMapper">
+<insert id="insertGoogleUser" parameterType="com.smhrd.model.GoogleUser">
+        <selectKey keyProperty="id" resultType="int" order="BEFORE">
+            SELECT google_users_seq.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO google_users (id, user_id, full_name, given_name, family_name, image_url, email)
+        VALUES (#{id}, #{userId}, #{fullName}, #{givenName}, #{familyName}, #{imageUrl}, #{email})
+    </insert>
+</mapper>

@@ -220,10 +220,12 @@
 						<script src="https://accounts.google.com/gsi/client" async defer></script>
 
 
-						<div id="g_id_onload"
-							data-client_id="755402645796-in2nk95j3efnuigdt6ua21m165os6fr3.apps.googleusercontent.com"
-							data-callback="handleCredentialResponse"></div>
-						<div class="g_id_signin" data-type="icon" data-shape="circle"></div>
+						<div class="sns-logo google">
+							<a href="#" onclick="handleGoogleLogin()" class="w-inline-block">
+								<img src="images/google-real-logo.png" loading="lazy" width="80"
+								height="80" alt="" class="logo-image">
+							</a>
+						</div>
 
 						<script type="text/javascript"
 							src="https://developers.kakao.com/sdk/js/kakao.js"></script>
@@ -286,42 +288,48 @@
 		}
 	</script>
 	<script type="text/javascript">
-	function handleCredentialResponse(response) {
-        const responsePayload = parseJwt(response.credential);
+		function handleGoogleLogin() {
+			// Google 로그인 페이지로 리다이렉트
+			window.location.href = "https://accounts.google.com/o/oauth2/auth?client_id=755402645796-in2nk95j3efnuigdt6ua21m165os6fr3.apps.googleusercontent.com&redirect_uri=http://localhost:8081/Artistry_Project/index.jsp&response_type=code&scope=profile email openid";
+		}
+	</script>
+	<script type="text/javascript">
+		function handleCredentialResponse(response) {
+			const responsePayload = parseJwt(response.credential);
 
-        // 필요한 정보 추출
-        const userId = responsePayload.sub;
-        const fullName = responsePayload.name;
-        const givenName = responsePayload.given_name;
-        const familyName = responsePayload.family_name;
-        const imageUrl = responsePayload.picture;
-        const email = responsePayload.email;
+			// 필요한 정보 추출
+			const userId = responsePayload.sub;
+			const fullName = responsePayload.name;
+			const givenName = responsePayload.given_name;
+			const familyName = responsePayload.family_name;
+			const imageUrl = responsePayload.picture;
+			const email = responsePayload.email;
 
-        // 추출한 정보를 컨트롤러로 전송
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = 'GoogleLoginController';
+			// 추출한 정보를 컨트롤러로 전송
+			const form = document.createElement('form');
+			form.method = 'POST';
+			form.action = 'GoogleLoginController';
 
-        const params = {
-            userId: userId,
-            fullName: fullName,
-            givenName: givenName,
-            familyName: familyName,
-            imageUrl: imageUrl,
-            email: email
-        };
+			const params = {
+				userId : userId,
+				fullName : fullName,
+				givenName : givenName,
+				familyName : familyName,
+				imageUrl : imageUrl,
+				email : email
+			};
 
-        for (const key in params) {
-            const hiddenField = document.createElement('input');
-            hiddenField.type = 'hidden';
-            hiddenField.name = key;
-            hiddenField.value = params[key];
-            form.appendChild(hiddenField);
-        }
+			for ( const key in params) {
+				const hiddenField = document.createElement('input');
+				hiddenField.type = 'hidden';
+				hiddenField.name = key;
+				hiddenField.value = params[key];
+				form.appendChild(hiddenField);
+			}
 
-        document.body.appendChild(form);
-        form.submit();
-    }
+			document.body.appendChild(form);
+			form.submit();
+		}
 
 		function parseJwt(token) {
 			const base64Url = token.split('.')[1];

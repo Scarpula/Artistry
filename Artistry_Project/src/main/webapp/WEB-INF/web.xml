@@ -97,10 +97,10 @@
 		<servlet-class>com.smhrd.controller.KakaoLoginController</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>GoggleLoginController</servlet-name>
-		<display-name>GoggleLoginController</display-name>
+		<servlet-name>GoogleLoginController</servlet-name>
+		<display-name>GoogleLoginController</display-name>
 		<description></description>
-		<servlet-class>com.smhrd.controller.GoggleLoginController</servlet-class>
+		<servlet-class>com.smhrd.controller.GoogleLoginController</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>GetSellerService</servlet-name>
@@ -163,8 +163,8 @@
   </servlet-mapping>
   <servlet-mapping>
 
-  	<servlet-name>GoggleLoginController</servlet-name>
-  	<url-pattern>/GoggleLoginController</url-pattern>
+  	<servlet-name>GoogleLoginController</servlet-name>
+  	<url-pattern>/GoogleLoginController</url-pattern>
 </servlet-mapping>
 <servlet-mapping>
   	<servlet-name>GetSellerService</servlet-name>

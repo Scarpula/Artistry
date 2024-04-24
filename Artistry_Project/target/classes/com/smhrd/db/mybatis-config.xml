@@ -25,5 +25,6 @@
       <mapper resource="com/smhrd/db/PortMapper.xml" />
       <mapper resource="com/smhrd/db/NaverUserMapper.xml" />    
       <mapper resource="com/smhrd/db/KakaoUserMapper.xml" />            
+      <mapper resource="com/smhrd/db/GoogleUserMapper.xml" />            
    </mappers>
 </configuration>
