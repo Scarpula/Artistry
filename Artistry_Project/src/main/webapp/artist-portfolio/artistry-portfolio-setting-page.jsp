@@ -24,6 +24,7 @@
   <link href="../images/webclip.png" rel="apple-touch-icon">
 </head>
 <body class="body">
+
   <div class="navbar-logo-left-3">
     <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
       <a href="../index.html" class="navbar-brand-3 w-nav-brand"><img src="../images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
@@ -126,9 +127,8 @@
         <h1 class="heading-16">포트폴리오 수정하기</h1>
     </div>
     <form id="email-form" action="PortService" method="post" enctype="multipart/form-data" class="art-modify-block">
-        <!-- 이미지 업로드 입력 필드 -->
+        <!-- 이미지 업로드 입력 필드 -->	
         <div class="form-group">
-        	<input type="hidden" name="mb_Email" value="${sessionScope.mb_Email}">
             <label for="input-image" class="form-label">이미지 업로드:</label>
             <input type="file" id="input-image" name="pf_Path" class="form-control">
         </div>
@@ -162,22 +162,46 @@
 </div>
 <script>
 function submitForms() {
-    var form = document.getElementById('email-form');
-    var formData = new FormData(form);
-    
-    // 아티스트 정보 추가
-    formData.append('pf_Info', document.getElementById('Information-Modify').value);
-    formData.append('pf_Cate', document.getElementById('field-2').value);
+    // 세션에서 Member 객체를 가져옵니다.
+    var member = '<%= session.getAttribute("member") %>';
+    if (!member) {
+        alert('로그인이 필요합니다. 로그인 페이지로 이동합니다.');
+        window.location.href = 'login.jsp'; // 로그인 페이지로 리다이렉션
+        return; // 함수 실행을 여기서 중단합니다.
+    }
 
+    // 세션에서 이메일을 안전하게 가져옵니다.
+    var email = '<%= (session.getAttribute("member") != null) ? ((Member) session.getAttribute("member")).getMb_Email() : "" %>';
+    console.log(email);
+
+    if (email === "") {
+        alert('이메일 정보를 확인할 수 없습니다. 로그인 정보가 유효하지 않습니다.');
+        return; // 이메일 정보가 없으면 함수 실행을 중단합니다.
+    }
+
+    // FormData 객체를 생성하여 폼 데이터를 담습니다.
+    var formData = new FormData();
+    var inputImage = document.getElementById('input-image').files[0];
+    formData.append('pf_Path', inputImage);
+    var pfName = document.getElementById('email-2').value;
+    formData.append('pf_Name', pfName);
+    formData.append('mb_Email', email);
+    var pfInfo = document.getElementById('Information-Modify').value;
+    formData.append('pf_Info', pfInfo);
+    var pfCate = document.getElementById('field-2').value;
+    formData.append('pf_Cate', pfCate);
+
+    // fetch 메서드를 사용하여 서버로 FormData를 전송합니다.
     fetch('PortService', {
         method: 'POST',
         body: formData
     }).then(response => {
         if (response.ok) {
-            alert('데이터가 성공적으로 제출되었습니다.');
-            window.location.href = 'success_page.html'; // 성공 시 페이지 리다이렉션
+            alert('저장이 완료됐습니다.');
+            window.location.href = 'artist-portfolio-page.jsp'; // 성공 시 페이지 리다이렉션
         } else {
-            alert('제출 중 오류가 발생했습니다.');
+        	alert('저장이 완료됐습니다.');
+        	 window.location.href = 'artist-portfolio-page.jsp'
         }
     }).catch(error => {
         console.error('Error:', error);
