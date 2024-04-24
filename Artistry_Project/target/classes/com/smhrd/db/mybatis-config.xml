@@ -20,9 +20,6 @@
       <mapper resource="com/smhrd/db/MemberMapper.xml" />
       <mapper resource="com/smhrd/db/PaymentsMapper.xml" />
       <mapper resource="com/smhrd/db/ReviewMapper.xml" />
-      <!-- 포트폴리오 매퍼 -->
-      <mapper resource="com/smhrd/db/PaymentsMapper.xml" /> 
-      <!-- 리뷰 매퍼 -->
       <mapper resource="com/smhrd/db/LikesMapper.xml" />
       <mapper resource="com/smhrd/db/ChatRoomMapper.xml" />
       <mapper resource="com/smhrd/db/PortMapper.xml" />
