@@ -136,23 +136,32 @@
 								loading="lazy">
 						</div>
 						<%
-								// 세션에서 사용자 정보 가져오기
-								KakaoUser loginUser = (KakaoUser) session.getAttribute("kakaoUser");
+						// 세션에서 사용자 정보 가져오기
+						KakaoUser loginUser = (KakaoUser) session.getAttribute("kakaoUser");
 						%>
-						<%if(loginUser != null) {%>	
-						<!-- 로그인 된 경우 -->					
+						<%
+						if (loginUser != null) {
+						%>
+						<!-- 로그인 된 경우 -->
 						<nav class="navbar-dropdown-list w-dropdown-list">
 							<a href="#" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-							<a href="#" onclick="kakaoLogout(event)" class="navbar-dropdown-link w-dropdown-link">로그아웃</a></nav>
-								
-						<%}else{ %>
+							<a href="#" onclick="kakaoLogout(event)"
+								class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
+						</nav>
+
+						<%
+						} else {
+						%>
 						<!-- 로그인 되지 않은 경우 -->
-								<nav class="navbar-dropdown-list w-dropdown-list">
-								<a href="#" aria-current="page"
+						<nav class="navbar-dropdown-list w-dropdown-list">
+							<a href="#" aria-current="page"
 								class="navbar-dropdown-link w-dropdown-link w--current">로그인</a>
 							<a href="sign-up.jsp"
-								class="navbar-dropdown-link w-dropdown-link">회원가입</a></nav>
-								<% } %>
+								class="navbar-dropdown-link w-dropdown-link">회원가입</a>
+						</nav>
+						<%
+						}
+						%>
 					</div>
 				</li>
 			</ul>
@@ -207,51 +216,58 @@
 								height="80" alt="" class="logo-image">
 							</a>
 						</div>
-						<div class="sns-logo google">
-							<a href="#" class="w-inline-block"> <img
-								src="images/google-real-logo.png" loading="lazy" width="80"
-								height="80" alt="" class="logo-image">
-							</a>
-							<script type="text/javascript"
-								src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-							<script type="text/javascript">
-								Kakao.init('02c23cde395efa25162c48a90df59fc2');
-								function kakaoLogin() {
-									Kakao.Auth
-											.login({
-												success : function(response) {
-													Kakao.API
-															.request({
-																url : '/v2/user/me',
-																success : function(
-																		response) {
-																	var email = response.kakao_account.email;
-												                    var nickname = response.properties.nickname;
-												                    var profileImageUrl = response.properties.profile_image;
+						<!-- 구글 연동 스크립트 -->
+						<script src="https://accounts.google.com/gsi/client" async defer></script>
 
-												                    // 사용자 정보를 컨트롤러로 전달
-												                    window.location.href = "KakaoLoginController?email=" + email +
-												                        "&nickname=" + encodeURIComponent(nickname) +
-												                        "&profileImageUrl=" + encodeURIComponent(profileImageUrl); 
-																},
-																fail : function(
-																		error) {
-																	alert(JSON
-																			.stringify(error))
-																},
-															})
-												},
-												fail : function(error) {
-													alert(JSON.stringify(error))
-												},
-											})
-								}
-							</script>
-						</div>
+
+						<div id="g_id_onload"
+							data-client_id="755402645796-in2nk95j3efnuigdt6ua21m165os6fr3.apps.googleusercontent.com"
+							data-callback="handleCredentialResponse"></div>
+						<div class="g_id_signin" data-type="icon" data-shape="circle"></div>
+
+						<script type="text/javascript"
+							src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+						<script type="text/javascript">
+							Kakao.init('02c23cde395efa25162c48a90df59fc2');
+							function kakaoLogin() {
+								Kakao.Auth
+										.login({
+											success : function(response) {
+												Kakao.API
+														.request({
+															url : '/v2/user/me',
+															success : function(
+																	response) {
+																var email = response.kakao_account.email;
+																var nickname = response.properties.nickname;
+																var profileImageUrl = response.properties.profile_image;
+
+																// 사용자 정보를 컨트롤러로 전달
+																window.location.href = "KakaoLoginController?email="
+																		+ email
+																		+ "&nickname="
+																		+ encodeURIComponent(nickname)
+																		+ "&profileImageUrl="
+																		+ encodeURIComponent(profileImageUrl);
+															},
+															fail : function(
+																	error) {
+																alert(JSON
+																		.stringify(error))
+															},
+														})
+											},
+											fail : function(error) {
+												alert(JSON.stringify(error))
+											},
+										})
+							}
+						</script>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<script
 		src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1"
@@ -260,14 +276,64 @@
 		crossorigin="anonymous"></script>
 	<script src="js/webflow.js" type="text/javascript"></script>
 	<script type="text/javascript">
-	function kakaoLogout(event){
-		Kakao.Auth.logout(function(){
-			// 로그아웃 성공 시 처리할 코드
-			alert('카카오 로그아웃 완료');
-			// 세션 삭제를 위해 서버로 요청 보내기
-			window.location.href = "KakaoLogoutController";
-		});
-	}
+		function kakaoLogout(event) {
+			Kakao.Auth.logout(function() {
+				// 로그아웃 성공 시 처리할 코드
+				alert('카카오 로그아웃 완료');
+				// 세션 삭제를 위해 서버로 요청 보내기
+				window.location.href = "KakaoLogoutController";
+			});
+		}
+	</script>
+	<script type="text/javascript">
+	function handleCredentialResponse(response) {
+        const responsePayload = parseJwt(response.credential);
+
+        // 필요한 정보 추출
+        const userId = responsePayload.sub;
+        const fullName = responsePayload.name;
+        const givenName = responsePayload.given_name;
+        const familyName = responsePayload.family_name;
+        const imageUrl = responsePayload.picture;
+        const email = responsePayload.email;
+
+        // 추출한 정보를 컨트롤러로 전송
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = 'GoogleLoginController';
+
+        const params = {
+            userId: userId,
+            fullName: fullName,
+            givenName: givenName,
+            familyName: familyName,
+            imageUrl: imageUrl,
+            email: email
+        };
+
+        for (const key in params) {
+            const hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = key;
+            hiddenField.value = params[key];
+            form.appendChild(hiddenField);
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+		function parseJwt(token) {
+			const base64Url = token.split('.')[1];
+			const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+			const jsonPayload = decodeURIComponent(atob(base64).split('').map(
+					function(c) {
+						return '%'
+								+ ('00' + c.charCodeAt(0).toString(16))
+										.slice(-2);
+					}).join(''));
+			return JSON.parse(jsonPayload);
+		}
 	</script>
 </body>
 
