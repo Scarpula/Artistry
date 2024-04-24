@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="com.smhrd.model.ChatRoom"%>
 <%@page import="com.smhrd.model.Likes"%>
 <%@page import="com.smhrd.model.Payments"%>
@@ -32,6 +33,8 @@
 	List<Payments> paymentList = (List<Payments>) session.getAttribute("paymentList");
 	List<Likes> likeList = (List<Likes>) session.getAttribute("likeList");
 	List<ChatRoom> chatRoomList = (List<ChatRoom>) session.getAttribute("chatRoomList");
+	List<Member> memberList = new MemberDAO().getMemberList();
+	
 	%>
 	<div class="navbar-logo-left-3">
 		<div data-animation="default" data-collapse="none" data-duration="400"
@@ -314,7 +317,42 @@
 					<div class="mypage-context-title-wrap" style="text-align:center;">
 						<h1>관리자 페이지</h1>
 						<div class="myAccount">
-						
+						<%if(memberList!=null){ %>
+							<table id="myAccount" border="1" style="border-spacing: 10px;">
+							<tr>
+								<td colspan="2"><b>회원 아이디</b></td>
+								<td colspan="2"><b>회원 이름</b></td>
+								<td colspan="2"><b>회원 전화번호</b></td>
+								<td colspan="2"><b>회원 닉네임</b></td>
+								<td colspan="2"><b>회원 구분</b></td>
+							</tr>
+							
+							<%
+							for (int i = 0; i < memberList.size(); i++) {
+							%>
+							<tr>
+								<td><%=memberList.get(i).getMb_Email()%>
+								<td />
+								<td><%=memberList.get(i).getMb_Name()%>
+								<td />
+								<td><%=memberList.get(i).getMb_Phone()%>
+								<td />
+								<td><%=memberList.get(i).getMb_Nick()%>
+								<td />
+								<%if(memberList.get(i).getMb_Type().equals(0)){ %>
+									<td>아티스트<td />
+								<%}else{ %>
+									<td>의뢰자<td />
+								<%} %>
+								<td><a href="MemberDeleteService?email=<%=memberList.get(i).getMb_Email() %>">delete</a></td>
+							</tr>
+							<%
+							}
+							%>
+						</table>
+							<%
+							}
+							%>
 						</div>
 					</div>
 				</div>

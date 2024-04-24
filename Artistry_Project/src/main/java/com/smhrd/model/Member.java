@@ -53,11 +53,13 @@ public class Member {
 		this.mb_Addr = mb_Addr;
 	}
 
-	public Member(@NonNull String mb_Nick) {
-		//닉네임 불러오는 생성자 메소드
-		super();
-		this.mb_Nick = mb_Nick;
-	}
+public Member(@NonNull String mb_Email) {
+	// 회원 삭제용 생성자 메소드
+	super();
+	this.mb_Email = mb_Email;
+}
+
+
    
 
 }
