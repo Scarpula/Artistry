@@ -126,7 +126,7 @@
 				</div>
 								<%if(loginMember!=null){ %>
 									<div>
-										<a href="#"><%=loginMember.getMb_Nick() %>님</a>
+										<a href="MyPage.jsp"><%=loginMember.getMb_Nick() %>님</a>
 									</div>
 								<%} %>
 				<ul role="list" class="nav-list right">
