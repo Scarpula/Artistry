@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.PortDAO"%>
 <%@page import="com.smhrd.model.Port"%>
 <%@page import="com.smhrd.model.Review"%>
 <%@page import="java.util.List"%>
@@ -34,17 +35,9 @@
 
 	<%	
 		Member loginMember = (Member)session.getAttribute("loginMember");	
-		List<Review> reviewList = null;
-		List<Port> portList = null;
-		portList = (List<Port>)session.getAttribute("portList");
-		reviewList = (List<Review>)session.getAttribute("reviewList");
-		
 		String artistEmail = request.getParameter("artistEmail");
-		
-		if(reviewList==null || portList == null){
-			response.sendRedirect("../GetReviewPortService?artistEmail="+artistEmail);
-		}
-		
+		List<Review> reviewList = new ReviewDAO().showReview(artistEmail);
+		List<Port> portList = new PortDAO().get_port_list(artistEmail);
 	%>
 
   <div class="main">
@@ -152,7 +145,6 @@
           <div style="display:block;opacity:0;-webkit-transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-artist-art">
             <div class="w-layout-grid artist-art-grid">
               <%	
-              		System.out.println(portList);
               	if(portList!=null){ 
               		for(int i = 0; i < portList.size(); i++){
               %>

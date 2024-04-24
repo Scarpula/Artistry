@@ -7,8 +7,8 @@
 		insert into reviews values(num_reviews.nextval, #{mb_Email}, 1, #{review_Content}, #{review_Ratings}, sysdate)
 	</insert>
 
-	<select id="showReview" parameterType="com.smhrd.model.Review" resultType="com.smhrd.model.Review">
-		select * from reviews where receiver = #{receiver} 
+	<select id="showReview" parameterType="String" resultType="com.smhrd.model.Review">
+		select * from reviews where receiver = #{artistEmail} 
 	</select>
 
 	
