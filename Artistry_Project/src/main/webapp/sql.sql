@@ -29,6 +29,22 @@ insert into chat_room values (2, 'admin', 'test_room2', 'test_room2', 1, sysdate
 insert into chat_room values (3, 'admin', 'test_room3', 'test_room3', 1, sysdate, 'F');
 insert into chat_room values (4, 'admin', 'test_room4', 'test_room4', 1, sysdate, 'F');
 
+update MEMBERS set mb_type = 0 where mb_email = 'admin';
+
+delete MEMBERS where mb_email != 'admin';
+
+insert into members values ('imgTest5','imgTest5','imgTest5','imgTest5','imgTest5','imgTest5',null,'imgTest5',sysdate,0);
+
+select * from PORTFOLIOS;
+
+insert into PORTFOLIOS values (101,'admin','../portfolio_img/1.jpg','emoji1','emoji','test1',sysdate);
+
+
+
+
+
+
+
 
 
 

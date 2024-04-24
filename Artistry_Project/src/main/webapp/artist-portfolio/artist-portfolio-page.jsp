@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Port"%>
 <%@page import="com.smhrd.model.Review"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.ReviewDAO"%>
@@ -39,6 +40,11 @@
 		reviewList = (List<Review>)session.getAttribute("reviewList");
 		}
 		
+		List<Port> portList = null;
+		if(session.getAttribute("portList")==null){
+			response.sendRedirect("../portfolioImg");
+		}
+	portList = (List<Port>)session.getAttribute("portList");
 	%>
 
   <div class="main">
@@ -145,42 +151,20 @@
           </div>
           <div style="display:block;opacity:0;-webkit-transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 215px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-artist-art">
             <div class="w-layout-grid artist-art-grid">
-              <div id="w-node-_550a96a2-a744-3681-3a62-95b4ca1c003a-bb169fcb" class="artist-art-form">
-                <div data-w-id="1cbd1ca6-35dd-5037-fb9c-405a15f6cf3f" class="artist-art"><img src="../images/1.png" loading="lazy" width="350" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 349.9921875px, 242.8828125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-_7284db90-fad2-42fa-7acf-0393715b2119-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-be721359-9902-5f24-6045-371207c22bae-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-bfe6e6dc-ff34-3816-93d7-684d3b67776a-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-_084f14de-cbd7-e08d-4037-57470f9202ca-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-_3797369b-1964-6cc3-d0ef-f5d2a211e715-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-_70ab8d54-e120-e793-0488-02bf4f355917-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-_85126c62-31a9-e326-a7eb-3f54c7649ad0-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
-              <div id="w-node-c768a1e9-0cc8-ef37-0a5a-6bbf2e0a07c5-bb169fcb" class="artist-art-form">
-                <div class="artist-art"><img src="../images/1.png" loading="lazy" width="285" height="252" alt="" srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 285px, 242.8828125px" class="artist-art-img"></div>
-                <h1 class="artist-art-title">코끼리</h1>
-              </div>
+              <%	
+              		System.out.println(portList);
+              	if(portList!=null){ 
+              		for(int i = 0; i < portList.size(); i++){
+              %>
+	              <div id="w-node-_550a96a2-a744-3681-3a62-95b4ca1c003a-bb169fcb" class="artist-art-form">
+	                <div data-w-id="1cbd1ca6-35dd-5037-fb9c-405a15f6cf3f" class="artist-art">
+		                <img src="<%=portList.get(i).getPf_Path() %>" loading="lazy" width="350" height="252" alt="" 
+		                sizes="(max-width: 479px) 100vw, (max-width: 1919px) 349.9921875px, 242.8828125px" class="artist-art-img">
+	               	</div>
+	                <h1 class="artist-art-title"><%=portList.get(i).getPf_Name() %></h1>
+	              </div>
+	          	 <%} %>
+	           <%} %>
             </div>
           </div>
           <div id="Artist-infomation" style="display:none" class="portfolio-artist-infomation">
@@ -243,6 +227,9 @@
             </div>
             <!-- 리뷰작성란 div태그끝-->
 				<%}%>
+                
+            
+ 			<!--리뷰div for문 시작-->
 				
 			<!-- 리뷰for문 -->
 				<%if(reviewList!=null){ %>

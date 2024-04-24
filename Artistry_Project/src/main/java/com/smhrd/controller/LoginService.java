@@ -45,8 +45,6 @@ public class LoginService extends HttpServlet {
 		List<ChatRoom> chatRoomList = new ChatRoomDAO().chat_room_list(chatRoom);
 		
 		
-		
-		
 		System.out.println(chatRoomList);
 		
 		if (loginMember != null) {
@@ -69,6 +67,7 @@ public class LoginService extends HttpServlet {
 			
 			System.out.println("로그인 성공!");
 		
+//			System.out.println(reviewList);
 		} else {
 			System.out.println("로그인 실패!");
 		}
