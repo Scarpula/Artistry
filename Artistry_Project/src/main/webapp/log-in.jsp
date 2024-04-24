@@ -20,6 +20,7 @@
 <link href="css/webflow.css" rel="stylesheet" type="text/css">
 <link href="css/scars-stupendous-site-9634ca.webflow.css"
 	rel="stylesheet" type="text/css">
+<link href="css/GoogleLogo.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link href="https://fonts.gstatic.com" rel="preconnect"
 	crossorigin="anonymous">
@@ -216,20 +217,41 @@
 								height="80" alt="" class="logo-image">
 							</a>
 						</div>
-						
+
 						<!-- 구글 연동 스크립트 -->
 						<script src="https://accounts.google.com/gsi/client" async defer></script>
-
 
 						<div class="sns-logo google">
 							<div id="g_id_onload"
 								data-client_id="755402645796-in2nk95j3efnuigdt6ua21m165os6fr3.apps.googleusercontent.com"
 								data-callback="handleCredentialResponse"
 								data-auto_prompt="false"></div>
-							<div class="g_id_signin" data-type="icon" data-shape="Rectangle" 
-								data-theme="outline" data-text="signin_with" data-size="large">
-							</div>
+							<div class="g_id_signin" data-type="icon" data-shape="Rectangle"
+								data-theme="outline" data-text="signin_with" data-size="large"></div>
 						</div>
+
+						<script>
+							window.onload = function() {
+								var container = document
+										.querySelector(".sns-logo.google");
+								var customImage = document.createElement("img");
+								customImage.src = "images/google-logo.png";
+								customImage.alt = "google Login";
+								customImage.style.width = "80px";
+								customImage.style.height = "80px";
+								customImage.style.cursor = "pointer";
+								customImage.style.borderRadius = "8px";
+
+								// 로고 클릭 이벤트 핸들러 추가
+								customImage.addEventListener("click",
+										function() {
+											// Google 로그인 프로세스 시작
+											google.accounts.id.prompt();
+										});
+
+								container.appendChild(customImage);
+							}
+						</script>
 
 						<script type="text/javascript"
 							src="https://developers.kakao.com/sdk/js/kakao.js"></script>
@@ -346,7 +368,7 @@
 					}).join(''));
 			return JSON.parse(jsonPayload);
 		}
-	</script>           
+	</script>
 </body>
 
 </html>
