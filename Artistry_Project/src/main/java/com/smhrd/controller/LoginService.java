@@ -44,8 +44,8 @@ public class LoginService extends HttpServlet {
 		ChatRoom chatRoom = new ChatRoom(mb_Email);
 		List<ChatRoom> chatRoomList = new ChatRoomDAO().chat_room_list(chatRoom);
 		
-		Review mb_Review = new Review(mb_Email);
-		List<Review> reviewList = new ReviewDAO().showReview(mb_Review);
+		
+		
 		
 		System.out.println(chatRoomList);
 		
@@ -65,12 +65,10 @@ public class LoginService extends HttpServlet {
 			
 			// session 에 좋아요 정보 저장
 			session.setAttribute("chatRoomList", chatRoomList);
-			
-			//session에 리뷰리스트 정보 저장
-			session.setAttribute("reviewList", reviewList);
+
 			
 			System.out.println("로그인 성공!");
-			System.out.println(reviewList);
+		
 		} else {
 			System.out.println("로그인 실패!");
 		}

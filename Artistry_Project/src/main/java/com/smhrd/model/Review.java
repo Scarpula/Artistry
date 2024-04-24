@@ -36,6 +36,7 @@ public class Review {
 
 	    private String created_At;
 	    
+	    private String receiver;
 	    
 	    public Review(@NonNull String mb_Email, @NonNull String review_Content, int review_Ratings) {
 			super();

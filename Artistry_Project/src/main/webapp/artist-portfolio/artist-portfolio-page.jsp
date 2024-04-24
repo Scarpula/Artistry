@@ -29,8 +29,16 @@
 </head>
 <body class="body">
 
-	<%
-		List<Review> reviewList = (List<Review>)session.getAttribute("reviewList");
+
+
+	<%	
+	Member loginMember = (Member)session.getAttribute("loginMember");	
+	List<Review> reviewList = null;
+		if(reviewList==null){
+			response.sendRedirect("../Review_List");
+		reviewList = (List<Review>)session.getAttribute("reviewList");
+		}
+		
 	%>
 
   <div class="main">
@@ -202,7 +210,7 @@
           
            
           <!-- 리뷰수정_기현수 -->
-          	<% Member loginMember = (Member)session.getAttribute("member"); %>
+
           <div style="display:none" class="portfolio-artist-review">
             <div class="artist-review-head">
               <h1 class="heading-10">총 리뷰 0개</h1>
@@ -215,7 +223,7 @@
              <% if(loginMember!=null){ %>
               <form action="../ReviewService" method="post" id="email-form" class="review-writing-form" data-wf-page-id="660fa367cce1a421bb169fcb" data-wf-element-id="de265365-044b-c91d-7432-08d6c918aa7e"><label for="field" class="field-label-4">리뷰 작성하기</label>
                 
-				<input type="hidden" name="mb_Email" value="<%=loginMember.getMb_Email()%>">
+			 <!-- <input type="hidden" name="mb_Email" value=" loginMember.get">  -->
 				
                 <div class="review-text-area-wrapp"><textarea name="content" placeholder="작품을 잘 받아보셨다면, 솔직한 후기를 남겨주세요^^" maxlength="5000" id="field" name="field" data-name="Field" class="review-text-area w-input"></textarea>
                   <div class="value-submit-wrap">
@@ -236,8 +244,8 @@
             <!-- 리뷰작성란 div태그끝-->
 				<%}%>
 				
-				<!-- 리뷰for문 -->
-				
+			<!-- 리뷰for문 -->
+				<%if(reviewList!=null){ %>
 				<% for(int i=0; i<reviewList.size(); i++) {%>
 					<div class="w-layout-grid review-container">
 	              <div id="w-node-_8616ec42-16ad-8146-6b61-c251d1221daa-bb169fcb" class="review-block">
@@ -261,7 +269,7 @@
 		               <!--  </div> -->
 	       	    	 </div>
 		           </div> <%} %>
-				
+		           <%}%> 
         	<!-- 리뷰for문 끝 -->
 	        </div>
 	        <!--  리뷰수정 끝 -->
