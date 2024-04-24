@@ -18,7 +18,7 @@ public class PortService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	 
         // 파일 업로드를 위한 경로, 최대 크기, 인코딩, 파일 이름 중복 정책 설정
-        String path = getServletContext().getRealPath("../portfolio_img/"); // 파일 저장 경로
+        String path = request.getSession().getServletContext().getRealPath("/portfolio_img"); // 파일 저장 경로
         int maxSize = 10 * 1024 * 1024; // 최대 업로드 파일 크기 (10MB)
         String encoding = "UTF-8"; // 인코딩 타입 설정
         DefaultFileRenamePolicy renamePolicy = new DefaultFileRenamePolicy(); // 중복 파일명 정책
