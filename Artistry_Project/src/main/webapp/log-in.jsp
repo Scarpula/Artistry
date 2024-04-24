@@ -221,10 +221,13 @@
 
 
 						<div class="sns-logo google">
-							<a href="#" onclick="handleGoogleLogin()" class="w-inline-block">
-								<img src="images/google-real-logo.png" loading="lazy" width="80"
-								height="80" alt="" class="logo-image">
-							</a>
+							<div id="g_id_onload"
+								data-client_id="755402645796-in2nk95j3efnuigdt6ua21m165os6fr3.apps.googleusercontent.com"
+								data-callback="handleCredentialResponse"
+								data-auto_prompt="false"></div>
+							<div class="g_id_signin" data-type="icon" data-shape="circle"
+								data-theme="outline" data-text="signin_with" data-size="large">
+							</div>
 						</div>
 
 						<script type="text/javascript"
