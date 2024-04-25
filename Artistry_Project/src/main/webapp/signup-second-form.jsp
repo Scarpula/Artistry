@@ -242,14 +242,7 @@
 							</div>
 						</div>
 				</div>
-				<div class="boundary _01"></div>
-				<div class="identification-form">
-					<div class="identification-text-wrap">
-						<h5 class="heading-6">본인인증</h5>
-					</div>
-					<a href="#" class="phone-identification-button w-button">휴대폰 본인
-						인증하기</a>
-				</div>
+			
 				<div class="boundary _01"></div>
 
 				<div class="signup-complete">
