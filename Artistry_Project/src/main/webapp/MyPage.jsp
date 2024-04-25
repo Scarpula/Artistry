@@ -213,8 +213,11 @@
 					class="category-text-wrap">채팅내역</li>
 				<li data-w-id="13e59a0c-9989-cb9a-2092-6108e16f97b7"
 					class="category-text-wrap">좋아요 작가 목록</li>
+				<li data-w-id="e3a5911f-fd13-6056-ad64-9eb75db3f5dd"
+					class="category-text-wrap">아티스트 페이지</li>
 				<li data-w-id="f861915a-ac63-97aa-257a-d469c1980934"
 					class="category-text-wrap">관리자 페이지</li>
+
 			</ul>
 			<%
 			} else {
@@ -419,6 +422,12 @@
 						}
 						%>
 					</div>
+				</div>
+			</div>
+			<div style="display: none" class="mypage-artistpage">
+				<div class="mypage-context-title-wrap">
+					<h1>아티스트 페이지</h1>
+					<div class="MyAccount"></div>
 				</div>
 			</div>
 		</div>

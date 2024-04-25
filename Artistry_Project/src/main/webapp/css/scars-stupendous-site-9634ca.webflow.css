@@ -6347,6 +6347,32 @@ body {
     display: flex;
     position: absolute;
   }
+
+  .websocket-form-block {
+    z-index: 101;
+    background-color: #fbf6f0;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1250px;
+    height: 1550px;
+    display: flex;
+    position: absolute;
+    top: 11%;
+    bottom: 3%;
+    left: 40%;
+    right: 0%;
+  }
+
+  .mypage-artistpage {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 1424px;
+    height: 100px;
+    display: flex;
+    position: absolute;
+  }
 }
 
 @media screen and (max-width: 991px) {
