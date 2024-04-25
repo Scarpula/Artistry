@@ -47,19 +47,12 @@ public class frontController extends HttpServlet {
 		if(resultURL.equals("EmailCheck.do")) {
 			service = new EmailCheck();
 		}
-		
-		
-		if(service != null) {
-            String moveURL = service.execute(request, response);
+		String moveURL = service.execute(request, response);;
 		
 	
 		if(moveURL != null) {
 			response.sendRedirect(moveURL);
-		}else {
-            // 처리되지 않은 URL에 대한 예외 처리
-            PrintWriter out = response.getWriter();
-            out.println("해당 URL에 대한 서비스를 찾을 수 없습니다.");
-        }
+		}
     }
 }
 		
@@ -67,6 +60,5 @@ public class frontController extends HttpServlet {
 		
 		
 	
-	}
-
+	
 
