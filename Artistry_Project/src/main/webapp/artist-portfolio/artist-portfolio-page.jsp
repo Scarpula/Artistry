@@ -156,7 +156,7 @@
             </div>
           </div>
           <div class="profile-button">
-            <a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰하기</a>
+            <a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button" onclick="loginFirst()">의뢰하기</a>
             <a href="#" class="follow-button w-button">1 : 1 채팅</a>
             <a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 작성하기</a>
           </div>
@@ -294,7 +294,7 @@
        </div>
          </div>
       </div>
-      
+      <%if(loginMember != null){ %>
       <!-- 요청서폼 시작 -->
       <form  action="../ReqService?receiver=<%=artistEmail%>&mb_email=<%=loginMember.getMb_Email()%>>" method="post" id="email-form-3" enctype="multipart/form-data"
                      data-name="Email Form 3"  class="text-area-form"
@@ -392,6 +392,7 @@
       </div> 
       </form>
        <!-- 기현수 _ 요청서 폼 끝 -->
+       <%} %>
       
    </div>
    <script
