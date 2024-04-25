@@ -24,7 +24,7 @@
   <link href="../images/webclip.png" rel="apple-touch-icon">
 </head>
 <body class="body">
-	<% Member loginMember = (Member)session.getAttribute("loginMember"); %>
+	<% Member loginMember = (Member)session.getAttribute("member"); %>
   <div class="navbar-logo-left-3">
     <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
       <a href="../index.jsp" class="navbar-brand-3 w-nav-brand"><img src="../images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
