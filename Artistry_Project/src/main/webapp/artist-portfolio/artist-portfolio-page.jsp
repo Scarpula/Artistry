@@ -156,9 +156,10 @@
             </div>
           </div>
           <div class="profile-button">
+
             <a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰하기</a>
             <a href="#"  class="follow-button w-button" id="chatButton">1 : 1 채팅</a>
-            <a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 수정하기</a>
+            <a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 작성하기</a>
           </div>
           <div class="like-container"><img src="../images/Like_lofo-removebg.png" loading="lazy" width="512" height="512" alt="" srcset="../images/Like_lofo-removebg-p-500.png 500w, ../images/Like_lofo-removebg-p-800.png 800w, ../images/Like_lofo-removebg.png 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1919px) 511.9921875px, 127.9921875px" class="like-img">
             <div class="like-count">0</div>
