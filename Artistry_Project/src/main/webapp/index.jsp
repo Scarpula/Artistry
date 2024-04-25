@@ -758,7 +758,7 @@
 										sizes="(max-width: 1602px) 100vw, (max-width: 1919px) 1602px, 1144px"
 										srcset="images/VIsable-img3-p-500.jpg 500w, images/VIsable-img3-p-800.jpg 800w, images/VIsable-img3-p-1080.jpg 1080w, images/VIsable-img3-p-1600.jpg 1600w, images/VIsable-img3.jpg 1602w"
 										alt="" class="visable-image">
-								</div>
+								</div>  
 							</div>
 							<div id="w-node-d895e512-e60d-f2ab-0d94-d0e6e1a04169-c69e39b8"
 								class="visable-content-wrapper">
