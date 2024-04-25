@@ -26,5 +26,6 @@
       <mapper resource="com/smhrd/db/NaverUserMapper.xml" />    
       <mapper resource="com/smhrd/db/KakaoUserMapper.xml" />            
       <mapper resource="com/smhrd/db/GoogleUserMapper.xml" />            
+      <mapper resource="com/smhrd/db/ReqMapper.xml" />            
    </mappers>
 </configuration>
