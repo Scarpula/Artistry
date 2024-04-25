@@ -380,7 +380,7 @@
                      <div class="request-text-area w-form">
                         <textarea placeholder="판매자에게 요청사항을 자세히 기입하세요" maxlength="5000" id="Request-Text"
                            name="ReqText" data-name="Request Text"
-                           class="textarea w-input"></textarea>
+                           class="textarea w-input2"></textarea>
                         <input type="submit" data-wait="Please wait..."
                            class="submit-button-4 w-button" value="의뢰하기">
                      </div>
