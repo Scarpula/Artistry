@@ -22,6 +22,12 @@ public class ArtistDAO {
 		session.close();
 		return cnt;
 	}
+
+	public int addArtist(String artist_email) {
+		SqlSession session = sf.openSession(true);
+		int cnt = session.insert("com.smhrd.db.ArtistMapper.insertArtist",artist_email);
+		return cnt;
+	}
 	
 	
 }

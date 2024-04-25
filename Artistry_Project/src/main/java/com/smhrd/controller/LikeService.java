@@ -23,7 +23,7 @@ public class LikeService extends HttpServlet {
 		int cnt = new LikesDAO().toggleLike(like);
 		
 		if(cnt < 1) {
-			System.out.println("병신");
+			System.out.println("zz");
 		}
 		else {
 			System.out.println("굿");
