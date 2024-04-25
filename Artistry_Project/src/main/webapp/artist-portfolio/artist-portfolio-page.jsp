@@ -373,7 +373,7 @@ $(document).ready(function() {
 	$(document).ready(function(){
 		$('#chatButton').click(function(){
 			// chatPage.jsp로 이동
-			window.location.href = 'chatPage.jsp';
+			window.location.href = '../chatPage.jsp';
 		});
 	});
 </script>
