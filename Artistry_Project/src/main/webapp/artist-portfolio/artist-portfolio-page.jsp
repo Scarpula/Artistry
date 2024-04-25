@@ -34,7 +34,7 @@
 
 
    <%   
-      Member loginMember = (Member)session.getAttribute("loginMember");   
+      Member loginMember = (Member)session.getAttribute("member");   
       String artistEmail = request.getParameter("artistEmail");
       List<Review> reviewList = new ReviewDAO().showReview(artistEmail);
       List<Port> portList = new PortDAO().get_port_list(artistEmail);
@@ -78,31 +78,66 @@
             </div>
           </div>
         </div>
-        <ul role="list" class="nav-list right">
-          <li class="nav-item hide">
-            <div class="divider-vertical bg-dgray01"></div>
-          </li>
-          <li class="nav-item">
-            <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
-              <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="../images/star.svg" loading="lazy"></div>
-              <nav class="navbar-dropdown-list w-dropdown-list">
-                <a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
-                <a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
-                <a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
-              </nav>
-            </div>
-          </li>
-          <li class="nav-item hide">
-            <div class="divider-vertical bg-dgray01"></div>
-          </li>
-          <li class="nav-item">
-            <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
-              <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="../images/user.svg" loading="lazy"></div>
-              <nav class="navbar-dropdown-list w-dropdown-list">
-                <a href="../user-account.html" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-                <a href="../log-in.jsp" class="navbar-dropdown-link w-dropdown-link">로그인</a>
-                <a href="../sign-up.html" class="navbar-dropdown-link w-dropdown-link">회원가입</a><button class="navbar-dropdown-link bottom" data-wf-user-logout="로그아웃" data-wf-user-login="회원가입" type="button">로그아웃</button>
-              </nav>
+       <%
+				if (loginMember != null) {
+				%>
+				<div>
+					<a href="../MyPage.jsp"><%=loginMember.getMb_Nick()%>님</a>
+				</div>
+				<%
+				}
+				%>
+				<ul role="list" class="nav-list right">
+					<li class="nav-item hide">
+						<div class="divider-vertical bg-dgray01"></div>
+					</li>
+					<li class="nav-item">
+						<div data-hover="false" data-delay="0"
+							class="navbar-dropdown w-dropdown">
+							<div class="navbar-dropdown-toggle w-dropdown-toggle">
+								<img width="24" height="24" alt="" src="../images/star.svg"
+									loading="lazy">
+							</div>
+							<nav class="navbar-dropdown-list w-dropdown-list">
+								<a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
+								<a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
+								<a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
+							</nav>
+						</div>
+					</li>
+					<li class="nav-item hide">
+						<div class="divider-vertical bg-dgray01"></div>
+					</li>
+					<li class="nav-item">
+						<div data-hover="false" data-delay="0"
+							class="navbar-dropdown w-dropdown">
+							<div class="navbar-dropdown-toggle w-dropdown-toggle">
+								<img width="24" height="24" alt="" src="../images/user.svg"
+									loading="lazy">
+							</div>
+							<%
+							if (loginMember != null) {
+							%>
+							<nav class="navbar-dropdown-list w-dropdown-list">
+								<a href="../MyPage.jsp"
+									class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
+									href="../LogoutService"
+									class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
+							</nav>
+							<%
+							} else {
+							%>
+							<nav class="navbar-dropdown-list w-dropdown-list">
+								<a href="../MyPage.jsp"
+									class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
+									href="../log-in.jsp"
+									class="navbar-dropdown-link w-dropdown-link">로그인</a> <a
+									href="../sign-up.jsp"
+									class="navbar-dropdown-link w-dropdown-link">회원가입</a>
+							</nav>
+							<%
+							}
+							%>
             </div>
           </li>
         </ul>
