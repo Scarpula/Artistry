@@ -17,6 +17,8 @@ public class LikeService extends HttpServlet {
 		System.out.println(mb_Email + artist_email);
 		
 		Likes like = new Likes(mb_Email,artist_email);
+		
+		
 	}
 
 }
