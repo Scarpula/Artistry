@@ -32,26 +32,28 @@ public class Review {
 	    private String review_Content;
 	    // 별점 
 
+	    
 	    private int review_Ratings;
 
 	    private String created_At;
-	    
+
 	    private String receiver;
 	    
-	    public Review(@NonNull String mb_Email, @NonNull String review_Content, int review_Ratings) {
-			super();
-			this.mb_Email = mb_Email;
-			this.review_Content = review_Content;
-			this.review_Ratings = review_Ratings;
-		}
-
+	    
 		public Review(String receiver) {
 			super();
 			this.receiver = receiver;
 		}
-	    
-	    
 
-		// 등록 일자 
+
+		public Review(@NonNull String mb_Email, String review_Content, int review_Ratings, String receiver) {
+			super();
+			this.mb_Email = mb_Email;
+			this.review_Content = review_Content;
+			this.review_Ratings = review_Ratings;
+			this.receiver = receiver;
+		}
+
+		
 		
 }

@@ -16,14 +16,15 @@ public class ReviewService extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		
-		String mb_Email = request.getParameter("mb_Email");
+		String mb_Email = request.getParameter("email");
 		String content  = request.getParameter("content");
+		String receiver = request.getParameter("receiver");
 		int ratings = Integer.parseInt(request.getParameter("ratings"));
 		
 		
 		System.out.print( mb_Email+ content + ratings);
 		
-		Review reviews = new Review(mb_Email, content, ratings);
+		Review reviews = new Review(mb_Email, content, ratings, receiver);
 		
 		int cnt = new ReviewDAO().add_Review(reviews);
 		if (cnt>0) {
