@@ -159,18 +159,18 @@
         </div>
 	<div class="portfolio-artist-art setting-page">
     <div class="artist-art-setting">
-        <h1 class="heading-16">포트폴리오 수정하기</h1>
+        <h1 class="heading-16">포트폴리오 작성하기</h1>
     </div>
     <form id="email-form" action="PortService" method="post" enctype="multipart/form-data" class="art-modify-block">
         <!-- 이미지 업로드 입력 필드 -->	
         <div class="form-group">
             <label for="input-image" class="form-label">이미지 업로드:</label>
-            <input type="file" id="input-image" name="pf_Path" class="form-control">
+            <input type="file" id="input-image" name="pf_Path" class="form-control upload-input">
         </div>
         <!-- 제목 입력 필드 -->
         <div class="form-group">
             <label for="email-2" class="form-label">제목:</label>
-            <input class="form-control" maxlength="256" name="pf_Name" placeholder="제목을 입력해주세요" type="text" id="email-2" required>
+            <input class="form-control title-input" maxlength="256" name="pf_Name" placeholder="제목을 입력해주세요" type="text" id="email-2" required>
         </div>
         <!-- 제출 버튼 -->
         <div class="form-group">
@@ -188,11 +188,7 @@
         <label for="Information-Modify" class="field-label-3">아티스트 정보</label>
         <textarea id="Information-Modify" name="pf_Info" maxlength="5000" data-name="Information-Modify" placeholder="" class="artist-infor-area w-input"></textarea>
         <h1 class="heading-17">의뢰 가능 분야 선택</h1>
-        <select id="field" name="field" data-name="Field" required="" class="select-field-2 w-select">
-            <option value="">Select an option...</option>
-            <!-- Other options... -->
-        </select>
-        <input class="text-field-4 w-input" autofocus="true" maxlength="256" name="pf_Cate" data-name="Field 2" placeholder="" type="text" id="field-2" required="">
+        <input class="text-field-2 w-input" autofocus="true" maxlength="256" name="pf_Cate" data-name="Field 2" placeholder="" type="text" id="field-2" required="">
     </div>
 </div>
 <script>
