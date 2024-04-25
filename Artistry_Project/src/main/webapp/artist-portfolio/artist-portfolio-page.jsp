@@ -156,7 +156,7 @@
           </div>
           <div class="profile-button">
             <a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰하기</a>
-            <a href="#"  onclick="createChannel('dltjdeh7745@naver.com', 'asdf7745@naver.com')" class="follow-button w-button">1 : 1 채팅</a>
+            <a href="#"  onclick="createChannel('<%=loginMember.getMb_Email() %>', '<%=artistEmail %>')" class="follow-button w-button">1 : 1 채팅</a>
             <a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 수정하기</a>
           </div>
           <div class="like-container"><img src="../images/Like_lofo-removebg.png" loading="lazy" width="512" height="512" alt="" srcset="../images/Like_lofo-removebg-p-500.png 500w, ../images/Like_lofo-removebg-p-800.png 800w, ../images/Like_lofo-removebg.png 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1919px) 511.9921875px, 127.9921875px" class="like-img">
@@ -379,9 +379,9 @@ function createChannel(userId,partnerId){
 		},
 		data : JSON.stringify({
 			'name' : '1:1 Chat',
-			'channelId' : 'UNIQUE_CHANNEL_ID',
+			'channelId' : userId + '_' + artistEmail,
 			'type' : 'private',
-			'members' : [userId, partnerId]
+			'members' : [userId, artistEmail]
 		}),
 		success : function(response){
 			var channelId = response.channel.id;
@@ -393,6 +393,24 @@ function createChannel(userId,partnerId){
 		}
 	});
 }
+
+	function initializeTalkPlusSDK(channelId,userId){
+		var appId = '94c4543b-80b2-4b7d-91eb-11a67dbe5261';
+		var apiKey = '7d0fcde16afdc718e73dd85bfa7467897be94f51b817c613f94764e1ac3e684d';
+		
+		TP.createChannel({
+			appId : appId,
+			apiKey : apiKey,
+			channelId : channelId,
+			userId : userId,
+			onMessageReceived: function(message){
+				
+			},
+			onError : function(error){
+				console.log('Error:',error);
+			}
+		});
+	}
 </script>
 
 </body>
