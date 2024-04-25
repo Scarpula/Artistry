@@ -2,36 +2,17 @@ import { videoBase64 } from "./videobase64.js";
 import { imgBase64 } from "./imgbase64.js";
 
 const APP_ID = '3ee30362-8459-4ff8-b69c-091be04cfd7a';
-const DEMO_CHANNEL_ID = 'demo_channel';
 
-const avatarUser = [
-	{username : '제임스', image : './images/user_0.png'},
-	{username : '팀', image : './images/user_1.png'},
-	{username : '에이미', image : './images/user_2.png'},
-	{username : '엠마', image : './images/user_3.png'},
-	{username : '니콜', image : './images/user_4.png'},
-	{username : '대니얼', image : './images/user_5.png'},
-	{username : '토마스', image : './images/user_6.png'},
-	{username : '마이클', image : './images/user_7.png'},
-	{username : '잭슨', image : './images/user_8.png'},
-	{username : '마일로', image : './images/user_9.png'},
-	{username : '조이', image : './images/user_10.png'},
-	{username : '제이미', image : './images/user_11.png'},
-	{username : '조지', image : './images/user_12.png'},
-	{username : '케이트', image : './images/user_13.png'},
-	{username : '아이반', image : './images/user_14.png'},
-	{username : '칼', image : './images/user_15.png'},
-	{username : '릴리', image : './images/user_16.png'},
-	{username : '제시카', image : './images/user_17.png'},
-	{username : '윌리엄', image : './images/user_18.png'},
-	{username : '스칼렛', image : './images/user_19.png'},
-];
 let client;
 let loginUserInfo = {};
+let loginUserEmail = "<%= loginMember.getMb_Email() %>";
+let urlParams = new URLSearchParams(window.location.search);
+let artistEmail = urlParams.get('artistEmail');
+let channelId = loginUserEmail + '_' + artistEmail;
 
-const avatarhtml = function (message) {
+const avatarhtml = function(message) {
 	let pick = Math.floor(Math.random() * avatarUser.length);
-	if (!message.profileImageUrl){
+	if (!message.profileImageUrl) {
 		message.profileImageUrl = avatarUser[pick].image;
 	}
 	const messageList = document.createElement('div');
@@ -59,7 +40,7 @@ const avatarhtml = function (message) {
 
 	const profileImage = new Image();
 	profileImage.src = message.profileImageUrl;
-	profileImage.onload = function () {
+	profileImage.onload = function() {
 		avatarImage.appendChild(profileImage);
 	};
 
@@ -69,7 +50,7 @@ const avatarhtml = function (message) {
 	messageList.appendChild(avatarImage);
 	messageList.appendChild(messageBox);
 
-	if (message.fileUrl !== "" && Object.keys(message.data).length > 0){
+	if (message.fileUrl !== "" && Object.keys(message.data).length > 0) {
 		messageCont.removeChild(messageText);
 		messageCont.appendChild(fileArea);
 		let html = '';
@@ -95,7 +76,7 @@ const avatarhtml = function (message) {
 	return messageList;
 };
 
-const addMessagehtml = function (message) {
+const addMessagehtml = function(message) {
 	const messageList = document.createElement('div');
 	const messageBox = document.createElement('div');
 	const messageCont = document.createElement('div');
@@ -128,7 +109,7 @@ function XSSCheck(str) {
 	return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-const addFilePicturehtml = function (message) {
+const addFilePicturehtml = function(message) {
 	return `
     <div class="message-list wirter">
 		<div class="message-box">
@@ -142,7 +123,7 @@ const addFilePicturehtml = function (message) {
 	</div>`;
 };
 
-const addFileVideohtml = function (message) {
+const addFileVideohtml = function(message) {
 	return `
     <div class="message-list wirter">
 		<div class="message-box">
@@ -158,7 +139,7 @@ const addFileVideohtml = function (message) {
 	</div>`;
 };
 
-const addFilehtml = function (message) {
+const addFilehtml = function(message) {
 	return `
     <div class="message-list wirter">
 		<div class="message-box">
@@ -176,8 +157,7 @@ const addFilehtml = function (message) {
 	</div>`;
 };
 
-$(document).ready(function () {
-	//$('.chat-title').text(DEMO_CHANNEL_ID);
+$(document).ready(function() {
 	const today = new Date();
 	const year = today.getFullYear();
 	const month = today.getMonth() + 1;
@@ -185,9 +165,9 @@ $(document).ready(function () {
 	const dateText = `${year}년 ${month >= 10 ? month : '0' + month}월 ${date >= 10 ? date : '0' + date}일`;
 	$('.chat-area .date').text(dateText);
 
-	client = new TalkPlus.Client({appId: APP_ID});
+	client = new TalkPlus.Client({ appId: APP_ID });
 
-	client.on('event', function (payload) {
+	client.on('event', function(payload) {
 		if (payload.type === 'message') {
 			addMessage(payload.message);
 		}
@@ -203,43 +183,39 @@ $(document).ready(function () {
 });
 
 function setupUsernameInputEventListener() {
-	// login anonymously
-	let pick = Math.floor(Math.random() * avatarUser.length);
-	client.loginAnonymous({userId: generateRandomId(), username: avatarUser[pick].username, profileImageUrl: avatarUser[pick].image}, function (errResp, data) {
+	client.loginAnonymous({ userId: loginUserEmail, username: loginUserEmail }, function(errResp, data) {
 		loginUserInfo = data.user;
 
 		$('.user-box .user-img').attr('src', loginUserInfo.profileImageUrl);
 		$('.user-box .name input').val(loginUserInfo.username);
 
-		//user name 변경.
 		changeUserName(loginUserInfo);
-
 
 		if (errResp) {
 			return alert(JSON.stringify(errResp));
 		}
-		// join demo channel
-		client.joinChannel({channelId: DEMO_CHANNEL_ID}, function (errResp, data) {
+
+		client.joinChannel({ channelId: channelId }, function(errResp, data) {
 			if (errResp) {
-				if (errResp.code === '2003') { // if channel not found, create it
+				if (errResp.code === '2003') {
 					client.createChannel({
-						channelId: DEMO_CHANNEL_ID,
-						name: DEMO_CHANNEL_ID,
+						channelId: channelId,
+						name: channelId,
 						type: 'super_public',
 						members: []
-					}, function (errResp, data) {
+					}, function(errResp, data) {
 						if (errResp) {
 							return alert(JSON.stringify(errResp));
 						}
 					});
-				} else if (errResp.code === '2008') { // if user already had joined channel before, don't worry about error
+				} else if (errResp.code === '2008') {
 					// don't handle
 				} else {
 					return alert(JSON.stringify(errResp));
 				}
 			}
 
-			client.getMessages({channelId: DEMO_CHANNEL_ID}, function (errResp, data) {
+			client.getMessages({ channelId: channelId }, function(errResp, data) {
 				if (errResp) {
 					return alert(JSON.stringify(errResp));
 				}
@@ -247,16 +223,16 @@ function setupUsernameInputEventListener() {
 			});
 		});
 	});
- }
+}
 
-function changeUserName(loginUserInfo){
-	$(document).on('click', '.btn-alter', function(e){
+function changeUserName(loginUserInfo) {
+	$(document).on('click', '.btn-alter', function(e) {
 		$(this).closest('.user-box').find('.name').addClass('active');
 		$(this).closest('.user-box').find('.name input').focus();
 	});
-	$(document).on('focusout', '.user-box .name input', function(e){
+	$(document).on('focusout', '.user-box .name input', function(e) {
 		let newUserName = $(this).closest('.user-box').find('.name input').val();
-		if (newUserName !== loginUserInfo.username){
+		if (newUserName !== loginUserInfo.username) {
 			client.updateUser({
 				username: newUserName,
 			});
@@ -266,8 +242,8 @@ function changeUserName(loginUserInfo){
 }
 
 function sendMessageInputListener() {
-	$(document).on('keypress', '.enterMessage', function (e) {
-		if ($('.enterMessage').val() !== ''){
+	$(document).on('keypress', '.enterMessage', function(e) {
+		if ($('.enterMessage').val() !== '') {
 			if (e.keyCode === 13) {
 				e.preventDefault();
 				const messageText = $('.enterMessage').val();
@@ -279,7 +255,7 @@ function sendMessageInputListener() {
 }
 
 function sendMessageBtnListener() {
-	$(document).on('click', '#btnEnterMessage', function (e) {
+	$(document).on('click', '#btnEnterMessage', function(e) {
 		e.preventDefault();
 		if ($('.enterMessage').val() !== '') {
 			const messageText = $('.enterMessage').val();
@@ -302,7 +278,7 @@ function populateChatWindowWithMessages(messages) {
 
 function addMessageText(messageText) {
 	if (messageText.trim() === '') return;
-	client.sendMessage({channelId: DEMO_CHANNEL_ID, type: 'text', text: messageText}, function (err, data) {
+	client.sendMessage({ channelId: channelId, type: 'text', text: messageText }, function(err, data) {
 		if (err) {
 			return alert(err);
 		}
@@ -322,8 +298,8 @@ function addMessage(message) {
 
 function generateRandomString() {
 	return Math.floor((1 + Math.random()) * 0x10000)
-			.toString(16)
-			.substring(1);
+		.toString(16)
+		.substring(1);
 }
 
 function generateRandomId() {
@@ -335,17 +311,17 @@ function scrollDown() {
 }
 
 function showAttechFilebox() {
-	$('.btn-attach a').on('click', function () {
+	$('.btn-attach a').on('click', function() {
 		$(this).addClass('active');
 		$(this).closest('.message-write-inner').find('.attach-box').addClass('active');
 	});
-	$('.btn-attach a').on('focusout', function () {
+	$('.btn-attach a').on('focusout', function() {
 		$(this).removeClass('active');
 		$(this).closest('.message-write-inner').find('.attach-box').removeClass('active');
 	});
 }
 
-function b64toBlob (b64Data, contentType = '', sliceSize = 512) {
+function b64toBlob(b64Data, contentType = '', sliceSize = 512) {
 	const byteCharacters = atob(b64Data);
 	const byteArrays = [];
 	for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
@@ -361,22 +337,22 @@ function b64toBlob (b64Data, contentType = '', sliceSize = 512) {
 	return blob;
 }
 
-function dataURLtoFile (dataurl, fileName) {
+function dataURLtoFile(dataurl, fileName) {
 	var arr = dataurl.split(','),
-			mime = arr[0].match(/:(.*?);/)[1],
-			bstr = atob(arr[1]),
-			n = bstr.length,
-			u8arr = new Uint8Array(n);
+		mime = arr[0].match(/:(.*?);/)[1],
+		bstr = atob(arr[1]),
+		n = bstr.length,
+		u8arr = new Uint8Array(n);
 
-	while(n--){
-			u8arr[n] = bstr.charCodeAt(n);
+	while (n--) {
+		u8arr[n] = bstr.charCodeAt(n);
 	}
-	return new File([u8arr], fileName, {type:mime});
+	return new File([u8arr], fileName, { type: mime });
 }
 
 function sendFileImage() {
-	$('.attach-box .attach.pic').on('click', function () {
-		let imgFile = dataURLtoFile(imgBase64,'TalkPlusSampleImage');
+	$('.attach-box .attach.pic').on('click', function() {
+		let imgFile = dataURLtoFile(imgBase64, 'TalkPlusSampleImage');
 		let imgFileSize = String(imgFile.size);
 		client.sendMessage({
 			channelId: DEMO_CHANNEL_ID,
@@ -384,7 +360,7 @@ function sendFileImage() {
 			text: '',
 			data: { 'fileSizeLabel': imgFileSize, 'fileNameLabel': imgFile.name, fileTypeLabel: 'image' },
 			file: imgFile,
-		}, function (err, data) {
+		}, function(err, data) {
 			if (err) {
 				return alert(err);
 			}
@@ -397,7 +373,7 @@ function sendFileImage() {
 }
 
 function sendFileVideo() {
-	$('.attach-box .attach.video').on('click', function () {
+	$('.attach-box .attach.video').on('click', function() {
 		let videoUrl = 'https://d2qgyf3am7429y.cloudfront.net/video/talkplus.mp4';
 		const blob = b64toBlob(videoBase64, 'video/mp4');
 
@@ -410,7 +386,7 @@ function sendFileVideo() {
 			text: '',
 			data: { 'fileSizeLabel': videoFileSize, 'fileNameLabel': videoFile.name, 'fileScreenShotUrl': videoUrl, fileTypeLabel: 'video' },
 			file: videoFile,
-		}, function (err, data) {
+		}, function(err, data) {
 			if (err) {
 				return alert(err);
 			}
@@ -423,15 +399,16 @@ function sendFileVideo() {
 }
 
 function sendFileText() {
-	$('.attach-box .attach.file').on('click', function () {
+	$('.attach-box .attach.file').on('click', function() {
 		let file = new File(["talkplus sample file..."], "Talkplus Sample.txt", { type: "text/plain" });
 		let filesize = String(file.size);
-		client.sendMessage({ channelId: DEMO_CHANNEL_ID,
+		client.sendMessage({
+			channelId: DEMO_CHANNEL_ID,
 			type: 'text',
 			text: '',
 			data: { 'fileSizeLabel': filesize, 'fileNameLabel': file.name, fileTypeLabel: 'text' },
 			file: file,
-		}, function (err, data) {
+		}, function(err, data) {
 			if (err) {
 				return alert(err);
 			}
