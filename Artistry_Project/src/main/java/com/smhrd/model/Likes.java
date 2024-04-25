@@ -25,5 +25,11 @@ public class Likes {
 		super();
 		this.mb_Email = mb_Email;
 	}
+
+	public Likes(@NonNull String mb_Email, @NonNull String artist_Email) {// 좋아요 기능 용
+		super();
+		this.mb_Email = mb_Email;
+		this.artist_Email = artist_Email;
+	}
 	
 }

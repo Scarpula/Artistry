@@ -159,12 +159,12 @@
             <a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰하기</a>
             <a href="#" class="follow-button w-button">1 : 1 채팅</a>
             <a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 작성하기</a>
-            <a href="#"  class="follow-button w-button">1 : 1 채팅</a>
-            <a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 수정하기</a>
           </div>
-          <div class="like-container"><img src="../images/Like_lofo-removebg.png" loading="lazy" width="512" height="512" alt="" srcset="../images/Like_lofo-removebg-p-500.png 500w, ../images/Like_lofo-removebg-p-800.png 800w, ../images/Like_lofo-removebg.png 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1919px) 511.9921875px, 127.9921875px" class="like-img">
+          <!-- 좋아용 -->
+          <div class="like-container"><img src="../images/Like_lofo-removebg.png" id="img_Like" loading="lazy" width="512" height="512" alt="" srcset="../images/Like_lofo-removebg-p-500.png 500w, ../images/Like_lofo-removebg-p-800.png 800w, ../images/Like_lofo-removebg.png 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1919px) 511.9921875px, 127.9921875px" class="like-img" onclick="checkFavorite()">
             <div class="like-count">0</div>
           </div>
+          <!-- 좋아요 여기까지 -->
         </div>
         <div class="container-wrap">
           <div class="portfolio-tab">
@@ -352,24 +352,28 @@
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="../js/webflow.js" type="text/javascript"></script>
-  <script>
-$(document).ready(function() {
-  var likeCount = parseInt($('.like-count').text());
-  $('.like-img').click(function() {
+<script>
+function checkFavorite() { 
+    const mb_email = "<%=loginMember.getMb_Email() %>"; // 적절한 이메일 값으로 초기화
+    const artist_email = "<%=artistEmail %>"; // 적절한 이메일 값으로 초기화
     $.ajax({
-      url: 'https://api.example.com/like', // 서버의 API 엔드포인트 URL로 대체해주세요.
-      method: 'POST',
-      data: { /* 필요한 데이터 전송 */ },
-      success: function(response) {
-        likeCount++;
-        $('.like-count').text(likeCount);
-      },
-      error: function(xhr, status, error) {
-        console.log('Error:', error);
-      }
+        url: "../LikeService",
+        type: "POST",
+        dataType: "text", // 응답 형식에 따라 변경 가능
+        data: { mb_email: mb_email,
+        		artist_email:artist_email
+        	},
+        success: function(response) {
+            console.log("Response:", response); // 성공 시 로그
+        },
+        error: function(xhr, status, error) {
+            console.error("Error:", error); // 에러 처리 로그
+        }
     });
-  });
-});
+}
+
+
 </script>
+
 </body>
 </html>
