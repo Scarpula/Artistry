@@ -6302,6 +6302,7 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
+    width : 450px
   }
 
   .text-area-form {
@@ -6311,24 +6312,26 @@ body {
     display: flex;
   }
 
-  .textarea {
-    aspect-ratio: 5.25;
-    margin-top: 15px;
-    margin-left: 20px;
-    margin-right: 1000px;
+ .textarea {
+    aspect-ratio: 3.25;
+    margin-top: 25px;
+    margin-left: 645px;
+    margin-right: 0px;
     padding-bottom: 0;
     font-size: 24px;
     line-height: 44px;
     display: block;
-  }
+    width: 990px;
+    margin-bottom: 25px;
+}
 
   .submit-button-4 {
     border-radius: 10px;
     margin-top: 25px;
     padding: 15px 25px;
     position: relative;
-    left: 524px;
-  }
+    left: 334px;
+}
 
   .request-form-upload {
     color: #fff;
