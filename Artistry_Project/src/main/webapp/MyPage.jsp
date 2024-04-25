@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ArtistDAO"%>
+<%@page import="com.smhrd.model.Artists"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="com.smhrd.model.ChatRoom"%>
 <%@page import="com.smhrd.model.Likes"%>
@@ -58,6 +60,7 @@
 	List<Likes> likeList = (List<Likes>) session.getAttribute("likeList");
 	List<ChatRoom> chatRoomList = (List<ChatRoom>) session.getAttribute("chatRoomList");
 	List<Member> memberList = new MemberDAO().getMemberList();
+	Artists artist = new ArtistDAO().getArtistInfo(loginMember.getMb_Email());
 	%>
 	<div class="navbar-logo-left-3">
 		<div data-animation="default" data-collapse="none" data-duration="400"
@@ -213,15 +216,26 @@
 					class="category-text-wrap">채팅내역</li>
 				<li data-w-id="13e59a0c-9989-cb9a-2092-6108e16f97b7"
 					class="category-text-wrap">좋아요 작가 목록</li>
-				<li data-w-id="e3a5911f-fd13-6056-ad64-9eb75db3f5dd"
-					class="category-text-wrap">아티스트 페이지</li>
 				<li data-w-id="f861915a-ac63-97aa-257a-d469c1980934"
 					class="category-text-wrap">관리자 페이지</li>
-
 			</ul>
 			<%
 			} else {
 			%>
+			<%if(loginMember.getMb_Type().equals(false)){ %>
+			<ul role="list" class="mypage-side-profile-catelist w-list-unstyled">
+				<li data-w-id="3f641a6c-3b4c-fd6d-20d3-f0dd35d2eeca"
+					class="category-text-wrap">정보수정</li>
+				<li data-w-id="74c3dd16-60ec-6e8f-c824-5d0e7908d266"
+					class="category-text-wrap">거래내역</li>
+				<li data-w-id="44949014-bf4f-bb3c-6159-e0fc071a6d27"
+					class="category-text-wrap">채팅내역</li>
+				<li data-w-id="13e59a0c-9989-cb9a-2092-6108e16f97b7"
+					class="category-text-wrap">좋아요 작가 목록</li>
+				<li data-w-id="e3a5911f-fd13-6056-ad64-9eb75db3f5dd"
+					class="category-text-wrap">아티스트 페이지</li>
+			</ul>
+			<%}else{ %>		
 			<ul role="list" class="mypage-side-profile-catelist w-list-unstyled">
 				<li data-w-id="3f641a6c-3b4c-fd6d-20d3-f0dd35d2eeca"
 					class="category-text-wrap">정보수정</li>
@@ -232,6 +246,7 @@
 				<li data-w-id="13e59a0c-9989-cb9a-2092-6108e16f97b7"
 					class="category-text-wrap">좋아요 작가 목록</li>
 			</ul>
+			<%} %>		
 			<%
 			}
 			%>
@@ -428,6 +443,35 @@
 				<div class="mypage-context-title-wrap">
 					<h1>아티스트 페이지</h1>
 					<div class="MyAccount">
+					<form action="MyPage_artistInfo?email=<%=loginMember.getMb_Email()%>" method="post">
+						<table>
+							<tr>
+								<td>카테고리</td>
+								<td>
+									<select name="cate" >
+										<option>캐릭터</option>
+										<option>일러스트</option>
+										<option>캐리커쳐</option>
+										<option>이모티콘</option>
+										<option>캘리그라피/로고</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>최소 의뢰 금액</td> 
+								<td><input type="text" name="min_price" value="<%=artist.getMin_price() %>"></td>
+							</tr>
+							<tr>
+								<td>최대 의뢰 금액</td>
+								<td><input type="text" name="max_price" value="<%=artist.getMax_price() %>"></td>
+							</tr>
+							<tr>
+								<td colspan="2"><input type="submit" value="저장하기"></td>
+							</tr>
+							
+						</table>
+						
+					</form>
 					</div>
 				</div>
 			</div>
