@@ -427,7 +427,8 @@
 			<div style="display: none" class="mypage-artistpage">
 				<div class="mypage-context-title-wrap">
 					<h1>아티스트 페이지</h1>
-					<div class="MyAccount"></div>
+					<div class="MyAccount">
+					</div>
 				</div>
 			</div>
 		</div>
