@@ -32,6 +32,8 @@ public class JoinService extends HttpServlet {
 		Member member = new Member(mb_Email, mb_Pw, mb_Phone,mb_Birthdate, mb_Name,mb_Nick, add,mb_Type);
 		int cnt = new MemberDAO().join(member);
 		
+		response.sendRedirect("log-in.jsp");
+		
 	}
 
 }

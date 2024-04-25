@@ -396,7 +396,7 @@
 								<td><%=memberList.get(i).getMb_Nick()%>
 								<td />
 								<%
-								if (memberList.get(i).getMb_Type().equals(0)) {
+								if (memberList.get(i).getMb_Type().equals(false)) {
 								%>
 								<td>아티스트
 								<td />
