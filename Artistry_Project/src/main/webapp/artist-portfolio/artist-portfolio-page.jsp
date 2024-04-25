@@ -232,7 +232,8 @@
             
         <!-- List<Review> revie wList = (List<Review>)session.getAttribute("reviewList"); -->
              <% if(loginMember!=null){ %>
-              <form action="../ReviewService" method="post" id="email-form" class="review-writing-form" data-wf-page-id="660fa367cce1a421bb169fcb" data-wf-element-id="de265365-044b-c91d-7432-08d6c918aa7e"><label for="field" class="field-label-4">리뷰 작성하기</label>
+              <form action="../ReviewService?receiver=<%=artistEmail %>&email=<%=loginMember.getMb_Email() %>" 
+              method="post" id="email-form" class="review-writing-form" data-wf-page-id="660fa367cce1a421bb169fcb" data-wf-element-id="de265365-044b-c91d-7432-08d6c918aa7e"><label for="field" class="field-label-4">리뷰 작성하기</label>
                 
           <!-- <input type="hidden" name="mb_Email" value=" loginMember.get">  -->
             
