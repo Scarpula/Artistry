@@ -6312,11 +6312,11 @@ body {
     display: flex;
   }
 
-  .textarea {
+ .textarea {
     aspect-ratio: 5.25;
     margin-top: 15px;
-    margin-left: 510px;
-    margin-right: 800px;
+    margin-left: 500px;
+    margin-right: 500px;
     padding-bottom: 0;
     font-size: 24px;
     line-height: 44px;
