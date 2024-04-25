@@ -6302,6 +6302,7 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
+    width : 450px
   }
 
   .text-area-form {
@@ -6314,8 +6315,8 @@ body {
   .textarea {
     aspect-ratio: 5.25;
     margin-top: 15px;
-    margin-left: 20px;
-    margin-right: 1000px;
+    margin-left: 510px;
+    margin-right: 800px;
     padding-bottom: 0;
     font-size: 24px;
     line-height: 44px;
