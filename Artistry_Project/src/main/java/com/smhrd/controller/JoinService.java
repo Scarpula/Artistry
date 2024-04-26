@@ -35,10 +35,18 @@ public class JoinService extends HttpServlet {
 		int cnt = new MemberDAO().join(member);
 		
 		
-		int art = new ArtistDAO().addArtist(mb_Email);
-		
-		if (art>0) {
-			System.out.println("아티스트 테이블 정보 넣음");
+		if(cnt>0) {
+			if(mb_Type==false) {
+				int art = new ArtistDAO().addArtist(mb_Email,mb_Nick);
+				
+				if(art>0) {
+					System.out.println("아티스트로 회원가입이 완료 됐습니다!");
+				}else {
+					System.out.println("아티스트 회원가입 실패");
+				}
+			}
+			System.out.println("의뢰자로 회원가입이 완료 됐습니다!");
+			
 		}
 		
 		response.sendRedirect("log-in.jsp");

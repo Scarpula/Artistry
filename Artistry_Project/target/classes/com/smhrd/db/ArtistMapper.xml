@@ -5,14 +5,22 @@
   <mapper namespace="com.smhrd.db.ArtistMapper">
   
   <select id="getArtistInfo" parameterType="String" resultType="com.smhrd.model.Artists">
-  	select * from artists where artist_email=#{email}
+  	select artist_cate, min_price, max_price from artists where artist_email=#{email}
   </select>
   
-  <update id="editArtistInfo">
+  <update id="editArtistInfo" parameterType="com.smhrd.model.Artists">
   	update artists set artist_cate=#{cate}, min_price=#{min_price}, max_price=#{max_price} where artist_email=#{artist_email}
   </update>
-  <insert id="insertArtist">
-  	insert into artists values(#{artist_email},null,null,null)
+  <insert id="insertArtist" parameterType="String">
+  	insert into artists values(#{artist_email},'일러스트',0,0,#{artist_nick})
   </insert>
+  
+  <select id="searchArtist" parameterType="String">
+  	select * from 
+  </select>
+  
+  <select id="get_artist_list" resultType="com.smhrd.model.Artists">
+  	select * from artists
+  </select>
   
   </mapper>

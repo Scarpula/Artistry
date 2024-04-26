@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Artists"%>
+<%@page import="com.smhrd.model.ArtistDAO"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="com.smhrd.model.PortDAO"%>
 <%@page import="java.util.List"%>
@@ -63,7 +65,10 @@
 	String keyWord = request.getParameter("keyWord");
 	/* System.out.print(keyWord); */
 	Member loginMember = (Member) session.getAttribute("member");
-	List<Member> artistList = new MemberDAO().get_artist_list();
+	List<Artists> artistList = new ArtistDAO().get_artist_list();
+	if(keyWord != null){
+		List<Artists> searchList = new ArtistDAO().get_search_list(keyWord);
+	}
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
@@ -319,11 +324,11 @@
 							</div>
 							<div class="text-wrap">
 								<a
-									href="artist-portfolio-page.jsp?artistEmail=<%=artistList.get(i).getMb_Email()%>"
-									class="title-link"> <%=artistList.get(i).getMb_Email()%></a>
+									href="artist-portfolio-page.jsp?artistEmail=<%=artistList.get(i).getArtist_email()%>"
+									class="title-link"> <%=artistList.get(i).getArtist_email()%></a>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="artist-link-wrap">
-									<a href="#" class="artist-link"><%=artistList.get(i).getMb_Nick()%></a><img
+									<a href="#" class="artist-link"><%=artistList.get(i).getArtist_nick()%></a><img
 										src="../images/label-check.png" loading="lazy" width="30"
 										height="30" alt="" class="image-4"><img
 										src="../images/label-award.png" loading="lazy" width="30"
@@ -334,7 +339,7 @@
 								</div>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="price-tag">
-									<h3>25,000won ~</h3>
+									<h3><%=artistList.get(i).getMin_price()%>won ~</h3>
 								</div>
 							</div>
 						</div>
@@ -342,8 +347,10 @@
 						}
 						%>
 						<%
-						}
+						}else if(searchList != null){
 						%>
+						
+						<%} %>
 						<!-- 작가 별 종료 -->
 					</div>
 				</div>
