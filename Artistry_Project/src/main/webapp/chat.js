@@ -15,7 +15,7 @@ function sendMessage() {
     const receiverId = '아티스트 ID'; // 아티스트 ID 적절하게 설정하세요
 
     // AJAX 요청으로 메시지 서버에 전송
-    fetch('/ChatService', {
+    fetch('/Artistry_Project/ChatService', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
