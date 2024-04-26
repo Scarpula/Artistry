@@ -1,6 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,25 +33,38 @@ public class JoinService extends HttpServlet {
 		String add = mb_Addr + ' '+ mb_Addr2;
 
 		Member member = new Member(mb_Email, mb_Pw, mb_Phone,mb_Birthdate, mb_Name,mb_Nick, add,mb_Type);
-		int cnt = new MemberDAO().join(member);
 		
+		int cnt = 0;
+		int art = 0;
 		
-		if(cnt>0) {
-			if(mb_Type==false) {
-				int art = new ArtistDAO().addArtist(mb_Email,mb_Nick);
-				
-				if(art>0) {
-					System.out.println("아티스트로 회원가입이 완료 됐습니다!");
+			if(mb_Type==false) {//아티스트
+				cnt = new MemberDAO().join(member);
+				art = new ArtistDAO().addArtist(mb_Email,mb_Nick);
+			}else {//의뢰자
+				cnt = new MemberDAO().join(member);
+					}
+			
+//			PrintWriter out = response.getWriter();
+			
+			if (art>0) {
+				if(cnt>0) {
+					// 아티스트 가입 성공
+					response.sendRedirect("index.jsp");
 				}else {
-					System.out.println("아티스트 회원가입 실패");
+					// 아티스트 가입 실패
+					response.sendRedirect("sign-up.jsp");
+				}
+			}else {
+				if(cnt>0) {
+					// 의뢰자 가입 성공
+					response.sendRedirect("index.jsp");
+				}else {
+					// 의뢰자 가입 실패
+					response.sendRedirect("sign-up.jsp");
 				}
 			}
-			System.out.println("의뢰자로 회원가입이 완료 됐습니다!");
 			
-		}
-		
-		response.sendRedirect("log-in.jsp");
-		
-	}
+			
+			}
 
-}
+	}

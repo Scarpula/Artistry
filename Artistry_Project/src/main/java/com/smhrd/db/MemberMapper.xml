@@ -45,4 +45,7 @@
 		delete members where mb_email=#{mb_Email}
 	</delete>
 	
+	<update id="update_profile_img" parameterType="com.smhrd.model.Member">
+		update members set mb_profile_img=#{mb_ProfileImg} where mb_email=#{mb_Email}
+	</update>
 </mapper>

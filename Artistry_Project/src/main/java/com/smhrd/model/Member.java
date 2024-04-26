@@ -59,7 +59,12 @@ public Member(@NonNull String mb_Email) {
 	this.mb_Email = mb_Email;
 }
 
-
+public Member(@NonNull String mb_Email, @NonNull String mb_Pw, String mb_ProfileImg) {
+	super();
+	this.mb_Email = mb_Email;
+	this.mb_Pw = mb_Pw;
+	this.mb_ProfileImg = mb_ProfileImg;
+}
    
 
 }
