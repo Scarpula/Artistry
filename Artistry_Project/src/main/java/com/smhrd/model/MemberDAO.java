@@ -65,4 +65,12 @@ public class MemberDAO {
 		return cnt;
 	}
 
+	public int update_profile_img(Member member) {
+		// 프로필 사진 업데이트 문
+		SqlSession session = sf.openSession(true);
+		int cnt = session.update("com.smhrd.db.MemberMapper.update_profile_img", member);
+		session.close();
+		return cnt;
+	}
+
 }
