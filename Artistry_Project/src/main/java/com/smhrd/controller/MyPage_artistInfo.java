@@ -19,11 +19,45 @@ public class MyPage_artistInfo extends HttpServlet {
 		String cate3 = request.getParameter("cate3");
 		String cate4 = request.getParameter("cate4");
 		String cate5 = request.getParameter("cate5");
-		String cate = cate1 + ", " + cate2 + ", " + cate3 + ", " + cate4 + ", " + cate5;
+		String[] cateList = new String[5];
+		cateList[0] = cate1;
+		cateList[1] = cate2;
+		cateList[2] = cate3;
+		cateList[3] = cate4;
+		cateList[4] = cate5;
+		int countNotNull = 0;
+		for (String value : cateList) {
+		    if (value != null) {
+		        countNotNull++;
+		    }
+		}
+		String[] cateList2 = new String[countNotNull];
+		
+		int index = 0;
+		for (String value : cateList) {
+		    if (value != null) {
+		        cateList2[index] = value;
+		        index++;
+		    }
+		}
+		String cate = "";
+
+		for (String value : cateList2) {
+		    if (value != null) {
+		        cate += value + ", ";
+		    }
+		}
+
+		// 마지막 콤마와 공백 제거
+		if (!cate.isEmpty()) {
+		    cate = cate.substring(0, cate.length() - 2);
+		}
+		
+		System.out.println(cate);
+		
 		int min_price = Integer.parseInt(request.getParameter("min_price"));
 		int max_price = Integer.parseInt(request.getParameter("max_price"));
 	
-		System.out.println(cate);
 		
 		Artists artist = new Artists(email, cate, min_price, max_price);
 		int cnt = new ArtistDAO().editArtistInfo(artist);

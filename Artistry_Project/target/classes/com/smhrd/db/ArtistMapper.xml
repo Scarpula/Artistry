@@ -23,4 +23,6 @@
   	select * from artists
   </select>
   
+  
+  
   </mapper>

@@ -14,8 +14,6 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.JoinService</servlet-class>
 	</servlet>
-
-
 	<servlet>
 		<servlet-name>LogoutService</servlet-name>
 		<display-name>LogoutService</display-name>
@@ -52,12 +50,9 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.ReviewService</servlet-class>
 	</servlet>
-
-
 	<!-- <servlet> <servlet-name>LoginService</servlet-name> <display-name>LoginService</display-name> 
 		<description></description> <servlet-class>com.smhrd.controller.LoginService</servlet-class> 
 		</servlet> -->
-
 	<servlet>
 		<servlet-name>PortService</servlet-name>
 		<display-name>PortService</display-name>
@@ -93,9 +88,7 @@
 		<display-name>GetArtistListService</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.GetArtistListService</servlet-class>
-
 	</servlet>
-
 	<servlet>
 		<servlet-name>GetAllMemberService</servlet-name>
 		<display-name>GetAllMemberService</display-name>
@@ -125,6 +118,15 @@
 		<display-name>MyPage_artistInfo</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.MyPage_artistInfo</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>profile_imgService</servlet-name>
+		<display-name>profile_imgService</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.profile_imgService</servlet-class>
+
 	</servlet>
 
 
@@ -161,6 +163,7 @@
 		<url-pattern>/ReviewService</url-pattern>
 	</servlet-mapping>
 
+
 	<servlet-mapping>
 		<servlet-name>KakaoLogoutController</servlet-name>
 		<url-pattern>/KakaoLogoutController</url-pattern>
@@ -170,7 +173,22 @@
 		<url-pattern>/KakaoLoginController</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-
+		<servlet-name>LikeService</servlet-name>
+		<url-pattern>/LikeService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ReqService</servlet-name>
+		<url-pattern>/ReqService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MyPage_artistInfo</servlet-name>
+		<url-pattern>/MyPage_artistInfo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>profile_imgService</servlet-name>
+		<url-pattern>/profile_imgService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>GoogleLoginController</servlet-name>
 		<url-pattern>/GoogleLoginController</url-pattern>
 	</servlet-mapping>
@@ -191,19 +209,7 @@
 		<servlet-name>MemberDeleteService</servlet-name>
 		<url-pattern>/MemberDeleteService</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
 
-		<servlet-name>LikeService</servlet-name>
-		<url-pattern>/LikeService</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>ReqService</servlet-name>
-		<url-pattern>/ReqService</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>MyPage_artistInfo</servlet-name>
-		<url-pattern>/MyPage_artistInfo</url-pattern>
-	</servlet-mapping>
 
 
 

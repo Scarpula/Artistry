@@ -170,18 +170,9 @@
 								class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
 						</nav>
 						<%
-						} else {
-						%>
-						<nav class="navbar-dropdown-list w-dropdown-list">
-							<a href="log-in.jsp"
-								class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
-								href="log-in.jsp" class="navbar-dropdown-link w-dropdown-link">로그인</a>
-							<a href="sign-up.jsp"
-								class="navbar-dropdown-link w-dropdown-link">회원가입</a>
-						</nav>
-						<%
 						}
 						%>
+						
 					</div>
 				</li>
 			</ul>
@@ -191,12 +182,23 @@
 		<div class="mypage-sidecontainer">
 			<div class="mypage-side-profile-wrap">
 				<div class="mypage-side-profile-img-wrap">
-					<img class="profile-img" src="images/1.png" width="450"
+					<img class="profile-img" src="<%=loginMember.getMb_ProfileImg() %>" width="450"
 						height="155" alt=""
 						sizes="(max-width: 479px) 100vw, (max-width: 1919px) 450px, 7vw"
-						data-w-id="fa2d44e0-dd52-0cf6-3773-e1f7d8540d3b" loading="lazy"
-						srcset="images/1-p-500.png 500w, images/1-p-800.png 800w, images/1.png 1024w">
+						data-w-id="fa2d44e0-dd52-0cf6-3773-e1f7d8540d3b" loading="lazy">
 				</div>
+				<form action="profile_imgService" method="post" enctype="multipart/form-data">
+					<div>
+					<input type="text" hidden="" name="mb_Email" value="<%=loginMember.getMb_Email()%>">
+					<table>
+						<tr>
+							<td><input type="file" name="mb_profile_img"> </td>
+							<td><input type="submit" value="변경"></td>
+						</tr>
+					</table>
+						
+					</div>
+				</form>
 				<div class="mypage-side-profile-clasify-block">
 					<%
 					if (loginMember.getMb_Type().equals(0)) {

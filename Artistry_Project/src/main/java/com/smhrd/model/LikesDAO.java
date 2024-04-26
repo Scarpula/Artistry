@@ -28,5 +28,24 @@ public class LikesDAO {
 		return cnt;
 	}
 	
-
+	public Boolean Likecheck(Likes like) {
+		SqlSession session = sf.openSession(true);
+		int con = session.selectOne("com.smhrd.db.LikesMapper.likecheck", like);
+		session.close();
+		return con > 0;
+	}
+	
+	
+	public int removeLike(Likes like) {
+	    SqlSession session = sf.openSession(true); 
+	        int seo = session.delete("com.smhrd.db.LikesMapper.removeLike", like);
+	        session.close();  
+	        return seo;  
+	    }
+	
+	
+	
+	
 }
+
+
