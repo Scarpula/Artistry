@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ArtistDAO"%>
+<%@page import="com.smhrd.model.Artists"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="com.smhrd.model.ChatRoom"%>
 <%@page import="com.smhrd.model.Likes"%>
@@ -50,6 +52,14 @@
 </script>
 <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="images/webclip.png" rel="apple-touch-icon">
+<style>
+        .checkbox-label-준범 {
+            display: inline-block; /* 인라인 블록 요소로 배치 */
+            margin-right: 10px; /* 각 체크박스 사이의 간격 조정 */
+            margin-bottom: 5px;
+            height: 10px;
+        }
+</style>
 </head>
 <body class="body">
 	<%
@@ -58,6 +68,7 @@
 	List<Likes> likeList = (List<Likes>) session.getAttribute("likeList");
 	List<ChatRoom> chatRoomList = (List<ChatRoom>) session.getAttribute("chatRoomList");
 	List<Member> memberList = new MemberDAO().getMemberList();
+	Artists artist = new ArtistDAO().getArtistInfo(loginMember.getMb_Email());
 	%>
 	<div class="navbar-logo-left-3">
 		<div data-animation="default" data-collapse="none" data-duration="400"
@@ -213,15 +224,26 @@
 					class="category-text-wrap">채팅내역</li>
 				<li data-w-id="13e59a0c-9989-cb9a-2092-6108e16f97b7"
 					class="category-text-wrap">좋아요 작가 목록</li>
-				<li data-w-id="e3a5911f-fd13-6056-ad64-9eb75db3f5dd"
-					class="category-text-wrap">아티스트 페이지</li>
 				<li data-w-id="f861915a-ac63-97aa-257a-d469c1980934"
 					class="category-text-wrap">관리자 페이지</li>
-
 			</ul>
 			<%
 			} else {
 			%>
+			<%if(loginMember.getMb_Type().equals(false)){ %>
+			<ul role="list" class="mypage-side-profile-catelist w-list-unstyled">
+				<li data-w-id="3f641a6c-3b4c-fd6d-20d3-f0dd35d2eeca"
+					class="category-text-wrap">정보수정</li>
+				<li data-w-id="74c3dd16-60ec-6e8f-c824-5d0e7908d266"
+					class="category-text-wrap">거래내역</li>
+				<li data-w-id="44949014-bf4f-bb3c-6159-e0fc071a6d27"
+					class="category-text-wrap">채팅내역</li>
+				<li data-w-id="13e59a0c-9989-cb9a-2092-6108e16f97b7"
+					class="category-text-wrap">좋아요 작가 목록</li>
+				<li data-w-id="e3a5911f-fd13-6056-ad64-9eb75db3f5dd"
+					class="category-text-wrap">아티스트 페이지</li>
+			</ul>
+			<%}else{ %>		
 			<ul role="list" class="mypage-side-profile-catelist w-list-unstyled">
 				<li data-w-id="3f641a6c-3b4c-fd6d-20d3-f0dd35d2eeca"
 					class="category-text-wrap">정보수정</li>
@@ -232,6 +254,7 @@
 				<li data-w-id="13e59a0c-9989-cb9a-2092-6108e16f97b7"
 					class="category-text-wrap">좋아요 작가 목록</li>
 			</ul>
+			<%} %>		
 			<%
 			}
 			%>
@@ -425,9 +448,36 @@
 				</div>
 			</div>
 			<div style="display: none" class="mypage-artistpage">
-				<div class="mypage-context-title-wrap">
+				<div class="mypage-context-title-wrap" style="text-align: center;">
 					<h1>아티스트 페이지</h1>
 					<div class="MyAccount">
+					<form action="MyPage_artistInfo?email=<%=loginMember.getMb_Email()%>" method="post">
+						<table id="myAccount" border="1">
+							<tr>
+								<td>카테고리</td>
+								<td align="center">
+									<label class="checkbox-label-준범"><input id="chbox" type="checkbox" value="캐릭터" name="cate1">캐릭터</label> 
+								    <label class="checkbox-label-준범"><input id="chbox" type="checkbox" value="일러스트" name="cate2">일러스트</label> 
+								    <label class="checkbox-label-준범"><input id="chbox" type="checkbox" value="캐리커쳐" name="cate3">캐리커쳐</label> 
+								    <label class="checkbox-label-준범"><input id="chbox" type="checkbox" value="이모티콘" name="cate4">이모티콘</label> 
+								    <label class="checkbox-label-준범"><input id="chbox" type="checkbox" value="캘리그라피/로고" name="cate5">캘리그라피/로고</label> 
+								</td>
+							</tr>
+							<tr>
+								<td>최소 의뢰 금액</td> 
+								<td><input type="text" name="min_price" value="<%=artist.getMin_price() %>"></td>
+							</tr>
+							<tr>
+								<td>최대 의뢰 금액</td>
+								<td><input type="text" name="max_price" value="<%=artist.getMax_price() %>"></td>
+							</tr>
+							<tr>
+								<td colspan="2" align="center"><input type="submit" value="저장하기"></td>
+							</tr>
+							
+						</table>
+						
+					</form>
 					</div>
 				</div>
 			</div>

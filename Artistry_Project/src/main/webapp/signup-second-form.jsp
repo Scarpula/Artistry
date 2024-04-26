@@ -176,7 +176,8 @@
 				</div>
 				<div class="member-type-select-form">
 					<div class="member-type-text-wrap">
-						<h1 class="heading-5">회원타입 선택</h1>
+						<h1 class="heading-5">회원타입 선택</h1><br>
+						<h3 class="heading-5">아티스트로 가입 시 마이 페이지에서 정보 추가를 완료해주세요!</h3>
 					</div>
 					<div class="boundary"></div>
 

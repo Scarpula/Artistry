@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smhrd.model.ArtistDAO;
+import com.smhrd.model.Artists;
 import com.smhrd.model.Member;
 import com.smhrd.model.MemberDAO;
 
@@ -31,6 +33,13 @@ public class JoinService extends HttpServlet {
 
 		Member member = new Member(mb_Email, mb_Pw, mb_Phone,mb_Birthdate, mb_Name,mb_Nick, add,mb_Type);
 		int cnt = new MemberDAO().join(member);
+		
+		
+		int art = new ArtistDAO().addArtist(mb_Email);
+		
+		if (art>0) {
+			System.out.println("아티스트 테이블 정보 넣음");
+		}
 		
 		response.sendRedirect("log-in.jsp");
 		

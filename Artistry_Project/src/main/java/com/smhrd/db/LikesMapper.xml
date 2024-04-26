@@ -6,4 +6,9 @@
 	<select id="like_list" parameterType="com.smhrd.model.Likes" resultType="com.smhrd.model.Likes">
 		select * from likes where mb_email=#{mb_Email}
 	</select>
+	<insert id="toggleLike" parameterType="com.smhrd.model.Likes">
+		INSERT INTO likes (like_idx, mb_email, artist_email, created_at)
+		VALUES (likes_SEQ.nextval, #{mb_Email}, #{artist_Email}, sysdate)
+	</insert>
+	
   </mapper>
