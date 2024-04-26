@@ -184,7 +184,7 @@
 
 
 					<!-- 회원관리 2_ form -->
-					<form action="JoinService" method="post">
+					<form action="JoinService" method="post" onclick="JoinCheck()">
 
 						<div class="member-type-select-wrap">
 							<div class="member-type w-form">
@@ -266,6 +266,8 @@
 		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 		crossorigin="anonymous"></script>
 	<script src="js/webflow.js" type="text/javascript"></script>
+	
+	
 
 </body>
 </html>
