@@ -11,17 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.smhrd.model.ChatMessage;
 import com.smhrd.model.ChatMessageDAO;
+import com.smhrd.model.Member;
 
 public class GetChatMessagesService extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         
-        String senderId = request.getParameter("senderId");
+        String loggedInUserEmail = ((Member) request.getSession().getAttribute("member")).getMb_Email();
         String receiverId = request.getParameter("receiverId");
         
         try {
             ChatMessageDAO messageDAO = new ChatMessageDAO();
-            List<ChatMessage> chatMessages = messageDAO.getChatMessages(senderId, receiverId);
+            List<ChatMessage> chatMessages = messageDAO.getChatMessages(loggedInUserEmail, receiverId);
             
             Gson gson = new Gson();
             String json = gson.toJson(chatMessages);

@@ -19,4 +19,14 @@ public class LikesDAO {
 		return likeList;
 	}
 
+
+	public int toggleLike(Likes like) {
+		SqlSession session = sf.openSession(true); //auto commit
+		// 경로, value
+		int cnt = session.insert("com.smhrd.db.LikesMapper.toggleLike", like);
+		session.close();
+		return cnt;
+	}
+	
+
 }

@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Artists"%>
+<%@page import="com.smhrd.model.ArtistDAO"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="com.smhrd.model.PortDAO"%>
 <%@page import="java.util.List"%>
@@ -60,10 +62,15 @@
 </head>
 <body class="body">
 	<%
-	String keyWord = request.getParameter("keyWord");
+	String keyWord = request.getParameter("Search-2");
 	/* System.out.print(keyWord); */
 	Member loginMember = (Member) session.getAttribute("member");
-	List<Member> artistList = new MemberDAO().get_artist_list();
+	List<Artists> artistList = new ArtistDAO().get_artist_list();
+	List<Artists> searchList = null;
+	if(keyWord != null){
+		searchList = new ArtistDAO().get_search_list(keyWord);
+	}
+	System.out.print(searchList);
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
@@ -300,7 +307,47 @@
 					<div class="w-layout-grid art-grid">
 						<!-- 작가 별 시작 -->
 						<%
-						if (artistList != null) {
+						if(searchList != null) {
+						%>
+						<%
+						for (int i = 0; i < searchList.size(); i++) {
+						%>
+						<div id="w-node-_733c6bee-1a7f-f234-7502-c31924bd6773-11168024"
+							class="art-item">
+							<div data-w-id="51e1b636-57d6-a97a-d0c5-40ad8bfecd18"
+								class="art-wrap">
+								<a
+									style="-webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+									href="#" class="art-link-block w-inline-block"><img
+									src="../images/1.png" loading="lazy" width="218" height="218"
+									alt=""
+									srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w"
+									sizes="(max-width: 479px) 100vw, 218px" class="image-5"></a>
+							</div>
+							<div class="text-wrap">
+								<a
+									href="artist-portfolio-page.jsp?artistEmail=<%=searchList.get(i).getArtist_email()%>"
+									class="title-link"> <%=searchList.get(i).getArtist_email()%></a>
+								<div class="divider bg-dgrey01 art-main"></div>
+								<div class="artist-link-wrap">
+									<a href="#" class="artist-link"><%=searchList.get(i).getArtist_nick()%></a><img
+										src="../images/label-check.png" loading="lazy" width="30"
+										height="30" alt="" class="image-4"><img
+										src="../images/label-award.png" loading="lazy" width="30"
+										height="30" alt="" class="image-6">
+								</div>
+								<div class="work-period">
+									<div class="work-period-text-wrap">work Period : 2day</div>
+								</div>
+								<div class="divider bg-dgrey01 art-main"></div>
+								<div class="price-tag">
+									<h3><%=searchList.get(i).getMin_price()%>won ~ <%=searchList.get(i).getMax_price() %>won</h3>
+								</div>
+							</div>
+						</div>
+						<%} %>
+						<%
+						}else{
 						%>
 						<%
 						for (int i = 0; i < artistList.size(); i++) {
@@ -319,11 +366,11 @@
 							</div>
 							<div class="text-wrap">
 								<a
-									href="artist-portfolio-page.jsp?artistEmail=<%=artistList.get(i).getMb_Email()%>"
-									class="title-link"> <%=artistList.get(i).getMb_Email()%></a>
+									href="artist-portfolio-page.jsp?artistEmail=<%=artistList.get(i).getArtist_email()%>"
+									class="title-link"> <%=artistList.get(i).getArtist_email()%></a>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="artist-link-wrap">
-									<a href="#" class="artist-link"><%=artistList.get(i).getMb_Nick()%></a><img
+									<a href="#" class="artist-link"><%=artistList.get(i).getArtist_nick()%></a><img
 										src="../images/label-check.png" loading="lazy" width="30"
 										height="30" alt="" class="image-4"><img
 										src="../images/label-award.png" loading="lazy" width="30"
@@ -334,16 +381,12 @@
 								</div>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="price-tag">
-									<h3>25,000won ~</h3>
+									<h3><%=artistList.get(i).getMin_price()%>won ~ <%=artistList.get(i).getMax_price() %>won</h3>
 								</div>
 							</div>
 						</div>
-						<%
-						}
-						%>
-						<%
-						}
-						%>
+							<%} %>
+						<%} %>
 						<!-- 작가 별 종료 -->
 					</div>
 				</div>
