@@ -167,7 +167,7 @@
 							if (loginMember != null) {
 							%>
 							<nav class="navbar-dropdown-list w-dropdown-list">
-								<a href="../MyPage.jsp"
+								<a href="../log-in.jsp"
 									class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
 									href="../LogoutService"
 									class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
@@ -222,40 +222,43 @@
 						</a>
 						<div class="filter-accordion-body">
 							<div class="filter-form-block w-form">
+							<!-- 검색 체크박스 폼 시작 -->
 								<form id="wf-form--4" name="email-form" data-name="Email Form"
-									method="get" class="form"
+									method="get" class="form" action="../SearchService"
 									data-wf-page-id="660a443f25f0805e11168024"
 									data-wf-element-id="99cf0d8e-01a3-ec36-b932-66d53bbf673d">
 									<div class="filter-check-wrap">
 										<div class="filter-check-field">
 											<label class="w-checkbox filter-checkbox-field"><input
-												type="checkbox" id="checkbox" name="checkbox"
-												data-name="Checkbox"
+												type="checkbox" id="checkbox" name="cateBox1" 
+												data-name="Checkbox" value="캐릭터"
 												class="w-checkbox-input filter-checkbox"><span
 												class="filter-checkbox-label w-form-label" for="checkbox">캐릭터</span></label><label
 												class="w-checkbox filter-checkbox-field"><input
-												type="checkbox" id="checkbox-2" name="checkbox-2"
-												data-name="Checkbox 2"
+												type="checkbox" id="checkbox-2" name="cateBox2"
+												data-name="Checkbox 2" value="일러스트"
 												class="w-checkbox-input filter-checkbox"><span
 												class="filter-checkbox-label w-form-label" for="checkbox-2">일러스트</span></label><label
 												class="w-checkbox filter-checkbox-field"><input
-												type="checkbox" id="checkbox-2" name="checkbox-2"
-												data-name="Checkbox 2"
+												type="checkbox" id="checkbox-2" name="cateBox3"
+												data-name="Checkbox 2" value="캐리커쳐"
 												class="w-checkbox-input filter-checkbox"><span
 												class="filter-checkbox-label w-form-label" for="checkbox-2">캐리커쳐</span></label><label
 												class="w-checkbox filter-checkbox-field"><input
-												type="checkbox" id="checkbox-2" name="checkbox-2"
-												data-name="Checkbox 2"
+												type="checkbox" id="checkbox-2" name="cateBox4"
+												data-name="Checkbox 2" value="이모티콘"
 												class="w-checkbox-input filter-checkbox"><span
 												class="filter-checkbox-label w-form-label" for="checkbox-2">이모티콘</span></label><label
 												class="w-checkbox filter-checkbox-field"><input
-												type="checkbox" id="checkbox-2" name="checkbox-2"
-												data-name="Checkbox 2"
+												type="checkbox" id="checkbox-2" name="cateBox5"
+												data-name="Checkbox 2" value="캘리그라피/로고"
 												class="w-checkbox-input filter-checkbox"><span
 												class="filter-checkbox-label w-form-label" for="checkbox-2">캘리그라피/로고</span></label>
+												<input type="submit" value="검색하기">
 										</div>
 									</div>
 								</form>
+							<!-- 검색 체크박스 폼 끝 -->
 								<div class="w-form-done">
 									<div>Thank you! Your submission has been received!</div>
 								</div>
