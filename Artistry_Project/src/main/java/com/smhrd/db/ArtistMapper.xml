@@ -15,8 +15,8 @@
   	insert into artists values(#{artist_email},'일러스트',0,0,#{artist_nick})
   </insert>
   
-  <select id="searchArtist" parameterType="String">
-  	select * from 
+  <select id="searchArtist" parameterType="String" resultType="com.smhrd.model.Artists">
+  	SELECT * FROM artists WHERE artist_cate LIKE '%' || #{keyword} || '%'
   </select>
   
   <select id="get_artist_list" resultType="com.smhrd.model.Artists">

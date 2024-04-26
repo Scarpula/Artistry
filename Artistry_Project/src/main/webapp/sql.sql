@@ -39,6 +39,7 @@ select * from PORTFOLIO;
 
 insert into PORTFOLIOS values (101,'admin','../portfolio_img/1.jpg','emoji1','emoji','test1',sysdate);
 
+select * from REVIEWS;
 
 
 

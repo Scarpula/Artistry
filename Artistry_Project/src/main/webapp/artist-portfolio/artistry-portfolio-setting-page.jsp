@@ -232,7 +232,7 @@ function submitForms() {
             window.location.href = 'artist-portfolio-page.jsp'; // 성공 시 페이지 리다이렉션
         } else {
         	alert('저장이 완료됐습니다.');
-        	 window.location.href = 'artist-portfolio-page.jsp'
+        	 window.location.href = 'artist-portfolio-page.jsp?artistEmail=<%=((Member)session.getAttribute("member")).getMb_Email()%>'
         }
     }).catch(error => {
         console.error('Error:', error);

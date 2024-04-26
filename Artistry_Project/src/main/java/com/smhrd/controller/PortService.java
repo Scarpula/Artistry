@@ -18,7 +18,7 @@ public class PortService extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         // 실제 파일이 저장될 서버의 파일 시스템 경로
-        String path = "C:\\Users\\smhrd\\git\\Artistry1\\Artistry_Project\\src\\main\\webapp\\portfolio_img";
+        String path = "C:\\Users\\smhrd\\git\\Artistry\\Artistry_Project\\src\\main\\webapp\\portfolio_img";
         
         int maxSize = 10 * 1024 * 1024; // 최대 업로드 파일 크기 (10MB)
         String encoding = "UTF-8"; // 인코딩 타입 설정
@@ -45,7 +45,7 @@ public class PortService extends HttpServlet {
         // 파일 업로드 및 DB 삽입 결과 로그
         if (cnt > 0) {
             System.out.println("파일 업로드 및 DB 저장 성공!");
-            response.sendRedirect("BoardMain.jsp"); // 성공 시 이동할 페이지
+            response.sendRedirect("artist-portfolio/artist-portfolio-page.jsp?artistEmail="+mb_Email); // 성공 시 이동할 페이지
         } else {
             System.out.println("파일 업로드 또는 DB 저장 실패..");
             response.sendRedirect("error.jsp"); // 실패 시 이동할 페이지

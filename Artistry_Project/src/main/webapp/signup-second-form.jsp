@@ -272,10 +272,9 @@
 	<script src="js/webflow.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
-	
 		function JoinCheck(){
-			var result = ${result}		
-			console.log('result')
+			var result = $('result');		
+			console.log(result)
 			function(result){
 					if(result=='success'){
 						alert('가입에 성공하였습니다. 메인으로 돌아가서 로그인 해 주세요.')
