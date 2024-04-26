@@ -32,10 +32,11 @@ public class ArtistDAO {
 	}
 	
 	public List<Artists> get_search_list (String keyWord){
+		// 검색 조건에 맞는 아티스트를 가져오는 메소드
 		SqlSession session = sf.openSession(true);
 		List<Artists> searchList = session.selectList("com.smhrd.db.ArtistMapper.searchArtist",keyWord);
 		session.close();
-		return null;
+		return searchList;
 	}			
 	
 	public List<Artists> get_artist_list() {

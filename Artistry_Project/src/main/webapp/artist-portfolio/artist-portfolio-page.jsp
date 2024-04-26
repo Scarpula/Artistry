@@ -161,7 +161,9 @@
             <a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 작성하기</a>
           </div>
           <!-- 좋아요 시작 -->
-          <div class="like-container"><img src="../Likeimg/Likeicon12.png" loading="lazy" width="512" height="512" alt=""  class="like-img" id="Likebutton" onclick="checkFavorite()">
+          <div class="like-container"><img src="../images/Likeicon1" loading="lazy" width="512" height="512" alt="" 
+             srcset="../images/Like_lofo-removebg-p-500.png 500w, ../images/Like_lofo-removebg-p-800.png 800w, ../images/Like_lofo-removebg.png 1024w" 
+             sizes="(max-width: 767px) 100vw, (max-width: 1919px) 511.9921875px, 127.9921875px" class="like-img" onclick="checkFavorite()">
             <div class="like-count">100</div>
           </div>
           <!-- 좋아요 끝 -->
@@ -255,9 +257,9 @@
                   </div>
                 </div>
               </form>
+            <%}%>
             </div>
             <!-- 리뷰작성란 div태그끝-->
-            <%}%>
                 
             
           <!--리뷰div for문 시작-->
@@ -403,31 +405,33 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"></script>
    <script src="../js/webflow.js" type="text/javascript"></script>
-   <script>	   
-		function checkFavorite() { 
-		    const mb_Email = "<%=loginMember.getMb_Email() %>"; // 적절한 이메일 값으로 초기화
-		    const artist_Email = "<%=artistEmail %>"; // 적절한 이메일 값으로 초기화
-		    $.ajax({
-		        url: "../LikeService",
-		        type: "POST",
-		        dataType: "text", // 응답 형식에 따라 변경 가능
-		        data: { mb_Email: mb_Email,
-		        		artist_Email:artist_Email
-		        	},
-		        	 success: function(response) {
-		                 console.log("Response:", response); // 성공 시 로그
-		                 if (response === "liked") {
-		                     $("#Likebutton").attr("src", "../Likeimg/Likeicon2.png"); // 좋아요 상태 이미지
-		                 }
-		             },
-		             error: function(xhr, status, error) {
-		                 console.error("Error:", error); // 에러 처리 로그
-		             }
-		});
-		
-		}
+   <%if(loginMember != null){ %>
+      <script>
+   function checkFavorite() { 
+       const mb_Email = "<%=loginMember.getMb_Email() %>"; // 적절한 이메일 값으로 초기화
+       const artist_Email = "<%=artistEmail %>"; // 적절한 이메일 값으로 초기화
+       $.ajax({
+           url: "../LikeService",
+           type: "POST",
+           dataType: "text", // 응답 형식에 따라 변경 가능
+           data: { mb_Email: mb_Email,
+                 artist_Email:artist_Email
+              },
+              success: function(response) {
+                  if (response === "liked") {
+                      $("#Likebutton").attr("src", "../Likeimg/Likeicon2.png"); // 좋아요 상태 이미지
+                  }
+              },
+              error: function(xhr, status, error) {
+                  console.error("Error:", error); // 에러 처리 로그
+              }
+ });
 
-
-</script>
+   	
+   }
+   
+   
+   </script>
+<%} %>
 </body>
 </html>

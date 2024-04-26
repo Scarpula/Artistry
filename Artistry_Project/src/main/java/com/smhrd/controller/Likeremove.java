@@ -10,8 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class Likeremove extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		
-		
+
 	}
 
 }
