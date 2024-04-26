@@ -126,9 +126,14 @@
 				</div>
 								<%if(loginMember!=null){ %>
 									<div>
-										<a href="MyPage.jsp"><%=loginMember.getMb_Nick() %>님</a>
+										<h3><a href="MyPage.jsp"><%=loginMember.getMb_Nick() %>님</a></h3>
 									</div>
-								<%} %>
+								<%}else {%>
+									<div>
+										<h3><a href="log-in.jsp">로그인을 해주세요.</a></h3>
+									</div> 
+									<%}%>
+									
 				<ul role="list" class="nav-list right">
 					<li class="nav-item hide">
 						<div class="divider-vertical bg-dgray01"></div>
@@ -193,11 +198,11 @@
 								class="animation-on-load-2">
 								<div class="text-block">
 								
-							<%if(loginMember!=null){ %>
-								<div class="text-span"><h1>&quot;<%=loginMember.getMb_Nick() %>님&quot;  의 예술, 세상과 연결되다 </h1></div><br>&quot;
-							<%}else{ %>
+							<% if(loginMember!=null){ %>
+								<div class="text-span"><h1>&quot;<%=loginMember.getMb_Nick()%>님&quot;  의 예술, 세상과 연결되다 </h1></div><br>&quot;
+							<%} else{ %>
 									&quot; <span class="text-span">당신의 예술, 세상과 연결되다 </span>&quot;<br>&quot;
-								<%} %>
+								<% }%>
 									Connect Your Art to the World with Artistry &quot;
 								</div>
 								<div class="button-holder">

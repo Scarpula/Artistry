@@ -44,7 +44,6 @@ public class JoinService extends HttpServlet {
 				cnt = new MemberDAO().join(member);
 					}
 			
-						
 //			PrintWriter out = response.getWriter();
 			
 			if (art>0) {
