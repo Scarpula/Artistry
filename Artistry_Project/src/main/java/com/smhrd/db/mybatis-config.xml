@@ -28,7 +28,5 @@
       <mapper resource="com/smhrd/db/GoogleUserMapper.xml" />            
       <mapper resource="com/smhrd/db/ReqMapper.xml" />
       <mapper resource="com/smhrd/db/ArtistMapper.xml" />            
-      <mapper resource="com/smhrd/db/ChatMessageMapper.xml" />            
-      <mapper resource="com/smhrd/db/ChatHistoryMapper.xml" />            
    </mappers>
 </configuration>

@@ -28,7 +28,6 @@
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="../images/webclip.png" rel="apple-touch-icon">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript">client = new TalkPlus.Client({appId: 94c4543b-80b2-4b7d-91eb-11a67dbe5261});</script>
 </head>
 <body class="body">
 

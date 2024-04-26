@@ -1,6 +1,3 @@
-<%@page import="com.smhrd.model.Member"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +5,9 @@
     <link rel="stylesheet" href="./css/style.css">
 	<meta charset="utf-8" />
 	<script>
-	<%Member loginMember = (Member)session.getAttribute("member");%>
-	window.loginMemberNick = '<%=(loginMember != null) ? loginMember.getMb_Nick() : ""%>';
-    window.loginMemberProfileUrl = '<%=(loginMember != null) ? loginMember.getProfileImageUrl() : ""%>';
-
+	'<%!Member loginMember = (Member)session.getAttribute("member");%>'
+    var loginMemberNick = '<%=loginMember.getMb_Nick()%>';
+    var loginMemberProfileUrl = '<%=loginMember.getProfileImageUrl()%>';
 </script>
 </head>
 <div class="wrap">

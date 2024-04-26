@@ -3,70 +3,67 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
-      <context-param>
-        <param-name>expressionLanguageEnabled</param-name>
-        <param-value>true</param-value>
-    </context-param>
-  <servlet>
-  	<servlet-name>JoinService</servlet-name>
-  	<display-name>JoinService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.JoinService</servlet-class>
-  </servlet>
- 
-
-  <servlet>
-  	<servlet-name>LogoutService</servlet-name>
-  	<display-name>LogoutService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.LogoutService</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>SearchService</servlet-name>
-  	<display-name>SearchService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.SearchService</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>MyPage_EditInfo</servlet-name>
-  	<display-name>MyPage_EditInfo</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.MyPage_EditInfo</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>EmailCheck</servlet-name>
-  	<display-name>EmailCheck</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.EmailCheck</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>Command</servlet-name>
-  	<display-name>Command</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.frontcontroller.Command</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>ReviewService</servlet-name>
-  	<display-name>ReviewService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.ReviewService</servlet-class>
-  </servlet>
-
-
- <!--  <servlet>
-  	<servlet-name>LoginService</servlet-name>
-  	<display-name>LoginService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.LoginService</servlet-class>
-  </servlet> -->
-  
+	<display-name>Archetype Created Web Application</display-name>
+	<context-param>
+		<param-name>expressionLanguageEnabled</param-name>
+		<param-value>true</param-value>
+	</context-param>
 	<servlet>
-  	<servlet-name>PortService</servlet-name>
-  	<display-name>PortService</display-name>
-  	<description></description>
-  	<servlet-class>com.smhrd.controller.PortService</servlet-class>
-  </servlet>
+		<servlet-name>JoinService</servlet-name>
+		<display-name>JoinService</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.JoinService</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>LogoutService</servlet-name>
+		<display-name>LogoutService</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.LogoutService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SearchService</servlet-name>
+		<display-name>SearchService</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.SearchService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MyPage_EditInfo</servlet-name>
+		<display-name>MyPage_EditInfo</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.MyPage_EditInfo</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EmailCheck</servlet-name>
+		<display-name>EmailCheck</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.EmailCheck</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Command</servlet-name>
+		<display-name>Command</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.frontcontroller.Command</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ReviewService</servlet-name>
+		<display-name>ReviewService</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.ReviewService</servlet-class>
+	</servlet>
+
+
+	<!-- <servlet> <servlet-name>LoginService</servlet-name> <display-name>LoginService</display-name> 
+		<description></description> <servlet-class>com.smhrd.controller.LoginService</servlet-class> 
+		</servlet> -->
+
+	<servlet>
+		<servlet-name>PortService</servlet-name>
+		<display-name>PortService</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.PortService</servlet-class>
+	</servlet>
 	<servlet>
 		<servlet-name>KakaoLogoutController</servlet-name>
 		<display-name>KakaoLogoutController</display-name>
@@ -116,7 +113,7 @@
 		<display-name>LikeService</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.LikeService</servlet-class>
-			</servlet>
+	</servlet>
 	<servlet>
 		<servlet-name>ReqService</servlet-name>
 		<display-name>ReqService</display-name>
@@ -129,128 +126,91 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.MyPage_artistInfo</servlet-class>
 	</servlet>
-	<servlet>
-		<servlet-name>ChatService</servlet-name>
-		<display-name>ChatService</display-name>
-		<description></description>
-		<servlet-class>com.smhrd.controller.ChatService</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>GetChatMessagesService</servlet-name>
-		<display-name>GetChatMessagesService</display-name>
-		<description></description>
-		<servlet-class>com.smhrd.controller.GetChatMessagesService</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>SaveChatHistoryService</servlet-name>
-		<display-name>SaveChatHistoryService</display-name>
-		<description></description>
-		<servlet-class>com.smhrd.controller.SaveChatHistoryService</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>ChatHistoryService</servlet-name>
-		<display-name>ChatHistoryService</display-name>
-		<description></description>
-		<servlet-class>com.smhrd.controller.ChatHistoryService</servlet-class>
-	</servlet> 
 
-  <servlet-mapping>
-  	<servlet-name>JoinService</servlet-name>
-  	<url-pattern>/JoinService</url-pattern>
-  </servlet-mapping>
-  
- 
-  <servlet-mapping>
-  	<servlet-name>LogoutService</servlet-name>
-  	<url-pattern>/LogoutService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>SearchService</servlet-name>
-  	<url-pattern>/SearchService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>MyPage_EditInfo</servlet-name>
-  	<url-pattern>/MyPage_EditInfo</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>EmailCheck</servlet-name>
-  	<url-pattern>/EmailCheck</url-pattern>
-  </servlet-mapping>
-  
-  <servlet-mapping>
-  	<servlet-name>Command</servlet-name>
-  	<url-pattern>/Command</url-pattern>
-  </servlet-mapping>
 
-  <servlet-mapping>
-  	<servlet-name>ReviewService</servlet-name>
-  	<url-pattern>/ReviewService</url-pattern>
-  </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JoinService</servlet-name>
+		<url-pattern>/JoinService</url-pattern>
+	</servlet-mapping>
 
-  <servlet-mapping>
-  	<servlet-name>KakaoLogoutController</servlet-name>
-  	<url-pattern>/KakaoLogoutController</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>KakaoLoginController</servlet-name>
-  	<url-pattern>/KakaoLoginController</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
 
-  	<servlet-name>GoogleLoginController</servlet-name>
-  	<url-pattern>/GoogleLoginController</url-pattern>
-</servlet-mapping>
-<servlet-mapping>
-  	<servlet-name>GetSellerService</servlet-name>
-  	<url-pattern>/GetSellerService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>GetArtistListService</servlet-name>
-  	<url-pattern>/GetArtistListService</url-pattern>
-  </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutService</servlet-name>
+		<url-pattern>/LogoutService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SearchService</servlet-name>
+		<url-pattern>/SearchService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MyPage_EditInfo</servlet-name>
+		<url-pattern>/MyPage_EditInfo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EmailCheck</servlet-name>
+		<url-pattern>/EmailCheck</url-pattern>
+	</servlet-mapping>
 
-  <servlet-mapping>
-  	<servlet-name>GetAllMemberService</servlet-name>
-  	<url-pattern>/GetAllMemberService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>MemberDeleteService</servlet-name>
-  	<url-pattern>/MemberDeleteService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Command</servlet-name>
+		<url-pattern>/Command</url-pattern>
+	</servlet-mapping>
 
-  	<servlet-name>LikeService</servlet-name>
-  	<url-pattern>/LikeService</url-pattern>
-  </servlet-mapping>
-   <servlet-mapping>
-  	<servlet-name>ReqService</servlet-name>
-  	<url-pattern>/ReqService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>MyPage_artistInfo</servlet-name>
-  	<url-pattern>/MyPage_artistInfo</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ChatService</servlet-name>
-  	<url-pattern>/ChatService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>GetChatMessagesService</servlet-name>
-  	<url-pattern>/GetChatMessagesService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>SaveChatHistoryService</servlet-name>
-  	<url-pattern>/SaveChatHistoryService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>ChatHistoryService</servlet-name>
-  	<url-pattern>/ChatHistoryService</url-pattern>
-  </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ReviewService</servlet-name>
+		<url-pattern>/ReviewService</url-pattern>
+	</servlet-mapping>
 
- <!--  <servlet-mapping>
-  	<servlet-name>LoginService</servlet-name>
-  	<url-pattern>/LoginService</url-pattern>
-  </servlet-mapping> -->
+	<servlet-mapping>
+		<servlet-name>KakaoLogoutController</servlet-name>
+		<url-pattern>/KakaoLogoutController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>KakaoLoginController</servlet-name>
+		<url-pattern>/KakaoLoginController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+
+		<servlet-name>GoogleLoginController</servlet-name>
+		<url-pattern>/GoogleLoginController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetSellerService</servlet-name>
+		<url-pattern>/GetSellerService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetArtistListService</servlet-name>
+		<url-pattern>/GetArtistListService</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>GetAllMemberService</servlet-name>
+		<url-pattern>/GetAllMemberService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberDeleteService</servlet-name>
+		<url-pattern>/MemberDeleteService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+
+		<servlet-name>LikeService</servlet-name>
+		<url-pattern>/LikeService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ReqService</servlet-name>
+		<url-pattern>/ReqService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MyPage_artistInfo</servlet-name>
+		<url-pattern>/MyPage_artistInfo</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+	<!-- <servlet-mapping> <servlet-name>LoginService</servlet-name> <url-pattern>/LoginService</url-pattern> 
+		</servlet-mapping> -->
 
 
 </web-app>
