@@ -69,6 +69,7 @@
 	List<ChatRoom> chatRoomList = (List<ChatRoom>) session.getAttribute("chatRoomList");
 	List<Member> memberList = new MemberDAO().getMemberList();
 	Artists artist = new ArtistDAO().getArtistInfo(loginMember.getMb_Email());
+	/* System.out.print(artist.getCate()+artist.getMin_price()+artist.getMax_price()); */
 	%>
 	<div class="navbar-logo-left-3">
 		<div data-animation="default" data-collapse="none" data-duration="400"
@@ -243,6 +244,7 @@
 				<li data-w-id="e3a5911f-fd13-6056-ad64-9eb75db3f5dd"
 					class="category-text-wrap">아티스트 페이지</li>
 			</ul>
+			
 			<%}else{ %>		
 			<ul role="list" class="mypage-side-profile-catelist w-list-unstyled">
 				<li data-w-id="3f641a6c-3b4c-fd6d-20d3-f0dd35d2eeca"
@@ -452,6 +454,7 @@
 					<h1>아티스트 페이지</h1>
 					<div class="MyAccount">
 					<form action="MyPage_artistInfo?email=<%=loginMember.getMb_Email()%>" method="post">
+					<%if(artist != null){ %>
 						<table id="myAccount" border="1">
 							<tr>
 								<td>카테고리</td>
@@ -476,7 +479,7 @@
 							</tr>
 							
 						</table>
-						
+						<%} %>
 					</form>
 					</div>
 				</div>

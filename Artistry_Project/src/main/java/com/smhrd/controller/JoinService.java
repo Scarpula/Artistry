@@ -1,6 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,14 +33,39 @@ public class JoinService extends HttpServlet {
 		String add = mb_Addr + ' '+ mb_Addr2;
 
 		Member member = new Member(mb_Email, mb_Pw, mb_Phone,mb_Birthdate, mb_Name,mb_Nick, add,mb_Type);
-		int cnt = new MemberDAO().join(member);
 		
-		int art = new ArtistDAO().addArtist(mb_Email);
+		int cnt = 0;
+		int art = 0;
 		
-		response.sendRedirect("log-in.jsp");
-	    
-	      
-	      
-	   }
+			if(mb_Type==false) {//아티스트
+				cnt = new MemberDAO().join(member);
+				art = new ArtistDAO().addArtist(mb_Email,mb_Nick);
+			}else {//의뢰자
+				cnt = new MemberDAO().join(member);
+					}
+			
+//			PrintWriter out = response.getWriter();
+			
+			if (art>0) {
+				if(cnt>0) {
+					// 아티스트 가입 성공
+					response.sendRedirect("signup-second-form.jsp?result=success");
+				}else {
+					// 아티스트 가입 실패
+					response.sendRedirect("signup-second-form.jsp?result=fail");
+				}
+			}else {
+				if(cnt>0) {
+					// 의뢰자 가입 성공
+					response.sendRedirect("signup-second-form.jsp?result=success");
+				}else {
+					// 의뢰자 가입 실패
+					response.sendRedirect("signup-second-form.jsp?result=fail");
+				}
+			}
+		
+			
+			
+			}
 
 	}

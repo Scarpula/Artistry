@@ -1,7 +1,7 @@
 <%@ page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Wed Apr 17 2024 02:25:43 GMT+0000 (Coordinated Universal Time)  -->
@@ -176,7 +176,8 @@
 				</div>
 				<div class="member-type-select-form">
 					<div class="member-type-text-wrap">
-						<h1 class="heading-5">회원타입 선택</h1><br>
+						<h1 class="heading-5">회원타입 선택</h1>
+						<br>
 						<h3 class="heading-5">아티스트로 가입 시 마이 페이지에서 정보 추가를 완료해주세요!</h3>
 					</div>
 					<div class="boundary"></div>
@@ -184,7 +185,7 @@
 
 
 					<!-- 회원관리 2_ form -->
-					<form action="JoinService" method="post" onclick="JoinCheck()">
+					<form action="JoinService" method="post" >
 
 						<div class="member-type-select-wrap">
 							<div class="member-type w-form">
@@ -243,16 +244,19 @@
 							</div>
 						</div>
 				</div>
-			
+
 				<div class="boundary _01"></div>
 
 				<div class="signup-complete">
-					<button type="submit" class="phone-identification-button w-button">가입
+					<button type="submit" class="phone-identification-button w-button" onclick="JoinCheck()">가입
 						완료</button>
 				</div>
 
 				<!--    signup-complete-button -->
 				</form>
+				<%	String result = request.getParameter("result");
+					System.out.print("회원가입결과 : " + result);%>
+					
 				<!-- 회원관리 2_ form 종료 -->
 
 
@@ -267,7 +271,23 @@
 		crossorigin="anonymous"></script>
 	<script src="js/webflow.js" type="text/javascript"></script>
 	
+	<script type="text/javascript">
 	
+		function JoinCheck(){
+			var result = ${result}		
+			console.log('result')
+			function(result){
+					if(result=='success'){
+						alert('가입에 성공하였습니다. 메인으로 돌아가서 로그인 해 주세요.')
+						}else {
+						alert('가입에 실패하였습니다. 회원가입을 다시 진행 해 주세요.')
+						}
+					}
+			}
+	
+	</script>
+
+
 
 </body>
 </html>
