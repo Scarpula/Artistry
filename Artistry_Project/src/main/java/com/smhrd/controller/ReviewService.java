@@ -22,7 +22,7 @@ public class ReviewService extends HttpServlet {
 		int ratings = Integer.parseInt(request.getParameter("ratings"));
 		
 		
-		System.out.print( mb_Email+ content + ratings);
+		System.out.print( mb_Email+ content + ratings+receiver);
 		
 		Review reviews = new Review(mb_Email, content, ratings, receiver);
 		
@@ -35,7 +35,7 @@ public class ReviewService extends HttpServlet {
 			System.out.print("등록실패 ");
 		}
 		
-		response.sendRedirect("artist-portfolio/artist-portfolio-page.jsp");
+		response.sendRedirect("artist-portfolio/artist-portfolio-page.jsp?artistEmail="+receiver);
 	
 	
 	
