@@ -22,15 +22,11 @@ public class LikeService extends HttpServlet {
 		
 		int cnt = new LikesDAO().toggleLike(like);
 		
-		if(cnt < 1) {
-			System.out.println("zz");
-		}
-		else {
-			System.out.println("굿");
-		}
-		
-		
-		response.sendRedirect("artistry-portfolio-setting-page.jsp");
-	}
+		   if (cnt > 0) {
+		        response.getWriter().print("liked"); // 'liked' 상태 반환
+		    } else {
+		        response.getWriter().print("unliked"); // 'unliked' 상태 반환
+		    }
 
+}
 }

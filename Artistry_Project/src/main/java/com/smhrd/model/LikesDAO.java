@@ -28,5 +28,15 @@ public class LikesDAO {
 		return cnt;
 	}
 	
-
+	
+	public int removeLike(Likes like) {
+	    SqlSession session = sf.openSession(true); 
+	        int cnt = session.delete("com.smhrd.db.LikesMapper.deleteLike", like);
+	        session.close();  
+	        return cnt;  
+	    }
+	
+	
 }
+
+
