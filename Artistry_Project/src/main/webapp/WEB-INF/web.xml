@@ -128,6 +128,12 @@
 		<display-name>ChatService</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.ChatService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetChatMessagesService</servlet-name>
+		<display-name>GetChatMessagesService</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.GetChatMessagesService</servlet-class>
 	</servlet> 
 
   <servlet-mapping>
@@ -204,6 +210,10 @@
   <servlet-mapping>
   	<servlet-name>ChatService</servlet-name>
   	<url-pattern>/ChatService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetChatMessagesService</servlet-name>
+  	<url-pattern>/GetChatMessagesService</url-pattern>
   </servlet-mapping>
 
  <!--  <servlet-mapping>

@@ -87,14 +87,12 @@
   
     <script src="chat.js"></script>
     <script>
-      const plusIcon = document.getElementById('plus-icon');
-      const tabContainer = document.getElementById('tab-container');
-  
-      plusIcon.addEventListener('click', function() {
-  const isVisible = tabContainer.style.display === 'block';
-  tabContainer.style.display = isVisible ? 'none' : 'block'; // 표시 상태를 토글합니다.
-  tabContainer.style.bottom = isVisible ? '100%' : 'calc(100% + 10px)'; // `plus-icon`의 위쪽으로 위치를 조정합니다.
-});
+    const plusIcon = document.getElementById('plus-icon');
+    const tabContainer = document.getElementById('tab-container');
+
+    plusIcon.addEventListener('click', function() {
+        tabContainer.classList.toggle('show');
+    });
     </script>
 </body>
 </html>

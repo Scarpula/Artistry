@@ -13,7 +13,7 @@ public class ChatMessageDAO {
 	
 	public void insertMessage(ChatMessage message) {
 		SqlSession session = sf.openSession(true);
-		session.insert("ChatMessageMapper.insertMessage",message);
+		session.insert("com.smhrd.db.ChatMessageMapper.insertMessage",message);
 		session.commit();
 	}
 	public List<ChatMessage> getChatMessages(String senderId, String receiverId){
@@ -21,7 +21,7 @@ public class ChatMessageDAO {
 		ChatMessage params = new ChatMessage();
 		params.setSenderId(senderId);
 		params.setReceiverId(receiverId);
-		return session.selectList("ChatMessageMapper.getChatMessage",params);
+		return session.selectList("com.smhrd.db.ChatMessageMapper.getChatMessages",params);
 	}
 	
 }
