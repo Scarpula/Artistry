@@ -18,11 +18,11 @@ public class LikeService extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		String mb_Email = request.getParameter("mb_Email");
+		Double Like_Idx = Double.parseDouble(request.getParameter("Like_Idx"));
 		String artist_Email = request.getParameter("artist_Email");
 		System.out.println(mb_Email + artist_Email);
 		
 		   Likes like = new Likes(mb_Email,artist_Email);
-		   
 		   
 		   int cnt = new LikesDAO().toggleLike(like); //좋아요 값 넣기
 		   
