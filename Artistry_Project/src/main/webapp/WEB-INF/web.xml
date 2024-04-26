@@ -140,6 +140,18 @@
 		<display-name>GetChatMessagesService</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.GetChatMessagesService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SaveChatHistoryService</servlet-name>
+		<display-name>SaveChatHistoryService</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.SaveChatHistoryService</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ChatHistoryService</servlet-name>
+		<display-name>ChatHistoryService</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.controller.ChatHistoryService</servlet-class>
 	</servlet> 
 
   <servlet-mapping>
@@ -225,6 +237,14 @@
   <servlet-mapping>
   	<servlet-name>GetChatMessagesService</servlet-name>
   	<url-pattern>/GetChatMessagesService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SaveChatHistoryService</servlet-name>
+  	<url-pattern>/SaveChatHistoryService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ChatHistoryService</servlet-name>
+  	<url-pattern>/ChatHistoryService</url-pattern>
   </servlet-mapping>
 
  <!--  <servlet-mapping>
