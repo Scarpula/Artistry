@@ -192,7 +192,12 @@
 								style="-webkit-transform: translate3d(0, 35%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 35%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 35%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 35%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); opacity: 0.04"
 								class="animation-on-load-2">
 								<div class="text-block">
+								
+							<%if(loginMember!=null){ %>
+								<div class="text-span"><h1>&quot;<%=loginMember.getMb_Nick() %>님&quot;  의 예술, 세상과 연결되다 </h1></div><br>&quot;
+							<%}else{ %>
 									&quot; <span class="text-span">당신의 예술, 세상과 연결되다 </span>&quot;<br>&quot;
+								<%} %>
 									Connect Your Art to the World with Artistry &quot;
 								</div>
 								<div class="button-holder">
