@@ -44,26 +44,26 @@ public class JoinService extends HttpServlet {
 				cnt = new MemberDAO().join(member);
 					}
 			
+						
 //			PrintWriter out = response.getWriter();
 			
 			if (art>0) {
 				if(cnt>0) {
 					// 아티스트 가입 성공
-					response.sendRedirect("signup-second-form.jsp?result=success");
+					response.sendRedirect("index.jsp");
 				}else {
 					// 아티스트 가입 실패
-					response.sendRedirect("signup-second-form.jsp?result=fail");
+					response.sendRedirect("sign-up.jsp");
 				}
 			}else {
 				if(cnt>0) {
 					// 의뢰자 가입 성공
-					response.sendRedirect("signup-second-form.jsp?result=success");
+					response.sendRedirect("index.jsp");
 				}else {
 					// 의뢰자 가입 실패
-					response.sendRedirect("signup-second-form.jsp?result=fail");
+					response.sendRedirect("sign-up.jsp");
 				}
 			}
-		
 			
 			
 			}
