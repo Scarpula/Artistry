@@ -10,5 +10,10 @@
 		INSERT INTO likes (like_idx, mb_email, artist_email, created_at)
 		VALUES (likes_SEQ.nextval, #{mb_Email}, #{artist_Email}, sysdate)
 	</insert>
-	
+	<select id="Likecheck" parameterType="com.smhrd.model.Likes" resultType="com.smhrd.model.Likes">
+		select * from likes where mb_email=#{mb_Email}, artist_email=#{artist_Email}
+	</select>
+	<delete id="removeLike" parameterType="com.smhrd.model.Likes">
+		delete from likes where mb_email=#{mb_Emil}, artist_email=#{artist_Email}
+	</delete>
   </mapper>
