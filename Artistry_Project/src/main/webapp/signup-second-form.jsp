@@ -152,9 +152,6 @@
 								href="log-in.html" class="navbar-dropdown-link w-dropdown-link">로그인</a>
 							<a href="sign-up.html"
 								class="navbar-dropdown-link w-dropdown-link">회원가입</a>
-							<button class="navbar-dropdown-link bottom"
-								data-wf-user-logout="로그아웃" data-wf-user-login="회원가입"
-								type="button">로그아웃</button>
 						</nav>
 					</div>
 				</li>
