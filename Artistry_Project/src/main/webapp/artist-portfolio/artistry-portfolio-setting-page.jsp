@@ -25,7 +25,9 @@
   <link href="../images/webclip.png" rel="apple-touch-icon">
 </head>
 <body class="body">
-	<% Member loginMember = (Member)session.getAttribute("member"); %>
+	<%
+		Member loginMember = (Member)session.getAttribute("member");
+	%>
   <div class="navbar-logo-left-3">
     <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
       <a href="../index.jsp" class="navbar-brand-3 w-nav-brand"><img src="../images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
@@ -141,15 +143,13 @@
     <div class="main-container setting-page">
       <div style="-webkit-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-profile-tab setting-page">
         <div class="portfolio-profile-img-wrap"><img src="../images/11.png" loading="lazy" sizes="(max-width: 1024px) 100vw, (max-width: 1919px) 1024px, 4vw" srcset="../images/11-p-500.png 500w, ../images/11-p-800.png 800w, ../images/11.png 1024w" alt="" class="profiel-img-con">
-          <h1 class="heading-11">코끼리</h1>
+          <h1 class="heading-11"><%=loginMember.getMb_Nick() %></h1>
           <div class="profile-insta-block">
             <h1 class="heading-12">INSTA@:</h1>
             <a href="#" class="insta-link-block w-inline-block"><img src="../images/insta_logo-removebg-preview.png" loading="lazy" sizes="(max-width: 666px) 100vw, (max-width: 1919px) 666px, 4vw" srcset="../images/insta_logo-removebg-preview-p-500.png 500w, ../images/insta_logo-removebg-preview.png 666w" alt="" class="insta-logo"></a>
           </div>
         </div>
         <div class="profile-button">
-          <a href="#" class="request-button w-button">의뢰하기</a>
-          <a href="#" class="follow-button w-button">팔로우+</a>
         </div>
         <div class="like-container"><img src="../images/Like_lofo-removebg.png" loading="lazy" width="512" height="512" alt="" srcset="../images/Like_lofo-removebg-p-500.png 500w, ../images/Like_lofo-removebg-p-800.png 800w, ../images/Like_lofo-removebg.png 1024w" sizes="(max-width: 767px) 100vw, (max-width: 1919px) 512px, 128px" class="like-img">
           <div class="like-count">0</div>

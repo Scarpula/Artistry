@@ -4,6 +4,7 @@
 <%@page import="com.smhrd.model.Review"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.ReviewDAO"%>
+<%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8" isELIgnored="false"%>
@@ -40,6 +41,7 @@
       String artistEmail = request.getParameter("artistEmail");
       List<Review> reviewList = new ReviewDAO().showReview(artistEmail);
       List<Port> portList = new PortDAO().get_port_list(artistEmail);
+      Member artist = new MemberDAO().get_artist(artistEmail);
    %>
 
   <div class="main">
@@ -159,17 +161,36 @@
       <div class="main-container">
         <div style="-webkit-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-profile-tab">
           <div class="portfolio-profile-img-wrap"><img src="../images/11.png" loading="lazy" sizes="(max-width: 1279px) 100vw, (max-width: 1919px) 1024.0078125px, 4vw" srcset="../images/11-p-500.png 500w, ../images/11-p-800.png 800w, ../images/11.png 1024w" alt="" class="profiel-img-con">
-            <h1 class="heading-11">코끼리</h1>
+            <h1 class="heading-11"><%=artist.getMb_Nick() %></h1>
             <div class="profile-insta-block">
               <h1 class="heading-12">INSTA@:</h1>
               <a href="#" class="insta-link-block w-inline-block"><img src="../images/insta_logo-removebg-preview.png" loading="lazy" sizes="(max-width: 666px) 100vw, (max-width: 1919px) 666px, 4vw" srcset="../images/insta_logo-removebg-preview-p-500.png 500w, ../images/insta_logo-removebg-preview.png 666w" alt="" class="insta-logo"></a>
             </div>
           </div>
-          <div class="profile-button">
-            <a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰하기</a>
-           <a href="../WebSocket.jsp" class="follow-button w-button">1 : 1 채팅</a>
-            <a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 작성하기</a>
-          </div>
+          <%if(loginMember!=null){ %>
+           <%if(artist.getMb_Email().equals(loginMember.getMb_Email())){ %>
+         	 <div class="profile-button">
+           	 	<a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰확인하기</a>
+           	 	<a href="artistry-portfolio-setting-page.jsp?artistEmail=<%=artistEmail %>" class="follow-button setting-button w-button">포트폴리오 작성하기</a>
+          	</div>
+          <%}else{ %>
+          	<div class="profile-button">
+          	  <a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰하기</a>
+          	  <a href="../WebSocket.jsp" class="follow-button w-button">1 : 1 채팅</a>
+         	</div>
+          <%} %>
+          <%}else{ %>
+          	<div class="profile-button">
+            	<a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button" onclick="loginFirst()">의뢰하기</a>
+            	<a href="#" class="follow-button w-button" onclick="loginFirst()">1 : 1 채팅</a>
+         	</div>
+          <%} %>
+          <script type="text/javascript">
+          	function loginFirst() {
+				alert("먼저 로그인을 해주세요!")
+			}
+          </script>
+          
           <!-- 좋아요 시작 -->
           <div class="like-container"><img src="../iconimg/Love2.png" alt="" id="Likebutton" onclick="checkFavorite()">
           <br>
@@ -406,7 +427,6 @@
       </form>
        <!-- 기현수 _ 요청서 폼 끝 -->
        <%} %>
-      
    </div>
    <script
       src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1"

@@ -73,4 +73,11 @@ public class MemberDAO {
 		return cnt;
 	}
 
+	public Member get_artist(String artistEmail) {
+		SqlSession session = sf.openSession(true);
+		Member artist = session.selectOne("com.smhrd.db.MemberMapper.get_member",artistEmail);
+		session.close();
+		return artist;
+	}
+	
 }
