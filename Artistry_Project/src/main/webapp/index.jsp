@@ -830,7 +830,7 @@ if (code != null && state != null) {
               <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">dltjdeh7745@naver.com</a>
               <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">qoddkfdl@gmail.com</a>
               <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">hyunsoo1753@gmail.com</a>
-              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">See all resources &gt;</a>
+              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">yunina456@naver.com</a>
             </div>
             <div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd0750-08cd0736" class="footer-block-4">
               <div class="title-small-4">Address</div>
