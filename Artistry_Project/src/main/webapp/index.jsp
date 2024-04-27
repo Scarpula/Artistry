@@ -94,6 +94,7 @@ if (code != null && state != null) {
 	Member loginMember = (Member) session.getAttribute("member");
 	KakaoUser loginkakaoUser = (KakaoUser) session.getAttribute("kakaoUser");
 	GoogleUser logingoogleUser = (GoogleUser) session.getAttribute("googleUser");
+	
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
