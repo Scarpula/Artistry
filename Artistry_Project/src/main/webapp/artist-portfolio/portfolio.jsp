@@ -403,37 +403,42 @@
 			</div>
 		</div>
 	</div>
-	<div class="artview-floating-tab">
-		<div data-hover="false" data-delay="0" id="history-dropdown"
-			history-dropdown="draggableDropdown"
-			class="history-tab-dropdown w-dropdown">
-			<div id="Dropdown-toggle" dropdown-toggle="draggableDropdownToggle"
-				class="dropdown-toggle-3 w-dropdown-toggle">
-				<img src="../images/star.svg" loading="lazy" width="48" height="48"
-					alt="">
-			</div>
-			<nav class="history-dropdown-list w-dropdown-list">
-				<a href="#" class="history-dropdown-link w-inline-block"><img
-					src="../images/3.png" loading="lazy" sizes="100vw"
-					srcset="../images/3-p-500.png 500w, ../images/3-p-800.png 800w, ../images/3.png 1024w"
-					alt="" class="history-dropdown-image"><img
-					src="../images/1.png" loading="lazy" sizes="100vw"
-					srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w"
-					alt="" class="history-dropdown-image"></a>
-				<div class="divider bg-dgrey01 history-dropdown"></div>
-				<a href="#" class="history-dropdown-link w-inline-block"><img
-					src="../images/11.png" loading="lazy" sizes="100vw"
-					srcset="../images/11-p-500.png 500w, ../images/11-p-800.png 800w, ../images/11.png 1024w"
-					alt=""><img src="../images/7.png" loading="lazy"
-					sizes="100vw"
-					srcset="../images/7-p-500.png 500w, ../images/7-p-800.png 800w, ../images/7.png 1024w"
-					alt="" class="history-dropdown-image"></a>
-				<div class="divider bg-dgrey01 history-dropdown"></div>
-			</nav>
-		</div>
-	</div>
-	</div>
-	</div>
+	<section class="footer-dark-4">
+      <div class="footer-container">
+        <a href="#" class="footer-brand-4 w-inline-block"><img src="../images/Artistry-logo3.jpg" loading="lazy" width="185" alt="" class="footer-icon-img"></a>
+        <div class="footer-wrapper-4">
+          <div class="footer-content-4">
+            <div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd073c-08cd0736" class="footer-block-4">
+              <div class="title-small-4">team Artistry</div>
+              <a href="#" class="footer-link-4">이성도</a>
+              <a href="#" class="footer-link-4">조준범</a>
+              <a href="#" class="footer-link-4">기현수</a>
+              <a href="#" class="footer-link-4">윤명상</a>
+            </div>
+            <div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd0745-08cd0736" class="footer-block-4">
+              <div class="title-small-4">EMAIL</div>
+              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">dltjdeh7745@naver.com</a>
+              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">qoddkfdl@gmail.com</a>
+              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">hyunsoo1753@gmail.com</a>
+              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">See all resources &gt;</a>
+            </div>
+            <div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd0750-08cd0736" class="footer-block-4">
+              <div class="title-small-4">Address</div>
+              <a href="#" class="footer-link-4">광주 동구 예술길 31-15 4층</a>
+              <a href="#" class="footer-link-4">대의동 10-1</a>
+              <a href="#" class="footer-link-4">61474</a>
+              <div class="footer-social-block-4">
+                <a href="https://map.naver.com/p/search/%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%9D%B8%EC%9E%AC%EA%B0%9C%EB%B0%9C%EC%9B%90/place/1115170819?placePath=?entry=pll&amp;from=nx&amp;fromNxList=true&amp;searchType=place&amp;mapsvc=true&amp;maplocsvc=true&amp;agree=true&amp;c=18.01,0,0,0,dh" target="_blank" class="footer-social-link-4 w-inline-block"><img src="../images/home_pin_FILL0_wght400_GRAD0_opsz24.svg" loading="lazy" alt=""></a>
+                <a href="#" class="footer-social-link-4 w-inline-block"></a>
+                <a href="#" class="footer-social-link-4 w-inline-block"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-divider-4"></div>
+      <div class="footer-copyright-center-4">Copyright © 2024 Artistry</div>
+    </section>
 	<script
 		src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1"
 		type="text/javascript"
