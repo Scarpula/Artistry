@@ -181,6 +181,9 @@
           	  <a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰하기</a>
           	  <a href="../WebSocket.jsp" class="follow-button w-button">1 : 1 채팅</a>
          	</div>
+          	<div class="profile-button">
+          	  <a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="../payments-page.jsp" class="request-button w-button">결제하기</a>
+         	</div>
           <%} %>
           <%}else{ %>
           	<div class="profile-button">

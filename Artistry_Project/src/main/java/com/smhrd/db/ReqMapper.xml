@@ -10,5 +10,10 @@
   </insert>
   
   
+  <select id="ReqAll" parameterType="String" resultType="com.smhrd.model.Req">
+  	select * from art_requests where mb_email=#{mb_Email}
+  </select>
+  
+  
   </mapper>
   

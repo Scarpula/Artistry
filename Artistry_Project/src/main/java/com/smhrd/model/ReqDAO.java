@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -18,7 +20,12 @@ public class ReqDAO {
 		return cnt;
 	}
 
-	
+	public List<Req> ReqAll(String mb_Email){
+		SqlSession session = sf.openSession(true);
+		List<Req> ReqAll = session.selectList("com.smhrd.db.ReqMapper.ReqAll", mb_Email);
+		session.close();
+		return ReqAll;
+	}
 	
 	
 	
