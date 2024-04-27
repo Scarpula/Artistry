@@ -277,7 +277,6 @@
 							</div>
 						</div>
 					</div>
-					<div class="divider bg-dgrey01"></div>
 					<div id="w-node-_6cd93f0b-7ce8-02a7-12b9-274e4bce371b-11168024"
 						class="filter-accordion-wrap">
 						<a data-w-id="6cd93f0b-7ce8-02a7-12b9-274e4bce371c" href="#"
