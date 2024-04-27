@@ -27,6 +27,21 @@ public class ReqDAO {
 		return ReqAll;
 	}
 	
+	public List<Req> get_req_list_receiver(String artistEmail){
+		SqlSession session = sf.openSession(true);
+		List<Req> reqListArtist = session.selectList("com.smhrd.db.ReqMapper.get_req_list_receiver", artistEmail);
+		session.close();
+		return reqListArtist;
+		
+	}
+	
+	public Req get_req_detail(int idx) {
+		SqlSession session = sf.openSession(true);
+		Req req = session.selectOne("com.smhrd.db.ReqMapper.get_req_detail",idx);
+		session.close();
+		System.out.println(req);
+		return req;
+	}
 	
 	
 }

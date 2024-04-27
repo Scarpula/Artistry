@@ -45,6 +45,7 @@
       List<Port> portList = new PortDAO().get_port_list(artistEmail);
       Member artist = new MemberDAO().get_artist(artistEmail);
       Artists artist_info = new ArtistDAO().getArtistInfo(artistEmail);
+      List<Req> reqListArtist = new ReqDAO().get_req_list_receiver(artistEmail);
    %>
 
   <div class="main">
@@ -338,101 +339,38 @@
       <%if(loginMember != null){ %>
       <%if(loginMember.getMb_Email().equals(artist.getMb_Email())){ %>
       <!-- 의뢰 확인 -->
-      <form  action="../ReqService?receiver=<%=artistEmail%>&mb_email=<%=loginMember.getMb_Email()%>>" method="post" id="email-form-3" enctype="multipart/form-data"
-                     data-name="Email Form 3"  class="text-area-form"
-                     data-wf-page-id="660fa367cce1a421bb169fcb"
-                     data-wf-element-id="b4d1ec42-6ae0-b4d9-64f8-2ff74e9f71d7">
-      <div id="Request-form"
+      	<div id="Request-form"
          style="width: 1250px; height: 1550px; -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); display: none; transform-style: preserve-3d"
          class="request-form-block">
          <section style="display: none" class="reqeust-form-head">
-            <h1 class="heading-18">요청서 작성</h1>
+            <h1 class="heading-18">요청서 목록 확인</h1>
             <img src="../images/cancel_FILL0_wght400_GRAD0_opsz24.svg"
                loading="lazy" data-w-id="1a8b61ae-1fcf-133d-30a7-2ac6cfce9216"
                alt="" class="cancel-button-img">
-         </section>   
-         <div style="display: none" class="request-form-container">
-         <!-- 파일첨부div -->
-            <div class="request-form-wrap">
-               <h1 class="heading-19">[의뢰하기 파일(원본) 첨부]</h1>
-               <div data-w-id="f1f0f9e6-8eea-6be6-da34-9748990e277c"
-                  class="request-form-img-upload-wrap">
-                  <div class="text-block-14">
-                     업로드 할 파일 놓기<br> <span>또는</span>
-                  </div>
-                  <div class="file-upload preview-image">
-                     <label for="input-image">파일 선택</label> 
-                     <input type="file" name="ReqFile" id="input-image" class="upload-hidden">
-                  </div>
-               </div>
-            </div>
-            
-            <!-- 가격div  -->
-            <div class="request-form-wrap-2">
-               <div class="text-block-15">[가격]</div>
-               <div class="frame-price-form-block w-form">
-                  <div id="email-form-2" data-name="Email Form 2">
-                   <input name="ReqPrice" type="text" class="text-field w-input" maxlength="256" 
-                   placeholder="'원'없이 숫자만 입력하세요. 예) 50000 " id=""> 
-                     <label class="w-checkbox frame-choose">
-                  </div>
-               </div>
-            <!-- 가격div끝 -->
-               
-               <!-- 라디오 div -->
-               <div class="choose-modification w-form">
-                  <div id="email-form-2" name=""
-                     data-name="Email Form 2" 
-                     data-wf-page-id="660fa367cce1a421bb169fcb"
-                     data-wf-element-id="78b453ce-27ec-8332-0e88-c1cd34c8d37c">
-                     <div class="text-block-15">[추가수정(30,000원/회)]</div>
-                           <div class="radio-wrap">
-                           <label class="frame-choose-radio w-radio">
-                           <input name = "ReqFix" type="radio" data-name="frame price" id="30-000"
-                           required="" class="w-form-formradioinput price-button w-radio-input"
-                           value="30000"><span class="radio-button-label w-form-label" for="30-000">1회</span></label>
-                           
-                           <label class="frame-choose-radio w-radio">
-                           <input name = "ReqFix" type="radio" data-name="frame price" id="50-000" 
-                           required="" class="w-form-formradioinput price-button w-radio-input"
-                           value="60000"><span class="radio-button-label-2 w-form-label" for="50-000">2회</span></label>
-                           
-                           <label class="frame-choose-radio w-radio">
-                           <input name = "ReqFix" type="radio"   data-name="frame price" id="70-000" 
-                           required="" class="w-form-formradioinput price-button w-radio-input"
-                           value="90000"><span class="radio-button-label-3 w-form-label" for="70-000">3회</span></label>
-                           
-                           <label class="frame-choose-radio w-radio">
-                           <input name = "ReqFix" type="radio" data-name="frame price" id="100-000" 
-                           required="" class="w-form-formradioinput price-button w-radio-input"
-                           value="120000"><span class="radio-button-label-4 w-form-label" for="100-000">4회</span></label>
-                           
-                           <label class="frame-choose-radio w-radio">
-                           <input name = "ReqFix" type="radio" data-name="frame price" id="30-000" 
-                           required="" class="w-form-formradioinput price-button w-radio-input"
-                           value="150000"> <span class="radio-button-label w-form-label" for="30-000">5회</span></label>
-                           </div>
-                  </div>
-                  
-               </div>
-                  <div class="request-form-wrap-3">
-                     <div class="text-block-16">[요청서 작성]</div>
-                     <div class="frame-price-form-block w-form">
-                     <div id="email-form-2" data-name="Email Form 2"> <!-- 추가div -->
-                     <div class="request-text-area w-form">
-                        <textarea placeholder="판매자에게 요청사항을 자세히 기입하세요" maxlength="5000" id="Request-Text"
-                           name="ReqText" data-name="Request Text"
-                           class="textarea w-input2"></textarea>
-                        <input type="submit" data-wait="Please wait..."
-                           class="submit-button-4 w-button" value="의뢰하기">
-                     </div>
-                     </div>
-                     </div>
-                  </div>
-            </div>
-         </div>
-      </div> 
-      </form>
+         </section> 
+         <%if(reqListArtist!=null){ %>  
+			<table border="1">
+				<tr>
+					<td>의뢰자 이메일</td>
+					<td>의뢰 내용</td>
+					<td>의뢰 금액</td>
+					<td>의뢰 일자</td>
+				</tr>
+		<%for(int i = 0; i<reqListArtist.size();i++){ %>
+				<tr>
+					<td><%=reqListArtist.get(i).getMb_Email() %></td>
+					<%if(reqListArtist.get(i).getReq_paper().length()>10){ %>
+					<td><a href="../request-detail-page.jsp?idx=<%=reqListArtist.get(i).getReq_idx()%>"><%=reqListArtist.get(i).getReq_paper().substring(0,10) %>...</a></td>
+					<%}else{ %>
+					<td><a href="../request-detail-page.jsp?idx=<%=reqListArtist.get(i).getReq_idx()%>"><%=reqListArtist.get(i).getReq_paper() %></a></td>
+					<%} %>
+					<td><%=reqListArtist.get(i).getReq_price() %></td>
+					<td><%=reqListArtist.get(i).getCreated_at().substring(0,10) %></td>
+				</tr>
+			
+		<%} %>	
+			</table>
+		<%} %>	
        <!-- 기현수 _ 요청서 폼 끝 -->
        <%}else{ %>
       <!-- 요청서폼 시작_기현수_결제하기button 시작_0427 -->

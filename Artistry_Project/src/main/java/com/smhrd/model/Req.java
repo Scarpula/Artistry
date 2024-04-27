@@ -15,7 +15,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Req {
-
 	
 	private int req_idx;
 	@NonNull private String mb_Email;
@@ -25,13 +24,9 @@ public class Req {
 	@NonNull private int req_price;
 	private String created_at;
 	
-
-	
-	
-	
-	
-	
-	
-	
+	public Req(@NonNull String mb_Email) {
+		super();
+		this.mb_Email = mb_Email;
+	}
 	
 }
