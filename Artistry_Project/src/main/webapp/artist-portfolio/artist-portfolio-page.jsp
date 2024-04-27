@@ -332,7 +332,7 @@
       <%if(loginMember.getMb_Email().equals(artist.getMb_Email())){ %>
       <!-- 의뢰 확인 -->
        <%}else{ %>
-      <!-- 요청서폼 시작 -->
+      <!-- 요청서폼 시작_기현수_결제하기button 시작_0427 -->
       <form  action="../ReqService?receiver=<%=artistEmail%>&mb_email=<%=loginMember.getMb_Email()%>>" method="post" id="email-form-3" enctype="multipart/form-data"
                      data-name="Email Form 3"  class="text-area-form"
                      data-wf-page-id="660fa367cce1a421bb169fcb"

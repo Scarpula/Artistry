@@ -175,7 +175,7 @@
 							if (loginMember != null) {
 							%>
 							<nav class="navbar-dropdown-list w-dropdown-list">
-								<a href="../log-in.jsp"
+								<a href="../MyPage.jsp"
 									class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
 									href="../LogoutService"
 									class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
@@ -184,7 +184,7 @@
 							} else {
 							%>
 							<nav class="navbar-dropdown-list w-dropdown-list">
-								<a href="../MyPage.jsp"
+								<a href="../log-in.jsp"
 									class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
 									href="../log-in.jsp"
 									class="navbar-dropdown-link w-dropdown-link">로그인</a> <a
