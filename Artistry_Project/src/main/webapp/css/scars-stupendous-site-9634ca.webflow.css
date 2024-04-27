@@ -3181,6 +3181,9 @@ body {
     font-size: 28px;
     transition: opacity .35s;
     display: flex;
+    color : white;
+    
+    
   }
 
   .button2 {
@@ -3494,6 +3497,7 @@ body {
     display: block;
     position: relative;
     overflow: visible;
+    color : white;
   }
 
   .button-2._02 {
@@ -5327,7 +5331,7 @@ body {
     flex-flow: column;
     justify-content: space-between;
     align-items: center;
-    height: 120vh;
+    height: 150vh;
     margin-top: 45px;
     display: flex;
     position: absolute;
@@ -5447,7 +5451,6 @@ body {
         display: flex;
     }
 
-
   .review-image-block {
     object-fit: fill;
     width: 300px;
@@ -5547,7 +5550,6 @@ body {
         margin-left: 35px;
         padding-right: 45px;
     }
-
   .paragraph-6 {
     font-size: 25px;
     line-height: 1.2;

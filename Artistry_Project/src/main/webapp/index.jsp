@@ -308,7 +308,7 @@ if (code != null && state != null) {
 										<a
 											style="-webkit-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
 											href="artist-portfolio/portfolio.jsp"
-											class="button-2 _01 w-button">watch the picture</a>
+											class="button-2 _01 w-button" >watch the picture</a>
 										<link rel="prerender" href="/artist-portfolio/portfolio.jsp">
 										<div
 											style="-webkit-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
@@ -724,219 +724,131 @@ if (code != null && state != null) {
 					</div>
 				</div>
 			</div>
-			<div class="section">
-				<div class="access-features">
-					<div class="text-container">
-						<div class="access-wrap">
-							<div class="access-gird-holder _01">
-								<div class="access-gird">
-									<div class="access-card">
-										<div
-											style="-webkit-transform: translate3d(65px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(-55deg) rotateZ(0) skew(0, 0); -moz-transform: translate3d(65px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(-55deg) rotateZ(0) skew(0, 0); -ms-transform: translate3d(65px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(-55deg) rotateZ(0) skew(0, 0); transform: translate3d(65px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(-55deg) rotateZ(0) skew(0, 0); opacity: 0; transform-style: preserve-3d"
-											class="access-small-image-holder">
-											<img src="images/access-image.svg" loading="lazy" alt=""
-												class="access-small-image">
-										</div>
-										<div class="access-image-holder">
-											<div data-w-id="c8f5e3d4-3f18-52e5-5bd3-e2ea6f0ab967"
-												class="access-image-container">
-												<div
-													style="opacity: 0; -webkit-transform: translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-													class="access-big-image-holder _01">
-													<img src="images/Big-Image.jpg" loading="lazy"
-														sizes="(max-width: 1254px) 100vw, (max-width: 1919px) 1254px, 497.79168701171875px"
-														srcset="images/Big-Image-p-500.jpg 500w, images/Big-Image-p-800.jpg 800w, images/Big-Image-p-1080.jpg 1080w, images/Big-Image.jpg 1254w"
-														alt="" class="access-big-image">
-												</div>
-											</div>
-											<div class="access-background-holder _01">
-												<img src="images/OrangeBG.jpg" loading="lazy"
-													sizes="(max-width: 1102px) 100vw, (max-width: 1919px) 1102px, 497.79168701171875px"
-													srcset="images/OrangeBG-p-500.jpg 500w, images/OrangeBG-p-800.jpg 800w, images/OrangeBG-p-1080.jpg 1080w, images/OrangeBG.jpg 1102w"
-													alt="" class="access-background-image">
-											</div>
-										</div>
-									</div>
-									<div class="access-content">
-										<div class="access-tag-holder">
-											<div class="access-tag-container">
-												<img src="images/Tag-Image1.svg" loading="lazy" alt="">
-											</div>
-											<div class="text-block-2">Explore</div>
-										</div>
-										<div class="access-title-holder">
-											<h2 data-w-id="6bcb4aed-1e83-1c42-e678-bab822d5d265"
-												style="opacity: 0; -webkit-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-												class="heading-2 _01">Speak Your Mind: Your Thoughts,
-												Your Voice</h2>
-										</div>
-										<div class="access-paragraph-holder">
-											<p
-												style="opacity: 0; -webkit-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-												class="paragraph-3 _01">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-												Mauris id nunc odio. Aliquam et tellus urna. Phasellus eget<br>
-											</p>
-										</div>
-										<div class="access-button-holder">
-											<a data-w-id="c68a7a06-dd29-7cbe-c812-70820b1c28aa"
-												style="opacity: 0; -webkit-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-												href="#" class="button-3 _01 w-button">Get Early Access</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="access-gird-holder _02">
-								<div class="access-gird">
-									<div class="access-content">
-										<div class="access-tag-holder">
-											<div class="access-tag-container">
-												<img src="images/Tag-Image2.svg" loading="lazy" alt="">
-											</div>
-											<div class="text-block-2">Boost</div>
-										</div>
-										<div class="access-title-holder">
-											<h2 data-w-id="0194e8da-ca50-e8e0-f454-6670992dea8f"
-												style="opacity: 0; -webkit-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-												class="heading-2 _02">Trending Now: Explore the Pulse
-												of Swift</h2>
-										</div>
-										<div class="access-paragraph-holder">
-											<p
-												style="opacity: 0; -webkit-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-												class="paragraph-3 _02">
-												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-												Mauris id nunc odio. Aliquam et tellus urna. Phasellus eget<br>
-											</p>
-										</div>
-										<div class="access-button-holder">
-											<a
-												style="opacity: 0; -webkit-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-												href="#" class="button-3 _02 w-button">Get Early Access</a>
-										</div>
-									</div>
-									<div class="access-card">
-										<div class="access-image-holder">
-											<div class="access-image-container _02">
-												<div data-w-id="0194e8da-ca50-e8e0-f454-6670992dea84"
-													style="-webkit-transform: translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); opacity: 0"
-													class="access-big-image-holder _02">
-													<img src="images/Big-Image.jpg" loading="lazy"
-														sizes="(max-width: 1254px) 100vw, (max-width: 1919px) 1254px, 409.79168701171875px"
-														srcset="images/Big-Image-p-500.jpg 500w, images/Big-Image-p-800.jpg 800w, images/Big-Image-p-1080.jpg 1080w, images/Big-Image.jpg 1254w"
-														alt="" class="access-big-image">
-												</div>
-											</div>
-											<div class="access-background-holder _02">
-												<img src="images/Hero-BG.webp" loading="lazy"
-													sizes="(max-width: 1600px) 100vw, (max-width: 1919px) 1600px, 497.79168701171875px"
-													srcset="images/Hero-BG-p-500.webp 500w, images/Hero-BG-p-800.webp 800w, images/Hero-BG-p-1080.webp 1080w, images/Hero-BG.webp 1600w"
-													alt="" class="access-background-image">
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="section">
-			<div class="visable-section-holder">
-				<div class="visable-container">
-					<div class="visable-gird-holder">
-						<div class="w-layout-grid visable-gird">
-							<div id="w-node-_6d2feb28-1bd7-bedd-eeae-9c6304ddfeb2-c69e39b8"
-								class="visable-image-content-wrapper">
-								<div class="visable-image-content-holder">
-									<img src="images/Visable-Img.jpg" loading="lazy"
-										sizes="(max-width: 1602px) 100vw, (max-width: 1919px) 1602px, 1144px"
-										srcset="images/Visable-Img-p-500.jpg 500w, images/Visable-Img-p-800.jpg 800w, images/Visable-Img-p-1080.jpg 1080w, images/Visable-Img-p-1600.jpg 1600w, images/Visable-Img.jpg 1602w"
-										alt="" class="visable-image">
-								</div>
-								<div class="visable-image-content-holder">
-									<img src="images/visable-img2.jpg" loading="lazy"
-										sizes="(max-width: 1602px) 100vw, (max-width: 1919px) 1602px, 1144px"
-										srcset="images/visable-img2-p-500.jpg 500w, images/visable-img2-p-800.jpg 800w, images/visable-img2-p-1080.jpg 1080w, images/visable-img2-p-1600.jpg 1600w, images/visable-img2.jpg 1602w"
-										alt="" class="visable-image">
-								</div>
-								<div class="visable-image-content-holder">
-									<img src="images/VIsable-img3.jpg" loading="lazy"
-										sizes="(max-width: 1602px) 100vw, (max-width: 1919px) 1602px, 1144px"
-										srcset="images/VIsable-img3-p-500.jpg 500w, images/VIsable-img3-p-800.jpg 800w, images/VIsable-img3-p-1080.jpg 1080w, images/VIsable-img3-p-1600.jpg 1600w, images/VIsable-img3.jpg 1602w"
-										alt="" class="visable-image">
-								</div>
-							</div>
-							<div id="w-node-d895e512-e60d-f2ab-0d94-d0e6e1a04169-c69e39b8"
-								class="visable-content-wrapper">
-								<div class="visable-content">
-									<div>
-										안녕 <br>‍
-									</div>
-									<div class="visable-heading-holder">
-										<h2 class="heading-3">
-											Our app is designed to be<br>visible
-										</h2>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing
-											elit. Mauris id nunc odio. Aliquam et tellus urna. Phasellus
-											eget</p>
-									</div>
-									<a href="#" class="button-4 w-button">Get early access</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+      <div class="section">
+        <div class="access-features">
+          <div class="text-container">
+            <div class="access-wrap">
+              <div class="access-gird-holder _01">
+                <div class="access-gird">
+                  <div class="access-card">
+                    <div style="-webkit-transform:translate3d(65px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(-55deg) rotateZ(0) skew(0, 0);-moz-transform:translate3d(65px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(-55deg) rotateZ(0) skew(0, 0);-ms-transform:translate3d(65px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(-55deg) rotateZ(0) skew(0, 0);transform:translate3d(65px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(-55deg) rotateZ(0) skew(0, 0);opacity:0;transform-style:preserve-3d" class="access-small-image-holder"><img src="images/Main-page--1_2.JPG" loading="lazy" sizes="(max-width: 1279px) 100vw, (max-width: 1919px) 1252.0078125px, 349.9921875px" srcset="images/Main-page--1_2.JPG 500w, images/Main-page--1_2.JPG 800w, images/Main-page--1_2.JPG 1080w, images/Main-page--1_2.JPG 1252w" alt="" class="access-small-image"></div>
+                    <div class="access-image-holder">
+                      <div data-w-id="c8f5e3d4-3f18-52e5-5bd3-e2ea6f0ab967" class="access-image-container">
+                        <div style="opacity:0;-webkit-transform:translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="access-big-image-holder _01"><img src="images/Main-page-2.3.JPG" loading="lazy" width="780" height="512" alt="" class="access-big-image"></div>
+                      </div>
+                      <div class="access-background-holder _01"><img src="images/OrangeBG.jpg" loading="lazy" sizes="(max-width: 1279px) 100vw, (max-width: 1919px) 1102.0078125px, 529.8984375px" srcset="images/OrangeBG-p-500.jpg 500w, images/OrangeBG-p-800.jpg 800w, images/OrangeBG-p-1080.jpg 1080w, images/OrangeBG.jpg 1102w" alt="" class="access-background-image"></div>
+                    </div>
+                  </div>
+                  <div class="access-content">
+                    <div class="access-tag-holder">
+                      <div class="access-tag-container"><img src="images/Tag-Image1.svg" loading="lazy" alt=""></div>
+                      <div class="text-block-2">Review</div>
+                    </div>
+                    <div class="access-title-holder">
+                      <h2 data-w-id="6bcb4aed-1e83-1c42-e678-bab822d5d265" style="opacity:0;-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="heading-2 _01">리뷰를 작성해보세요!</h2>
+                    </div>
+                    <div class="access-paragraph-holder">
+                      <p style="opacity:0;-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="paragraph-3 _01">리뷰를 작성해서 의뢰를 받았던 아티스트에게 감사함을 표시해 보세요<br>아티스트 들에게 큰 힘이 됩니다!<br></p>
+                    </div>
+                    <div class="access-button-holder">
+                      <a data-w-id="c68a7a06-dd29-7cbe-c812-70820b1c28aa" style="opacity:0;-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" href="artist-portfolio/portfolio.jsp" class="button-3 _01 w-button">리뷰 작성하러 가기</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="access-gird-holder _02">
+                <div class="access-gird">
+                  <div class="access-content">
+                    <div class="access-tag-holder">
+                      <div class="access-tag-container"><img src="images/Tag-Image2.svg" loading="lazy" alt=""></div>
+                      <div class="text-block-2">Request</div>
+                    </div>
+                    <div class="access-title-holder">
+                      <h2 data-w-id="0194e8da-ca50-e8e0-f454-6670992dea8f" style="opacity:0;-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="heading-2 _02">내게 맞는 아티스트에게 <br>의뢰하기 !</h2>
+                    </div>
+                    <div class="access-paragraph-holder">
+                      <p style="opacity:0;-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="paragraph-3 _02">본인의 스타일에 맞는 작가에게 직접 의뢰도 할 수 있고, <br>1:1 채팅을 통해서 원하는 방향성을 잡을 수 도 있어요!<br></p>
+                    </div>
+                    <div class="access-button-holder">
+                      <a style="opacity:0;-webkit-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" href="artist-portfolio/portfolio.jsp" class="button-3 _02 w-button">의뢰 하러 가기</a>
+                    </div>
+                  </div>
+                  <div class="access-card">
+                    <div class="access-image-holder">
+                      <div class="access-image-container _02">
+                        <div data-w-id="0194e8da-ca50-e8e0-f454-6670992dea84" style="-webkit-transform:translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(177px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="access-big-image-holder _02"><img src="images/Main-page-3.JPG" loading="lazy" alt="" class="access-big-image"></div>
+                      </div>
+                      <div class="access-background-holder _02"><img src="images/Hero-BG.webp" loading="lazy" sizes="(max-width: 1919px) 100vw, 529.8984375px" srcset="images/Hero-BG-p-500.webp 500w, images/Hero-BG-p-800.webp 800w, images/Hero-BG-p-1080.webp 1080w, images/Hero-BG.webp 1600w" alt="" class="access-background-image"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="visable-section-holder">
+        <div class="visable-container">
+          <div class="visable-gird-holder">
+            <div class="w-layout-grid visable-gird">
+              <div id="w-node-_6d2feb28-1bd7-bedd-eeae-9c6304ddfeb2-c69e39b8" class="visable-image-content-wrapper">
+                <div class="visable-image-content-holder"><img src="images/download_image_1714200764254.png" loading="lazy" width="Auto" height="500" alt="" srcset="images/download_image_1714200764254.png 500w, images/download_image_1714200764254.png 800w, images/download_image_1714200764254.png 828w" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 412.3359375px, 1144.03125px" class="visable-image"></div>
+                <div class="visable-image-content-holder"><img src="images/download_image_1714200786938.png" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 449.859375px, 1144.03125px" height="500" alt="" srcset="images/download_image_1714200786938.png 500w, images/download_image_1714200786938.png 800w, images/download_image_1714200786938.png 1080w, images/download_image_1714200786938.png 1364w" class="visable-image"></div>
+                <div class="visable-image-content-holder"><img src="images/download_image_1714200819977.png" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 1919px) 384.28125px, 1144.03125px" height="500" alt="" srcset="images/download_image_1714200819977.png 500w, images/download_image_1714200819977.png 800w, images/download_image_1714200819977.png 1080w, images/download_image_1714200819977.png 1571w" class="visable-image"></div>
+              </div>
+              <div id="w-node-d895e512-e60d-f2ab-0d94-d0e6e1a04169-c69e39b8" class="visable-content-wrapper">
+                <div class="visable-content">
+                  <div>Artistry <br>‍</div>
+                  <div class="visable-heading-holder">
+                    <h2 class="heading-3">저희 기능들을 수행해보세요!!</h2>
+                    <p class="paragraph-7">1. 카테고리별 검색 기능<br>2. 포트폴리오 별 애니메이션<br>3. SNS 로그인 !</p>
+                  </div>
+                  <a href="artist-portfolio/portfolio.jsp" class="button-4 w-button">포트폴리오 보러가기!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 		<section class="footer-dark-4">
-			<div class="container-13">
-				<div class="footer-wrapper-4">
-					<a href="#" class="footer-brand-4 w-inline-block"><img
-						src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124a332512aaee_placeholder-1.svg"
-						loading="lazy" alt=""></a>
-					<div class="footer-content-4">
-						<div id="w-node-_1e9011f8-b6b4-4a86-4c60-dca647754811-c69e39b8"
-							class="footer-block-4">
-							<div class="title-small-4">Company</div>
-							<a href="#" class="footer-link-4">How it works</a> <a href="#"
-								class="footer-link-4">Pricing</a> <a href="#"
-								class="footer-link-4">Docs</a>
-						</div>
-						<div id="w-node-_1e9011f8-b6b4-4a86-4c60-dca64775481a-c69e39b8"
-							class="footer-block-4">
-							<div class="title-small-4">Resources</div>
-							<a href="#" class="footer-link-4">Blog post name list goes
-								here</a> <a href="#" class="footer-link-4">Blog post name list
-								goes here</a> <a href="#" class="footer-link-4">Blog post name
-								list goes here</a> <a href="#" class="footer-link-4">See all
-								resources &gt;</a>
-						</div>
-						<div id="w-node-_1e9011f8-b6b4-4a86-4c60-dca647754825-c69e39b8"
-							class="footer-block-4">
-							<div class="title-small-4">About</div>
-							<a href="#" class="footer-link-4">Terms &amp; Conditions</a> <a
-								href="#" class="footer-link-4">Privacy policy</a>
-							<div class="footer-social-block-4">
-								<a href="#" class="footer-social-link-4 w-inline-block"><img
-									src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124ac15112aad5_twitter%20small.svg"
-									loading="lazy" alt=""></a> <a href="#"
-									class="footer-social-link-4 w-inline-block"><img
-									src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124a389912aad8_linkedin%20small.svg"
-									loading="lazy" alt=""></a> <a href="#"
-									class="footer-social-link-4 w-inline-block"><img
-									src="https://uploads-ssl.webflow.com/62434fa732124a0fb112aab4/62434fa732124a51bf12aae9_facebook%20small.svg"
-									loading="lazy" alt=""></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="footer-divider-4"></div>
-			<div class="footer-copyright-center-4">Copyright © 2021 Company
-				name</div>
-		</section>
+      <div class="footer-container">
+        <a href="#" class="footer-brand-4 w-inline-block"><img src="images/Artistry-logo3.jpg" loading="lazy" width="185" alt="" class="footer-icon-img"></a>
+        <div class="footer-wrapper-4">
+          <div class="footer-content-4">
+            <div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd073c-08cd0736" class="footer-block-4">
+              <div class="title-small-4">team Artistry</div>
+              <a href="#" class="footer-link-4">이성도</a>
+              <a href="#" class="footer-link-4">조준범</a>
+              <a href="#" class="footer-link-4">기현수</a>
+              <a href="#" class="footer-link-4">윤명상</a>
+            </div>
+            <div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd0745-08cd0736" class="footer-block-4">
+              <div class="title-small-4">EMAIL</div>
+              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">dltjdeh7745@naver.com</a>
+              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">qoddkfdl@gmail.com</a>
+              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">hyunsoo1753@gmail.com</a>
+              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">yunina456@naver.com</a>
+            </div>
+            <div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd0750-08cd0736" class="footer-block-4">
+              <div class="title-small-4">Address</div>
+              <a href="#" class="footer-link-4">광주 동구 예술길 31-15 4층</a>
+              <a href="#" class="footer-link-4">대의동 10-1</a>
+              <a href="#" class="footer-link-4">61474</a>
+              <div class="footer-social-block-4">
+                <a href="https://map.naver.com/p/search/%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%9D%B8%EC%9E%AC%EA%B0%9C%EB%B0%9C%EC%9B%90/place/1115170819?placePath=?entry=pll&amp;from=nx&amp;fromNxList=true&amp;searchType=place&amp;mapsvc=true&amp;maplocsvc=true&amp;agree=true&amp;c=18.01,0,0,0,dh" target="_blank" class="footer-social-link-4 w-inline-block"><img src="images/home_pin_FILL0_wght400_GRAD0_opsz24.svg" loading="lazy" alt=""></a>
+                <a href="#" class="footer-social-link-4 w-inline-block"></a>
+                <a href="#" class="footer-social-link-4 w-inline-block"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-divider-4"></div>
+      <div class="footer-copyright-center-4">Copyright © 2024 Artistry</div>
+    </section>
 	</div>
 	<script
 		src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1"
