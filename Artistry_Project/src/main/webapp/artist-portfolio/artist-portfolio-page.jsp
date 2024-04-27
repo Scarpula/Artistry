@@ -329,6 +329,9 @@
          </div>
       </div>
       <%if(loginMember != null){ %>
+      <%if(loginMember.getMb_Email().equals(artist.getMb_Email())){ %>
+      <!-- 의뢰 확인 -->
+       <%}else{ %>
       <!-- 요청서폼 시작 -->
       <form  action="../ReqService?receiver=<%=artistEmail%>&mb_email=<%=loginMember.getMb_Email()%>>" method="post" id="email-form-3" enctype="multipart/form-data"
                      data-name="Email Form 3"  class="text-area-form"
@@ -426,6 +429,7 @@
       </div> 
       </form>
        <!-- 기현수 _ 요청서 폼 끝 -->
+       <%} %>
        <%} %>
    </div>
    <script
