@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ArtistDAO"%>
+<%@page import="com.smhrd.model.Artists"%>
 <%@page import="com.smhrd.model.Likes"%>
 <%@page import="com.smhrd.model.PortDAO"%>
 <%@page import="com.smhrd.model.Port"%>
@@ -42,6 +44,7 @@
       List<Review> reviewList = new ReviewDAO().showReview(artistEmail);
       List<Port> portList = new PortDAO().get_port_list(artistEmail);
       Member artist = new MemberDAO().get_artist(artistEmail);
+      Artists artist_info = new ArtistDAO().getArtistInfo(artistEmail);
    %>
 
   <div class="main">
@@ -464,7 +467,7 @@
                <div class="frame-price-form-block w-form">
                   <div id="email-form-2" data-name="Email Form 2">
                    <input name="ReqPrice" type="text" class="text-field w-input" maxlength="256" 
-                   placeholder="'원'없이 숫자만 입력하세요. 예) 50000 " id=""> 
+                   placeholder="최소 가격은 <%=artist_info.getMin_price() %>(원) 입니다. 숫자만 입력해주세요." id=""> 
                      <label class="w-checkbox frame-choose">
                   </div>
                </div>
