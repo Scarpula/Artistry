@@ -1,25 +1,27 @@
+<%@page import="com.smhrd.model.GoogleUser"%>
+<%@page import="com.smhrd.model.NaverUser"%>
 <%@page import="com.smhrd.model.KakaoUser"%>
 <%@page import="com.smhrd.model.Member"%>
-<%@ page import="com.smhrd.controller.NaverLoginController" %>
-<%@ page import="com.smhrd.controller.ApiExamMemberProfile" %>
+<%@ page import="com.smhrd.controller.NaverLoginController"%>
+<%@ page import="com.smhrd.controller.ApiExamMemberProfile"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-	<%
-    String code = request.getParameter("code");
-    String state = request.getParameter("state"); 
 
-    if (code != null && state != null) {
-        try {
-            String accessToken = NaverLoginController.getAccessToken(code, state);
-            ApiExamMemberProfile.ACCESS_TOKEN = accessToken;
-            ApiExamMemberProfile.getUserProfile();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+<%
+String code = request.getParameter("code");
+String state = request.getParameter("state");
+
+if (code != null && state != null) {
+	try {
+		String accessToken = NaverLoginController.getAccessToken(code, state);
+		ApiExamMemberProfile.ACCESS_TOKEN = accessToken;
+		ApiExamMemberProfile.getUserProfile();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
 %>
-	
+
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Fri Apr 19 2024 05:34:53 GMT+0000 (Coordinated Universal Time)  -->
@@ -66,8 +68,9 @@
 </head>
 <body class="body">
 	<%
-	  Member loginMember = (Member)session.getAttribute("member");
-	  KakaoUser loginUser = (KakaoUser)session.getAttribute("kakaoUser");
+	Member loginMember = (Member) session.getAttribute("member");
+	KakaoUser loginkakaoUser = (KakaoUser) session.getAttribute("kakaoUser");
+	GoogleUser logingoogleUser = (GoogleUser) session.getAttribute("googleUser");
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
@@ -87,8 +90,8 @@
 						</ul>
 						<div class="search-wrap">
 							<div data-hover="false" data-delay="0"
-								class="dropdown w-dropdown">  
-								<div class="dropdown-toggle w-dropdown-toggle"></div> 
+								class="dropdown w-dropdown">
+								<div class="dropdown-toggle w-dropdown-toggle"></div>
 								<nav class="dropdown-list w-dropdown-list">
 									<a href="#" class="w-dropdown-link">Link 1</a> <a href="#"
 										class="w-dropdown-link">Link 2</a> <a href="#"
@@ -99,7 +102,8 @@
 								<div class="form-search-container w-form">
 									<form id="wf-form-Search-Form" name="wf-form-Search-Form"
 										data-name="Search Form" redirect="/research"
-										data-redirect="/research" action="artist-portfolio/portfolio.jsp?keyWord=" method="get"
+										data-redirect="/research"
+										action="artist-portfolio/portfolio.jsp?keyWord=" method="get"
 										class="form-search" data-wf-page-id="65fa46eb9d90d967c69e39b8"
 										data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5">
 										<input class="search-field w-input" maxlength="256"
@@ -124,24 +128,64 @@
 						</div>
 					</div>
 				</div>
-								<%if(loginMember!=null){ %>
-								<%if(loginMember.getMb_Type().equals(true)){ %>
-									<div>
-										<h3><a href="MyPage.jsp"><%=loginMember.getMb_Nick() %>님</a></h3>
-									</div>
-								
-								<%}else{%>
-									<div>
-										<h3><a href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>">
-										<%=loginMember.getMb_Nick() %>님</a></h3>
-									</div>
-								<%} %>
-								<%}else {%>
-									<div>
-										<h3><a href="log-in.jsp">로그인을 해주세요.</a></h3>
-									</div> 
-									<%}%>
-									
+				<%
+				if (loginMember != null || loginkakaoUser != null || logingoogleUser != null) {
+				%>
+				<%
+				if (loginMember != null) {
+				%>
+				<%
+				if (loginMember.getMb_Type().equals(true)) {
+				%>
+				<div>
+					<h3>
+						<a href="MyPage.jsp"><%=loginMember.getMb_Nick()%>님</a>
+					</h3>
+				</div>
+				<%
+				} else {
+				%>
+				<div>
+					<h3>
+						<a
+							href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>">
+							<%=loginMember.getMb_Nick()%>님
+						</a>
+					</h3>
+				</div>
+				<%
+				}
+				%>
+				<%
+				} else if (loginkakaoUser != null) {
+				%>
+				<div>
+					<h3>
+						<a href="MyPage.jsp"><%=loginkakaoUser.getNickname()%>님</a>
+					</h3>
+				</div>
+				<%
+				} else if (logingoogleUser != null) {
+				%>
+				<div>
+					<h3>
+						<a href="MyPage.jsp"><%=logingoogleUser.getFullName()%>님</a>
+					</h3>
+				</div>
+				<%
+				}
+				%>
+				<%
+				} else {
+				%>
+				<div>
+					<h3>
+						<a href="log-in.jsp">로그인을 해주세요.</a>
+					</h3>
+				</div>
+				<%
+				}
+				%>
 				<ul role="list" class="nav-list right">
 					<li class="nav-item hide">
 						<div class="divider-vertical bg-dgray01"></div>
@@ -170,18 +214,28 @@
 								<img width="24" height="24" alt="" src="images/user.svg"
 									loading="lazy">
 							</div>
-							<%if(loginMember!=null || loginUser !=null){ %>
-								<nav class="navbar-dropdown-list w-dropdown-list">
-									<a href="MyPage.jsp" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-									<a href="LogoutService" class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
-								</nav>
-							<%}else{ %>
-								<nav class="navbar-dropdown-list w-dropdown-list">
-									<a href="log-in.jsp" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-									<a href="log-in.jsp" class="navbar-dropdown-link w-dropdown-link">로그인</a>
-									<a href="sign-up.jsp" class="navbar-dropdown-link w-dropdown-link">회원가입</a>
-								</nav>
-							<%} %>
+							<%
+							if (loginMember != null || loginkakaoUser != null) {
+							%>
+							<nav class="navbar-dropdown-list w-dropdown-list">
+								<a href="MyPage.jsp"
+									class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
+									href="LogoutService"
+									class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
+							</nav>
+							<%
+							} else {
+							%>
+							<nav class="navbar-dropdown-list w-dropdown-list">
+								<a href="log-in.jsp"
+									class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
+									href="log-in.jsp" class="navbar-dropdown-link w-dropdown-link">로그인</a>
+								<a href="sign-up.jsp"
+									class="navbar-dropdown-link w-dropdown-link">회원가입</a>
+							</nav>
+							<%
+							}
+							%>
 						</div>
 					</li>
 				</ul>
@@ -205,18 +259,30 @@
 								style="-webkit-transform: translate3d(0, 35%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 35%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 35%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 35%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); opacity: 0.04"
 								class="animation-on-load-2">
 								<div class="text-block">
-								
-							<% if(loginMember!=null){ %>
-								<div class="text-span"><h1>&quot;<%=loginMember.getMb_Nick()%>님&quot;  의 예술, 세상과 연결되다 </h1></div><br>&quot;
-							<%} else{ %>
+
+									<%
+									if (loginMember != null) {
+									%>
+									<div class="text-span">
+										<h1>
+											&quot;<%=loginMember.getMb_Nick()%>님&quot; 의 예술, 세상과 연결되다
+										</h1>
+									</div>
+									<br>&quot;
+									<%
+									} else {
+									%>
 									&quot; <span class="text-span">당신의 예술, 세상과 연결되다 </span>&quot;<br>&quot;
-								<% }%>
+									<%
+									}
+									%>
 									Connect Your Art to the World with Artistry &quot;
 								</div>
 								<div class="button-holder">
 									<div data-w-id="d90ecd32-fcee-d920-ab75-b73cd84ef98a"
 										class="slide-button-animation">
-										<a style="-webkit-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+										<a
+											style="-webkit-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
 											href="artist-portfolio/portfolio.jsp"
 											class="button-2 _01 w-button">watch the picture</a>
 										<link rel="prerender" href="/artist-portfolio/portfolio.jsp">
@@ -776,7 +842,7 @@
 										sizes="(max-width: 1602px) 100vw, (max-width: 1919px) 1602px, 1144px"
 										srcset="images/VIsable-img3-p-500.jpg 500w, images/VIsable-img3-p-800.jpg 800w, images/VIsable-img3-p-1080.jpg 1080w, images/VIsable-img3-p-1600.jpg 1600w, images/VIsable-img3.jpg 1602w"
 										alt="" class="visable-image">
-								</div>  
+								</div>
 							</div>
 							<div id="w-node-d895e512-e60d-f2ab-0d94-d0e6e1a04169-c69e39b8"
 								class="visable-content-wrapper">

@@ -9,6 +9,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.json.JSONObject;
 
 import com.smhrd.model.NaverUser;
@@ -17,7 +19,7 @@ import com.smhrd.model.NaverUserDAO;
 public class ApiExamMemberProfile {
     public static String ACCESS_TOKEN;
 
-    public static void getUserProfile() {
+    public static NaverUser getUserProfile() {
         String token = ACCESS_TOKEN;
         String header = "Bearer " + token;
         String apiURL = "https://openapi.naver.com/v1/nid/me";
@@ -61,9 +63,12 @@ public class ApiExamMemberProfile {
         User.setAge(age);
         User.setBirthyear(birthyear);
         User.setMobile(mobile);
+        
+        
 
         NaverUserDAO userDAO = new NaverUserDAO();    
         userDAO.insertNaverUser(User);
+        return User;
     }
 
     private static String get(String apiUrl, Map<String, String> requestHeaders) {
@@ -122,6 +127,7 @@ public class ApiExamMemberProfile {
 
         ACCESS_TOKEN = NaverLoginController.getAccessToken(code, state);
         getUserProfile();
+        
     }
    
 }
