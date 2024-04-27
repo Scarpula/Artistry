@@ -31,6 +31,7 @@ public class Member {
    @NonNull
    private String mb_Addr;
    
+   private String joined_At;
    @NonNull
    private Boolean mb_Type;
    

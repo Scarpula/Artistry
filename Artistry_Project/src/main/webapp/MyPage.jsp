@@ -189,6 +189,7 @@
 	<div class="mypage-main">
 		<div class="mypage-sidecontainer">
 			<div class="mypage-side-profile-wrap">
+			<!--프로필 사진-->
 				<div class="mypage-side-profile-img-wrap">
 					<img class="profile-img" src="<%=loginMember.getMb_ProfileImg() %>" width="450"
 						height="155" alt=""
