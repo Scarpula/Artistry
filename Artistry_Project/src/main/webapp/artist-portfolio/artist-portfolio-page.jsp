@@ -192,9 +192,9 @@
           </script>
           
           <!-- 좋아요 시작 -->
-          <div class="like-container"><img src="../iconimg/Love2.png" alt="" id="Likebutton" onclick="checkFavorite()">
+          <div class="like-container"><img src="../iconimg/Love2.png" alt="" id="Likebutton">
           <br>
-            <div class="like-count" id="clickCount">100</div>
+            <div class="like-count" id="clickCount">0</div>
           </div>
           <!-- 좋아요 끝 -->
         </div>
