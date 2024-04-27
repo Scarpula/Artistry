@@ -57,7 +57,8 @@ public class ReqService extends HttpServlet {
         	System.out.print("의뢰요청서 추가실패");
         }
         
-        response.sendRedirect("artist-portfolio/portfolio.jsp");
+//        <a href="./Ex04앵커태그2.html#top">앵커태그 내 제일위로</a>
+        response.sendRedirect("artist-portfolio/portfolio.jsp.RequestForm_Start");
 //        System.out.print(ReqFile2 + ReqPrice + ReqFix + artistEmail);
 	
 	}

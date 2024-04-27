@@ -334,9 +334,9 @@
        <%}else{ %>
       <!-- 요청서폼 시작_기현수_결제하기button 시작_0427 -->
       <form  action="../ReqService?receiver=<%=artistEmail%>&mb_email=<%=loginMember.getMb_Email()%>>" method="post" id="email-form-3" enctype="multipart/form-data"
-                     data-name="Email Form 3"  class="text-area-form"
-                     data-wf-page-id="660fa367cce1a421bb169fcb"
-                     data-wf-element-id="b4d1ec42-6ae0-b4d9-64f8-2ff74e9f71d7">
+            data-name="Email Form 3"  class="text-area-form"
+            data-wf-page-id="660fa367cce1a421bb169fcb"
+            data-wf-element-id="b4d1ec42-6ae0-b4d9-64f8-2ff74e9f71d7">
       <div id="Request-form"
          style="width: 1250px; height: 1550px; -webkit-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); display: none; transform-style: preserve-3d"
          class="request-form-block">
@@ -410,7 +410,7 @@
                   </div>
                   
                </div>
-                  <div class="request-form-wrap-3">
+                   <div class="request-form-wrap-3">
                      <div class="text-block-16">[요청서 작성]</div>
                      <div class="frame-price-form-block w-form">
                      <div id="email-form-2" data-name="Email Form 2"> <!-- 추가div -->
@@ -419,7 +419,7 @@
                            name="ReqText" data-name="Request Text"
                            class="textarea w-input2"></textarea>
                         <input type="submit" data-wait="Please wait..."
-                           class="submit-button-4 w-button" value="의뢰하기">
+                           class="submit-button-4 w-button" value="의뢰하기"">
                      </div>
                      </div>
                      </div>
