@@ -65,6 +65,13 @@ if (code != null && state != null) {
 </script>
 <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="images/webclip.png" rel="apple-touch-icon">
+  <style>
+  a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+  </style>
 </head>
 <body class="body">
 	<%
@@ -139,7 +146,7 @@ if (code != null && state != null) {
 				%>
 				<div>
 					<h3>
-						<a href="MyPage.jsp"><%=loginMember.getMb_Nick()%>님</a>
+						<a href="MyPage.jsp" style="margin-right: 45px;"><%=loginMember.getMb_Nick()%>님</a>
 					</h3>
 				</div>
 				<%
@@ -148,7 +155,7 @@ if (code != null && state != null) {
 				<div>
 					<h3>
 						<a
-							href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>">
+							href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>" style="margin-right: 45px;">
 							<%=loginMember.getMb_Nick()%>님
 						</a>
 					</h3>
@@ -161,7 +168,7 @@ if (code != null && state != null) {
 				%>
 				<div>
 					<h3>
-						<a href="MyPage.jsp"><%=loginkakaoUser.getNickname()%>님</a>
+						<a href="MyPage.jsp" style="margin-right: 45px;"><%=loginkakaoUser.getNickname()%>님</a>
 					</h3>
 				</div>
 				<%
@@ -169,7 +176,7 @@ if (code != null && state != null) {
 				%>
 				<div>
 					<h3>
-						<a href="MyPage.jsp"><%=logingoogleUser.getFullName()%>님</a>
+						<a href="MyPage.jsp" style="margin-right: 45px;"><%=logingoogleUser.getFullName()%>님</a>
 					</h3>
 				</div>
 				<%
@@ -180,7 +187,7 @@ if (code != null && state != null) {
 				%>
 				<div>
 					<h3>
-						<a href="log-in.jsp">로그인을 해주세요.</a>
+						<a href="log-in.jsp" style="margin-right: 45px;">로그인을 해주세요.</a>
 					</h3>
 				</div>
 				<%
@@ -215,7 +222,7 @@ if (code != null && state != null) {
 									loading="lazy">
 							</div>
 							<%
-							if (loginMember != null || loginkakaoUser != null) {
+							if (loginMember != null || loginkakaoUser != null || logingoogleUser != null) {
 							%>
 							<nav class="navbar-dropdown-list w-dropdown-list">
 								<a href="MyPage.jsp"
