@@ -48,4 +48,10 @@
 	<update id="update_profile_img" parameterType="com.smhrd.model.Member">
 		update members set mb_profile_img=#{mb_ProfileImg} where mb_email=#{mb_Email}
 	</update>
+	
+	<!-- 특정 멤버 정보 가져오기 -->
+	<select id="get_member" parameterType="String" resultType="com.smhrd.model.Member">
+		select * from members where mb_email = #{artistEmail}	
+	</select>
+	
 </mapper>
