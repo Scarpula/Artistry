@@ -44,28 +44,27 @@ public class JoinService extends HttpServlet {
 				cnt = new MemberDAO().join(member);
 					}
 			
-			System.out.print(cnt + art); //cnt,art -> 값 담김
+//			System.out.print(cnt + art); //cnt,art -> 값 담김
 
 
 			
 			if (art>0) {
 				if(cnt>0) {
 					// 아티스트 가입 성공
-					response.sendRedirect("signup-second-form.jsp?result=success");
+					response.sendRedirect("index.jsp?result=success");
 				}else {
 					// 아티스트 가입 실패
-					response.sendRedirect("signup-second-form.jsp?result=fail");
+					response.sendRedirect("index.jsp?result=fail");
 				}
 			}else {
 				if(cnt>0) {
 					// 의뢰자 가입 성공
-					response.sendRedirect("signup-second-form.jsp?result=success");
+					response.sendRedirect("index.jsp?result=success");
 				}else {
 					// 의뢰자 가입 실패
-					response.sendRedirect("signup-second-form.jsp?result=fail");
+					response.sendRedirect("index.jsp?result=fail");
 				}
 			}
-			response.sendRedirect("index.jsp");
 			
 			}
 

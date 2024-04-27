@@ -74,6 +74,22 @@ if (code != null && state != null) {
   </style>
 </head>
 <body class="body">
+
+ 		<% String result = request.getParameter("result");
+               
+           if(result!=null){
+              if(result.equals("success")){
+              // 비동기 alert 창 발동
+              System.out.print("이건success");%>
+              <script type="text/javascript">alert("회원가입에에 성공하였습니다.")</script>
+            <%}else{//비동기 alert창 발동
+              System.out.print("이건fail");%>
+              
+              <script type="text/javascript">alert("회원가입에 실패하였습니다.")</script>
+            
+           <% }
+           }%>
+
 	<%
 	Member loginMember = (Member) session.getAttribute("member");
 	KakaoUser loginkakaoUser = (KakaoUser) session.getAttribute("kakaoUser");

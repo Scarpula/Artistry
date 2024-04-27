@@ -185,24 +185,6 @@
                <!-- 회원관리 2_ form -->
                <form action="JoinService" method="post" >
                
-               <% String result = request.getParameter("result");
-               
-                  if(result!=null){
-                     if(result.equals("success")){
-                     // 비동기 alert 창 발동
-                     System.out.print("이건success");%>
-                     <script type="text/javascript">alert("회원가입에에 성공하였습니다.")</script>
-                   <%}else{//비동기 alert창 발동
-                     System.out.print("이건fail");%>
-                     
-                     <script type="text/javascript">alert("회원가입에 실패하였습니다.")</script>
-                   
-                  <% }
-                  }%>
-                  
-               
-               
-               
                   <div class="member-type-select-wrap">
                      <div class="member-type w-form">
                         <div class="member-type-selector"
