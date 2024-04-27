@@ -99,7 +99,7 @@
 								<div class="form-search-container w-form">
 									<form id="wf-form-Search-Form" name="wf-form-Search-Form"
 										data-name="Search Form" redirect="/research"
-										data-redirect="/research" action="/research" method="get"
+										data-redirect="/research" action="artist-portfolio/portfolio.jsp?keyWord=" method="get"
 										class="form-search" data-wf-page-id="65fa46eb9d90d967c69e39b8"
 										data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5">
 										<input class="search-field w-input" maxlength="256"
@@ -125,9 +125,17 @@
 					</div>
 				</div>
 								<%if(loginMember!=null){ %>
+								<%if(loginMember.getMb_Type().equals(true)){ %>
 									<div>
 										<h3><a href="MyPage.jsp"><%=loginMember.getMb_Nick() %>님</a></h3>
 									</div>
+								
+								<%}else{%>
+									<div>
+										<h3><a href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>">
+										<%=loginMember.getMb_Nick() %>님</a></h3>
+									</div>
+								<%} %>
 								<%}else {%>
 									<div>
 										<h3><a href="log-in.jsp">로그인을 해주세요.</a></h3>
