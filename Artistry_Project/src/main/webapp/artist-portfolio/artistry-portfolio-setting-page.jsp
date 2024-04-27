@@ -196,7 +196,7 @@
     <div class="information-modify-block">
         <label for="Information-Modify" class="field-label-3">아티스트 정보</label>
         <textarea id="Information-Modify" name="pf_Info" maxlength="5000" data-name="Information-Modify" placeholder="" class="artist-infor-area w-input"></textarea>
-        <h1 class="heading-17">의뢰 가능 분야 선택</h1>
+        <h1 class="heading-17">의뢰 가능 분야 작성</h1>
         <input class="text-field-2 w-input" autofocus="true" maxlength="256" name="pf_Cate" data-name="Field 2" placeholder="" type="text" id="field-2" required="">
     </div>
 </div>

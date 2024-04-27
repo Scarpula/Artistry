@@ -15,7 +15,7 @@ public class profile_imgService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// 실제 파일이 저장될 서버의 파일 시스템 경로
-        String path = "C:\\Users\\smhrd\\git\\Artistry\\Artistry_Project\\src\\main\\webapp\\profile_img";
+        String path = "C:\\Users\\smhrd\\git\\Artistry1\\Artistry_Project\\src\\main\\webapp\\profile_img";
         
         int maxSize = 10 * 1024 * 1024; // 최대 업로드 파일 크기 (10MB)
         String encoding = "UTF-8"; // 인코딩 타입 설정
@@ -29,8 +29,8 @@ public class profile_imgService extends HttpServlet {
         String profile_img_name = multi.getFilesystemName("mb_profile_img");
         String pw = " ";
         // 상대 웹 경로로 변환 (웹 컨텍스트 내에서의 경로)
-        String mb_profile_img = "C:/Users/smhrd/git/Artistry/Artistry_Project/src/main/webapp/profile_img/" + profile_img_name;
-		Member member = new Member(mb_Email,mb_profile_img,pw);
+        String mb_profile_img = path+"/profile_img/"+ profile_img_name;
+		Member member = new Member(mb_Email,pw,mb_profile_img);
         int cnt = new MemberDAO().update_profile_img(member);
         
         if(cnt>0) {
