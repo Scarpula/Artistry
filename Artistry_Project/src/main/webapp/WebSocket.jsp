@@ -7,22 +7,25 @@
 <title>Artistry 채팅방</title>
 <link rel="stylesheet" href="./css/style.css">
 <meta charset="utf-8" />
-<script>
-	<%Member loginMember = (Member) session.getAttribute("member");%>
-	window.loginMemberNick = <%=(loginMember != null) ? "'" + loginMember.getMb_Nick() + "'" : "''"%>;
-	window.loginMemberProfileUrl = <%=(loginMember != null) ? "'" + loginMember.getMb_ProfileImg() + "'" : "''"%>;
-</script>
+
+	<%
+	Member loginMember = (Member) session.getAttribute("member");
+	String loginUserId = loginMember.getMb_Email();
+	String loginUserName = loginMember.getMb_Nick();
+	String loginUserProfileImage = loginMember.getMb_ProfileImg();
+	%>
+	
+
 
 <%
 String userEmail = request.getParameter("userEmail");
-String artistEmail = request.getParameter("artistEmail");
+
 %>
 <script>
 var userEmail = '<%=userEmail%>';
-var artistEmail = '<%=artistEmail%>
-	';
+
 </script>
-<script src="./js/index.js"></script>
+<script type="module" src="./js/index.js"></script>
 
 </script>
 </head>

@@ -158,7 +158,7 @@
           </div>
           <div class="profile-button">
             <a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰하기</a>
-           <a href="../WebSocket.jsp?userEmail=<%=loginMember.getMb_Email()%>&artistEmail=<%=artistEmail%>" class="follow-button w-button">1 : 1 채팅</a>
+           <a href="../WebSocket.jsp" class="follow-button w-button">1 : 1 채팅</a>
             <a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 작성하기</a>
           </div>
           <!-- 좋아요 시작 -->
