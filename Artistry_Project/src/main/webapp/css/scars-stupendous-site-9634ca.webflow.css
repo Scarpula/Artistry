@@ -6302,7 +6302,6 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
-    width : 450px
   }
 
   .text-area-form {
@@ -6312,26 +6311,24 @@ body {
     display: flex;
   }
 
- .textarea {
-    aspect-ratio: 3.25;
-    margin-top: 25px;
-    margin-left: 645px;
-    margin-right: 0px;
+  .textarea {
+    aspect-ratio: 5.25;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 1000px;
     padding-bottom: 0;
     font-size: 24px;
     line-height: 44px;
     display: block;
-    width: 990px;
-    margin-bottom: 25px;
-}
+  }
 
   .submit-button-4 {
     border-radius: 10px;
     margin-top: 25px;
     padding: 15px 25px;
     position: relative;
-    left: 334px;
-}
+    left: 524px;
+  }
 
   .request-form-upload {
     color: #fff;
@@ -6375,6 +6372,88 @@ body {
     height: 100px;
     display: flex;
     position: absolute;
+  }
+
+  .request-detail-container {
+    justify-content: center;
+    align-items: center;
+    height: 1160px;
+    margin-top: 25px;
+    padding-bottom: 0;
+    padding-right: 0;
+    display: flex;
+  }
+
+  .request-detail-block {
+    border: 1px solid rgba(255, 231, 231, .8);
+    border-radius: 11px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 850px;
+    height: 90%;
+    display: flex;
+    box-shadow: 10px 11px 18px rgba(0, 0, 0, .2);
+  }
+
+  .detail-text-wrap {
+    margin-top: 48px;
+  }
+
+  .detail-section {
+    border: 1px solid #000;
+    border-radius: 4px;
+    width: 80%;
+    height: 70%;
+    margin-top: 65px;
+  }
+
+  .picture-area {
+    height: 320px;
+    margin-top: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .detail-text {
+    border: 1px solid #000;
+    height: 250px;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 25px;
+  }
+
+  .request-detail-requester {
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+  }
+
+  .requester, .requester-id {
+    margin-left: 15px;
+  }
+
+  .backpage-button {
+    color: #1a0000;
+    background-color: #fbf6f0;
+    border: 1px solid #e1dcd7;
+    border-radius: 5px;
+    margin-top: 35px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .infotext {
+    margin-left: 15px;
+  }
+
+  .heading-20 {
+    color: #b1b1b1;
+    margin-left: 15px;
   }
 }
 
@@ -7222,12 +7301,6 @@ body {
   .container-13 {
     max-width: none;
   }
-  
-  .loginUserInfo{
-  margin-right: 45px;
-  
-  }
-  
 }
 
 #w-node-_1e9011f8-b6b4-4a86-4c60-dca647754811-c69e39b8, #w-node-_1e9011f8-b6b4-4a86-4c60-dca64775481a-c69e39b8, #w-node-_1e9011f8-b6b4-4a86-4c60-dca647754825-c69e39b8, #w-node-_36e6c8af-1fa4-832e-7c39-34708e065c9a-8afc4f38, #w-node-_36e6c8af-1fa4-832e-7c39-34708e065ca3-8afc4f38, #w-node-_36e6c8af-1fa4-832e-7c39-34708e065cae-8afc4f38 {
