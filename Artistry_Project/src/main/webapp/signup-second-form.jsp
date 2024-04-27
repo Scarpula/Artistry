@@ -152,9 +152,7 @@
 								href="log-in.html" class="navbar-dropdown-link w-dropdown-link">로그인</a>
 							<a href="sign-up.html"
 								class="navbar-dropdown-link w-dropdown-link">회원가입</a>
-							<button class="navbar-dropdown-link bottom"
-								data-wf-user-logout="로그아웃" data-wf-user-login="회원가입"
-								type="button">로그아웃</button>
+							
 						</nav>
 					</div>
 				</li>
@@ -187,9 +185,23 @@
 					<!-- 회원관리 2_ form -->
 					<form action="JoinService" method="post" >
 					
+					<% String result = request.getParameter("result");
 					
-					<%	String result = request.getParameter("result");
-					System.out.print("회원가입결과 : " + result);%>
+						if(result!=null){
+							if(result.equals("success")){
+							// 비동기 alert 창 발동
+							System.out.print("이건success");%>
+							<script type="text/javascript">alert("회원가입에에 성공하였습니다.")</script>
+						 <%}else{//비동기 alert창 발동
+							System.out.print("이건fail");%>
+							
+							<script type="text/javascript">alert("회원가입에 실패하였습니다.")</script>
+						 
+						<% }
+						}%>
+						
+					
+					
 					
 						<div class="member-type-select-wrap">
 							<div class="member-type w-form">
@@ -220,7 +232,7 @@
 									data-wf-element-id="a1686655-5388-a9b8-f960-8e1c6c863caf">
 									<label data-w-id="a1686655-5388-a9b8-f960-8e1c6c863cb0"
 										class="w-checkbox checkbox-field"> <input type="radio"
-										id="checkbox-2" name="mb_Type" value="false"
+										id="checkbox	" name="mb_Type" value="false"
 										data-name="Checkbox 2"
 										data-w-id="a1686655-5388-a9b8-f960-8e1c6c863cb1"
 										class="w-checkbox-input checkbox _02"> <span
@@ -278,9 +290,13 @@
 	<script src="js/webflow.js" type="text/javascript"></script>
 	
 	<script type="text/javascript">
-		function JoinCheck(){
-					alert('가입에 성공하였습니다. 메인으로 돌아가서 로그인 해 주세요.')
+		function Check(){
+				alert('가입에 성공하였습니다. 메인으로 돌아가서 로그인 해 주세요.')
 			}
+		function fail({
+				alert('회원가입에 실패..')
+			
+		})
 	</script>
 
 
