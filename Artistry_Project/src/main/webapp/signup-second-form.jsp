@@ -93,7 +93,7 @@
                      <div class="form-search-container w-form">
                         <form id="wf-form-Search-Form" name="wf-form-Search-Form"
                            data-name="Search Form" redirect="/research"
-                           data-redirect="/research" action="/research" method="get"
+                           data-redirect="/research" action="artist-portfolio/portfolio.jsp?keyWord=" method="get"
                            class="form-search" data-wf-page-id="661cc68163939fbbd3cc6973"
                            data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5">
                            <input class="search-field w-input" maxlength="256"

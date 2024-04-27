@@ -65,7 +65,8 @@
               </div>
               <div class="form-search-wrap">
                 <div class="form-search-container w-form">
-                  <form id="wf-form-Search-Form" name="wf-form-Search-Form" data-name="Search Form" redirect="/research" data-redirect="/research" action="/research" method="get" class="form-search" data-wf-page-id="660fa367cce1a421bb169fcb" data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5"><input class="search-field w-input" maxlength="256" name="Search-2" data-name="Search 2" placeholder="Search on Artistry.." data-w-id="39529a09-50bd-5c07-ff29-0fe03328b2c6" type="text" id="Search">
+                  <form id="wf-form-Search-Form" name="wf-form-Search-Form" data-name="Search Form" redirect="/research" 
+                  data-redirect="/research" action="portfolio.jsp?keyWord=" method="get" class="form-search" data-wf-page-id="660fa367cce1a421bb169fcb" data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5"><input class="search-field w-input" maxlength="256" name="Search-2" data-name="Search 2" placeholder="Search on Artistry.." data-w-id="39529a09-50bd-5c07-ff29-0fe03328b2c6" type="text" id="Search">
                     <div class="search-icon-wrap">
                       <a href="#" target="_blank" class="link-block w-inline-block"><img src="../images/search.svg" loading="lazy" alt=""></a>
                     </div>
@@ -84,9 +85,17 @@
        <%
             if (loginMember != null) {
             %>
-            <div>
-               <a href="../MyPage.jsp"><%=loginMember.getMb_Nick()%>님</a>
-            </div>
+            <%if(loginMember.getMb_Type().equals(true)){ %>
+									<div>
+										<h3><a href="../MyPage.jsp"><%=loginMember.getMb_Nick() %>님</a></h3>
+									</div>
+								
+								<%}else{%>
+									<div>
+										<h3><a href="artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>">
+										<%=loginMember.getMb_Nick() %>님</a></h3>
+									</div>
+								<%} %>
             <%
             }
             %>
