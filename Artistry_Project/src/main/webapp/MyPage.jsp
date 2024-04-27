@@ -191,7 +191,7 @@
 			<div class="mypage-side-profile-wrap">
 			<!--프로필 사진-->
 				<div class="mypage-side-profile-img-wrap">
-					<img class="profile-img" src="<%=loginMember.getMb_ProfileImg() %>" width="450"
+					<img class="profile-img" src="<%= loginMember.getMb_ProfileImg() != null ? loginMember.getMb_ProfileImg() : "../images/1.png" %>" width="450"
 						height="155" alt=""
 						sizes="(max-width: 479px) 100vw, (max-width: 1919px) 450px, 7vw"
 						data-w-id="fa2d44e0-dd52-0cf6-3773-e1f7d8540d3b" loading="lazy">
