@@ -171,7 +171,7 @@
            <%if(artist.getMb_Email().equals(loginMember.getMb_Email())){ %>
          	 <div class="profile-button">
            	 	<a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰확인하기</a>
-           	 	<a href="artistry-portfolio-setting-page.jsp" class="follow-button setting-button w-button">포트폴리오 작성하기</a>
+           	 	<a href="artistry-portfolio-setting-page.jsp?artistEmail=<%=artistEmail %>" class="follow-button setting-button w-button">포트폴리오 작성하기</a>
           	</div>
           <%}else{ %>
           	<div class="profile-button">
