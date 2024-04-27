@@ -4,14 +4,30 @@ import { imgBase64 } from "./imgbase64.js";
 const APP_ID = '94c4543b-80b2-4b7d-91eb-11a67dbe5261';
 const DEMO_CHANNEL_ID = 'Artistry';
 
+const avatarUser = [
+	{username : 'admin', image : './images/user-default-logo.png'},
+	{username : 'admin', image : './images/user-default-logo.png'},
+	{username : 'admin', image : './images/user-default-logo.png'},
+	{username : 'admin', image : './images/user-default-logo.png'},
+	{username : 'admin', image : './images/user-default-logo.png'},
+	{username : 'admin', image : './images/user-default-logo.png'},
+	{username : '아티스트', image : './images/artist-logo.png'},
+	{username : '아티스트', image : './images/artist-logo.png'},
+	{username : '아티스트', image : './images/artist-logo.png'},
+];
 let client;
 let loginUserInfo = {
-	userId: '<%= loginUserId %>',
+		userId: '<%= loginUserId %>',
     username: '<%= loginUserName %>',
     profileImageUrl: '<%= loginUserProfileImage %>'
+	
 };
 
 const avatarhtml = function (message) {
+	let pick = Math.floor(Math.random() * avatarUser.length);
+	if (!message.profileImageUrl){
+		message.profileImageUrl = avatarUser[pick].image;
+	}
 	const messageList = document.createElement('div');
 	const avatarImage = document.createElement('div');
 	const avatarName = document.createElement('div');
@@ -181,12 +197,9 @@ $(document).ready(function () {
 });
 
 function setupUsernameInputEventListener() {
-	// 로그인한 사용자 정보 사용
-	client.loginAnonymous({
-		userId: loginUserInfo.userId,
-		username: loginUserInfo.username,
-		profileImageUrl: loginUserInfo.profileImageUrl
-	}, function (errResp, data) {
+	// login anonymously
+	let pick = Math.floor(Math.random() * avatarUser.length);
+	client.loginAnonymous({userId: generateRandomId(), username: avatarUser[pick].username, profileImageUrl: avatarUser[pick].image}, function (errResp, data) {
 		loginUserInfo = data.user;
 
 		$('.user-box .user-img').attr('src', loginUserInfo.profileImageUrl);
@@ -194,6 +207,7 @@ function setupUsernameInputEventListener() {
 
 		//user name 변경.
 		changeUserName(loginUserInfo);
+
 
 		if (errResp) {
 			return alert(JSON.stringify(errResp));
@@ -227,7 +241,7 @@ function setupUsernameInputEventListener() {
 			});
 		});
 	});
-}
+ }
 
 function changeUserName(loginUserInfo){
 	$(document).on('click', '.btn-alter', function(e){
@@ -298,6 +312,16 @@ function addMessage(message) {
 	html = avatarhtml(message);
 	$('.message-area').append(html);
 	scrollDown();
+}
+
+function generateRandomString() {
+	return Math.floor((1 + Math.random()) * 0x10000)
+			.toString(16)
+			.substring(1);
+}
+
+function generateRandomId() {
+	return generateRandomString() + '-' + generateRandomString() + '-' + generateRandomString();
 }
 
 function scrollDown() {
@@ -399,4 +423,17 @@ function sendFileText() {
 		client.sendMessage({ channelId: DEMO_CHANNEL_ID,
 			type: 'text',
 			text: '',
-			data: { 'fil
+			data: { 'fileSizeLabel': filesize, 'fileNameLabel': file.name, fileTypeLabel: 'text' },
+			file: file,
+		}, function (err, data) {
+			if (err) {
+				return alert(err);
+			}
+			let html = '';
+			html = addFilehtml(data.message);
+			$('.message-area').append(html);
+			scrollDown();
+		});
+	});
+}
+
