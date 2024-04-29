@@ -29,10 +29,8 @@ public class PortinfoService extends HttpServlet {
 		String mb_Email = request.getParameter("mb_Email");
 		System.out.println(pf_Info + pf_Title + pf_Sale + mb_Email); //확인용
 		
-		Port2 port1 = new Port2(pf_Info, pf_Title, pf_Sale, mb_Email);
-		List<Port2> infoList = new PortDAO2().selectinfo(port1);
 
-		Port2 port2 = new Port2(pf_Info, pf_Title, pf_Sale);
+		Port2 port2 = new Port2(pf_Info, pf_Title, pf_Sale,mb_Email);
 		int cnt = new PortDAO2().portinfo(port2);
 		
 		if(cnt > 0) {
@@ -41,6 +39,6 @@ public class PortinfoService extends HttpServlet {
 		else {
 			System.out.println("DB 저장 실패");
 		}
-		response.sendRedirect("artist-portfolio/artist-portfolio-page.jsp");
+		response.sendRedirect("artist-portfolio/artist-portfolio-page.jsp?artistEmail="+mb_Email);
 }
 }
