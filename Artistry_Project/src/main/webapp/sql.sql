@@ -41,6 +41,7 @@ insert into PORTFOLIOS values (101,'admin','../portfolio_img/1.jpg','emoji1','em
 
 select * from REVIEWS;
 
+select * from ARTISTS;
 
 
 

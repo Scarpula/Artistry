@@ -33,13 +33,13 @@ public class JoinService extends HttpServlet {
 		String add = mb_Addr + ' '+ mb_Addr2;
 
 		Member member = new Member(mb_Email, mb_Pw, mb_Phone,mb_Birthdate, mb_Name,mb_Nick, add,mb_Type);
-		
+		Artists artist = new Artists(mb_Email,mb_Nick);
 		int cnt = 0;
 		int art = 0;
 		
 			if(mb_Type==false) {//아티스트
 				cnt = new MemberDAO().join(member);
-				art = new ArtistDAO().addArtist(mb_Email,mb_Nick);
+				art = new ArtistDAO().addArtist(artist);
 			}else {//의뢰자
 				cnt = new MemberDAO().join(member);
 					}
