@@ -367,11 +367,13 @@
 							<div data-w-id="51e1b636-57d6-a97a-d0c5-40ad8bfecd18"
 								class="art-wrap">
 								<a
-									style="-webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+									style="-webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); 
+									-moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); 
+									-ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); 
+									transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
 									href="#" class="art-link-block w-inline-block"><img
-									src="../images/1.png" loading="lazy" width="218" height="218"
+									src="../<%=artistList.get(i).getArtist_profile_img() %>" loading="lazy" width="218" height="218"
 									alt=""
-									srcset="../images/1-p-500.png 500w, ../images/1-p-800.png 800w, ../images/1.png 1024w"
 									sizes="(max-width: 479px) 100vw, 218px" class="image-5"></a>
 							</div>
 							<div class="text-wrap">

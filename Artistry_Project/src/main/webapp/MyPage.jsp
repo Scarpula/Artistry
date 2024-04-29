@@ -222,6 +222,10 @@ a:-webkit-any-link {
 					<div>
 						<input type="text" hidden="" name="mb_Email"
 							value="<%=loginMember.getMb_Email()%>">
+						<%if(artist!=null){ %>
+						<input type="text" hidden="" name="artist_Email"
+							value="<%=loginMember.getMb_Email()%>">
+						<%} %>
 						<table>
 							<tr>
 								<td><input type="file" name="mb_profile_img"></td>

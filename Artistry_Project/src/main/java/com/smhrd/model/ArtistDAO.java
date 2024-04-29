@@ -46,5 +46,12 @@ public class ArtistDAO {
 		session.close();
 		return artistList;
 	}
+
+	public int update_profile(Artists artist) {
+		SqlSession session = sf.openSession(true);
+		int cnt = session.update("com.smhrd.db.ArtistMapper.update_profile", artist);
+		session.close();
+		return cnt;
+	}
 	
 }
