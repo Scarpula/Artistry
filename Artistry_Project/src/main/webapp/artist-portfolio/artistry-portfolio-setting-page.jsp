@@ -186,9 +186,8 @@
 				style="-webkit-transform: translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
 				class="portfolio-profile-tab setting-page">
 				<div class="portfolio-profile-img-wrap">
-					<img src="../images/11.png" loading="lazy"
+					<img src="../<%=loginMember.getMb_Profile_Img() %>" loading="lazy"
 						sizes="(max-width: 1024px) 100vw, (max-width: 1919px) 1024px, 4vw"
-						srcset="../images/11-p-500.png 500w, ../images/11-p-800.png 800w, ../images/11.png 1024w"
 						alt="" class="profiel-img-con">
 					<h1 class="heading-11"><%=loginMember.getMb_Nick()%></h1>
 					<div class="profile-insta-block">
