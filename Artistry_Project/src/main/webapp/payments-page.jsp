@@ -3,7 +3,7 @@
 <%@page import="com.smhrd.model.Member"%>
 <%@page import="com.smhrd.model.Req"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Sat Apr 27 2024 07:25:43 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="662ca2f3252e40c57915c85d" data-wf-site="65fa46eb9d90d967c69e39b1">
@@ -31,7 +31,7 @@
 	Member loginMember = (Member) session.getAttribute("member");
 	String mb_Email = loginMember.getMb_Email();
 	List<Req> ReqInfo = new ReqDAO().ReqAll(mb_Email);
-	
+	System.out.print("의뢰내용 출력 : "+ mb_Email + ReqInfo);
 	%>
 
 
@@ -102,24 +102,35 @@
       <div class="payments-head">
         <h1 class="heading-21">결제하기</h1>
       </div>
-      <div class="payments-wrapper">
-        <div class="w-layout-grid grid-2">
+      <!-- 의뢰 테이블 시작 -->
+   		   <div class="payments-wrapper">
+		  <div class="w-layout-grid grid-2">
           <div id="w-node-f1f41a82-2cfd-cebc-a113-48f8fde52482-7915c85d" class="paymentsblock">번호</div>
           <div id="w-node-a2ead6d9-1da7-5d16-d2de-e2cb1f663ba1-7915c85d" class="paymentsblock">품목</div>
           <div id="w-node-_5bf0eadf-30b1-5f9b-f2bb-a59f74093558-7915c85d" class="paymentsblock">아티스트</div>
           <div id="w-node-af628076-ec46-90ed-e678-28c37ab249f8-7915c85d" class="paymentsblock">금액</div>
           <div id="w-node-_8eb31830-814b-85ad-ef37-d10a558afce8-7915c85d" class="paymentsblock">결제</div>
           <div id="w-node-_817ca628-9d85-b685-0136-d0d3ce72748d-7915c85d" class="paymentsblock">확인</div>
-          <div id="w-node-eb818534-9416-27a2-b990-1e0372e850c8-7915c85d" class="paymentsblock"></div>
-          <div id="w-node-e7c6fdf9-c27a-15a9-785c-2962a4f75b8f-7915c85d" class="paymentsblock"></div>
-          <div id="w-node-_37805949-41a8-0794-995f-e59819ba866f-7915c85d" class="paymentsblock"></div>
-          <div id="w-node-c33fe992-742b-72eb-d7a6-dcd2870af06e-7915c85d" class="paymentsblock"></div>
+       
+       <!-- 일반회원 의뢰내역 for문 시작 -->  
+        
+          <%
+           int num= 1;
+          for(Req r: ReqInfo){%>
+          <div id="w-node-eb818534-9416-27a2-b990-1e0372e850c8-7915c85d" class="paymentsblock"><%=num%></div>
+          <div id="w-node-e7c6fdf9-c27a-15a9-785c-2962a4f75b8f-7915c85d" class="paymentsblock"><%= r.getReq_paper()%></div>
+          <div id="w-node-_37805949-41a8-0794-995f-e59819ba866f-7915c85d" class="paymentsblock"><%=r.getReq_receiver()%></div>
+          <div id="w-node-c33fe992-742b-72eb-d7a6-dcd2870af06e-7915c85d" class="paymentsblock"><%=r.getReq_price()%></div>
           <div id="w-node-_8b363230-c83d-14c2-56fa-c4d36536bc7c-7915c85d" class="paymentsblock">
             <a href="#" class="link-3">결제하기</a>
           </div>
           <div id="w-node-c6f41e41-e3bc-d217-61a1-74edb6e000ec-7915c85d" class="paymentsblock">
             <a href="#" class="link-4">확인</a>
           </div>
+          <%  num ++; 
+           
+          }%>
+          
         </div>
       </div>
     </div>
