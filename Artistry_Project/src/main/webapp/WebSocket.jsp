@@ -12,7 +12,7 @@
 	Member loginMember = (Member) session.getAttribute("member");
 	String loginUserId = loginMember.getMb_Email();
 	String loginUserName = loginMember.getMb_Nick();
-	String loginUserProfileImage = loginMember.getMb_ProfileImg();
+	String loginUserProfileImage = loginMember.getMb_Profile_Img();
 	%>
 	
 
@@ -38,7 +38,7 @@ var userEmail = '<%=userEmail%>';
 			</a>
 		</h1>
 		<div class="user-box">
-			<img class="user-img" src="<%=loginMember.getMb_ProfileImg()%>"
+			<img class="user-img" src="<%=loginMember.getMb_Profile_Img()%>"
 				alt="user image" />
 			<div class="name">
 				<input type="text" value="<%=loginMember.getMb_Nick()%>" />

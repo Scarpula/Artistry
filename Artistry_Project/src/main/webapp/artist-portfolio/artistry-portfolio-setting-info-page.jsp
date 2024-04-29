@@ -17,6 +17,7 @@
 <link href="../css/normalize.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css"
 	href="../css/Portfolio-setting.css">
+<link href="../css/SettingInfoPage.css" rel="stylesheet" type="text/css">
 <link href="../css/webflow.css" rel="stylesheet" type="text/css">
 <link href="../css/scars-stupendous-site-9634ca.webflow.css"
 	rel="stylesheet" type="text/css">
@@ -26,18 +27,37 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
 	type="text/javascript"></script>
-<script type="text/javascript">WebFont.load({  google: {    families: ["Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Oswald:200,300,400,500,600,700","Merriweather:300,300italic,400,400italic,700,700italic,900,900italic","PT Sans:400,400italic,700,700italic"]  }});</script>
-<script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+<script type="text/javascript">
+	WebFont
+			.load({
+				google : {
+					families : [
+							"Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic",
+							"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic",
+							"Oswald:200,300,400,500,600,700",
+							"Merriweather:300,300italic,400,400italic,700,700italic,900,900italic",
+							"PT Sans:400,400italic,700,700italic" ]
+				}
+			});
+</script>
+<script type="text/javascript">
+	!function(o, c) {
+		var n = c.documentElement, t = " w-mod-";
+		n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch
+				&& c instanceof DocumentTouch)
+				&& (n.className += t + "touch")
+	}(window, document);
+</script>
 <link href="../images/favicon.ico" rel="shortcut icon"
 	type="image/x-icon">
 <link href="../images/webclip.png" rel="apple-touch-icon">
-    <style>
-  a:-webkit-any-link {
-    color: black;
-    cursor: pointer;
-    text-decoration: none;
+<style>
+a:-webkit-any-link {
+	color: black;
+	cursor: pointer;
+	text-decoration: none;
 }
-  </style>
+</style>
 </head>
 <body class="body">
 	<%
@@ -129,7 +149,20 @@
 				<li class="nav-item hide">
 					<div class="divider-vertical bg-dgray01"></div>
 				</li>
-				
+				<li class="nav-item">
+					<div data-hover="false" data-delay="0"
+						class="navbar-dropdown w-dropdown">
+						<div class="navbar-dropdown-toggle w-dropdown-toggle">
+							<img width="24" height="24" alt="" src="../images/star.svg"
+								loading="lazy">
+						</div>
+						<nav class="navbar-dropdown-list w-dropdown-list">
+							<a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
+							<a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
+							<a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
+						</nav>
+					</div>
+				</li>
 				<li class="nav-item hide">
 					<div class="divider-vertical bg-dgray01"></div>
 				</li>
@@ -180,8 +213,9 @@
 				style="-webkit-transform: translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
 				class="portfolio-profile-tab setting-page">
 				<div class="portfolio-profile-img-wrap">
-					<img src="../<%=loginMember.getMb_Profile_Img() %>" loading="lazy"
+					<img src="../images/11.png" loading="lazy"
 						sizes="(max-width: 1024px) 100vw, (max-width: 1919px) 1024px, 4vw"
+						srcset="../images/11-p-500.png 500w, ../images/11-p-800.png 800w, ../images/11.png 1024w"
 						alt="" class="profiel-img-con">
 					<h1 class="heading-11"><%=loginMember.getMb_Nick()%></h1>
 					<div class="profile-insta-block">
@@ -211,30 +245,24 @@
 							<div>포트폴리오</div>
 					</div>
 				</div>
-				<div class="portfolio-artist-art setting-page">
+				<div class="portfolio-artist-art setting-page setting-info-page">
 					<div class="artist-art-setting">
-						<h1 class="heading-16">포트폴리오 작성하기</h1>
+						<h1 class="heading-16">아티스트 정보 작성하기</h1>
 					</div>
-					<form id="email-form" action="PortService" method="post"
-						enctype="multipart/form-data" class="art-modify-block">
-						<!-- 이미지 업로드 입력 필드 -->
-						<div class="form-group">
-							<label for="input-image" class="form-label">이미지 업로드:</label> <input
-								type="file" id="input-image" name="pf_Path"
-								class="form-control upload-input">
-						</div>
-						<!-- 제목 입력 필드 -->
-						<div class="form-group">
-							<label for="email-2" class="form-label">제목:</label> <input
-								class="form-control title-input" maxlength="256" name="pf_Name"
-								placeholder="제목을 입력해주세요" type="text" id="email-2" required>
-						</div>
-						<!-- 제출 버튼 -->
-						<div class="form-group">
-							<input type="button" value="저장"
-								style="padding: 10px 30px; font-size: 20px; width: 100%;"
-								class="submit-button w-button" onclick="submitForms()">
-						</div>
+					<form action="" method="post" class="portfolio-info-setting"
+						style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+						<label for="title" style="font-size: 24px; margin-bottom: 25px;">제목:</label>
+						<input type="text" id="title" name="title" required
+							style="width: 380px; height: 60px; font-size: 34px; padding: 15px;"><br>
+						<br> <label for="content"
+							style="margin-top: 65px; font-size: 24px;">본문:</label><br>
+						<textarea id="content" name="content" rows="10" cols="50" required
+							class="Settinginfo" style="width: 1000px; height: 450px;"></textarea>
+						<label for="sales" style="margin-top: 65px; font-size: 24px;">판매량:</label>
+						<input type="number" id="sales" name="sales" required
+							style="width: 75px; margin-top: 28px; border-radius: 8px;"><br>
+						<br> <br> <input type="submit" value="Submit"
+							style="padding: 24px; border-radius: 12px; background-color: white;">
 					</form>
 				</div>
 
@@ -253,41 +281,48 @@ function submitForms() {
     var email = '<%=(session.getAttribute("member") != null) ? ((Member) session.getAttribute("member")).getMb_Email() : ""%>';
     console.log(email);
 
-    if (email === "") {
-        alert('이메일 정보를 확인할 수 없습니다. 로그인 정보가 유효하지 않습니다.');
-        return; // 이메일 정보가 없으면 함수 실행을 중단합니다.
+    if (email === "
+							") {
+        alert('이메일 정보를 확인할 수 없습니다. 로그인 정보가 유효하지
+							않습니다.');
+        return; // 이메일 정보가 없으면 함수 실행을
+							중단합니다.
     }
 
-    // FormData 객체를 생성하여 폼 데이터를 담습니다.
-    var formData = new FormData();
-    var inputImage = document.getElementById('input-image').files[0];
+    // FormData 객체를 생성하여 폼 데이터를 담습니다. var
+							formData=new FormData();
+    var
+							inputImage=document.getElementById(
+							'input-image').files[0];
     formData.append('pf_Path', inputImage);
-    var pfName = document.getElementById('email-2').value;
+    var
+							pfName=document.getElementById(
+							'email-2').value;
     formData.append('pf_Name', pfName);
     formData.append('mb_Email', email);
-    var pfInfo = document.getElementById('Information-Modify').value;
+    var
+							pfInfo=document.getElementById(
+							'Information-Modify').value;
     formData.append('pf_Info', pfInfo);
-    var pfCate = document.getElementById('field-2').value;
+    var
+							pfCate=document.getElementById(
+							'field-2').value;
     formData.append('pf_Cate', pfCate);
 
-    // fetch 메서드를 사용하여 서버로 FormData를 전송합니다.
-    fetch('PortService', {
+    // fetch
+							메서드를 사용하여 서버로 FormData를 전송합니다.
+							fetch('PortService', {
         method: 'POST',
-        body: formData
-    }).then(response => {
-        if (response.ok) {
-            alert('저장이 완료됐습니다.');
-            window.location.href = 'artist-portfolio-page.jsp'; // 성공 시 페이지 리다이렉션
-        } else {
-        	alert('저장이 완료됐습니다.');
-        	 window.location.href = 'artist-portfolio-page.jsp?artistEmail=<%=((Member) session.getAttribute("member")).getMb_Email()%>'
-        }
-    }).catch(error => {
-        console.error('Error:', error);
-        alert('제출 중 오류가 발생했습니다.');
-    });
-}
-</script>
+        body:
+							formData
+    }).then(response=> { if (response.ok) {
+						alert('저장이 완료됐습니다.'); window.location.href =
+						'artist-portfolio-page.jsp'; // 성공 시 페이지 리다이렉션 } else { alert('저장이
+						완료됐습니다.'); window.location.href =
+						'artist-portfolio-page.jsp?artistEmail=<%=((Member) session.getAttribute("member")).getMb_Email()%>'
+						} }).catch(error => { console.error('Error:', error); alert('제출 중
+						오류가 발생했습니다.'); }); }
+						</script>
 			</div>
 		</div>
 		<script
@@ -297,58 +332,69 @@ function submitForms() {
 			crossorigin="anonymous"></script>
 		<script src="../js/webflow.js" type="text/javascript"></script>
 		<script>
-    $(document).ready(function(){
-    
-    //$('#ex_filename').change(function() {
-    //	var filename = $(this).val();
-    //	$('.upload-name').val(filename);
-    //});
-    
-    var fileTarget = $('.file-upload .upload-hidden');
-    
-    fileTarget.on('change', function(){  // 값이 변경되면
-         if(window.FileReader){  // modern browser
-              var filename = $(this)[0].files[0].name;
-         } 
-         else {  // old IE
-              var filename = $(this).val().split('/').pop().split('\\').pop();  // 파일명만 추출
-         }
-    
-         // 추출한 파일명 삽입
-         $(this).siblings('.upload-name').val(filename);
-    });
-    }); 
-    
-    //preview image 
-    var imgTarget = $('.preview-image .upload-hidden');
-    
-    imgTarget.on('change', function(){
-    var parent = $(this).parent();
-    parent.children('.upload-display').remove();
-    
-    if(window.FileReader){
-         //image 파일만
-         if (!$(this)[0].files[0].type.match(/image\//)) return;
-    
-         var reader = new FileReader();
-         reader.onload = function(e){
-              var src = e.target.result;
-              parent.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img src="'+src+'" class="upload-thumb"></div></div>');
-         }
-         reader.readAsDataURL($(this)[0].files[0]);
-    }
-    
-    else {
-         $(this)[0].select();
-         $(this)[0].blur();
-         var imgSrc = document.selection.createRange().text;
-         parent.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img class="upload-thumb"></div></div>');
-    
-         var img = $(this).siblings('.upload-display').find('img');
-         img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""+imgSrc+"\")";        
-    }
-    });
-    
-      </script>
+				$(document).ready(
+						function() {
+
+							//$('#ex_filename').change(function() {
+							//	var filename = $(this).val();
+							//	$('.upload-name').val(filename);
+							//});
+
+							var fileTarget = $('.file-upload .upload-hidden');
+
+							fileTarget.on('change', function() { // 값이 변경되면
+								if (window.FileReader) { // modern browser
+									var filename = $(this)[0].files[0].name;
+								} else { // old IE
+									var filename = $(this).val().split('/')
+											.pop().split('\\').pop(); // 파일명만 추출
+								}
+
+								// 추출한 파일명 삽입
+								$(this).siblings('.upload-name').val(filename);
+							});
+						});
+
+				//preview image 
+				var imgTarget = $('.preview-image .upload-hidden');
+
+				imgTarget
+						.on(
+								'change',
+								function() {
+									var parent = $(this).parent();
+									parent.children('.upload-display').remove();
+
+									if (window.FileReader) {
+										//image 파일만
+										if (!$(this)[0].files[0].type
+												.match(/image\//))
+											return;
+
+										var reader = new FileReader();
+										reader.onload = function(e) {
+											var src = e.target.result;
+											parent
+													.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img src="'+src+'" class="upload-thumb"></div></div>');
+										}
+										reader
+												.readAsDataURL($(this)[0].files[0]);
+									}
+
+									else {
+										$(this)[0].select();
+										$(this)[0].blur();
+										var imgSrc = document.selection
+												.createRange().text;
+										parent
+												.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img class="upload-thumb"></div></div>');
+
+										var img = $(this).siblings(
+												'.upload-display').find('img');
+										img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""
+												+ imgSrc + "\")";
+									}
+								});
+			</script>
 </body>
 </html>

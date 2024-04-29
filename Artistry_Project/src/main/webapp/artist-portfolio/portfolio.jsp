@@ -59,6 +59,13 @@
 	integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 	crossorigin="anonymous"></script>
 <script src="../js/webflow.js" type="text/javascript"></script>
+  <style>
+  a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+  </style>
 </head>
 <body class="body">
 	<%
@@ -70,7 +77,6 @@
 	if(keyWord != null){
 		searchList = new ArtistDAO().get_search_list(keyWord);
 	}
-	System.out.print(searchList);
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
@@ -147,20 +153,7 @@
 					<li class="nav-item hide">
 						<div class="divider-vertical bg-dgray01"></div>
 					</li>
-					<li class="nav-item">
-						<div data-hover="false" data-delay="0"
-							class="navbar-dropdown w-dropdown">
-							<div class="navbar-dropdown-toggle w-dropdown-toggle">
-								<img width="24" height="24" alt="" src="../images/star.svg"
-									loading="lazy">
-							</div>
-							<nav class="navbar-dropdown-list w-dropdown-list">
-								<a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
-								<a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
-								<a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
-							</nav>
-						</div>
-					</li>
+					
 					<li class="nav-item hide">
 						<div class="divider-vertical bg-dgray01"></div>
 					</li>

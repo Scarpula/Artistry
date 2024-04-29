@@ -118,20 +118,7 @@
                <li class="nav-item hide">
                   <div class="divider-vertical bg-dgray01"></div>
                </li>
-               <li class="nav-item">
-                  <div data-hover="false" data-delay="0"
-                     class="navbar-dropdown w-dropdown">
-                     <div class="navbar-dropdown-toggle w-dropdown-toggle">
-                        <img width="24" height="24" alt="" src="../images/star.svg"
-                           loading="lazy">
-                     </div>
-                     <nav class="navbar-dropdown-list w-dropdown-list">
-                        <a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
-                        <a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
-                        <a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
-                     </nav>
-                  </div>
-               </li>
+               
                <li class="nav-item hide">
                   <div class="divider-vertical bg-dgray01"></div>
                </li>
@@ -186,7 +173,7 @@
          	 <div class="profile-button">
            	 	<a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰확인하기</a>
            	 	<a href="artistry-portfolio-setting-page.jsp?artistEmail=<%=artistEmail %>" class="follow-button setting-button w-button">포트폴리오 작성하기</a>
-           	 	<a href="artistry-portfolio-setting-page.jsp?artistEmail=<%=artistEmail %>" class="follow-button setting-button w-button">정보 작성하기</a>
+           	 	<a href="artistry-portfolio-setting-info-page.jsp?artistEmail=<%=artistEmail %>" class="follow-button setting-button w-button">정보 작성하기</a>
           	</div>
           <%}else{ %>
           	<div class="profile-button">
@@ -257,19 +244,6 @@
                 <h1>73</h1>
               </div>
             </div>
-            <div class="artist-request-field-wrap">
-              <h1 class="heading-9">의뢰 가능한 분야</h1>
-              <div class="request-field-form">
-                <div class="request-field-wrap">
-                  <h3 class="request-field-text">일러스트</h3>
-                </div>
-                <div class="request-field-wrap">
-                  <h3 class="request-field-text">캐릭터</h3>
-                </div>
-                <div class="request-field-wrap">
-                  <h3 class="request-field-text">캐리커쳐</h3>
-                </div>
-              </div>
             </div>
           </div>
           
