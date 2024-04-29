@@ -81,7 +81,7 @@ if (code != null && state != null) {
               if(result.equals("success")){
               // 비동기 alert 창 발동
               System.out.print("이건success");%>
-              <script type="text/javascript">alert("회원가입에에 성공하였습니다.")</script>
+              <script type="text/javascript">alert("회원가입에 성공하였습니다.")</script>
             <%}else{//비동기 alert창 발동
               System.out.print("이건fail");%>
               

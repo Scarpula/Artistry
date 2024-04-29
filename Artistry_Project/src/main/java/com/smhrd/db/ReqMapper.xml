@@ -9,6 +9,18 @@
   	 INSERT INTO art_requests VALUES (art_requests_SEQ.nextval, #{mb_Email}, #{req_paper}, #{req_img_path}, #{req_receiver}, #{req_price}, sysdate)
   </insert>
   
+  <select id="ReqAll" parameterType="String" resultType="com.smhrd.model.Req">
+  	select * from art_requests where mb_email=#{mb_Email}
+  </select>
+  	
+  <select id="get_req_list_receiver" parameterType="String" resultType="com.smhrd.model.Req">
+  	select * from art_requests where req_receiver = #{artistEmail}
+  </select>
+  
+  <select id="get_req_detail" parameterType="int" resultType="com.smhrd.model.Req">
+  	select * from art_requests where req_idx=#{idx}
+  </select>
+  
   
   </mapper>
   
