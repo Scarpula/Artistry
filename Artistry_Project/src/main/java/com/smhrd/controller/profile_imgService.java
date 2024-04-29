@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.smhrd.model.ArtistDAO;
+import com.smhrd.model.Artists;
 import com.smhrd.model.Member;
 import com.smhrd.model.MemberDAO;
 
@@ -37,13 +39,23 @@ public class profile_imgService extends HttpServlet {
         String mb_Email = multi.getParameter("mb_Email");
         String profile_img_name = multi.getFilesystemName("mb_profile_img");
         String pw = " ";
-
+        String artist_email = multi.getParameter("artist_Email");
         // 상대 웹 경로 설정 (웹 컨텍스트 내에서의 경로)
         String mb_profile_img = relativePath + "/" + profile_img_name;
 
         Member member = new Member(mb_Email, pw, mb_profile_img);
         int cnt = new MemberDAO().update_profile_img(member);
-
+        
+        if(artist_email!=null) {
+        	Artists artist = new Artists(artist_email,mb_profile_img);
+        	int cnt2 = new ArtistDAO().update_profile(artist);
+        	
+        	if(cnt2>0) {
+        		System.out.println("아티스트 테이블 프사 성공");
+        	}
+        }
+        
+        
         if (cnt > 0) {
             System.out.print("업데이트 성공");
             

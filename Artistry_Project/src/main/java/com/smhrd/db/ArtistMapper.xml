@@ -23,6 +23,9 @@
   	select * from artists
   </select>
   
+  <update id="update_profile" parameterType="com.smhrd.model.Artists">
+  	update artists set artist_profile_img=#{artist_nick} where artist_email=#{artist_email}
+  </update>
   
   
   </mapper>

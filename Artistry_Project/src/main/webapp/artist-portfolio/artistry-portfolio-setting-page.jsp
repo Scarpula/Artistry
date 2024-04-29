@@ -216,10 +216,6 @@
 						<a data-w-id="88f0583a-46d0-dbb2-7b75-0e498dab87aa" href="#"
 							class="portfolio-tab-link-block setting-page w-inline-block">
 							<div>포트폴리오</div>
-						</a> <a data-w-id="88f0583a-46d0-dbb2-7b75-0e498dab87ad" href="#"
-							class="portfolio-tab-link-block setting-page w-inline-block">
-							<div>아티스트 정보</div>
-						</a>
 					</div>
 				</div>
 				<div class="portfolio-artist-art setting-page">
@@ -250,31 +246,6 @@
 				</div>
 
 				<!-- 아티스트 정보 입력 폼 (제출 버튼 제거) -->
-				<form id="email-form" method="post" enctype="multipart/form-data"
-					class="art-modify-block">
-					<div id="Artist-infomation"
-						class="portfolio-artist-infomation setting-page">
-						<div class="artist-infomation-setting">
-							<h1 class="heading-16">아티스트 정보 수정하기</h1>
-						</div>
-						<div class="information-modify-block">
-							<label for="Information-Modify" class="field-label-3">아티스트
-								정보</label>
-							<textarea id="Information-Modify" name="pf_Info" maxlength="5000"
-								data-name="Information-Modify" placeholder=""
-								class="artist-infor-area w-input"></textarea>
-							<h1 class="heading-17">의뢰 가능 분야 작성</h1>
-							<input class="text-field-2 w-input" autofocus="true"
-								maxlength="256" name="pf_Cate" data-name="Field 2"
-								placeholder="" type="text" id="field-2" required="">
-						</div>
-						<div class="form-group">
-							<input type="button" value="저장"
-								style="padding: 10px 30px; font-size: 20px; width: 100%;"
-								class="submit-button w-button" >
-						</div>
-					</div>
-				</form>
 				<script>
 function submitForms() {
     // 세션에서 Member 객체를 가져옵니다.
