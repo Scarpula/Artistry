@@ -31,13 +31,13 @@
 <link href="../images/favicon.ico" rel="shortcut icon"
 	type="image/x-icon">
 <link href="../images/webclip.png" rel="apple-touch-icon">
-<style>
-a:-webkit-any-link {
-	color: black;
-	cursor: pointer;
-	text-decoration: none;
+    <style>
+  a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
 }
-</style>
+  </style>
 </head>
 <body class="body">
 	<%
@@ -257,14 +257,13 @@ a:-webkit-any-link {
 				</div>
 
 				<!-- 아티스트 정보 입력 폼 (제출 버튼 제거) -->
-
-				<div id="Artist-infomation"
-					class="portfolio-artist-infomation setting-page">
-					<div class="artist-infomation-setting">
-						<h1 class="heading-16">아티스트 정보 수정하기</h1>
-					</div>
-					<form id="email-form" method="post" enctype="multipart/form-data"
-						class="art-modify-block">
+				<form id="email-form" method="post" enctype="multipart/form-data"
+					class="art-modify-block">
+					<div id="Artist-infomation"
+						class="portfolio-artist-infomation setting-page">
+						<div class="artist-infomation-setting">
+							<h1 class="heading-16">아티스트 정보 수정하기</h1>
+						</div>
 						<div class="information-modify-block">
 							<label for="Information-Modify" class="field-label-3">아티스트
 								정보</label>
@@ -279,10 +278,9 @@ a:-webkit-any-link {
 						<div class="form-group">
 							<input type="button" value="저장"
 								style="padding: 10px 30px; font-size: 20px; width: 100%;"
-								class="submit-button w-button">
+								class="submit-button w-button" >
 						</div>
-				</div>
-				</div>
+					</div>
 				</form>
 				<script>
 function submitForms() {
