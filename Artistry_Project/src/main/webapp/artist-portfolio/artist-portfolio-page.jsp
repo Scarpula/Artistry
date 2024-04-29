@@ -236,6 +236,7 @@
                       <img src="<%=portList.get(i).getPf_Path() %>" loading="lazy" width="350" height="252" alt="" 
                       sizes="(max-width: 479px) 100vw, (max-width: 1919px) 349.9921875px, 242.8828125px" class="artist-art-img">
                      </div>
+                     <%System.out.println(portList.get(i).getPf_Path()); %>
                    <h1 class="artist-art-title"><%=portList.get(i).getPf_Name() %></h1>
                  </div>
                  <%} %>

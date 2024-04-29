@@ -41,6 +41,7 @@ public class PortService extends HttpServlet {
 
         // 파일 업로드 및 DB 삽입 결과 로그
         if (cnt > 0) {
+        	System.out.println(pf_Path);
             System.out.println("파일 업로드 및 DB 저장 성공!");
             response.sendRedirect("artist-portfolio/artist-portfolio-page.jsp?artistEmail="+mb_Email); // 성공 시 이동할 페이지
         } else {
