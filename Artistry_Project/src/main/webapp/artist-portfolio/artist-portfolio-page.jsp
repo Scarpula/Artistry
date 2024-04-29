@@ -1,7 +1,5 @@
-<%@page import="com.smhrd.model.Port2"%>
-<%@page import="com.smhrd.model.PortDAO2"%>
 <%@page import="com.smhrd.model.ReqDAO"%>
-<%@page import="com.smhrd.model.Req" %>
+<%@ page import="com.smhrd.model.Req" %>
 <%@page import="com.smhrd.model.ArtistDAO"%>
 <%@page import="com.smhrd.model.Artists"%>
 <%@page import="com.smhrd.model.Likes"%>
@@ -43,12 +41,6 @@
     cursor: pointer;
     text-decoration: none;
 }
-	#reqList{
-	margin-top: 30px;
-	width: 1200px;
-    height: 300px;
-    text-align: center;
-}
   </style>
 </head>
 <body class="body">
@@ -64,7 +56,6 @@
       Member artist = new MemberDAO().get_artist(artistEmail);
       Artists artist_info = new ArtistDAO().getArtistInfo(artistEmail);
       List<Req> reqListArtist = new ReqDAO().get_req_list_receiver(artistEmail);
-      Port2 portInfo = new PortDAO2().selectinfo(artistEmail);
    %>
 
   <div class="main">
@@ -127,7 +118,20 @@
                <li class="nav-item hide">
                   <div class="divider-vertical bg-dgray01"></div>
                </li>
-               
+               <li class="nav-item">
+                  <div data-hover="false" data-delay="0"
+                     class="navbar-dropdown w-dropdown">
+                     <div class="navbar-dropdown-toggle w-dropdown-toggle">
+                        <img width="24" height="24" alt="" src="../images/star.svg"
+                           loading="lazy">
+                     </div>
+                     <nav class="navbar-dropdown-list w-dropdown-list">
+                        <a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
+                        <a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
+                        <a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
+                     </nav>
+                  </div>
+               </li>
                <li class="nav-item hide">
                   <div class="divider-vertical bg-dgray01"></div>
                </li>
@@ -151,7 +155,7 @@
                      } else {
                      %>
                      <nav class="navbar-dropdown-list w-dropdown-list">
-                        <a href="../log-in.jsp"
+                        <a href="../MyPage.jsp"
                            class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
                            href="../log-in.jsp"
                            class="navbar-dropdown-link w-dropdown-link">로그인</a> <a
@@ -170,7 +174,7 @@
       <div class="banner-image-wrap"><img src="../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac.jpg" loading="lazy" sizes="100vw" srcset="../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-500.jpg 500w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-800.jpg 800w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-1080.jpg 1080w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-1600.jpg 1600w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-2000.jpg 2000w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-2600.jpg 2600w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-3200.jpg 3200w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac.jpg 3840w" alt="" class="image-10"></div>
       <div class="main-container">
         <div style="-webkit-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-profile-tab">
-          <div class="portfolio-profile-img-wrap"><img src="../<%=artist.getMb_Profile_Img() %>" loading="lazy" sizes="(max-width: 1279px) 100vw, (max-width: 1919px) 1024.0078125px, 4vw" alt="" class="profiel-img-con">
+          <div class="portfolio-profile-img-wrap"><img src="../images/11.png" loading="lazy" sizes="(max-width: 1279px) 100vw, (max-width: 1919px) 1024.0078125px, 4vw" srcset="../images/11-p-500.png 500w, ../images/11-p-800.png 800w, ../images/11.png 1024w" alt="" class="profiel-img-con">
             <h1 class="heading-11"><%=artist.getMb_Nick() %></h1>
             <div class="profile-insta-block">
               <h1 class="heading-12">INSTA@:</h1>
@@ -182,7 +186,6 @@
          	 <div class="profile-button">
            	 	<a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰확인하기</a>
            	 	<a href="artistry-portfolio-setting-page.jsp?artistEmail=<%=artistEmail %>" class="follow-button setting-button w-button">포트폴리오 작성하기</a>
-           	 	<a href="artistry-portfolio-setting-info-page.jsp?artistEmail=<%=artistEmail %>" class="follow-button setting-button w-button">정보 작성하기</a>
           	</div>
           <%}else{ %>
           	<div class="profile-button">
@@ -237,34 +240,44 @@
                       <img src="<%=portList.get(i).getPf_Path() %>" loading="lazy" width="350" height="252" alt="" 
                       sizes="(max-width: 479px) 100vw, (max-width: 1919px) 349.9921875px, 242.8828125px" class="artist-art-img">
                      </div>
-                     <%System.out.println(portList.get(i).getPf_Path()); %>
                    <h1 class="artist-art-title"><%=portList.get(i).getPf_Name() %></h1>
                  </div>
                  <%} %>
               <%} %>
             </div>
           </div>
-       <div id="Artist-infomation" style="display:none" class="portfolio-artist-infomation">
+          <div id="Artist-infomation" style="display:none" class="portfolio-artist-infomation">
           <!-- 아티스트 정보 페이지 -->
-          <%if(portInfo!=null){ %>
-            <h1 class="portfolio-artist-infomation-title"><strong class="bold-text"><%=portInfo.getPf_Title() %></strong></h1>
-            <p class="portfolio-artist-infomation-text"><%=portInfo.getPf_Info() %></p>
+            <h1 class="portfolio-artist-infomation-title"><strong class="bold-text">15년 이상의 브랜드 전문가와 함께 하세요~</strong></h1>
+            <p class="portfolio-artist-infomation-text">디자이너 gutta 공모전 수상 경력 사항<br><br>‍<br>Hi 서울 웹포스터 공모전 [수상 : 대상]09년 수산물 브랜드 대전 [수상 : 은상]<br>‍<br>제8회대한민국비쥬얼트랜드대전 [수상 : 특선]<br>제3회 Blue Leage 포트폴리오 대전 [수상 : 입선]<br>07년 Edtool 표지디자인 공모전 [수상 : 입상]<br>08년 UNICORN증보시스템 캐릭터 공모전 [수상 : 2위]<br>제44회 대한민국 디자인 전람회 [수상 : 입선]<br>10년 춘천월드레져총회 및 경기대회 캐릭터 공모전 [수상 : 입선]<br>14년 순천만 정원포스터 공모전 [수상 : 동상]<br>16년 담양대나무축제 포스터 [수상:대상]<br>‍<br><br>(자격사항)웹디자인 기능사 취득그래픽운용기능사 취득교원(실기교사) 자격증 취득브랜드컨설턴트 수료</p>
             <div class="information-stats">
               <h1 class="heading-7">판매량</h1>
               <div class="sales-volume"><img src="../images/shopping_bag_FILL0_wght400_GRAD0_opsz24.svg" loading="lazy" width="48" height="48" alt="" class="image-9">
-                <h1><%=portInfo.getPf_Sale() %></h1>
+                <h1>73</h1>
               </div>
             </div>
+            <div class="artist-request-field-wrap">
+              <h1 class="heading-9">의뢰 가능한 분야</h1>
+              <div class="request-field-form">
+                <div class="request-field-wrap">
+                  <h3 class="request-field-text">일러스트</h3>
+                </div>
+                <div class="request-field-wrap">
+                  <h3 class="request-field-text">캐릭터</h3>
+                </div>
+                <div class="request-field-wrap">
+                  <h3 class="request-field-text">캐리커쳐</h3>
+                </div>
+              </div>
             </div>
           </div>
-          <%} %>
           
            
           <!-- 리뷰수정_기현수 -->
 
           <div style="display:none" class="portfolio-artist-review">
             <div class="artist-review-head">
-              <h1 class="heading-10">총 리뷰 <%=reviewList.size() %>개</h1>
+              <h1 class="heading-10">총 리뷰 0개</h1>
             </div>
             
             <!-- 리뷰작성란 div태그 -->
@@ -346,7 +359,7 @@
                alt="" class="cancel-button-img">
          </section> 
          <%if(reqListArtist!=null){ %>  
-			<table id="reqList" border="1">
+			<table border="1">
 				<tr>
 					<td>의뢰자 이메일</td>
 					<td>의뢰 내용</td>
@@ -371,7 +384,7 @@
        <!-- 기현수 _ 요청서 폼 끝 -->
        <%}else{ %>
       <!-- 요청서폼 시작_기현수_결제하기button 시작_0427 -->
-      <form  action="../ReqService?receiver=<%=artistEmail%>&mb_email=<%=loginMember.getMb_Email()%>" method="post" id="email-form-3" enctype="multipart/form-data"
+      <form  action="../ReqService?receiver=<%=artistEmail%>&mb_email=<%=loginMember.getMb_Email()%>>" method="post" id="email-form-3" enctype="multipart/form-data"
             data-name="Email Form 3"  class="text-area-form"
             data-wf-page-id="660fa367cce1a421bb169fcb"
             data-wf-element-id="b4d1ec42-6ae0-b4d9-64f8-2ff74e9f71d7">
