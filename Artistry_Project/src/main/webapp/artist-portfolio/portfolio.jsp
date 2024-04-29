@@ -342,8 +342,8 @@
 							</div>
 							<div class="text-wrap">
 								<a
-									href="artist-portfolio-page.jsp?artistEmail=<%=searchList.get(i).getArtist_email()%>"
-									class="title-link"> <%=searchList.get(i).getArtist_email()%></a>
+									href="artist-portfolio-page.jsp?artistEmail=<%=searchList.get(i).getArtist_nick()%>"
+									class="title-link"> <%=searchList.get(i).getArtist_nick()%></a>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="artist-link-wrap">
 									<a href="#" class="artist-link"><%=searchList.get(i).getArtist_nick()%></a><img
@@ -384,8 +384,8 @@
 							</div>
 							<div class="text-wrap">
 								<a
-									href="artist-portfolio-page.jsp?artistEmail=<%=artistList.get(i).getArtist_email()%>"
-									class="title-link"> <%=artistList.get(i).getArtist_email()%></a>
+									href="artist-portfolio-page.jsp?artistEmail=<%=artistList.get(i).getArtist_nick()%>"
+									class="title-link"> <%=artistList.get(i).getArtist_nick() %></a>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="artist-link-wrap">
 									<a href="#" class="artist-link"><%=artistList.get(i).getArtist_nick()%></a><img
