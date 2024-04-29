@@ -8,6 +8,47 @@
 <!--  Last Published: Sat Apr 27 2024 07:25:43 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="662ca2f3252e40c57915c85d" data-wf-site="65fa46eb9d90d967c69e39b1">
 <head>
+
+  <!-- 결제API포트원서비스 SDK스크립트_기현수-->
+	<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+	  <!-- 포트원 결제API_기현수 -->
+  <script type="text/javascript">
+  
+	  var IMP = window.IMP;
+	  IMP.init("imp27513274");
+	  
+	  function checkOut(){
+          IMP.request_pay({
+              pg: "kakaopay.TC0ONETIME",
+              pay_method: "card",
+              // merchant_uid: "ORD20180131-0000011", //주문번호
+              name: "아티스트리 의뢰",
+              amount: 65000,
+              // buyer_email: "Iamport@chai.finance",
+              buyer_name: "기현수",
+              // buyer_tel: "010-1234-5678",
+              // buyer_addr: "서울특별시 강남구 삼성동",
+              // buyer_postcode: "123-456"
+              },
+              function(rsp){
+                  //callback
+                  //rsp.imp_udi값으로 결제 단건조회 API를 호출하여 결제결과 판단
+                  if(rsp.success){
+                      alert('결제가 성공적으로 완료되었습니다.');
+                      console.log(rsp);
+                  }else{
+                      
+                      alert('결제에 실패하였습니다:.' );
+                      console.log(rsp);
+                  }
+                  
+              }
+
+          )
+
+      }
+	</script>
+
   <meta charset="utf-8">
   <title>Payments Page</title>
   <meta content="Payments Page" property="og:title">
@@ -105,12 +146,12 @@
       <!-- 의뢰 테이블 시작 -->
    		   <div class="payments-wrapper">
 		  <div class="w-layout-grid grid-2">
-          <div id="w-node-f1f41a82-2cfd-cebc-a113-48f8fde52482-7915c85d" class="paymentsblock">번호</div>
-          <div id="w-node-a2ead6d9-1da7-5d16-d2de-e2cb1f663ba1-7915c85d" class="paymentsblock">품목</div>
-          <div id="w-node-_5bf0eadf-30b1-5f9b-f2bb-a59f74093558-7915c85d" class="paymentsblock">아티스트</div>
-          <div id="w-node-af628076-ec46-90ed-e678-28c37ab249f8-7915c85d" class="paymentsblock">금액</div>
-          <div id="w-node-_8eb31830-814b-85ad-ef37-d10a558afce8-7915c85d" class="paymentsblock">결제</div>
-          <div id="w-node-_817ca628-9d85-b685-0136-d0d3ce72748d-7915c85d" class="paymentsblock">확인</div>
+          <div id="w-node-f1f41a82-2cfd-cebc-a113-48f8fde52482-7915c85d" class="paymentsblock"><h3>번호</h3></div>
+          <div id="w-node-a2ead6d9-1da7-5d16-d2de-e2cb1f663ba1-7915c85d" class="paymentsblock"><h3>품목</h3></div>
+          <div id="w-node-_5bf0eadf-30b1-5f9b-f2bb-a59f74093558-7915c85d" class="paymentsblock"><h3>아티스트</h3></div>
+          <div id="w-node-af628076-ec46-90ed-e678-28c37ab249f8-7915c85d" class="paymentsblock"><h3>금액</h3></div>
+          <div id="w-node-_8eb31830-814b-85ad-ef37-d10a558afce8-7915c85d" class="paymentsblock"><h3>결제</h3></div>
+          <div id="w-node-_817ca628-9d85-b685-0136-d0d3ce72748d-7915c85d" class="paymentsblock"><h3>확인</h3></div>
        
        <!-- 일반회원 의뢰내역 for문 시작 -->  
         
@@ -122,7 +163,7 @@
           <div id="w-node-_37805949-41a8-0794-995f-e59819ba866f-7915c85d" class="paymentsblock"><%=r.getReq_receiver()%></div>
           <div id="w-node-c33fe992-742b-72eb-d7a6-dcd2870af06e-7915c85d" class="paymentsblock"><%=r.getReq_price()%></div>
           <div id="w-node-_8b363230-c83d-14c2-56fa-c4d36536bc7c-7915c85d" class="paymentsblock">
-            <a href="#" class="link-3">결제하기</a>
+            <button class="link-3" onclick="checkOut()">결제하기</button>
           </div>
           <div id="w-node-c6f41e41-e3bc-d217-61a1-74edb6e000ec-7915c85d" class="paymentsblock">
             <a href="#" class="link-4">확인</a>
@@ -137,5 +178,6 @@
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
+  
 </body>
 </html>
