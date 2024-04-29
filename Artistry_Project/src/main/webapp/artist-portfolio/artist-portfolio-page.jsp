@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Port2"%>
+<%@page import="com.smhrd.model.PortDAO2"%>
 <%@page import="com.smhrd.model.ReqDAO"%>
 <%@ page import="com.smhrd.model.Req" %>
 <%@page import="com.smhrd.model.ArtistDAO"%>

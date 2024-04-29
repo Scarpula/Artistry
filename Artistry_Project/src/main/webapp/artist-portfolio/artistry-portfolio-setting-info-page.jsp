@@ -249,152 +249,23 @@ a:-webkit-any-link {
 					<div class="artist-art-setting">
 						<h1 class="heading-16">아티스트 정보 작성하기</h1>
 					</div>
-					<form action="" method="post" class="portfolio-info-setting"
+					<form action="../PortinfoService" method="post" class="portfolio-info-setting"
 						style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
 						<label for="title" style="font-size: 24px; margin-bottom: 25px;">제목:</label>
-						<input type="text" id="title" name="title" required
+						<input type="text" id="mb_Title" name="mb_Title2" required
 							style="width: 380px; height: 60px; font-size: 34px; padding: 15px;"><br>
 						<br> <label for="content"
 							style="margin-top: 65px; font-size: 24px;">본문:</label><br>
-						<textarea id="content" name="content" rows="10" cols="50" required
-							class="Settinginfo" style="width: 1000px; height: 450px;"></textarea>
+						<textarea id="mb_Info" name="mb_Info2" rows="10" cols="50" required
+							class="Settinginfo" style="width: 1000px; height: 450px; font-size:24px; padding: 25px;"></textarea>
 						<label for="sales" style="margin-top: 65px; font-size: 24px;">판매량:</label>
-						<input type="number" id="sales" name="sales" required
-							style="width: 75px; margin-top: 28px; border-radius: 8px;"><br>
-						<br> <br> <input type="submit" value="Submit"
+						<input type="text" id="mb_Sale" name="mb_Sale2" required
+							style="width: 75px; margin-top: 28px; border-radius: 8px;">
+							<input type="submit" value="저장"
 							style="padding: 24px; border-radius: 12px; background-color: white;">
+							<input type="hidden" name="mb_Email" value="<%=loginMember.getMb_Email() %>" />
 					</form>
 				</div>
 
-				<!-- 아티스트 정보 입력 폼 (제출 버튼 제거) -->
-				<script>
-function submitForms() {
-    // 세션에서 Member 객체를 가져옵니다.
-    var member = '<%=session.getAttribute("member")%>';
-    if (!member) {
-        alert('로그인이 필요합니다. 로그인 페이지로 이동합니다.');
-        window.location.href = 'login.jsp'; // 로그인 페이지로 리다이렉션
-        return; // 함수 실행을 여기서 중단합니다.
-    }
-   
-    // 세션에서 이메일을 안전하게 가져옵니다.
-    var email = '<%=(session.getAttribute("member") != null) ? ((Member) session.getAttribute("member")).getMb_Email() : ""%>';
-    console.log(email);
-
-    if (email === "
-							") {
-        alert('이메일 정보를 확인할 수 없습니다. 로그인 정보가 유효하지
-							않습니다.');
-        return; // 이메일 정보가 없으면 함수 실행을
-							중단합니다.
-    }
-
-    // FormData 객체를 생성하여 폼 데이터를 담습니다. var
-							formData=new FormData();
-    var
-							inputImage=document.getElementById(
-							'input-image').files[0];
-    formData.append('pf_Path', inputImage);
-    var
-							pfName=document.getElementById(
-							'email-2').value;
-    formData.append('pf_Name', pfName);
-    formData.append('mb_Email', email);
-    var
-							pfInfo=document.getElementById(
-							'Information-Modify').value;
-    formData.append('pf_Info', pfInfo);
-    var
-							pfCate=document.getElementById(
-							'field-2').value;
-    formData.append('pf_Cate', pfCate);
-
-    // fetch
-							메서드를 사용하여 서버로 FormData를 전송합니다.
-							fetch('PortService', {
-        method: 'POST',
-        body:
-							formData
-    }).then(response=> { if (response.ok) {
-						alert('저장이 완료됐습니다.'); window.location.href =
-						'artist-portfolio-page.jsp'; // 성공 시 페이지 리다이렉션 } else { alert('저장이
-						완료됐습니다.'); window.location.href =
-						'artist-portfolio-page.jsp?artistEmail=<%=((Member) session.getAttribute("member")).getMb_Email()%>'
-						} }).catch(error => { console.error('Error:', error); alert('제출 중
-						오류가 발생했습니다.'); }); }
-						</script>
-			</div>
-		</div>
-		<script
-			src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1"
-			type="text/javascript"
-			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-			crossorigin="anonymous"></script>
-		<script src="../js/webflow.js" type="text/javascript"></script>
-		<script>
-				$(document).ready(
-						function() {
-
-							//$('#ex_filename').change(function() {
-							//	var filename = $(this).val();
-							//	$('.upload-name').val(filename);
-							//});
-
-							var fileTarget = $('.file-upload .upload-hidden');
-
-							fileTarget.on('change', function() { // 값이 변경되면
-								if (window.FileReader) { // modern browser
-									var filename = $(this)[0].files[0].name;
-								} else { // old IE
-									var filename = $(this).val().split('/')
-											.pop().split('\\').pop(); // 파일명만 추출
-								}
-
-								// 추출한 파일명 삽입
-								$(this).siblings('.upload-name').val(filename);
-							});
-						});
-
-				//preview image 
-				var imgTarget = $('.preview-image .upload-hidden');
-
-				imgTarget
-						.on(
-								'change',
-								function() {
-									var parent = $(this).parent();
-									parent.children('.upload-display').remove();
-
-									if (window.FileReader) {
-										//image 파일만
-										if (!$(this)[0].files[0].type
-												.match(/image\//))
-											return;
-
-										var reader = new FileReader();
-										reader.onload = function(e) {
-											var src = e.target.result;
-											parent
-													.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img src="'+src+'" class="upload-thumb"></div></div>');
-										}
-										reader
-												.readAsDataURL($(this)[0].files[0]);
-									}
-
-									else {
-										$(this)[0].select();
-										$(this)[0].blur();
-										var imgSrc = document.selection
-												.createRange().text;
-										parent
-												.prepend('<div class="upload-display"><div class="upload-thumb-wrap"><img class="upload-thumb"></div></div>');
-
-										var img = $(this).siblings(
-												'.upload-display').find('img');
-										img[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(enable='true',sizingMethod='scale',src=\""
-												+ imgSrc + "\")";
-									}
-								});
-			</script>
 </body>
 </html>

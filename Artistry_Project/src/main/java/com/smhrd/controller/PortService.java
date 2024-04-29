@@ -13,7 +13,6 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.model.Port;
 import com.smhrd.model.PortDAO;
 
-@WebServlet("/artist-portfolio/PortService")
 public class PortService extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

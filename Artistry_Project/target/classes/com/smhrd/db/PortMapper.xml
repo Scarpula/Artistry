@@ -16,8 +16,5 @@
 	<select id="getPortList" parameterType="String" resultType="com.smhrd.model.Port">
 		select * from portfolio where mb_email=#{artistEmail}
 	</select>
-	<insert id="portinfo" parameterType="com.smhrd.model.Port">
-		insert into pf_port(pf_info, pf_title) values (#{pf_Info}, #{pf_Title})
-	</insert>
 
 </mapper>

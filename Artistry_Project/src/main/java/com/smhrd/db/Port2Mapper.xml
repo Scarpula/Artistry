@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.Port2Mapper">
+
+	<insert id="portinfo" parameterType="com.smhrd.model.Port2">
+		insert into pf_port (pf_info, pf_title, pf_sale) values (#{pf_Info}, #{pf_Title}, #{pf_Sale})
+	</insert>
+	
+	<select id="selectinfo" parameterType="String" resultType="com.smhrd.model.Port2">
+		select * from pf_port where mb_Email=#{mb_Email}
+	</select>
+	
+
+</mapper>

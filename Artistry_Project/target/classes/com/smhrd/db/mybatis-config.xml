@@ -27,6 +27,7 @@
       <mapper resource="com/smhrd/db/KakaoUserMapper.xml" />            
       <mapper resource="com/smhrd/db/GoogleUserMapper.xml" />            
       <mapper resource="com/smhrd/db/ReqMapper.xml" />
-      <mapper resource="com/smhrd/db/ArtistMapper.xml" />            
+      <mapper resource="com/smhrd/db/ArtistMapper.xml" />      
+      <mapper resource="com/smhrd/db/Port2Mapper.xml" />      
    </mappers>
 </configuration>

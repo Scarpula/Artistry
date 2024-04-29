@@ -26,12 +26,7 @@ public class PortDAO {
 
 	}
 	
-	public int portinfo(Port port) {
-		SqlSession session = sf.openSession(true);
-		int cnt = session.insert("com.smhrd.db.PortMapper.portinfo", port);
-		session.close();
-		return cnt;
-	}
+
 
 
 }
