@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.GoogleUser"%>
+<%@page import="com.smhrd.model.KakaoUser"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@page import="com.smhrd.model.ReqDAO"%>
 <%@page import="com.smhrd.model.Req"%>
@@ -48,19 +50,29 @@
 </script>
 <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="images/webclip.png" rel="apple-touch-icon">
+  <style>
+  a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+  </style>
 </head>
 <body class="body">
 	<%
-		Member loginMember = (Member)session.getAttribute("member");
-		int req_idx = Integer.parseInt(request.getParameter("idx"));
-		Req req = new ReqDAO().get_req_detail(req_idx);
+	Member loginMember = (Member) session.getAttribute("member");
+	int req_idx = Integer.parseInt(request.getParameter("idx"));
+	Req req = new ReqDAO().get_req_detail(req_idx);
+	KakaoUser loginkakaoUser = (KakaoUser) session.getAttribute("kakaoUser");
+	GoogleUser logingoogleUser = (GoogleUser) session.getAttribute("googleUser");
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
 			<div data-animation="default" data-collapse="none"
 				data-duration="400" data-easing="ease" data-easing2="ease"
 				role="banner" class="nevbar shadow-three w-nav">
-				<a href="index.html" class="navbar-brand-3 w-nav-brand"><img
+				<a href="index.jsp" aria-current="page"
+					class="navbar-brand-3 w-nav-brand w--current"><img
 					src="images/Artistry-logo4.jpg" loading="lazy" width="240"
 					height="100" alt="" class="image-2"></a>
 				<div class="container-9">
@@ -86,7 +98,7 @@
 										data-name="Search Form" redirect="/research"
 										data-redirect="/research"
 										action="artist-portfolio/portfolio.jsp?keyWord=" method="get"
-										class="form-search" data-wf-page-id="662c80866e0e4feedf74700c"
+										class="form-search" data-wf-page-id="65fa46eb9d90d967c69e39b8"
 										data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5">
 										<input class="search-field w-input" maxlength="256"
 											name="Search-2" data-name="Search 2"
@@ -111,6 +123,9 @@
 					</div>
 				</div>
 				<%
+				if (loginMember != null || loginkakaoUser != null || logingoogleUser != null) {
+				%>
+				<%
 				if (loginMember != null) {
 				%>
 				<%
@@ -127,25 +142,61 @@
 				<div>
 					<h3>
 						<a
-							href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>"
-							style="margin-right: 45px;"> <%=loginMember.getMb_Nick()%>님
+							href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>" style="margin-right: 45px;">
+							<%=loginMember.getMb_Nick()%>님
 						</a>
 					</h3>
 				</div>
 				<%
 				}
 				%>
-				<%} %>
+				<%
+				} else if (loginkakaoUser != null) {
+				%>
+				<div>
+					<h3>
+						<a href="MyPage.jsp" style="margin-right: 45px;"><%=loginkakaoUser.getNickname()%>님</a>
+					</h3>
+				</div>
+				<%
+				} else if (logingoogleUser != null) {
+				%>
+				<div>
+					<h3>
+						<a href="MyPage.jsp" style="margin-right: 45px;"><%=logingoogleUser.getFullName()%>님</a>
+					</h3>
+				</div>
+				<%
+				}
+				%>
+				<%
+				} else {
+				%>
+				<div>
+					<h3>
+						<a href="log-in.jsp" style="margin-right: 45px;">로그인을 해주세요.</a>
+					</h3>
+				</div>
+				<%
+				}
+				%>
 				<ul role="list" class="nav-list right">
+					<li class="nav-item hide">
+						<div class="divider-vertical bg-dgray01"></div>
+					</li>
+					
 					<li class="nav-item hide">
 						<div class="divider-vertical bg-dgray01"></div>
 					</li>
 					<li class="nav-item">
 						<div data-hover="false" data-delay="0"
 							class="navbar-dropdown w-dropdown">
-							
+							<div class="navbar-dropdown-toggle w-dropdown-toggle">
+								<img width="24" height="24" alt="" src="images/user.svg"
+									loading="lazy">
+							</div>
 							<%
-							if (loginMember != null) {
+							if (loginMember != null || loginkakaoUser != null || logingoogleUser != null) {
 							%>
 							<nav class="navbar-dropdown-list w-dropdown-list">
 								<a href="MyPage.jsp"
@@ -168,25 +219,6 @@
 							%>
 						</div>
 					</li>
-					<li class="nav-item hide">
-						<div class="divider-vertical bg-dgray01"></div>
-					</li>
-					<li class="nav-item">
-						<div data-hover="false" data-delay="0"
-							class="navbar-dropdown w-dropdown">
-							<div class="navbar-dropdown-toggle w-dropdown-toggle">
-								<img width="24" height="24" alt="" src="images/user.svg"
-									loading="lazy">
-							</div>
-							<nav class="navbar-dropdown-list w-dropdown-list">
-								<a href="user-account.html"
-									class="navbar-dropdown-link top w-dropdown-link">마이페이지</a> <a
-									href="log-in.html" class="navbar-dropdown-link w-dropdown-link">로그인</a>
-								<a href="sign-up.html"
-									class="navbar-dropdown-link w-dropdown-link">회원가입</a>
-							</nav>
-						</div>
-					</li>
 				</ul>
 			</div>
 		</div>
@@ -197,25 +229,25 @@
 				</div>
 				<div class="detail-section">
 					<div class="picture-area">
-						<a href="<%=req.getReq_img_path() %>" download><img
-							src="<%=req.getReq_img_path() %>" loading="lazy" alt=""
+						<a href="<%=req.getReq_img_path()%>" download><img
+							src="<%=req.getReq_img_path()%>" loading="lazy" alt=""
 							class="image-area"></a>
 					</div>
 					<div class="detail-text">
-						<p><%=req.getReq_paper() %></p>
+						<p><%=req.getReq_paper()%></p>
 					</div>
 					<div class="request-detail-requester">
 						<div class="requester">
-							<h1>의뢰자 :</h1>
+							<h1 style="font-size: 20px;">의뢰자 :</h1>
 						</div>
-						<h1 id="Requester" class="requester-id"><%=req.getMb_Email() %></h1>
+						<h1 id="Requester" class="requester-id" style="font-size: 20px"><%=req.getMb_Email()%></h1>
 						<div class="infotext">
 							<h6 class="heading-20">이미지를 클릭하면 다운로드 됩니다</h6>
 						</div>
 					</div>
 				</div>
 				<a
-					href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=req.getReq_receiver() %>"
+					href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=req.getReq_receiver()%>"
 					class="backpage-button w-button">돌아가기</a>
 			</div>
 		</div>

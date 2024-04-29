@@ -3428,6 +3428,7 @@ body {
 		display: block;
 		position: relative;
 		overflow: visible;
+		color : white;
 	}
 	.button-2._02 {
 		opacity: 1;
