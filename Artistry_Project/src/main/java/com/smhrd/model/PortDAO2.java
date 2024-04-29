@@ -18,10 +18,10 @@ public class PortDAO2 {
 		return cnt;
 	}
 	
-	public List<Port2> selectinfo(Port2 port2) {
+	public Port2 selectinfo(String artistEmail) {
 			SqlSession session = sf.openSession(true);
-			List<Port2> infoList = session.selectList("com.smhrd.db.Port2Mapper.selectinfo",port2);
+			Port2 portInfo = session.selectOne("com.smhrd.db.Port2Mapper.selectinfo",artistEmail);
 			session.close();
-			return infoList;
+			return portInfo;
 		}
 }

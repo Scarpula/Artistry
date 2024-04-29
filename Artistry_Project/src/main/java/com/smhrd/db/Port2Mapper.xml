@@ -5,11 +5,11 @@
 <mapper namespace="com.smhrd.db.Port2Mapper">
 
 	<insert id="portinfo" parameterType="com.smhrd.model.Port2">
-		insert into pf_port (pf_info, pf_title, pf_sale) values (#{pf_Info}, #{pf_Title}, #{pf_Sale})
+		insert into pf_port values (#{pf_Info}, #{pf_Title}, #{pf_Sale}, #{mb_Email})
 	</insert>
 	
 	<select id="selectinfo" parameterType="String" resultType="com.smhrd.model.Port2">
-		select * from pf_port where mb_Email=#{mb_Email}
+		select * from pf_port where mb_Email=#{artistEmail}
 	</select>
 	
 
