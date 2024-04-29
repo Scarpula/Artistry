@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.Req"%>
+<%@page import="com.smhrd.model.ReqDAO"%>
 <%@page import="com.smhrd.model.ArtistDAO"%>
 <%@page import="com.smhrd.model.Artists"%>
 <%@page import="com.smhrd.model.Likes"%>
