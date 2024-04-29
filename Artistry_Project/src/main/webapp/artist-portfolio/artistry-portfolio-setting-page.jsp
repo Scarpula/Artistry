@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.Port"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -27,6 +28,7 @@
 <body class="body">
 	<%
 		Member loginMember = (Member)session.getAttribute("member");
+		
 	%>
   <div class="navbar-logo-left-3">
     <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
