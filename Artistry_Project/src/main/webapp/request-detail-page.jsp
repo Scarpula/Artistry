@@ -143,10 +143,7 @@
 					<li class="nav-item">
 						<div data-hover="false" data-delay="0"
 							class="navbar-dropdown w-dropdown">
-							<div class="navbar-dropdown-toggle w-dropdown-toggle">
-								<img width="24" height="24" alt="" src="images/star.svg"
-									loading="lazy">
-							</div>
+							
 							<%
 							if (loginMember != null) {
 							%>

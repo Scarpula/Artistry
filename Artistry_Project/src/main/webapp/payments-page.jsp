@@ -79,16 +79,7 @@
           <li class="nav-item hide">
             <div class="divider-vertical bg-dgray01"></div>
           </li>
-          <li class="nav-item">
-            <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
-              <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="images/star.svg" loading="lazy"></div>
-              <nav class="navbar-dropdown-list w-dropdown-list">
-                <a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
-                <a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
-                <a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
-              </nav>
-            </div>
-          </li>
+          
           <li class="nav-item hide">
             <div class="divider-vertical bg-dgray01"></div>
           </li>
@@ -98,7 +89,7 @@
               <nav class="navbar-dropdown-list w-dropdown-list">
                 <a href="user-account.html" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
                 <a href="log-in.html" class="navbar-dropdown-link w-dropdown-link">로그인</a>
-                <a href="sign-up.html" class="navbar-dropdown-link w-dropdown-link">회원가입</a><button class="navbar-dropdown-link bottom" data-wf-user-logout="로그아웃" data-wf-user-login="회원가입" type="button">로그아웃</button>
+                <a href="sign-up.html" class="navbar-dropdown-link w-dropdown-link">회원가입</a>
               </nav>
             </div>
           </li>
