@@ -1,5 +1,5 @@
-<%@page import="com.smhrd.model.Req"%>
 <%@page import="com.smhrd.model.ReqDAO"%>
+<%@page import="com.smhrd.model.Req" %>
 <%@page import="com.smhrd.model.ArtistDAO"%>
 <%@page import="com.smhrd.model.Artists"%>
 <%@page import="com.smhrd.model.Likes"%>
@@ -10,6 +10,7 @@
 <%@page import="com.smhrd.model.ReviewDAO"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@page import="com.smhrd.model.Member"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -34,6 +35,13 @@
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="../images/webclip.png" rel="apple-touch-icon">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+  a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+  </style>
 </head>
 <body class="body">
 

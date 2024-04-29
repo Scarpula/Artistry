@@ -18,6 +18,7 @@ public class Artists {
 	private String cate;
 	private int min_price;
 	private int max_price;
+	@NonNull
 	private String artist_nick;
 	public Artists(String cate, int min_price, int max_price) {
 		super();
