@@ -29,4 +29,6 @@ public class Req {
 		this.mb_Email = mb_Email;
 	}
 	
+	
+	
 }

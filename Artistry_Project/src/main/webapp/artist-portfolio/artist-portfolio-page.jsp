@@ -1,7 +1,7 @@
 <%@page import="com.smhrd.model.Port2"%>
 <%@page import="com.smhrd.model.PortDAO2"%>
 <%@page import="com.smhrd.model.ReqDAO"%>
-<%@ page import="com.smhrd.model.Req" %>
+<%@page import="com.smhrd.model.Req" %>
 <%@page import="com.smhrd.model.ArtistDAO"%>
 <%@page import="com.smhrd.model.Artists"%>
 <%@page import="com.smhrd.model.Likes"%>
@@ -42,6 +42,12 @@
     color: black;
     cursor: pointer;
     text-decoration: none;
+}
+	#reqList{
+	margin-top: 30px;
+	width: 1200px;
+    height: 300px;
+    text-align: center;
 }
   </style>
 </head>
@@ -120,20 +126,7 @@
                <li class="nav-item hide">
                   <div class="divider-vertical bg-dgray01"></div>
                </li>
-               <li class="nav-item">
-                  <div data-hover="false" data-delay="0"
-                     class="navbar-dropdown w-dropdown">
-                     <div class="navbar-dropdown-toggle w-dropdown-toggle">
-                        <img width="24" height="24" alt="" src="../images/star.svg"
-                           loading="lazy">
-                     </div>
-                     <nav class="navbar-dropdown-list w-dropdown-list">
-                        <a href="#" class="navbar-dropdown-link top w-dropdown-link">Follow</a>
-                        <a href="#" class="navbar-dropdown-link w-dropdown-link">Follow</a>
-                        <a href="#" class="navbar-dropdown-link bottom w-dropdown-link">Follow</a>
-                     </nav>
-                  </div>
-               </li>
+               
                <li class="nav-item hide">
                   <div class="divider-vertical bg-dgray01"></div>
                </li>
@@ -349,7 +342,7 @@
                alt="" class="cancel-button-img">
          </section> 
          <%if(reqListArtist!=null){ %>  
-			<table border="1">
+			<table id="reqList" border="1">
 				<tr>
 					<td>의뢰자 이메일</td>
 					<td>의뢰 내용</td>
@@ -374,7 +367,7 @@
        <!-- 기현수 _ 요청서 폼 끝 -->
        <%}else{ %>
       <!-- 요청서폼 시작_기현수_결제하기button 시작_0427 -->
-      <form  action="../ReqService?receiver=<%=artistEmail%>&mb_email=<%=loginMember.getMb_Email()%>>" method="post" id="email-form-3" enctype="multipart/form-data"
+      <form  action="../ReqService?receiver=<%=artistEmail%>&mb_email=<%=loginMember.getMb_Email()%>" method="post" id="email-form-3" enctype="multipart/form-data"
             data-name="Email Form 3"  class="text-area-form"
             data-wf-page-id="660fa367cce1a421bb169fcb"
             data-wf-element-id="b4d1ec42-6ae0-b4d9-64f8-2ff74e9f71d7">
