@@ -25,9 +25,9 @@ public class ArtistDAO {
 		return cnt;
 	}
 
-	public int addArtist(String artist_email, String artist_nick) {
+	public int addArtist(Artists artist) {
 		SqlSession session = sf.openSession(true);
-		int cnt = session.insert("com.smhrd.db.ArtistMapper.insertArtist",artist_email);
+		int cnt = session.insert("com.smhrd.db.ArtistMapper.insertArtist",artist);
 		return cnt;
 	}
 	
