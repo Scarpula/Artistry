@@ -25,9 +25,9 @@ public class ArtistDAO {
 		return cnt;
 	}
 
-	public int addArtist(String artist_email, String artist_nick) {
+	public int addArtist(Artists artist) {
 		SqlSession session = sf.openSession(true);
-		int cnt = session.insert("com.smhrd.db.ArtistMapper.insertArtist",artist_email);
+		int cnt = session.insert("com.smhrd.db.ArtistMapper.insertArtist",artist);
 		return cnt;
 	}
 	
@@ -45,6 +45,13 @@ public class ArtistDAO {
 		List<Artists> artistList = session.selectList("com.smhrd.db.ArtistMapper.get_artist_list");
 		session.close();
 		return artistList;
+	}
+
+	public int update_profile(Artists artist) {
+		SqlSession session = sf.openSession(true);
+		int cnt = session.update("com.smhrd.db.ArtistMapper.update_profile", artist);
+		session.close();
+		return cnt;
 	}
 	
 }

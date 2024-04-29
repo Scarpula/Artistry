@@ -19,6 +19,7 @@ insert into PAYMENTS values (5,
 select * from payments where mb_email='admin' order by pay_idx desc;
 
 
+ 
 
 
 
@@ -41,8 +42,9 @@ insert into PORTFOLIOS values (101,'admin','../portfolio_img/1.jpg','emoji1','em
 
 select * from REVIEWS;
 
+select * from ARTISTS;
 
-
+alter table artists add artist_profile_img varchar2(1000);
 
 
 
