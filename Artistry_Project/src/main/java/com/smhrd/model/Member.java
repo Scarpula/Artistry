@@ -27,7 +27,7 @@ public class Member {
    @NonNull
    private String mb_Nick;
 
-   private String mb_ProfileImg;
+   private String mb_Profile_Img;
    @NonNull
    private String mb_Addr;
    
@@ -60,11 +60,11 @@ public Member(@NonNull String mb_Email) {
 	this.mb_Email = mb_Email;
 }
 
-public Member(@NonNull String mb_Email, @NonNull String mb_Pw, String mb_ProfileImg) {
+public Member(@NonNull String mb_Email, @NonNull String mb_Pw, String mb_Profile_Img) {
 	super();
 	this.mb_Email = mb_Email;
 	this.mb_Pw = mb_Pw;
-	this.mb_ProfileImg = mb_ProfileImg;
+	this.mb_Profile_Img = mb_Profile_Img;
 }
    
 

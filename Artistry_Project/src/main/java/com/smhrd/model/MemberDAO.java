@@ -68,8 +68,13 @@ public class MemberDAO {
 	public int update_profile_img(Member member) {
 		// 프로필 사진 업데이트 문
 		SqlSession session = sf.openSession(true);
+		String mb_profile_img = member.getMb_Profile_Img();
+		String relativePath = "/profile_img/" + mb_profile_img.substring(mb_profile_img.lastIndexOf("/")+ 1);
+		member.setMb_Profile_Img(relativePath);
+		
 		int cnt = session.update("com.smhrd.db.MemberMapper.update_profile_img", member);
 		session.close();
+		
 		return cnt;
 	}
 

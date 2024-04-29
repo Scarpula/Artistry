@@ -94,7 +94,6 @@ if (code != null && state != null) {
 	Member loginMember = (Member) session.getAttribute("member");
 	KakaoUser loginkakaoUser = (KakaoUser) session.getAttribute("kakaoUser");
 	GoogleUser logingoogleUser = (GoogleUser) session.getAttribute("googleUser");
-	
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
@@ -286,6 +285,7 @@ if (code != null && state != null) {
 
 									<%
 									if (loginMember != null) {
+										System.out.println(loginMember.getMb_Profile_Img());
 									%>
 									<div class="text-span">
 										<h1>

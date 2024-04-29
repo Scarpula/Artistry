@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.ArtistDAO"%>
 <%@page import="com.smhrd.model.Artists"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
@@ -53,12 +54,18 @@
 <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="images/webclip.png" rel="apple-touch-icon">
 <style>
-        .checkbox-label-준범 {
-            display: inline-block; /* 인라인 블록 요소로 배치 */
-            margin-right: 10px; /* 각 체크박스 사이의 간격 조정 */
-            margin-bottom: 5px;
-            height: 10px;
-        }
+.checkbox-label-준범 {
+	display: inline-block; /* 인라인 블록 요소로 배치 */
+	margin-right: 10px; /* 각 체크박스 사이의 간격 조정 */
+	margin-bottom: 5px;
+	height: 10px;
+}
+
+a:-webkit-any-link {
+	color: black;
+	cursor: pointer;
+	text-decoration: none;
+}
 </style>
 </head>
 <body class="body">
@@ -98,7 +105,8 @@
 							<div class="form-search-container w-form">
 								<form id="wf-form-Search-Form" name="wf-form-Search-Form"
 									data-name="Search Form" redirect="/research"
-									data-redirect="/research" action="artist-portfolio/portfolio.jsp?keyWord=" method="get"
+									data-redirect="/research"
+									action="artist-portfolio/portfolio.jsp?keyWord=" method="get"
 									class="form-search" data-wf-page-id="65fd1577d3de0c8242fadcdd"
 									data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5">
 									<input class="search-field w-input" maxlength="256"
@@ -126,17 +134,29 @@
 			<%
 			if (loginMember != null) {
 			%>
-			<%if(loginMember.getMb_Type().equals(true)){ %>
-									<div>
-										<h3><a href="MyPage.jsp"><%=loginMember.getMb_Nick() %>님</a></h3>
-									</div>
-								
-								<%}else{%>
-									<div>
-										<h3><a href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>">
-										<%=loginMember.getMb_Nick() %>님</a></h3>
-									</div>
-								<%} %>
+			<%
+			if (loginMember.getMb_Type().equals(true)) {
+			%>
+			<div>
+				<h3>
+					<a href="MyPage.jsp"><%=loginMember.getMb_Nick()%>님</a>
+				</h3>
+			</div>
+
+			<%
+			} else {
+			%>
+			<div>
+				<h3>
+					<a
+						href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>">
+						<%=loginMember.getMb_Nick()%>님
+					</a>
+				</h3>
+			</div>
+			<%
+			}
+			%>
 			<%
 			}
 			%>
@@ -180,7 +200,7 @@
 						<%
 						}
 						%>
-						
+
 					</div>
 				</li>
 			</ul>
@@ -189,23 +209,26 @@
 	<div class="mypage-main">
 		<div class="mypage-sidecontainer">
 			<div class="mypage-side-profile-wrap">
-			<!--프로필 사진-->
+				<!--프로필 사진-->
 				<div class="mypage-side-profile-img-wrap">
-					<img class="profile-img" src="<%= loginMember.getMb_ProfileImg() != null ? loginMember.getMb_ProfileImg() : "../images/1.png" %>" width="450"
-						height="155" alt=""
+					<img class="profile-img"
+						src="<%=request.getContextPath()%><%=loginMember.getMb_Profile_Img()%>"
+						width="450" height="155" alt=""
 						sizes="(max-width: 479px) 100vw, (max-width: 1919px) 450px, 7vw"
 						data-w-id="fa2d44e0-dd52-0cf6-3773-e1f7d8540d3b" loading="lazy">
 				</div>
-				<form action="profile_imgService" method="post" enctype="multipart/form-data">
+				<form action="profile_imgService" method="post"
+					enctype="multipart/form-data">
 					<div>
-					<input type="text" hidden="" name="mb_Email" value="<%=loginMember.getMb_Email()%>">
-					<table>
-						<tr>
-							<td><input type="file" name="mb_profile_img"> </td>
-							<td><input type="submit" value="변경"></td>
-						</tr>
-					</table>
-						
+						<input type="text" hidden="" name="mb_Email"
+							value="<%=loginMember.getMb_Email()%>">
+						<table>
+							<tr>
+								<td><input type="file" name="mb_profile_img"></td>
+								<td><input type="submit" value="변경"></td>
+							</tr>
+						</table>
+
 					</div>
 				</form>
 				<div class="mypage-side-profile-clasify-block">
@@ -242,7 +265,9 @@
 			<%
 			} else {
 			%>
-			<%if(loginMember.getMb_Type().equals(false)){ %>
+			<%
+			if (loginMember.getMb_Type().equals(false)) {
+			%>
 			<ul role="list" class="mypage-side-profile-catelist w-list-unstyled">
 				<li data-w-id="3f641a6c-3b4c-fd6d-20d3-f0dd35d2eeca"
 					class="category-text-wrap">정보수정</li>
@@ -255,8 +280,10 @@
 				<li data-w-id="e3a5911f-fd13-6056-ad64-9eb75db3f5dd"
 					class="category-text-wrap">아티스트 페이지</li>
 			</ul>
-			
-			<%}else{ %>		
+
+			<%
+			} else {
+			%>
 			<ul role="list" class="mypage-side-profile-catelist w-list-unstyled">
 				<li data-w-id="3f641a6c-3b4c-fd6d-20d3-f0dd35d2eeca"
 					class="category-text-wrap">정보수정</li>
@@ -267,7 +294,9 @@
 				<li data-w-id="13e59a0c-9989-cb9a-2092-6108e16f97b7"
 					class="category-text-wrap">좋아요 작가 목록</li>
 			</ul>
-			<%} %>		
+			<%
+			}
+			%>
 			<%
 			}
 			%>
@@ -464,34 +493,47 @@
 				<div class="mypage-context-title-wrap" style="text-align: center;">
 					<h1>아티스트 페이지</h1>
 					<div class="MyAccount">
-					<form action="MyPage_artistInfo?email=<%=loginMember.getMb_Email()%>" method="post">
-					<%if(artist != null){ %>
-						<table id="myAccount" border="1">
-							<tr>
-								<td>카테고리</td>
-								<td align="center">
-									<label class="checkbox-label-준범"><input id="chbox" type="checkbox" value="캐릭터" name="cate1">캐릭터</label> 
-								    <label class="checkbox-label-준범"><input id="chbox" type="checkbox" value="일러스트" name="cate2">일러스트</label> 
-								    <label class="checkbox-label-준범"><input id="chbox" type="checkbox" value="캐리커쳐" name="cate3">캐리커쳐</label> 
-								    <label class="checkbox-label-준범"><input id="chbox" type="checkbox" value="이모티콘" name="cate4">이모티콘</label> 
-								    <label class="checkbox-label-준범"><input id="chbox" type="checkbox" value="캘리그라피/로고" name="cate5">캘리그라피/로고</label> 
-								</td>
-							</tr>
-							<tr>
-								<td>최소 의뢰 금액</td> 
-								<td><input type="text" name="min_price" value="<%=artist.getMin_price() %>"></td>
-							</tr>
-							<tr>
-								<td>최대 의뢰 금액</td>
-								<td><input type="text" name="max_price" value="<%=artist.getMax_price() %>"></td>
-							</tr>
-							<tr>
-								<td colspan="2" align="center"><input type="submit" value="저장하기"></td>
-							</tr>
-							
-						</table>
-						<%} %>
-					</form>
+						<form
+							action="MyPage_artistInfo?email=<%=loginMember.getMb_Email()%>"
+							method="post">
+							<%
+							if (artist != null) {
+							%>
+							<table id="myAccount" border="1">
+								<tr>
+									<td>카테고리</td>
+									<td align="center"><label class="checkbox-label-준범"><input
+											id="chbox" type="checkbox" value="캐릭터" name="cate1">캐릭터</label>
+										<label class="checkbox-label-준범"><input id="chbox"
+											type="checkbox" value="일러스트" name="cate2">일러스트</label> <label
+										class="checkbox-label-준범"><input id="chbox"
+											type="checkbox" value="캐리커쳐" name="cate3">캐리커쳐</label> <label
+										class="checkbox-label-준범"><input id="chbox"
+											type="checkbox" value="이모티콘" name="cate4">이모티콘</label> <label
+										class="checkbox-label-준범"><input id="chbox"
+											type="checkbox" value="캘리그라피/로고" name="cate5">캘리그라피/로고</label>
+									</td>
+								</tr>
+								<tr>
+									<td>최소 의뢰 금액</td>
+									<td><input type="text" name="min_price"
+										value="<%=artist.getMin_price()%>"></td>
+								</tr>
+								<tr>
+									<td>최대 의뢰 금액</td>
+									<td><input type="text" name="max_price"
+										value="<%=artist.getMax_price()%>"></td>
+								</tr>
+								<tr>
+									<td colspan="2" align="center"><input type="submit"
+										value="저장하기"></td>
+								</tr>
+
+							</table>
+							<%
+							}
+							%>
+						</form>
 					</div>
 				</div>
 			</div>
