@@ -59,6 +59,13 @@
 	integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 	crossorigin="anonymous"></script>
 <script src="../js/webflow.js" type="text/javascript"></script>
+  <style>
+  a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+  </style>
 </head>
 <body class="body">
 	<%
@@ -70,7 +77,6 @@
 	if(keyWord != null){
 		searchList = new ArtistDAO().get_search_list(keyWord);
 	}
-	System.out.print(searchList);
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
