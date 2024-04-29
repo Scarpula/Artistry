@@ -291,7 +291,7 @@ function submitForms() {
         window.location.href = 'login.jsp'; // 로그인 페이지로 리다이렉션
         return; // 함수 실행을 여기서 중단합니다.
     }
-
+   
     // 세션에서 이메일을 안전하게 가져옵니다.
     var email = '<%=(session.getAttribute("member") != null) ? ((Member) session.getAttribute("member")).getMb_Email() : ""%>';
     console.log(email);

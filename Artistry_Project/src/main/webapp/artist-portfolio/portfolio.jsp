@@ -77,7 +77,6 @@
 	if(keyWord != null){
 		searchList = new ArtistDAO().get_search_list(keyWord);
 	}
-	System.out.print(searchList);
 	%>
 	<div class="main">
 		<div class="navbar-logo-left-3">
