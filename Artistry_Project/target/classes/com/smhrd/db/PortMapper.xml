@@ -9,12 +9,15 @@
   <selectKey keyProperty="idx" resultType="int" order="BEFORE">
     SELECT portfolio_SEQ.nextval FROM DUAL
   </selectKey>
-  INSERT INTO portfolio (pf_idx, mb_email, pf_path, pf_name, pf_category, created_at, pf_info)
-  VALUES (#{idx}, #{mb_Email}, #{pf_Path}, #{pf_Name}, #{pf_Cate}, sysdate, #{pf_Info})
+  INSERT INTO portfolio (pf_idx, mb_email, pf_path, pf_name, created_at)
+  VALUES (#{idx}, #{mb_Email}, #{pf_Path}, #{pf_Name}, sysdate)
 </insert>
 	
 	<select id="getPortList" parameterType="String" resultType="com.smhrd.model.Port">
 		select * from portfolio where mb_email=#{artistEmail}
 	</select>
+	<insert id="portinfo" parameterType="com.smhrd.model.Port">
+		insert into pf_port(pf_info, pf_title) values (#{pf_Info}, #{pf_Title})
+	</insert>
 
 </mapper>

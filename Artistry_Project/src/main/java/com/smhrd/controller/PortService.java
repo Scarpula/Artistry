@@ -31,14 +31,12 @@ public class PortService extends HttpServlet {
         String mb_Email = multi.getParameter("mb_Email");
         String pf_Name = multi.getParameter("pf_Name");
         String pf_Path2 = multi.getFilesystemName("pf_Path");
-        String pf_Cate = multi.getParameter("pf_Cate");
-        String pf_Info = multi.getParameter("pf_Info");
 
         // 상대 웹 경로로 변환 (웹 컨텍스트 내에서의 경로)
         String pf_Path = request.getContextPath() + "/portfolio_img/" + pf_Path2;
 
         // 데이터베이스에 포트폴리오 정보 저장 (상대 웹 경로를 사용)
-        Port port = new Port(mb_Email, pf_Path, pf_Name, pf_Cate, pf_Info);
+        Port port = new Port(mb_Email, pf_Path, pf_Name);
         PortDAO dao = new PortDAO();
         int cnt = dao.insertPort(port);
 

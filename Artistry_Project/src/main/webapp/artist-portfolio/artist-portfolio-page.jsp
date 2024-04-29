@@ -35,6 +35,13 @@
   <link href="../images/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="../images/webclip.png" rel="apple-touch-icon">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+  a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+  </style>
 </head>
 <body class="body">
 
@@ -179,6 +186,7 @@
          	 <div class="profile-button">
            	 	<a data-w-id="99207502-0852-453a-11ee-a5ad15b0abad" href="#" class="request-button w-button">의뢰확인하기</a>
            	 	<a href="artistry-portfolio-setting-page.jsp?artistEmail=<%=artistEmail %>" class="follow-button setting-button w-button">포트폴리오 작성하기</a>
+           	 	<a href="artistry-portfolio-setting-page.jsp?artistEmail=<%=artistEmail %>" class="follow-button setting-button w-button">정보 작성하기</a>
           	</div>
           <%}else{ %>
           	<div class="profile-button">
