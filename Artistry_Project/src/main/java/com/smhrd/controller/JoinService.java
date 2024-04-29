@@ -12,6 +12,8 @@ import com.smhrd.model.ArtistDAO;
 import com.smhrd.model.Artists;
 import com.smhrd.model.Member;
 import com.smhrd.model.MemberDAO;
+import com.smhrd.model.Port2;
+import com.smhrd.model.PortDAO2;
 
 public class JoinService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -34,12 +36,15 @@ public class JoinService extends HttpServlet {
 
 		Member member = new Member(mb_Email, mb_Pw, mb_Phone,mb_Birthdate, mb_Name,mb_Nick, add,mb_Type);
 		Artists artist = new Artists(mb_Email,mb_Nick);
+		Port2 port2 = new Port2(mb_Email);
 		int cnt = 0;
 		int art = 0;
+		int port = 0;
 		
 			if(mb_Type==false) {//아티스트
 				cnt = new MemberDAO().join(member);
 				art = new ArtistDAO().addArtist(artist);
+				port = new PortDAO2().insertPortInfo(port2);
 			}else {//의뢰자
 				cnt = new MemberDAO().join(member);
 					}

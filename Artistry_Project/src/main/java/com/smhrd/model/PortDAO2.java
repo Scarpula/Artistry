@@ -13,7 +13,7 @@ public class PortDAO2 {
 
 	public int portinfo(Port2 port2) {
 		SqlSession session = sf.openSession(true);
-		int cnt = session.insert("com.smhrd.db.Port2Mapper.portinfo", port2);
+		int cnt = session.update("com.smhrd.db.Port2Mapper.portinfo", port2);
 		session.close();
 		return cnt;
 	}
@@ -24,4 +24,11 @@ public class PortDAO2 {
 			session.close();
 			return portInfo;
 		}
+
+	public int insertPortInfo(Port2 port2) {
+		SqlSession session = sf.openSession(true);
+		int port = session.insert("com.smhrd.db.Port2Mapper.insertPortInfo",port2);
+		session.close();
+		return port;
+	}
 }

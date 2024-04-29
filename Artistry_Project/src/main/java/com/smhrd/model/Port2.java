@@ -8,15 +8,16 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+@RequiredArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
 @ToString
 public class Port2 {
 
-	@NonNull private String pf_Info;
-	@NonNull private String pf_Title;
-	@NonNull private String pf_Sale;
+	private String pf_Info;
+	private String pf_Title;
+	private String pf_Sale;
 	@NonNull private String mb_Email;
 	
 	
