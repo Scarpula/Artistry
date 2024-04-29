@@ -41,6 +41,12 @@
     cursor: pointer;
     text-decoration: none;
 }
+	#reqList{
+	margin-top: 30px;
+	width: 1200px;
+    height: 300px;
+    text-align: center;
+}
   </style>
 </head>
 <body class="body">
@@ -334,7 +340,7 @@
                alt="" class="cancel-button-img">
          </section> 
          <%if(reqListArtist!=null){ %>  
-			<table border="1">
+			<table id="reqList" border="1">
 				<tr>
 					<td>의뢰자 이메일</td>
 					<td>의뢰 내용</td>
