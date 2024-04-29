@@ -3181,9 +3181,6 @@ body {
     font-size: 28px;
     transition: opacity .35s;
     display: flex;
-    color : white;
-    
-    
   }
 
   .button2 {
@@ -3497,7 +3494,6 @@ body {
     display: block;
     position: relative;
     overflow: visible;
-    color : white;
   }
 
   .button-2._02 {
@@ -3528,12 +3524,12 @@ body {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 1450px;
+    height: 950px;
     margin-bottom: 434px;
     padding-bottom: 4em;
     position: relative;
     top: 350px;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .feature-pictures-holder {
@@ -3542,9 +3538,11 @@ body {
     background-color: #fbf6f0;
     justify-content: center;
     align-items: center;
-    padding-bottom: 120px;
+    padding-top: 40px;
+    padding-bottom: 0;
     display: flex;
     position: relative;
+    overflow: visible;
   }
 
   .features-hero-picture-wrapper {
@@ -3562,13 +3560,16 @@ body {
   .feature {
     grid-column-gap: 30px;
     grid-row-gap: 30px;
+    object-fit: fill;
     background-color: #fbf6f0;
     flex-flow: column;
     width: 100%;
-    padding-top: 30px;
+    height: 696px;
+    padding-top: 22px;
     display: flex;
     position: relative;
     left: 0%;
+    overflow: visible;
   }
 
   .feature._01 {
@@ -3602,8 +3603,8 @@ body {
     justify-content: center;
     align-items: center;
     width: 300px;
-    height: 50px;
-    margin-top: 130px;
+    height: 100px;
+    margin-top: 95px;
     margin-bottom: 95px;
     display: flex;
   }
@@ -3636,7 +3637,17 @@ body {
   }
 
   .features-pictures._01 {
+    z-index: 100;
     background-color: #fbf6f0;
+    position: relative;
+    top: 50px;
+  }
+
+  .features-pictures._02 {
+    z-index: 100;
+    position: relative;
+    top: 29px;
+    overflow: visible;
   }
 
   .features-component-holder {
@@ -3664,6 +3675,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    margin-top: 650px;
     display: flex;
   }
 
@@ -3851,6 +3863,8 @@ body {
   }
 
   .visable-section-holder {
+    margin-top: 1450px;
+    margin-bottom: 650px;
     padding-top: 60px;
     padding-bottom: 60px;
     padding-right: 0;
@@ -5331,7 +5345,7 @@ body {
     flex-flow: column;
     justify-content: space-between;
     align-items: center;
-    height: 150vh;
+    height: 120vh;
     margin-top: 45px;
     display: flex;
     position: absolute;
@@ -5540,7 +5554,7 @@ body {
     text-decoration: none;
   }
 
-  .review-text-wrapper{
+ .review-text-wrapper{
         position: relative;
         bottom: -85px;
         left: -655px;
@@ -5550,6 +5564,7 @@ body {
         margin-left: 35px;
         padding-right: 45px;
     }
+
   .paragraph-6 {
     font-size: 25px;
     line-height: 1.2;
@@ -6358,10 +6373,10 @@ body {
         font-size: 24px;
         line-height: 44px;
         display: block;
-        width: 1000px;
+        width: 1000px; 
     }
 
-  .submit-button-4 {
+ .submit-button-4 {
         border-radius: 10px;
         margin-top: 25px;
         padding: 15px 25px;
