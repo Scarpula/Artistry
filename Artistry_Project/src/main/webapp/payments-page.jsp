@@ -4,50 +4,12 @@
 <%@page import="com.smhrd.model.Req"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
+ <%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Sat Apr 27 2024 07:25:43 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="662ca2f3252e40c57915c85d" data-wf-site="65fa46eb9d90d967c69e39b1">
 <head>
 
-  <!-- 결제API포트원서비스 SDK스크립트_기현수-->
-	<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
-	  <!-- 포트원 결제API_기현수 -->
-  <script type="text/javascript">
-  
-	  var IMP = window.IMP;
-	  IMP.init("imp27513274");
-	  
-	  function checkOut(){
-          IMP.request_pay({
-              pg: "kakaopay.TC0ONETIME",
-              pay_method: "card",
-              // merchant_uid: "ORD20180131-0000011", //주문번호
-              name: "아티스트리 의뢰",
-              amount: 65000,
-              // buyer_email: "Iamport@chai.finance",
-              buyer_name: "기현수",
-              // buyer_tel: "010-1234-5678",
-              // buyer_addr: "서울특별시 강남구 삼성동",
-              // buyer_postcode: "123-456"
-              },
-              function(rsp){
-                  //callback
-                  //rsp.imp_udi값으로 결제 단건조회 API를 호출하여 결제결과 판단
-                  if(rsp.success){
-                      alert('결제가 성공적으로 완료되었습니다.');
-                      console.log(rsp);
-                  }else{
-                      
-                      alert('결제에 실패하였습니다:.' );
-                      console.log(rsp);
-                  }
-                  
-              }
-
-          )
-
-      }
-	</script>
 
   <meta charset="utf-8">
   <title>Payments Page</title>
@@ -73,6 +35,7 @@
 	String mb_Email = loginMember.getMb_Email();
 	List<Req> ReqInfo = new ReqDAO().ReqAll(mb_Email);
 	System.out.print("의뢰내용 출력 : "+ mb_Email + ReqInfo);
+	
 	%>
 
 
@@ -158,19 +121,17 @@
           <%
            int num= 1;
           for(Req r: ReqInfo){%>
-          <div id="w-node-eb818534-9416-27a2-b990-1e0372e850c8-7915c85d" class="paymentsblock"><%=num%></div>
+          <div id="w-node-eb818534-9416-27a2-b990-1e0372e850c8-7915c85d" class="paymentsblock"><%=r.getReq_idx()%></div>
           <div id="w-node-e7c6fdf9-c27a-15a9-785c-2962a4f75b8f-7915c85d" class="paymentsblock"><%= r.getReq_paper()%></div>
           <div id="w-node-_37805949-41a8-0794-995f-e59819ba866f-7915c85d" class="paymentsblock"><%=r.getReq_receiver()%></div>
           <div id="w-node-c33fe992-742b-72eb-d7a6-dcd2870af06e-7915c85d" class="paymentsblock"><%=r.getReq_price()%></div>
           <div id="w-node-_8b363230-c83d-14c2-56fa-c4d36536bc7c-7915c85d" class="paymentsblock">
-            <button class="link-3" onclick="checkOut()">결제하기</button>
+            <button class="link-3" onclick="checkOut(<%=r.getReq_idx()%>,<%=r.getReq_price()%>)">결제하기</button>
           </div>
           <div id="w-node-c6f41e41-e3bc-d217-61a1-74edb6e000ec-7915c85d" class="paymentsblock">
             <a href="#" class="link-4">확인</a>
           </div>
-          <%  num ++; 
-           
-          }%>
+          <%  num ++; }%>
           
         </div>
       </div>
@@ -178,6 +139,42 @@
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
+  
+  
+  <!-- 결제API포트원서비스 SDK스크립트_기현수-->
+	<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+	  <!-- 포트원 결제API_기현수 -->
+  <script type="text/javascript">
+    
+	  var IMP = window.IMP;
+	  IMP.init("imp27513274");
+	  
+	  function checkOut(idx,price){
+          IMP.request_pay({
+              pg: "kakaopay.TC0ONETIME",
+              pay_method: "card",
+              merchant_uid: idx, //주문번호
+              name: "아티스트리 의뢰",
+              amount: price,
+				//buyer_name: email,
+              // buyer_tel: "010-1234-5678",
+              // buyer_addr: "서울특별시 강남구 삼성동",
+              // buyer_postcode: "123-456"
+              },
+              function(rsp){
+                  //callback
+                  //rsp.imp_udi값으로 결제 단건조회 API를 호출하여 결제결과 판단
+                  if(rsp.success){
+                      alert('결제가 성공적으로 완료되었습니다.');
+                      console.log(rsp);
+                  }else{
+                      alert('결제에 실패하였습니다:.' );
+                      console.log(rsp);
+                  }
+              }
+          )
+      }
+	</script>
   
 </body>
 </html>
