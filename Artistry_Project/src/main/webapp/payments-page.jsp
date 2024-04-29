@@ -31,6 +31,7 @@
 	Member loginMember = (Member) session.getAttribute("member");
 	String mb_Email = loginMember.getMb_Email();
 	List<Req> ReqInfo = new ReqDAO().ReqAll(mb_Email);
+	System.out.print(ReqInfo.toString());
 	
 	%>
 
