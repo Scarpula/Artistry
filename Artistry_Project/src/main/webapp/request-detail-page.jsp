@@ -50,13 +50,13 @@
 </script>
 <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="images/webclip.png" rel="apple-touch-icon">
-  <style>
-  a:-webkit-any-link {
-    color: black;
-    cursor: pointer;
-    text-decoration: none;
+<style>
+a:-webkit-any-link {
+	color: black;
+	cursor: pointer;
+	text-decoration: none;
 }
-  </style>
+</style>
 </head>
 <body class="body">
 	<%
@@ -142,8 +142,8 @@
 				<div>
 					<h3>
 						<a
-							href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>" style="margin-right: 45px;">
-							<%=loginMember.getMb_Nick()%>님
+							href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>"
+							style="margin-right: 45px;"> <%=loginMember.getMb_Nick()%>님
 						</a>
 					</h3>
 				</div>
@@ -184,7 +184,7 @@
 					<li class="nav-item hide">
 						<div class="divider-vertical bg-dgray01"></div>
 					</li>
-					
+
 					<li class="nav-item hide">
 						<div class="divider-vertical bg-dgray01"></div>
 					</li>
@@ -231,7 +231,7 @@
 					<div class="picture-area">
 						<a href="<%=req.getReq_img_path()%>" download><img
 							src="<%=req.getReq_img_path()%>" loading="lazy" alt=""
-							class="image-area"></a>
+							class="image-area" style="width: 350px; height: 350px;"></a>
 					</div>
 					<div class="detail-text">
 						<p><%=req.getReq_paper()%></p>
