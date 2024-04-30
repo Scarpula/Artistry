@@ -5124,16 +5124,18 @@ body {
 		box-shadow: 5px 10px 9px rgba(0, 0, 0, .2);
 	}
 	.portfolio-artist-review {
-		object-fit: fill;
-		border: 1px solid #000;
-		height: 200vh;
-		margin-top: 45px;
-		position: absolute;
-		top: 6%;
-		bottom: 0%;
-		left: 0%;
-		right: 0%;
-	}
+        object-fit: fill;
+        border: 1px solid #000;
+        height: 200vh;
+        margin-top: 575px;
+        margin-left: 940px;
+        position: absolute;
+        top: 6%;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+        width: 1570px;
+    }
 	.portfolio-artist-review.setting-page {
 		aspect-ratio: 1;
 		height: auto;
