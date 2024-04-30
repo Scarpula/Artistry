@@ -1,5 +1,6 @@
 package com.smhrd.controller;
 
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,16 +15,21 @@ import com.smhrd.model.Req;
 import com.smhrd.model.ReqDAO;
 
 public class ReqService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String path = "C:\\Users\\smhrd\\git\\Artistry\\Artistry_Project\\src\\main\\webapp\\req_img";
+		String relativePath = "req_img";
+		
+		String savePath = request.getServletContext().getRealPath(relativePath);
+        File saveDir = new File(savePath);
+        if (!saveDir.exists()) {
+            saveDir.mkdirs();
+        }
+        
 		 int maxSize = 10 * 1024 * 1024; // 최대 업로드 파일 크기 (10MB)
 	     String encoding = "UTF-8"; // 인코딩 타입 설정
 	     DefaultFileRenamePolicy renamePolicy = new DefaultFileRenamePolicy(); // 중복 파일명 정책
 		
-		MultipartRequest multi = new MultipartRequest(request, path, maxSize, encoding, renamePolicy);
+		MultipartRequest multi = new MultipartRequest(request, savePath, maxSize, encoding, renamePolicy);
 	
 		
 		//멤버이메일
@@ -34,7 +40,7 @@ public class ReqService extends HttpServlet {
 		
 		//req_img_path
 		String ReqFile = multi.getFilesystemName("ReqFile");
-		String ReqFile2 = request.getContextPath() + "/portfolio_img/" + ReqFile;
+		String ReqFile2 = relativePath + "/"  + ReqFile;
 				
 		//req_receiver
 		String ReqReceiver = request.getParameter("receiver");
