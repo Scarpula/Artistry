@@ -50,9 +50,6 @@
 		<description></description>
 		<servlet-class>com.smhrd.controller.ReviewService</servlet-class>
 	</servlet>
-	<!-- <servlet> <servlet-name>LoginService</servlet-name> <display-name>LoginService</display-name> 
-		<description></description> <servlet-class>com.smhrd.controller.LoginService</servlet-class> 
-		</servlet> -->
 	<servlet>
 		<servlet-name>PortService</servlet-name>
 		<display-name>PortService</display-name>
@@ -140,12 +137,6 @@
 		<display-name>PortinfoService</display-name>
 		<description></description>
 		<servlet-class>com.smhrd.controller.PortinfoService</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>getportinfo</servlet-name>
-		<display-name>getportinfo</display-name>
-		<description></description>
-		<servlet-class>com.smhrd.controller.getportinfo</servlet-class>
 	</servlet>
 
 
@@ -241,19 +232,6 @@
 		<servlet-name>PortService</servlet-name>
 		<url-pattern>/PortService</url-pattern>
 	</servlet-mapping>
-		<servlet-mapping>
-			<servlet-name>getportinfo</servlet-name>
-			<url-pattern>/getportinfo</url-pattern>
-		</servlet-mapping>
 	
-
-
-
-
-
-
-	<!-- <servlet-mapping> <servlet-name>LoginService</servlet-name> <url-pattern>/LoginService</url-pattern> 
-		</servlet-mapping> -->
-
 
 </web-app>
