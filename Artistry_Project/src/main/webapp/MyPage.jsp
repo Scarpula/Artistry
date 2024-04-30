@@ -229,7 +229,7 @@ a:-webkit-any-link {
 				</form>
 				<div class="mypage-side-profile-clasify-block">
 					<%
-					if (loginMember.getMb_Type().equals(0)) {
+					if (loginMember.getMb_Type()==false) {
 					%>
 					<h1 class="profile-member-clasify">아티스트</h1>
 					<%

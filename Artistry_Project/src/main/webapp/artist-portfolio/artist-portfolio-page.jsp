@@ -250,8 +250,8 @@
               <%} %>
             </div>
           </div>
-          <%if(portInfo!=null){ %>
           <div id="Artist-infomation" style="display:none" class="portfolio-artist-infomation">
+       	<%if(portInfo.getPf_Info()!=null){ %>
           <!-- 아티스트 정보 페이지 -->
             <h1 class="portfolio-artist-infomation-title"><strong class="bold-text"><%=portInfo.getPf_Title() %></strong></h1>
             <p class="portfolio-artist-infomation-text"><%=portInfo.getPf_Info() %></p>
@@ -292,8 +292,8 @@
                 </div>
               </div>
             </div>
+          <%} %> 
           </div>
-          <%} %>
            
           <!-- 리뷰수정_기현수 -->
 
