@@ -235,7 +235,7 @@
               %>
                  <div id="w-node-_550a96a2-a744-3681-3a62-95b4ca1c003a-bb169fcb" class="artist-art-form">
                    <div data-w-id="1cbd1ca6-35dd-5037-fb9c-405a15f6cf3f" class="artist-art">
-                      <img src="<%=portList.get(i).getPf_Path() %>" loading="lazy" width="350" height="252" alt="" 
+                      <img src="..<%=portList.get(i).getPf_Path() %>" loading="lazy" width="350" height="252" alt="" 
                       sizes="(max-width: 479px) 100vw, (max-width: 1919px) 349.9921875px, 242.8828125px" class="artist-art-img">
                      </div>
                    <h1 class="artist-art-title"><%=portList.get(i).getPf_Name() %></h1>
