@@ -55,6 +55,6 @@ delete PORTFOLIO where pf_idx = 286;
 
 delete artists where artist_email = 'caricature_soun@naver.com';
 
-
+delete ART_REQUESTS;
 
 

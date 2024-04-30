@@ -383,7 +383,7 @@
        <!-- 기현수 _ 요청서 폼 끝 -->
        <%}else{ %>
       <!-- 요청서폼 시작_기현수_결제하기button 시작_0427 -->
-      <form  action="../ReqService?receiver=<%=artistEmail%>&mb_email=<%=loginMember.getMb_Email()%>>" method="post" id="email-form-3" enctype="multipart/form-data"
+      <form  action="../ReqService?receiver=<%=artistEmail%>&mb_email=<%=loginMember.getMb_Email()%>" method="post" id="email-form-3" enctype="multipart/form-data"
             data-name="Email Form 3"  class="text-area-form"
             data-wf-page-id="660fa367cce1a421bb169fcb"
             data-wf-element-id="b4d1ec42-6ae0-b4d9-64f8-2ff74e9f71d7">
