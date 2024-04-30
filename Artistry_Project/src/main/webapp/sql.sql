@@ -47,6 +47,8 @@ select * from ARTISTS;
 alter table artists add artist_profile_img varchar2(1000);
 
 
+select * from ART_REQUESTS;
+
 
 
 

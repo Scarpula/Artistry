@@ -30,13 +30,13 @@
 </head>
 <body class="body">
 
-	<% 
-	Member loginMember = (Member) session.getAttribute("member");
-	String mb_Email = loginMember.getMb_Email();
-	List<Req> ReqInfo = new ReqDAO().ReqAll(mb_Email);
-	System.out.print("의뢰내용 출력 : "+ mb_Email + ReqInfo);
-	
-	%>
+   <% 
+   Member loginMember = (Member) session.getAttribute("member");
+   String mb_Email = loginMember.getMb_Email();
+   List<Req> ReqInfo = new ReqDAO().ReqAll(mb_Email);
+   System.out.print("의뢰내용 출력 : "+ mb_Email + ReqInfo);
+   
+   %>
 
 
 
@@ -44,7 +44,7 @@
   <div class="main">
     <div class="navbar-logo-left-3">
       <div data-animation="default" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nevbar shadow-three w-nav">
-        <a href="index.html" class="navbar-brand-3 w-nav-brand"><img src="images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
+        <a href="index.jsp" class="navbar-brand-3 w-nav-brand"><img src="images/Artistry-logo4.jpg" loading="lazy" width="240" height="100" alt="" class="image-2"></a>
         <div class="container-9">
           <div class="navbar-wrapper-3">
             <ul role="list" class="nav-list cate">
@@ -63,7 +63,7 @@
               </div>
               <div class="form-search-wrap">
                 <div class="form-search-container w-form">
-                  <form id="wf-form-Search-Form" name="wf-form-Search-Form" data-name="Search Form" redirect="/research" data-redirect="/research" action="/research" method="get" class="form-search" data-wf-page-id="662ca2f3252e40c57915c85d" data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5"><input class="search-field w-input" maxlength="256" name="Search-2" data-name="Search 2" placeholder="Search on Artistry.." data-w-id="39529a09-50bd-5c07-ff29-0fe03328b2c6" type="text" id="Search">
+                  <form id="wf-form-Search-Form" name="wf-form-Search-Form" data-name="Search Form" redirect="/research" data-redirect="/research" action="artist-portfolio/portfolio.jsp?keyWord=" method="get" class="form-search" data-wf-page-id="662ca2f3252e40c57915c85d" data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5"><input class="search-field w-input" maxlength="256" name="Search-2" data-name="Search 2" placeholder="Search on Artistry.." data-w-id="39529a09-50bd-5c07-ff29-0fe03328b2c6" type="text" id="Search">
                     <div class="search-icon-wrap">
                       <a href="#" target="_blank" class="link-block w-inline-block"><img src="images/search.svg" loading="lazy" alt=""></a>
                     </div>
@@ -79,6 +79,35 @@
             </div>
           </div>
         </div>
+        <%
+			if (loginMember != null) {
+			%>
+			<%
+			if (loginMember.getMb_Type().equals(true)) {
+			%>
+			<div>
+				<h3>
+					<a href="MyPage.jsp"><%=loginMember.getMb_Nick()%>님</a>
+				</h3>
+			</div>
+
+			<%
+			} else {
+			%>
+			<div>
+				<h3>
+					<a
+						href="artist-portfolio/artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>">
+						<%=loginMember.getMb_Nick()%>님
+					</a>
+				</h3>
+			</div>
+			<%
+			}
+			%>
+			<%
+			}
+			%>
         <ul role="list" class="nav-list right">
           <li class="nav-item hide">
             <div class="divider-vertical bg-dgray01"></div>
@@ -91,9 +120,8 @@
             <div data-hover="false" data-delay="0" class="navbar-dropdown w-dropdown">
               <div class="navbar-dropdown-toggle w-dropdown-toggle"><img width="24" height="24" alt="" src="images/user.svg" loading="lazy"></div>
               <nav class="navbar-dropdown-list w-dropdown-list">
-                <a href="user-account.html" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
-                <a href="log-in.html" class="navbar-dropdown-link w-dropdown-link">로그인</a>
-                <a href="sign-up.html" class="navbar-dropdown-link w-dropdown-link">회원가입</a>
+                <a href="myPage.jsp" class="navbar-dropdown-link top w-dropdown-link">마이페이지</a>
+                <a href="LogoutService" class="navbar-dropdown-link w-dropdown-link">로그아웃</a>
               </nav>
             </div>
           </li>
@@ -107,8 +135,8 @@
         <h1 class="heading-21">결제하기</h1>
       </div>
       <!-- 의뢰 테이블 시작 -->
-   		   <div class="payments-wrapper">
-		  <div class="w-layout-grid grid-2">
+            <div class="payments-wrapper">
+        <div class="w-layout-grid grid-2">
           <div id="w-node-f1f41a82-2cfd-cebc-a113-48f8fde52482-7915c85d" class="paymentsblock"><h3>번호</h3></div>
           <div id="w-node-a2ead6d9-1da7-5d16-d2de-e2cb1f663ba1-7915c85d" class="paymentsblock"><h3>품목</h3></div>
           <div id="w-node-_5bf0eadf-30b1-5f9b-f2bb-a59f74093558-7915c85d" class="paymentsblock"><h3>아티스트</h3></div>
@@ -129,7 +157,7 @@
             <button class="link-3" onclick="checkOut(<%=r.getReq_idx()%>,<%=r.getReq_price()%>)">결제하기</button>
           </div>
           <div id="w-node-c6f41e41-e3bc-d217-61a1-74edb6e000ec-7915c85d" class="paymentsblock">
-            <a href="#" class="link-4">확인</a>
+            <p class="link-4" id="result">확인</p>
           </div>
           <%  num ++; }%>
           
@@ -142,21 +170,21 @@
   
   
   <!-- 결제API포트원서비스 SDK스크립트_기현수-->
-	<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
-	  <!-- 포트원 결제API_기현수 -->
+   <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+     <!-- 포트원 결제API_기현수 -->
   <script type="text/javascript">
     
-	  var IMP = window.IMP;
-	  IMP.init("imp27513274");
-	  
-	  function checkOut(idx,price){
+     var IMP = window.IMP;
+     IMP.init("imp27513274");
+     
+     function checkOut(idx,price){
           IMP.request_pay({
               pg: "kakaopay.TC0ONETIME",
               pay_method: "card",
               merchant_uid: idx, //주문번호
               name: "아티스트리 의뢰",
               amount: price,
-				//buyer_name: email,
+            //buyer_name: email,
               // buyer_tel: "010-1234-5678",
               // buyer_addr: "서울특별시 강남구 삼성동",
               // buyer_postcode: "123-456"
@@ -167,14 +195,17 @@
                   if(rsp.success){
                       alert('결제가 성공적으로 완료되었습니다.');
                       console.log(rsp);
+                      var result_success=$('#result').val();
+                      console.log(result_success);
+                      
                   }else{
                       alert('결제에 실패하였습니다:.' );
                       console.log(rsp);
+                     }
                   }
-              }
           )
       }
-	</script>
+   </script>
   
 </body>
 </html>
