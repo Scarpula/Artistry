@@ -57,7 +57,7 @@ public class profile_imgService extends HttpServlet {
         
         
         if (cnt > 0) {
-            System.out.print("업데이트 성공");
+            System.out.println("업데이트 성공");
             
             // 세션에서 loginMember 객체 가져오기
             HttpSession session = request.getSession();
@@ -71,6 +71,8 @@ public class profile_imgService extends HttpServlet {
         } else {
             System.out.println("fail");
         }
+        System.out.println("저장 경로: " + savePath);
+        System.out.println("저장 디렉토리: " + saveDir.getAbsolutePath());
 
         response.sendRedirect("MyPage.jsp");
     }

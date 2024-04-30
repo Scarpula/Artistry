@@ -5,7 +5,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" %>
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <!--  This site was created in Webflow. https://www.webflow.com  -->
@@ -59,13 +59,13 @@
 	integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 	crossorigin="anonymous"></script>
 <script src="../js/webflow.js" type="text/javascript"></script>
-  <style>
-  a:-webkit-any-link {
-    color: black;
-    cursor: pointer;
-    text-decoration: none;
+<style>
+a:-webkit-any-link {
+	color: black;
+	cursor: pointer;
+	text-decoration: none;
 }
-  </style>
+</style>
 </head>
 <body class="body">
 	<%
@@ -74,7 +74,7 @@
 	Member loginMember = (Member) session.getAttribute("member");
 	List<Artists> artistList = new ArtistDAO().get_artist_list();
 	List<Artists> searchList = null;
-	if(keyWord != null){
+	if (keyWord != null) {
 		searchList = new ArtistDAO().get_search_list(keyWord);
 	}
 	%>
@@ -107,8 +107,9 @@
 								<div class="form-search-container w-form">
 									<form id="wf-form-Search-Form" name="wf-form-Search-Form"
 										data-name="Search Form" redirect="/research"
-										data-redirect="/research" action="portfolio.jsp?keyWord=" method="get"
-										class="form-search" data-wf-page-id="660a443f25f0805e11168024"
+										data-redirect="/research" action="portfolio.jsp?keyWord="
+										method="get" class="form-search"
+										data-wf-page-id="660a443f25f0805e11168024"
 										data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5">
 										<input class="search-field w-input" maxlength="256"
 											name="Search-2" data-name="Search 2"
@@ -135,17 +136,29 @@
 				<%
 				if (loginMember != null) {
 				%>
-				<%if(loginMember.getMb_Type().equals(true)){ %>
-									<div>
-										<h3><a href="../MyPage.jsp"><%=loginMember.getMb_Nick() %>님</a></h3>
-									</div>
-								
-								<%}else{%>
-									<div>
-										<h3><a href="artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>">
-										<%=loginMember.getMb_Nick() %>님</a></h3>
-									</div>
-								<%} %>
+				<%
+				if (loginMember.getMb_Type().equals(true)) {
+				%>
+				<div>
+					<h3>
+						<a href="../MyPage.jsp"><%=loginMember.getMb_Nick()%>님</a>
+					</h3>
+				</div>
+
+				<%
+				} else {
+				%>
+				<div>
+					<h3>
+						<a
+							href="artist-portfolio-page.jsp?artistEmail=<%=loginMember.getMb_Email()%>">
+							<%=loginMember.getMb_Nick()%>님
+						</a>
+					</h3>
+				</div>
+				<%
+				}
+				%>
 				<%
 				}
 				%>
@@ -153,7 +166,7 @@
 					<li class="nav-item hide">
 						<div class="divider-vertical bg-dgray01"></div>
 					</li>
-					
+
 					<li class="nav-item hide">
 						<div class="divider-vertical bg-dgray01"></div>
 					</li>
@@ -223,7 +236,7 @@
 						</a>
 						<div class="filter-accordion-body">
 							<div class="filter-form-block w-form">
-							<!-- 검색 체크박스 폼 시작 -->
+								<!-- 검색 체크박스 폼 시작 -->
 								<form id="wf-form--4" name="email-form" data-name="Email Form"
 									method="get" class="form" action="../SearchService"
 									data-wf-page-id="660a443f25f0805e11168024"
@@ -231,7 +244,7 @@
 									<div class="filter-check-wrap">
 										<div class="filter-check-field">
 											<label class="w-checkbox filter-checkbox-field"><input
-												type="checkbox" id="checkbox" name="cateBox1" 
+												type="checkbox" id="checkbox" name="cateBox1"
 												data-name="Checkbox" value="캐릭터"
 												class="w-checkbox-input filter-checkbox"><span
 												class="filter-checkbox-label w-form-label" for="checkbox">캐릭터</span></label><label
@@ -255,11 +268,12 @@
 												data-name="Checkbox 2" value="캘리그라피/로고"
 												class="w-checkbox-input filter-checkbox"><span
 												class="filter-checkbox-label w-form-label" for="checkbox-2">캘리그라피/로고</span></label>
-												<input type="submit" value="검색하기">
+											<input type="submit" value="검색하기"
+												style="margin-top: 25px; margin-left: 45px; border-radius: 8px; padding: 15px;">
 										</div>
 									</div>
 								</form>
-							<!-- 검색 체크박스 폼 끝 -->
+								<!-- 검색 체크박스 폼 끝 -->
 								<div class="w-form-done">
 									<div>Thank you! Your submission has been received!</div>
 								</div>
@@ -310,7 +324,7 @@
 					<div class="w-layout-grid art-grid">
 						<!-- 작가 별 시작 -->
 						<%
-						if(searchList != null) {
+						if (searchList != null) {
 						%>
 						<%
 						for (int i = 0; i < searchList.size(); i++) {
@@ -320,13 +334,11 @@
 							<div data-w-id="51e1b636-57d6-a97a-d0c5-40ad8bfecd18"
 								class="art-wrap">
 								<a
-									style="-webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); 
-									-moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); 
-									-ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); 
-									transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+									style="-webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
 									href="#" class="art-link-block w-inline-block"><img
-									src="../<%=searchList.get(i).getArtist_profile_img() %>" loading="lazy" width="218" height="218"
-									alt=""
+									src="../<%=searchList.get(i).getArtist_profile_img()%>"
+									<%System.out.println(searchList.get(i).getArtist_profile_img()); %>
+									loading="lazy" width="218" height="218" alt=""
 									sizes="(max-width: 479px) 100vw, 218px" class="image-5"></a>
 							</div>
 							<div class="text-wrap">
@@ -346,13 +358,17 @@
 								</div>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="price-tag">
-									<h3><%=searchList.get(i).getMin_price()%>won ~ <%=searchList.get(i).getMax_price() %>won</h3>
+									<h3><%=searchList.get(i).getMin_price()%>won ~
+										<%=searchList.get(i).getMax_price()%>won
+									</h3>
 								</div>
 							</div>
 						</div>
-						<%} %>
 						<%
-						}else{
+						}
+						%>
+						<%
+						} else {
 						%>
 						<%
 						for (int i = 0; i < artistList.size(); i++) {
@@ -362,23 +378,20 @@
 							<div data-w-id="51e1b636-57d6-a97a-d0c5-40ad8bfecd18"
 								class="art-wrap">
 								<a
-									style="-webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); 
-									-moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); 
-									-ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); 
-									transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+									style="-webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
 									href="#" class="art-link-block w-inline-block"><img
-									src="../<%=artistList.get(i).getArtist_profile_img() %>" loading="lazy" width="218" height="218"
-									alt=""
+									src="../<%=artistList.get(i).getArtist_profile_img()%>"
+									loading="lazy" width="218" height="218" alt=""
 									sizes="(max-width: 479px) 100vw, 218px" class="image-5"></a>
 							</div>
 							<div class="text-wrap">
 								<a
 									href="artist-portfolio-page.jsp?artistEmail=<%=artistList.get(i).getArtist_email()%>"
-									class="title-link"> <%=artistList.get(i).getArtist_email() %></a>
+									class="title-link"> <%=artistList.get(i).getArtist_email()%></a>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="artist-link-wrap">
 									<a href="#" class="artist-link"><%=artistList.get(i).getArtist_nick()%></a><img
-				 						src="../images/label-check.png" loading="lazy" width="30"
+										src="../images/label-check.png" loading="lazy" width="30"
 										height="30" alt="" class="image-4"><img
 										src="../images/label-award.png" loading="lazy" width="30"
 										height="30" alt="" class="image-6">
@@ -388,12 +401,18 @@
 								</div>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="price-tag">
-									<h3><%=artistList.get(i).getMin_price()%>won ~ <%=artistList.get(i).getMax_price() %>won</h3>
+									<h3><%=artistList.get(i).getMin_price()%>won ~
+										<%=artistList.get(i).getMax_price()%>won
+									</h3>
 								</div>
 							</div>
 						</div>
-							<%} %>
-						<%} %>
+						<%
+						}
+						%>
+						<%
+						}
+						%>
 						<!-- 작가 별 종료 -->
 					</div>
 				</div>
@@ -401,41 +420,53 @@
 		</div>
 	</div>
 	<section class="footer-dark-4">
-      <div class="footer-container">
-        <a href="#" class="footer-brand-4 w-inline-block"><img src="../images/Artistry-logo3.jpg" loading="lazy" width="185" alt="" class="footer-icon-img"></a>
-        <div class="footer-wrapper-4">
-          <div class="footer-content-4">
-            <div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd073c-08cd0736" class="footer-block-4">
-              <div class="title-small-4">team Artistry</div>
-              <a href="#" class="footer-link-4">이성도</a>
-              <a href="#" class="footer-link-4">조준범</a>
-              <a href="#" class="footer-link-4">기현수</a>
-              <a href="#" class="footer-link-4">윤명상</a>
-            </div>
-            <div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd0745-08cd0736" class="footer-block-4">
-              <div class="title-small-4">EMAIL</div>
-              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">dltjdeh7745@naver.com</a>
-              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">qoddkfdl@gmail.com</a>
-              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">hyunsoo1753@gmail.com</a>
-              <a href="https://mail.naver.com/v2/folders/0/all" class="footer-link-4">See all resources &gt;</a>
-            </div>
-            <div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd0750-08cd0736" class="footer-block-4">
-              <div class="title-small-4">Address</div>
-              <a href="#" class="footer-link-4">광주 동구 예술길 31-15 4층</a>
-              <a href="#" class="footer-link-4">대의동 10-1</a>
-              <a href="#" class="footer-link-4">61474</a>
-              <div class="footer-social-block-4">
-                <a href="https://map.naver.com/p/search/%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%9D%B8%EC%9E%AC%EA%B0%9C%EB%B0%9C%EC%9B%90/place/1115170819?placePath=?entry=pll&amp;from=nx&amp;fromNxList=true&amp;searchType=place&amp;mapsvc=true&amp;maplocsvc=true&amp;agree=true&amp;c=18.01,0,0,0,dh" target="_blank" class="footer-social-link-4 w-inline-block"><img src="../images/home_pin_FILL0_wght400_GRAD0_opsz24.svg" loading="lazy" alt=""></a>
-                <a href="#" class="footer-social-link-4 w-inline-block"></a>
-                <a href="#" class="footer-social-link-4 w-inline-block"></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-divider-4"></div>
-      <div class="footer-copyright-center-4">Copyright © 2024 Artistry</div>
-    </section>
+		<div class="footer-container">
+			<a href="#" class="footer-brand-4 w-inline-block"><img
+				src="../images/Artistry-logo3.jpg" loading="lazy" width="185" alt=""
+				class="footer-icon-img"></a>
+			<div class="footer-wrapper-4">
+				<div class="footer-content-4">
+					<div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd073c-08cd0736"
+						class="footer-block-4">
+						<div class="title-small-4">team Artistry</div>
+						<a href="#" class="footer-link-4">이성도</a> <a href="#"
+							class="footer-link-4">조준범</a> <a href="#" class="footer-link-4">기현수</a>
+						<a href="#" class="footer-link-4">윤명상</a>
+					</div>
+					<div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd0745-08cd0736"
+						class="footer-block-4">
+						<div class="title-small-4">EMAIL</div>
+						<a href="https://mail.naver.com/v2/folders/0/all"
+							class="footer-link-4">dltjdeh7745@naver.com</a> <a
+							href="https://mail.naver.com/v2/folders/0/all"
+							class="footer-link-4">qoddkfdl@gmail.com</a> <a
+							href="https://mail.naver.com/v2/folders/0/all"
+							class="footer-link-4">hyunsoo1753@gmail.com</a> <a
+							href="https://mail.naver.com/v2/folders/0/all"
+							class="footer-link-4">See all resources &gt;</a>
+					</div>
+					<div id="w-node-_988edab2-af3d-f4e1-d904-273e08cd0750-08cd0736"
+						class="footer-block-4">
+						<div class="title-small-4">Address</div>
+						<a href="#" class="footer-link-4">광주 동구 예술길 31-15 4층</a> <a
+							href="#" class="footer-link-4">대의동 10-1</a> <a href="#"
+							class="footer-link-4">61474</a>
+						<div class="footer-social-block-4">
+							<a
+								href="https://map.naver.com/p/search/%EC%8A%A4%EB%A7%88%ED%8A%B8%EC%9D%B8%EC%9E%AC%EA%B0%9C%EB%B0%9C%EC%9B%90/place/1115170819?placePath=?entry=pll&amp;from=nx&amp;fromNxList=true&amp;searchType=place&amp;mapsvc=true&amp;maplocsvc=true&amp;agree=true&amp;c=18.01,0,0,0,dh"
+								target="_blank" class="footer-social-link-4 w-inline-block"><img
+								src="../images/home_pin_FILL0_wght400_GRAD0_opsz24.svg"
+								loading="lazy" alt=""></a> <a href="#"
+								class="footer-social-link-4 w-inline-block"></a> <a href="#"
+								class="footer-social-link-4 w-inline-block"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-divider-4"></div>
+		<div class="footer-copyright-center-4">Copyright © 2024 Artistry</div>
+	</section>
 	<script
 		src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1"
 		type="text/javascript"
