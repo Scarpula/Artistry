@@ -5,12 +5,11 @@ const APP_ID = '94c4543b-80b2-4b7d-91eb-11a67dbe5261';
 const DEMO_CHANNEL_ID = 'Artistry';
 
 const avatarUser = [
-	{username : 'admin', image : './images/user-default-logo.png'},
-	{username : 'admin', image : './images/user-default-logo.png'},
-	{username : 'admin', image : './images/user-default-logo.png'},
-	{username : 'admin', image : './images/user-default-logo.png'},
-	{username : 'admin', image : './images/user-default-logo.png'},
-	{username : 'admin', image : './images/user-default-logo.png'},
+	{username : '의뢰자', image : './images/user-default-logo.png'},
+	{username : '의뢰자', image : './images/user-default-logo.png'},
+	{username : '의뢰자', image : './images/user-default-logo.png'},
+	{username : '의뢰자', image : './images/user-default-logo.png'},
+	{username : '의뢰자', image : './images/user-default-logo.png'},
 	{username : '아티스트', image : './images/artist-logo.png'},
 	{username : '아티스트', image : './images/artist-logo.png'},
 	{username : '아티스트', image : './images/artist-logo.png'},
