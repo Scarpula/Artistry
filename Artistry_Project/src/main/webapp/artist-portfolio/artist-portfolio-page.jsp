@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.PortDAO2"%>
+<%@page import="com.smhrd.model.Port2"%>
 <%@page import="com.smhrd.model.ReqDAO"%>
 <%@ page import="com.smhrd.model.Req" %>
 <%@page import="com.smhrd.model.ArtistDAO"%>
@@ -56,6 +58,7 @@
       Member artist = new MemberDAO().get_artist(artistEmail);
       Artists artist_info = new ArtistDAO().getArtistInfo(artistEmail);
       List<Req> reqListArtist = new ReqDAO().get_req_list_receiver(artistEmail);
+      Port2 portInfo = new PortDAO2().selectinfo(artistEmail);
    %>
 
   <div class="main">
@@ -174,7 +177,7 @@
       <div class="banner-image-wrap"><img src="../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac.jpg" loading="lazy" sizes="100vw" srcset="../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-500.jpg 500w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-800.jpg 800w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-1080.jpg 1080w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-1600.jpg 1600w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-2000.jpg 2000w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-2600.jpg 2600w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-3200.jpg 3200w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac.jpg 3840w" alt="" class="image-10"></div>
       <div class="main-container">
         <div style="-webkit-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-profile-tab">
-          <div class="portfolio-profile-img-wrap"><img src="../images/11.png" loading="lazy" sizes="(max-width: 1279px) 100vw, (max-width: 1919px) 1024.0078125px, 4vw" srcset="../images/11-p-500.png 500w, ../images/11-p-800.png 800w, ../images/11.png 1024w" alt="" class="profiel-img-con">
+          <div class="portfolio-profile-img-wrap"><img src="../<%=artist.getMb_Profile_Img() %>" loading="lazy" sizes="(max-width: 1279px) 100vw, (max-width: 1919px) 1024.0078125px, 4vw" alt="" class="profiel-img-con">
             <h1 class="heading-11"><%=artist.getMb_Nick() %></h1>
             <div class="profile-insta-block">
               <h1 class="heading-12">INSTA@:</h1>
@@ -247,38 +250,56 @@
               <%} %>
             </div>
           </div>
+          <%if(portInfo!=null){ %>
           <div id="Artist-infomation" style="display:none" class="portfolio-artist-infomation">
           <!-- 아티스트 정보 페이지 -->
-            <h1 class="portfolio-artist-infomation-title"><strong class="bold-text">15년 이상의 브랜드 전문가와 함께 하세요~</strong></h1>
-            <p class="portfolio-artist-infomation-text">디자이너 gutta 공모전 수상 경력 사항<br><br>‍<br>Hi 서울 웹포스터 공모전 [수상 : 대상]09년 수산물 브랜드 대전 [수상 : 은상]<br>‍<br>제8회대한민국비쥬얼트랜드대전 [수상 : 특선]<br>제3회 Blue Leage 포트폴리오 대전 [수상 : 입선]<br>07년 Edtool 표지디자인 공모전 [수상 : 입상]<br>08년 UNICORN증보시스템 캐릭터 공모전 [수상 : 2위]<br>제44회 대한민국 디자인 전람회 [수상 : 입선]<br>10년 춘천월드레져총회 및 경기대회 캐릭터 공모전 [수상 : 입선]<br>14년 순천만 정원포스터 공모전 [수상 : 동상]<br>16년 담양대나무축제 포스터 [수상:대상]<br>‍<br><br>(자격사항)웹디자인 기능사 취득그래픽운용기능사 취득교원(실기교사) 자격증 취득브랜드컨설턴트 수료</p>
+            <h1 class="portfolio-artist-infomation-title"><strong class="bold-text"><%=portInfo.getPf_Title() %></strong></h1>
+            <p class="portfolio-artist-infomation-text"><%=portInfo.getPf_Info() %></p>
             <div class="information-stats">
               <h1 class="heading-7">판매량</h1>
               <div class="sales-volume"><img src="../images/shopping_bag_FILL0_wght400_GRAD0_opsz24.svg" loading="lazy" width="48" height="48" alt="" class="image-9">
-                <h1>73</h1>
+                <h1><%=portInfo.getPf_Sale() %></h1>
               </div>
             </div>
             <div class="artist-request-field-wrap">
               <h1 class="heading-9">의뢰 가능한 분야</h1>
               <div class="request-field-form">
                 <div class="request-field-wrap">
-                  <h3 class="request-field-text">일러스트</h3>
+                  <h3 class="request-field-text"><%=artist_info.getCate() %></h3>
                 </div>
-                <div class="request-field-wrap">
-                  <h3 class="request-field-text">캐릭터</h3>
-                </div>
-                <div class="request-field-wrap">
-                  <h3 class="request-field-text">캐리커쳐</h3>
                 </div>
               </div>
             </div>
           </div>
           
+          <%}else{ %>
+          <div id="Artist-infomation" style="display:none" class="portfolio-artist-infomation">
+          <!-- 아티스트 정보 페이지 -->
+            <h1 class="portfolio-artist-infomation-title"><strong class="bold-text">아직 정보가 없어요!</strong></h1>
+            <p class="portfolio-artist-infomation-text"></p>
+            <div class="information-stats">
+              <h1 class="heading-7">판매량</h1>
+              <div class="sales-volume"><img src="../images/shopping_bag_FILL0_wght400_GRAD0_opsz24.svg" loading="lazy" width="48" height="48" alt="" class="image-9">
+                <h1>0</h1>
+              </div>
+            </div>
+            <div class="artist-request-field-wrap">
+              <h1 class="heading-9">의뢰 가능한 분야</h1>
+              <div class="request-field-form">
+                <div class="request-field-wrap">
+                  <h3 class="request-field-text"><%=artist_info.getCate() %></h3>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%} %>
            
           <!-- 리뷰수정_기현수 -->
 
           <div style="display:none" class="portfolio-artist-review">
             <div class="artist-review-head">
-              <h1 class="heading-10">총 리뷰 0개</h1>
+              <h1 class="heading-10">총 리뷰 <%=reviewList.size() %>개</h1>
             </div>
             
             <!-- 리뷰작성란 div태그 -->
@@ -326,7 +347,7 @@
                          </div>
                          
                             <div class="review-text-up">
-                            <% for(int j =0; j<=reviewList.get(i).getReview_Ratings();j++){%>
+                            <% for(int j =0; j<reviewList.get(i).getReview_Ratings();j++){%>
                             <img src="../images/star.svg" loading="lazy" width="50" height="37" alt="" class="review-star"><% }%>
                               <div class="review-star-text"> 점 </div>
                             </div> 
