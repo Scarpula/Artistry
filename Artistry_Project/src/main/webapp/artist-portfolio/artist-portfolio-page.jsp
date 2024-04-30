@@ -367,7 +367,6 @@
           
        </div>
          </div>
-      </div>
       <%if(loginMember != null){ %>
       <%if(loginMember.getMb_Email().equals(artist.getMb_Email())){ %>
       <!-- 의뢰 확인 -->
@@ -504,8 +503,6 @@
        <!-- 기현수 _ 요청서 폼 끝 -->
        <%} %>
        <%} %>
-   </div>
-   </div>
    </div>
    <script
       src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=65fa46eb9d90d967c69e39b1"
