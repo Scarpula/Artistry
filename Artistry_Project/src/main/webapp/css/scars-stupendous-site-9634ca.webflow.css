@@ -3035,6 +3035,7 @@ body {
 		min-width: 12.5rem;
 		padding: 1.5rem;
 		transition: transform .2s, background-color .2s;
+		font-size: 25px;
 	}
 	.user-log-in-log-out {
 		min-width: 12.5px;
@@ -4543,6 +4544,7 @@ body {
 		height: 150px;
 		margin-top: 0;
 		display: flex;
+		
 	}
 	.sns-logo.naver, .sns-logo.google, .sns-logo.kakao {
 		width: 80px;

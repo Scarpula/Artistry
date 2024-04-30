@@ -83,7 +83,8 @@
 							<div class="form-search-container w-form">
 								<form id="wf-form-Search-Form" name="wf-form-Search-Form"
 									data-name="Search Form" redirect="/research"
-									data-redirect="/research" action="artist-portfolio/portfolio.jsp?keyWord=" method="get"
+									data-redirect="/research"
+									action="artist-portfolio/portfolio.jsp?keyWord=" method="get"
 									class="form-search" data-wf-page-id="65fd1577d3de0c8242fadc8c"
 									data-wf-element-id="39529a09-50bd-5c07-ff29-0fe03328b2c5">
 									<input class="search-field w-input" maxlength="256"
@@ -112,7 +113,7 @@
 				<li class="nav-item hide">
 					<div class="divider-vertical bg-dgray01"></div>
 				</li>
-				
+
 				<li class="nav-item hide">
 					<div class="divider-vertical bg-dgray01"></div>
 				</li>
@@ -191,6 +192,9 @@
 					apiURL += "&state=" + state;
 					session.setAttribute("state", state);
 					%>
+
+					<h5 style="margin-top: 15px; position: relative; bottom: -20px;">SNS로
+						간편하게 로그인하기</h5>
 					<div class="sns-login-button">
 						<div class="sns-logo naver">
 							<a href="<%=apiURL%>" class="w-inline-block"> <img
@@ -356,7 +360,7 @@
 			return JSON.parse(jsonPayload);
 		}
 	</script>
-	
+
 </body>
 
 </html>
