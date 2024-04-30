@@ -49,9 +49,11 @@ alter table artists add artist_profile_img varchar2(1000);
 
 select * from ART_REQUESTS;
 
+select * from PORTFOLIO;
 
+delete PORTFOLIO where pf_idx = 176;
 
-
+delete artists where artist_email = 'caricature_soun@naver.com';
 
 
 

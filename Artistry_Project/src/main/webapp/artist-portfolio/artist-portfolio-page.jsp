@@ -43,6 +43,13 @@
     cursor: pointer;
     text-decoration: none;
 }
+	#request-준범{
+		margin-top: 30px;
+		width: 1200px;
+		height: 70px;
+		text-align: center;
+	
+	}
   </style>
 </head>
 <body class="body">
@@ -248,14 +255,6 @@
                 <h1><%=portInfo.getPf_Sale() %></h1>
               </div>
             </div>
-            <div class="artist-request-field-wrap">
-              <h1 class="heading-9">의뢰 가능한 분야</h1>
-              <div class="request-field-form">
-                <div class="request-field-wrap">
-                  <h3 class="request-field-text"><%=artist_info.getCate() %></h3>
-                </div>
-                </div>
-              </div>
             </div>
           </div>
           
@@ -270,14 +269,6 @@
                 <h1>0</h1>
               </div>
             </div>
-            <div class="artist-request-field-wrap">
-              <h1 class="heading-9">의뢰 가능한 분야</h1>
-              <div class="request-field-form">
-                <div class="request-field-wrap">
-                  <h3 class="request-field-text"><%=artist_info.getCate() %></h3>
-                </div>
-                </div>
-              </div>
             </div>
           <%} %> 
           </div>
@@ -367,7 +358,7 @@
                alt="" class="cancel-button-img">
          </section> 
          <%if(reqListArtist!=null){ %>  
-			<table border="1">
+			<table border="1" id="request-준범">
 				<tr>
 					<td>의뢰자 이메일</td>
 					<td>의뢰 내용</td>
