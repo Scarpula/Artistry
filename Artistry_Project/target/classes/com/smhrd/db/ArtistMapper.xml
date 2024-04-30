@@ -12,7 +12,7 @@
   	update artists set artist_cate=#{cate}, min_price=#{min_price}, max_price=#{max_price} where artist_email=#{artist_email}
   </update>
   <insert id="insertArtist" parameterType="com.smhrd.model.Artists">
-  	insert into artists values(#{artist_email},'일러스트',0,0,#{artist_nick},null)
+  	insert into artists values(#{artist_email},'일러스트',0,0,#{artist_nick},'/profile_img/defalt_profile.jpg')
   </insert>
   
   <select id="searchArtist" parameterType="String" resultType="com.smhrd.model.Artists">
