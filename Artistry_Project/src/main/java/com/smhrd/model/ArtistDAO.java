@@ -53,5 +53,12 @@ public class ArtistDAO {
 		session.close();
 		return cnt;
 	}
+
+	public int deleteArtist(String delEmail) {
+		SqlSession session = sf.openSession(true);
+		int cnt = session.delete("com.smhrd.db.ArtistMapper.deleteArtist",delEmail);
+		session.close();
+		return cnt;
+	}
 	
 }

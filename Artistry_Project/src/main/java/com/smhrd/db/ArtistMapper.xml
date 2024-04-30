@@ -27,5 +27,9 @@
   	update artists set artist_profile_img=#{artist_nick} where artist_email=#{artist_email}
   </update>
   
+  <delete id="deleteArtist" parameterType="String">
+  	delete artists where artist_email = #{delEmail}
+  </delete>
+  
   
   </mapper>
