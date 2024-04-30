@@ -17,7 +17,7 @@ public class PortService extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         // 실제 파일이 저장될 서버의 파일 시스템 경로
-        String path = "C:\\Users\\smhrd\\git\\Artistry\\Artistry_Project\\src\\main\\webapp\\portfolio_img";
+        String path = "C:\\Users\\smhrd\\git\\Artistry3\\Artistry_Project\\src\\main\\webapp\\portfolio_img";
         
         int maxSize = 10 * 1024 * 1024; // 최대 업로드 파일 크기 (10MB)
         String encoding = "UTF-8"; // 인코딩 타입 설정
