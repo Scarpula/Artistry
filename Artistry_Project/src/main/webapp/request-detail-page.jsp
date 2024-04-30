@@ -231,7 +231,7 @@
 					<div class="picture-area">
 						<a href="<%=req.getReq_img_path()%>" download><img
 							src="<%=req.getReq_img_path()%>" loading="lazy" alt=""
-							class="image-area"></a>
+							class="image-area" style="width: 350px; height: 350px; "></a>
 					</div>
 					<div class="detail-text">
 						<p><%=req.getReq_paper()%></p>
