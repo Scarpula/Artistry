@@ -19,7 +19,7 @@ import com.smhrd.model.NaverUserDAO;
 public class ApiExamMemberProfile {
     public static String ACCESS_TOKEN;
 
-    public static NaverUser getUserProfile() {
+    public static NaverUser getUserProfile(HttpSession session) {
         String token = ACCESS_TOKEN;
         String header = "Bearer " + token;
         String apiURL = "https://openapi.naver.com/v1/nid/me";
@@ -68,6 +68,9 @@ public class ApiExamMemberProfile {
 
         NaverUserDAO userDAO = new NaverUserDAO();    
         userDAO.insertNaverUser(User);
+        
+        session.setAttribute("naverUser", User);
+        
         return User;
     }
 
@@ -126,7 +129,7 @@ public class ApiExamMemberProfile {
         String state = ""; // 상태 토큰
 
         ACCESS_TOKEN = NaverLoginController.getAccessToken(code, state);
-        getUserProfile();
+        getUserProfile(null);
         
     }
    
