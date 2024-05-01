@@ -277,28 +277,32 @@ if (code != null && state != null) {
 									<%if(loginMember.getMb_Type()==true){ %>
 									<div class="text-span">
 										<h1>
-											예술, &quot;<%=loginMember.getMb_Nick()%>님&quot; 의 세상과 연결되다.
+											&quot;예술, <%=loginMember.getMb_Nick()%>님 의 세상과 연결되다.&quot;
 										</h1>
 									</div>
-									<br>&quot;
+									<br>
 									
 									<%}else{ %>
 									<div class="text-span">
 										<h1>
-											&quot;<%=loginMember.getMb_Nick()%>님&quot; 의 예술, 세상과 연결되다.
+											&quot;<%=loginMember.getMb_Nick()%>님 의 예술, 세상과 연결되다.&quot;
 										</h1>
 									</div>
-									<br>&quot;
+									<br>
 									
 									<%} %>
 									<%
 									} else {
 									%>
-									&quot; <span class="text-span">당신의 예술, 세상과 연결되다. </span>&quot;<br>&quot;
+									 <div class="text-span">
+									 	<h1>
+										 &quot;당신의 예술, 세상과 연결되다. &quot;
+									 	</h1>
+										 </div><br>
 									<%
 									}
 									%>
-									Connect Your Art to the World with Artistry &quot;
+									<h1>&quot;Connect Your Art to the World with Artistry &quot;</h1>
 								</div>
 								<div class="button-holder">
 									<div data-w-id="d90ecd32-fcee-d920-ab75-b73cd84ef98a"
