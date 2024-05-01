@@ -311,21 +311,21 @@ a:-webkit-any-link {
 					<div class="divider bg-dgrey01"></div>
 				</div>
 			</div>
-			<div class="main-view">
-				<div
-					style="opacity: 0; -webkit-transform: translate3d(0, 25px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 25px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 25px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 25px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-					class="list-content-wrap">
-					<div data-hover="false" data-delay="0"
-						class="art-view-dropdown w-dropdown"></div>
-					<div data-hover="false" data-delay="0"
-						class="art-view-dropdown w-dropdown"></div>
-				</div>
+			<div class="main-view" style="text-align: center;">
 				<div class="art-view-main">
-					<div class="w-layout-grid art-grid">
+					
 						<!-- 작가 별 시작 -->
 						<%
 						if (searchList != null) {
 						%>
+						
+						<%if(searchList.size()==0){ %>
+						<div>
+						<h1><b>조건에 맞는 아티스트가 없어요!</b></h1><br>
+						<a href="portfolio.jsp"> <h3>전체 아티스트 보러 가기</h3> </a>
+						</div>
+						<%} %>
+						<div class="w-layout-grid art-grid">
 						<%
 						for (int i = 0; i < searchList.size(); i++) {
 						%>
@@ -365,9 +365,11 @@ a:-webkit-any-link {
 						<%
 						}
 						%>
+						</div>
 						<%
 						} else {
 						%>
+						<div class="w-layout-grid art-grid">
 						<%
 						for (int i = 0; i < artistList.size(); i++) {
 						%>
@@ -407,15 +409,14 @@ a:-webkit-any-link {
 						<%
 						}
 						%>
+						</div>
 						<%
 						}
 						%>
 						<!-- 작가 별 종료 -->
-					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	<section class="footer-dark-4">
 		<div class="footer-container">
 			<a href="#" class="footer-brand-4 w-inline-block"><img

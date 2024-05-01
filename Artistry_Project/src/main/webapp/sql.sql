@@ -51,7 +51,7 @@ select * from ART_REQUESTS;
 
 select * from PORTFOLIO order by pf_idx;
 
-delete PORTFOLIO where pf_idx = 288;
+delete PORTFOLIO where pf_name = '아이_캐리커쳐';
 
 delete artists where artist_email = 'caricature_soun@naver.com';
 
