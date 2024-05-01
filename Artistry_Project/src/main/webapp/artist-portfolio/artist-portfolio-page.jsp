@@ -171,11 +171,13 @@
       <div class="banner-image-wrap"><img src="../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac.jpg" loading="lazy" sizes="100vw" srcset="../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-500.jpg 500w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-800.jpg 800w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-1080.jpg 1080w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-1600.jpg 1600w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-2000.jpg 2000w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-2600.jpg 2600w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac-p-3200.jpg 3200w, ../images/dd8d72e3-c412-4e9e-94c1-3e9fe23ccdac.jpg 3840w" alt="" class="image-10"></div>
       <div class="main-container">
         <div style="-webkit-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, -900px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="portfolio-profile-tab">
-          <div class="portfolio-profile-img-wrap"><img src="../<%=artist.getMb_Profile_Img() %>" loading="lazy" sizes="(max-width: 1279px) 100vw, (max-width: 1919px) 1024.0078125px, 4vw" alt="" class="profiel-img-con">
+          <div class="portfolio-profile-img-wrap"><img src="../<%=artist.getMb_Profile_Img() %>" 
+          loading="lazy" sizes="(max-width: 1279px) 100vw, (max-width: 1919px) 1024.0078125px, 4vw" alt="" class="profiel-img-con">
             <h1 class="heading-11"><%=artist.getMb_Nick() %></h1>
             <div class="profile-insta-block">
-              <h1 class="heading-12">INSTA@:</h1>
-              <a href="#" class="insta-link-block w-inline-block"><img src="../images/insta_logo-removebg-preview.png" loading="lazy" sizes="(max-width: 666px) 100vw, (max-width: 1919px) 666px, 4vw" srcset="../images/insta_logo-removebg-preview-p-500.png 500w, ../images/insta_logo-removebg-preview.png 666w" alt="" class="insta-logo"></a>
+              <h1 class="heading-12" style="padding-bottom: 45px;">INSTA@:</h1>
+              <a href="#" class="insta-link-block w-inline-block"><img src="../images/insta_logo-removebg-preview.png"
+               loading="lazy" style="width: 68px; height: 40px;" srcset="../images/insta_logo-removebg-preview-p-500.png 500w, ../images/insta_logo-removebg-preview.png 666w" alt="" class="insta-logo"></a>
             </div>
           </div>
           <%if(loginMember!=null){ %>
