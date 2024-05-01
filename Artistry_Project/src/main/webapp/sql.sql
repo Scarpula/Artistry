@@ -57,4 +57,9 @@ delete artists where artist_email = 'caricature_soun@naver.com';
 
 delete ART_REQUESTS;
 
+update artists set artist_nick = '강그림' where artist_email='kanggrim@naver.com';
+
+
+
+
 

@@ -274,16 +274,27 @@ if (code != null && state != null) {
 									if (loginMember != null) {
 										System.out.println(loginMember.getMb_Profile_Img());
 									%>
+									<%if(loginMember.getMb_Type()==true){ %>
 									<div class="text-span">
 										<h1>
-											&quot;<%=loginMember.getMb_Nick()%>님&quot; 의 예술, 세상과 연결되다
+											예술, &quot;<%=loginMember.getMb_Nick()%>님&quot; 의 세상과 연결되다.
 										</h1>
 									</div>
 									<br>&quot;
+									
+									<%}else{ %>
+									<div class="text-span">
+										<h1>
+											&quot;<%=loginMember.getMb_Nick()%>님&quot; 의 예술, 세상과 연결되다.
+										</h1>
+									</div>
+									<br>&quot;
+									
+									<%} %>
 									<%
 									} else {
 									%>
-									&quot; <span class="text-span">당신의 예술, 세상과 연결되다 </span>&quot;<br>&quot;
+									&quot; <span class="text-span">당신의 예술, 세상과 연결되다. </span>&quot;<br>&quot;
 									<%
 									}
 									%>

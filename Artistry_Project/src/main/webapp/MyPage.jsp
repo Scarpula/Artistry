@@ -69,6 +69,14 @@ a:-webkit-any-link {
 </style>
 </head>
 <body class="body">
+<script type="text/javascript">
+function noUpdate() {
+	alert("이메일은 변경할 수 없습니다!");
+}
+function completeUpate() {
+	alert("정보 수정이 완료되었습니다!");
+}
+</script>
 	<%
 	Member loginMember = (Member) session.getAttribute("member");
 	List<Payments> paymentList = (List<Payments>) session.getAttribute("paymentList");
@@ -308,7 +316,7 @@ a:-webkit-any-link {
 							<tr>
 								<td id="basic">이메일</td>
 								<td id="inputAccount"><input type="text" name="email"
-									value="<%=loginMember.getMb_Email()%>" readonly></td>
+									value="<%=loginMember.getMb_Email()%>" readonly onclick="noUpdate()"></td>
 							</tr>
 
 							<tr>
@@ -353,7 +361,7 @@ a:-webkit-any-link {
 							</tr>
 							<tr>
 								<td colspan="2" style="text-align: center;"><input
-									type="submit" value="수정하기"></td>
+									type="submit" value="수정하기" onclick="completeUpdate()"></td>
 							</tr>
 						</table>
 					</form>

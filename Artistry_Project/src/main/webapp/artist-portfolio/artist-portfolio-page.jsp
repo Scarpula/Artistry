@@ -46,7 +46,7 @@
 	#request-준범{
 		margin-top: 30px;
 		width: 1200px;
-		height: 70px;
+		height: 400px;
 		text-align: center;
 	
 	}
@@ -379,6 +379,9 @@
 				</tr>
 			
 		<%} %>	
+			<tr>
+			<td colspan="4"><b>의뢰 내용을 클릭해서 세부 정보를 확인하세요!</b></td>
+			</tr>
 			</table>
 		<%} %>	
        <!-- 기현수 _ 요청서 폼 끝 -->
