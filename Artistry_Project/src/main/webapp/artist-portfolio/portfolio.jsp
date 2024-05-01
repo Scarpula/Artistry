@@ -335,9 +335,8 @@ a:-webkit-any-link {
 								class="art-wrap">
 								<a
 									style="-webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-									href="#" class="art-link-block w-inline-block"><img
+									href="artist-portfolio-page.jsp?artistEmail=<%=searchList.get(i).getArtist_email()%>" class="art-link-block w-inline-block"><img
 									src="../<%=searchList.get(i).getArtist_profile_img()%>"
-									<%System.out.println(searchList.get(i).getArtist_profile_img()); %>
 									loading="lazy" width="218" height="218" alt=""
 									sizes="(max-width: 479px) 100vw, 218px" class="image-5"></a>
 							</div>
@@ -347,14 +346,13 @@ a:-webkit-any-link {
 									class="title-link"> <%=searchList.get(i).getArtist_email()%></a>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="artist-link-wrap">
-									<a href="#" class="artist-link"><%=searchList.get(i).getArtist_nick()%></a><img
+									<a href="artist-portfolio-page.jsp?artistEmail=<%=searchList.get(i).getArtist_email()%>" class="artist-link"><%=searchList.get(i).getArtist_nick()%></a><img
 										src="../images/label-check.png" loading="lazy" width="30"
 										height="30" alt="" class="image-4"><img
 										src="../images/label-award.png" loading="lazy" width="30"
 										height="30" alt="" class="image-6">
 								</div>
 								<div class="work-period">
-									<div class="work-period-text-wrap">work Period : 2day</div>
 								</div>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="price-tag">
@@ -379,7 +377,7 @@ a:-webkit-any-link {
 								class="art-wrap">
 								<a
 									style="-webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0); transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-									href="#" class="art-link-block w-inline-block"><img
+									href="artist-portfolio-page.jsp?artistEmail=<%=artistList.get(i).getArtist_email()%>" class="art-link-block w-inline-block"><img
 									src="../<%=artistList.get(i).getArtist_profile_img()%>"
 									loading="lazy" width="218" height="218" alt=""
 									sizes="(max-width: 479px) 100vw, 218px" class="image-5"></a>
@@ -390,14 +388,13 @@ a:-webkit-any-link {
 									class="title-link"> <%=artistList.get(i).getArtist_email()%></a>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="artist-link-wrap">
-									<a href="#" class="artist-link"><%=artistList.get(i).getArtist_nick()%></a><img
+									<a href="artist-portfolio-page.jsp?artistEmail=<%=artistList.get(i).getArtist_email()%>" class="artist-link"><%=artistList.get(i).getArtist_nick()%></a><img
 										src="../images/label-check.png" loading="lazy" width="30"
 										height="30" alt="" class="image-4"><img
 										src="../images/label-award.png" loading="lazy" width="30"
 										height="30" alt="" class="image-6">
 								</div>
 								<div class="work-period">
-									<div class="work-period-text-wrap">work Period : 2day</div>
 								</div>
 								<div class="divider bg-dgrey01 art-main"></div>
 								<div class="price-tag">

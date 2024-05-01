@@ -228,10 +228,10 @@ a:-webkit-any-link {
 					<h1>상세 요청서</h1>
 				</div>
 				<div class="detail-section">
-					<div class="picture-area">
+					<div class="picture-area" style="display: flex; justify-content: center; align-item: center; ">
 						<a href="<%=req.getReq_img_path()%>" download><img
 							src="<%=req.getReq_img_path()%>" loading="lazy" alt=""
-							class="image-area" style="width: 350px; height: 350px;"></a>
+							class="image-area" style="width: 325px; height: 325px;"></a>
 					</div>
 					<div class="detail-text">
 						<p><%=req.getReq_paper()%></p>

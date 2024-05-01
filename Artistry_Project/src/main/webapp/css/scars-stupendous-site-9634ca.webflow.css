@@ -6047,9 +6047,6 @@ body {
         margin-top: 15px;
         margin-left: 25px;
         margin-right: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 	.detail-text {
 		border: 1px solid #000;
