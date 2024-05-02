@@ -47,14 +47,84 @@ git clone https://github.com/junbeom09/Artistry.git
 ### 로그인
 - 로그인 기능은 사용자의 이메일과 비밀번호를 확인하여 처리합니다.
 
+  
+ @WebServlet("/LoginService")
+public class LoginService extends HttpServlet {
+    protected void service(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+
+        String mb_Email = request.getParameter("mb_Email");
+        String mb_Pw = request.getParameter("mb_Pw");
+
+        Member member = new Member(mb_Email, mb_Pw);
+        Member loginMember = new MemberDAO().login(member);
+
+        if (loginMember != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("member", loginMember);
+        }
+    }
+}
+
+
 ### 결제 API
 - 사용자는 카카오페이를 통해 안전하게 결제할 수 있으며, `IMP.request_pay` 함수를 통해 결제 요청이 처리됩니다.
+
+
+<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+<script type="text/javascript">
+    var IMP = window.IMP;
+    IMP.init("imp27513274");
+    function checkOut(idx, price) {
+        IMP.request_pay({
+            pg: "kakaopay.TC0ONETIME",
+            pay_method: "card",
+            merchant_uid: idx, //주문번호
+            name: "아티스트리 의뢰",
+            amount: price,
+        }, function(rsp) {
+            if (rsp.success) {
+                alert('결제가 성공적으로 완료되었습니다.');
+            } else {
+                alert('결제에 실패하였습니다.');
+            }
+        });
+    }
+</script>
+
 
 ### 좋아요 기능
 - 사용자는 각 포트폴리오 작품에 좋아요를 할 수 있으며, 클릭 수는 실시간으로 갱신됩니다.
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var image = document.getElementById('Likebutton');
+    var countDisplay = document.getElementById('clickCount');
+    var clickCount = 0;
+
+    image.addEventListener('click', function() {
+        clickCount++; // 클릭 카운트 증가
+        countDisplay.textContent = clickCount; // 화면에 표시된 카운트 업데이트
+    });
+});
+</script>
+
+
 ### 검색 기능
 - 카테고리
+
+
+request.setCharacterEncoding("UTF-8");
+
+String[] cateList = {request.getParameter("cateBox1"), request.getParameter("cateBox2"), request.getParameter("cateBox3"), request.getParameter("cateBox4"), request.getParameter("cateBox5")};
+String cate = Arrays.stream(cateList).filter(Objects::nonNull).collect(Collectors.joining(", "));
+
+String encodedCate = URLEncoder.encode(cate, "UTF-8");
+response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
+
+
 
 에 따라 작품을 검색할 수 있으며, 사용자는 다양한 카테고리를 조합하여 검색할 수 있습니다.
 
