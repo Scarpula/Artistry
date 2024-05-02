@@ -47,7 +47,7 @@ git clone https://github.com/junbeom09/Artistry.git
 ### 로그인
 - 로그인 기능은 사용자의 이메일과 비밀번호를 확인하여 처리합니다.
 
-  
+````
  @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response)
@@ -66,12 +66,13 @@ public class LoginService extends HttpServlet {
         }
     }
 }
+````
 
 
 ### 결제 API
 - 사용자는 카카오페이를 통해 안전하게 결제할 수 있으며, `IMP.request_pay` 함수를 통해 결제 요청이 처리됩니다.
 
-
+````
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
 <script type="text/javascript">
     var IMP = window.IMP;
@@ -92,12 +93,12 @@ public class LoginService extends HttpServlet {
         });
     }
 </script>
-
+````
 
 ### 좋아요 기능
 - 사용자는 각 포트폴리오 작품에 좋아요를 할 수 있으며, 클릭 수는 실시간으로 갱신됩니다.
 
-
+````
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     var image = document.getElementById('Likebutton');
@@ -110,12 +111,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
-
+````
 
 ### 검색 기능
 - 카테고리
 
-
+````
 request.setCharacterEncoding("UTF-8");
 
 String[] cateList = {request.getParameter("cateBox1"), request.getParameter("cateBox2"), request.getParameter("cateBox3"), request.getParameter("cateBox4"), request.getParameter("cateBox5")};
@@ -123,7 +124,7 @@ String cate = Arrays.stream(cateList).filter(Objects::nonNull).collect(Collector
 
 String encodedCate = URLEncoder.encode(cate, "UTF-8");
 response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
-
+````
 
 
 에 따라 작품을 검색할 수 있으며, 사용자는 다양한 카테고리를 조합하여 검색할 수 있습니다.
