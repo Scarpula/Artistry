@@ -63,7 +63,7 @@ git clone https://github.com/junbeom09/Artistry.git
 
 
 <fieldset>
-<legend><Strong>$\huge{\rm{\color{#FC4100}기능}}$</Strong></legend>
+<legend><h3>$\huge{\rm{\color{#FC4100}기능}}$</h3></legend>
 
 <p>$\huge{\rm{\color{#FFC55A}로그인}}$</p>
 
