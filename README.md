@@ -1,6 +1,6 @@
-<p>$\huge{\rm{\color{#FC4100}Artistry}}$</p>
+<h2>$\huge{\rm{\color{#FC4100}Artistry}}$</h2>
 
-<p>$\huge{\rm{\color{#FC4100}프로젝트 소개}}$</p>
+<h3>$\huge{\rm{\color{#FC4100}프로젝트 소개}}$</h3>
 
 Artistry는 미술 프리랜서와 의뢰자를 연결하는 플랫폼으로, 의뢰자와 프리랜서 간의 세분화된 역할을 생성하고, 그 역할에 맞게 코딩하여 아티스트가 의뢰를 수락하거나 거절할 수 있도록 합니다. 의뢰자는 아티스트의 작품을 보고 스타일이 맞다고 판단될 경우 의뢰를 할 수 있습니다. 이 플랫폼은 미술 프리랜서들의 경제적 자립을 지원하고자 시작되었습니다.
 
@@ -27,7 +27,7 @@ Artistry는 미술 프리랜서와 의뢰자를 연결하는 플랫폼으로, �
 - **Java, JSP/Servlet**: 서버 사이드 로직과 HTTP 요청 처리를 담당합니다.
 - **기타 라이브러리**: gson, hamcrest-core, javax-servlet-api, json, jstl, lombok, ojdbc, mybatis 등이 사용되었습니다.
 
-<p>$\huge{\rm{\color{#F6F5F2}설치 방법}}$</p>
+<p>$\huge{\rm{\color{#FC4100}설치 방법}}$</p>
 
 Artistry는 이클립스와 톰캣 서버(버전 9.0.86)를 사용하여 실행됩니다.
 
