@@ -46,8 +46,6 @@ git clone https://github.com/junbeom09/Artistry.git
 <br>
 
 
-
-
 <p>$\huge{\rm{\color{#FC4100}주요 기능}}$</p>
 1. **회원가입 및 로그인**: 사용자는 사이트에 접속하여 오른쪽 상단에서 회원가입을 할 수 있으며, 아티스트로 등록 가능합니다.
 2. **포트폴리오 관리**: 아티스트는 자신의 포트폴리오를 개인 페이지에 게시할 수 있습니다.
@@ -65,8 +63,7 @@ git clone https://github.com/junbeom09/Artistry.git
 <br>
 <br>
 <br>
-<br>
-<br>
+
 
 
 <fieldset>
