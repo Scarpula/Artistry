@@ -65,10 +65,10 @@ git clone https://github.com/junbeom09/Artistry.git
 <br>
 
 
----
+
 <fieldset>
 <legend><h3>$\huge{\rm{\color{#FC4100}기능}}$</h3></legend>
-
+---
 <p>$\huge{\rm{\color{#FFC55A}로그인}}$</p>
 
 
@@ -164,8 +164,9 @@ response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 <br>
 <br>
 
----
+
 <p>$\huge{\rm{\color{#FC4100}문제 해결 및 FAQ}}$</p>
+---
 <br>
 <br>
 <p>$\huge{\rm{\color{#FC4100}자주 발생하는 문제}}$</p>
