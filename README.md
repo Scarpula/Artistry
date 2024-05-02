@@ -58,7 +58,7 @@ git clone https://github.com/junbeom09/Artistry.git
 
 <p>$\huge{\rm{\color{#FC4100}기능}}$</p>
 
-<p>$\huge{\rm{\color{#F3D0D7}로그인}}$</p>
+<p>$\huge{\rm{\color{#FFC55A}로그인}}$</p>
 
 
 - 로그인 기능은 사용자의 이메일과 비밀번호를 확인하여 처리합니다.
@@ -85,7 +85,7 @@ public class LoginService extends HttpServlet {
 ````
 
 
-<p>$\huge{\rm{\color{#F3D0D7}결제 API}}$</p>
+<p>$\huge{\rm{\color{#FFC55A}결제 API}}$</p>
 - 사용자는 카카오페이를 통해 안전하게 결제할 수 있으며, `IMP.request_pay` 함수를 통해 결제 요청이 처리됩니다.
 
 ````
@@ -111,7 +111,7 @@ public class LoginService extends HttpServlet {
 </script>
 ````
 
-<p>$\huge{\rm{\color{#F3D0D7}좋아요 기능}}$</p>
+<p>$\huge{\rm{\color{#FFC55A}좋아요 기능}}$</p>
 - 사용자는 각 포트폴리오 작품에 좋아요를 할 수 있으며, 클릭 수는 실시간으로 갱신됩니다.
 
 ````
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 ````
 
-<p>$\huge{\rm{\color{#F3D0D7}검색기능}}$</p>
+<p>$\huge{\rm{\color{#FFC55A}검색기능}}$</p>
 - 카테고리
 
 ````
@@ -144,6 +144,13 @@ response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 
 
 에 따라 작품을 검색할 수 있으며, 사용자는 다양한 카테고리를 조합하여 검색할 수 있습니다.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <p>$\huge{\rm{\color{#FC4100}문제 해결 및 FAQ}}$</p>
 <br>
