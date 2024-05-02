@@ -55,8 +55,8 @@ git clone https://github.com/junbeom09/Artistry.git
 - UI는 1920px 모니터에서 75% 확대로 최적화되어 있습니다. 반응형 웹 구현이 완벽하지 않기 때문에 다른 해상도에서는 UI가 의도한 대로 보이지 않을 수 있습니다.
 
 
-
-<p>$\huge{\rm{\color{#FC4100}기능}}$</p>
+<fieldset>
+<legend><p>$\huge{\rm{\color{#FC4100}기능}}$</p></legend>
 
 <p>$\huge{\rm{\color{#FFC55A}로그인}}$</p>
 
@@ -144,6 +144,7 @@ response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 
 
 에 따라 작품을 검색할 수 있으며, 사용자는 다양한 카테고리를 조합하여 검색할 수 있습니다.
+</fieldset>
 
 <br>
 <br>
