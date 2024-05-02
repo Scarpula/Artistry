@@ -68,7 +68,9 @@ git clone https://github.com/junbeom09/Artistry.git
 
 <fieldset>
 <legend><h3>$\huge{\rm{\color{#FC4100}기능}}$</h3></legend>
----
+ 
+___
+
 <p>$\huge{\rm{\color{#FFC55A}로그인}}$</p>
 
 
@@ -155,7 +157,7 @@ response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 에 따라 작품을 검색할 수 있으며, 사용자는 다양한 카테고리를 조합하여 검색할 수 있습니다.
 </fieldset>
 
-***
+___
 
 <br>
 <br>
@@ -166,7 +168,7 @@ response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 
 
 <p>$\huge{\rm{\color{#FC4100}문제 해결 및 FAQ}}$</p>
----
+___
 <br>
 <br>
 <p>$\huge{\rm{\color{#FC4100}자주 발생하는 문제}}$</p>
@@ -181,7 +183,7 @@ response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 <p>$\huge{\rm{\color{#FC4100}해결 방법}}$</p>
 - UI 문제는 추가적인 반응형 디자인 적용으로 해결 가능합니다.
 - 로그인 오류 처리는 보다 명확한 사용자 피드백을 제공하도록 코드를 수정할 필요가 있습니다.
-***
+___
 <br>
 <br>
 <br>
