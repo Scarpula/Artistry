@@ -154,7 +154,9 @@ response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 ````
 에 따라 작품을 검색할 수 있으며, 사용자는 다양한 카테고리를 조합하여 검색할 수 있습니다.
 </fieldset>
----
+
+***
+
 <br>
 <br>
 <br>
