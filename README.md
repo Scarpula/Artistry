@@ -141,8 +141,6 @@ String cate = Arrays.stream(cateList).filter(Objects::nonNull).collect(Collector
 String encodedCate = URLEncoder.encode(cate, "UTF-8");
 response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 ````
-
-
 에 따라 작품을 검색할 수 있으며, 사용자는 다양한 카테고리를 조합하여 검색할 수 있습니다.
 </fieldset>
 
