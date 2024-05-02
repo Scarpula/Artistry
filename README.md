@@ -148,15 +148,26 @@ response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 <p>$\huge{\rm{\color{#FC4100}문제 해결 및 FAQ}}$</p>
 <br>
 <br>
+<br>
+<br><br>
+<br>
 
 <p>$\huge{\rm{\color{#FC4100}자주 발생하는 문제}}$</p>
 - **UI 문제**: 다양한 해상도에서 UI가 제대로 보이지 않는 문제가 있습니다.
 - **로그인 문제**: 로그인 실패 시 적절한 오류 메시지가 표시되지 않고 메인 화면으로 리다이렉트 됩니다.
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
 <p>$\huge{\rm{\color{#FC4100}해결 방법}}$</p>
 - UI 문제는 추가적인 반응형 디자인 적용으로 해결 가능합니다.
 - 로그인 오류 처리는 보다 명확한 사용자 피드백을 제공하도록 코드를 수정할 필요가 있습니다.
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <p>$\huge{\rm{\color{#FC4100}팀원 및 역할}}$</p>
@@ -165,8 +176,10 @@ response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 - 조준범: 백엔드 개발, 사용자 관리 및 통합 테스트
 - 윤명상: 데이터베이스 설계, 비동기 처리, 좋아요 기능
 - 기현수: 결제 API, 크롤링, 일정 관리 및 리뷰 페이지 개발
-
-
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <p>$\huge{\rm{\color{#FC4100}라이센스}}$</p>
