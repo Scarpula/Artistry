@@ -148,10 +148,6 @@ response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 <p>$\huge{\rm{\color{#FC4100}문제 해결 및 FAQ}}$</p>
 <br>
 <br>
-<br>
-<br><br>
-<br>
-
 <p>$\huge{\rm{\color{#FC4100}자주 발생하는 문제}}$</p>
 - **UI 문제**: 다양한 해상도에서 UI가 제대로 보이지 않는 문제가 있습니다.
 - **로그인 문제**: 로그인 실패 시 적절한 오류 메시지가 표시되지 않고 메인 화면으로 리다이렉트 됩니다.
