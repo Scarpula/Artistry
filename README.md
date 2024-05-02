@@ -164,6 +164,7 @@ response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 <br>
 <br>
 
+---
 <p>$\huge{\rm{\color{#FC4100}문제 해결 및 FAQ}}$</p>
 <br>
 <br>
@@ -179,6 +180,7 @@ response.sendRedirect("artist-portfolio/portfolio.jsp?Search-2=" + encodedCate);
 <p>$\huge{\rm{\color{#FC4100}해결 방법}}$</p>
 - UI 문제는 추가적인 반응형 디자인 적용으로 해결 가능합니다.
 - 로그인 오류 처리는 보다 명확한 사용자 피드백을 제공하도록 코드를 수정할 필요가 있습니다.
+***
 <br>
 <br>
 <br>
