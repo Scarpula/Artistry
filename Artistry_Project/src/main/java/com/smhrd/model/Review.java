@@ -7,53 +7,70 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
-
 @Setter
 @Getter
 @ToString
 @AllArgsConstructor
 public class Review {
-	
+    private Double review_Idx;
+    @NonNull 
+    private String mb_Email;
+    private Double req_Idx;
+    private String review_Content;
+    private int review_Ratings;
+    private String created_At;
+    private String receiver;
 
-		
-	    // 리뷰 식별자 
-	    private Double review_Idx;
-	    
-	    // 리뷰 작성자 
-		@NonNull 
-		private String mb_Email;
+    public Review(String receiver) {
+        this.receiver = receiver;
+    }
 
-	    // 의뢰 식별자 
-	    private Double req_Idx;
+    public Review(@NonNull String mb_Email, String review_Content, int review_Ratings, String receiver) {
+        this.mb_Email = mb_Email;
+        this.review_Content = review_Content;
+        this.review_Ratings = review_Ratings;
+        this.receiver = receiver;
+    }
+    
 
-	    // 리뷰 내용 
+	public Review(Double review_Idx, @NonNull String mb_Email, Double req_Idx, String review_Content,
+			int review_Ratings, String created_At, String receiver) {
+		super();
+		this.review_Idx = review_Idx;
+		this.mb_Email = mb_Email;
+		this.req_Idx = req_Idx;
+		this.review_Content = review_Content;
+		this.review_Ratings = review_Ratings;
+		this.created_At = created_At;
+		this.receiver = receiver;
+	}
 
-	    private String review_Content;
-	    // 별점 
+	public Double getReview_Idx() {
+		return review_Idx;
+	}
 
-	    
-	    private int review_Ratings;
+	public String getMb_Email() {
+		return mb_Email;
+	}
 
-	    private String created_At;
+	public Double getReq_Idx() {
+		return req_Idx;
+	}
 
-	    private String receiver;
-	    
-	    
-		public Review(String receiver) {
-			super();
-			this.receiver = receiver;
-		}
+	public String getReview_Content() {
+		return review_Content;
+	}
 
+	public int getReview_Ratings() {
+		return review_Ratings;
+	}
 
-		public Review(@NonNull String mb_Email, String review_Content, int review_Ratings, String receiver) {
-			super();
-			this.mb_Email = mb_Email;
-			this.review_Content = review_Content;
-			this.review_Ratings = review_Ratings;
-			this.receiver = receiver;
-		}
+	public String getCreated_At() {
+		return created_At;
+	}
 
-		
-		
+	public String getReceiver() {
+		return receiver;
+	}
+    
 }
