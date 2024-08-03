@@ -122,4 +122,29 @@ public class Member {
     public void setMb_Nick(String mb_Nick) {
         this.mb_Nick = mb_Nick;
     }
+
+	public String getMb_Pw() {
+		return mb_Pw;
+	}
+
+	public String getMb_Phone() {
+		return mb_Phone;
+	}
+
+	public String getMb_Birthdate() {
+		return mb_Birthdate;
+	}
+
+	public String getMb_Name() {
+		return mb_Name;
+	}
+
+	public String getMb_Addr() {
+		return mb_Addr;
+	}
+
+	public Timestamp getJoined_At() {
+		return joined_At;
+	}
+    
 }

@@ -31,6 +31,35 @@ public class ChatRoom {
 		super();
 		this.mb_Email = mb_Email;
 	}
+
+	public Double getRoom_Idx() {
+		return room_Idx;
+	}
+
+	public String getMb_Email() {
+		return mb_Email;
+	}
+
+	public String getRoom_Title() {
+		return room_Title;
+	}
+
+	public String getRoom_Info() {
+		return room_Info;
+	}
+
+	public int getRoom_Limit() {
+		return room_Limit;
+	}
+
+	public String getRoom_Status() {
+		return room_Status;
+	}
+
+	public String getOpened_At() {
+		return opened_At;
+	}
+	
 	
 	
 	

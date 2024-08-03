@@ -31,5 +31,22 @@ public class Likes {
 		this.mb_Email = mb_Email;
 		this.artist_Email = artist_Email;
 	}
+
+	public Double getLike_Idx() {
+		return like_Idx;
+	}
+
+	public String getMb_Email() {
+		return mb_Email;
+	}
+
+	public String getArtist_Email() {
+		return artist_Email;
+	}
+
+	public String getCreated_At() {
+		return created_At;
+	}
+	
 	
 }

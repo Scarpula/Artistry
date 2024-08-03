@@ -37,6 +37,46 @@ public class Payments {
 			super();
 			this.mb_Email = mb_Email;
 		}
+
+		public Double getPay_Idx() {
+			return pay_Idx;
+		}
+
+		public String getMb_Email() {
+			return mb_Email;
+		}
+
+		public int getReq_Idx() {
+			return req_Idx;
+		}
+
+		public int getTotal_Amount() {
+			return total_Amount;
+		}
+
+		public int getDiscount_Amount() {
+			return discount_Amount;
+		}
+
+		public int getPay_Amount() {
+			return pay_Amount;
+		}
+
+		public String getPay_Method() {
+			return pay_Method;
+		}
+
+		public int getPaid_Amount() {
+			return paid_Amount;
+		}
+
+		public String getPay_Memo() {
+			return pay_Memo;
+		}
+
+		public String getPayed_At() {
+			return payed_At;
+		}
 		
 		
 		
