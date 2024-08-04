@@ -52,5 +52,13 @@ public class Port {
 		return created_at;
 	}
 
+	public Port(@NonNull String mb_Email, @NonNull String pf_Path, @NonNull String pf_Name) {
+		super();
+		this.mb_Email = mb_Email;
+		this.pf_Path = pf_Path;
+		this.pf_Name = pf_Name;
+	}
+	
+	
     
 }
